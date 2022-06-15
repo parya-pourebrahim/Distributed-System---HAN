@@ -1,0 +1,161 @@
+%implements s909_b0_zc1e_2_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcDisableFcnOfS58B0 = OpaqueTLCBlockFcn("Disable", 58, 0, 2, 2)
+%assign tlcDisableFcnOfS60B0 = OpaqueTLCBlockFcn("Disable", 60, 0, 2, 2)
+%assign tlcDisableFcnOfS62B0 = OpaqueTLCBlockFcn("Disable", 62, 0, 2, 2)
+%assign tlcDisableFcnOfS64B0 = OpaqueTLCBlockFcn("Disable", 64, 0, 2, 2)
+/* {S!d9157}Disable for Enabled SubSystem: '<S874>/Sync_ID_CAN' */
+/*@>202a42*/if (%<SLibCG_DumpSSCode("/*@[23537c*/",(SLibCG_DWV(243, 0, 66, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS58B0)
+    /* {S!d9166}Disable for M-S-Function: '<S880>/S-Function' incorporates:
+ *  Constant: '<S876>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[23533a*/",tlcDisableFcnOfS58B0,"/*@]*/")>\
+%endif
+    /* {S!d9168}Disable for Outport: '<S876>/CAN_new' */
+    /*@>233b66*/localB->/*@>2377b8*/SFunction_o1_g/*@>202a76*/ = %<SLibCG_DumpSSCode("/*@[23548c*/",(SLibCG_SE(SLibCGIR_PV(84, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9170}Disable for Outport: '<S876>/Out2' */
+    /*@>233b74*/localB->/*@>2377bb*/In1_a/*@>202a78*/ = %<SLibCG_DumpSSCode("/*@[2354ae*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9172}Disable for Outport: '<S876>/Out3' */
+    /*@>233b82*/localB->/*@>2377c1*/In2_k/*@>202a7a*/ = %<SLibCG_DumpSSCode("/*@[2354d0*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9174}Disable for Outport: '<S876>/Out4' */
+    /*@>233b97*/localB->/*@>2377c7*/In3_nm/*@>202a7c*/ = %<SLibCG_DumpSSCode("/*@[2354f2*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9176}Disable for Outport: '<S876>/Out5' */
+    /*@>233bac*/localB->/*@>2377d0*/In4_d/*@>202a7e*/ = %<SLibCG_DumpSSCode("/*@[235514*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9178}Disable for Outport: '<S876>/Out6' */
+    /*@>233bc8*/localB->/*@>2377d9*/In5_d/*@>202a80*/ = %<SLibCG_DumpSSCode("/*@[235536*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9180}Disable for Outport: '<S876>/Out7' */
+    /*@>233be4*/localB->/*@>2377e5*/In6_i/*@>202a82*/ = %<SLibCG_DumpSSCode("/*@[235558*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9182}Disable for Outport: '<S876>/Out8' */
+    /*@>233c00*/localB->/*@>2377f1*/In7_ip/*@>202a84*/ = %<SLibCG_DumpSSCode("/*@[23557a*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9184}Disable for Outport: '<S876>/Out9' */
+    /*@>233c1c*/localB->/*@>2377fd*/In8_b/*@>202a86*/ = %<SLibCG_DumpSSCode("/*@[23559c*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+%<SLibCG_DumpSSCode("/*@[235403*/",SLibCG_SetDWV(243, 0, 66, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d9157}End of Disable for SubSystem: '<S874>/Sync_ID_CAN' */
+
+/* {S!d9159}Disable for Enabled SubSystem: '<S874>/Vote1_ID_CAN' */
+/*@>202a47*/if (%<SLibCG_DumpSSCode("/*@[23539d*/",(SLibCG_DWV(242, 0, 66, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS60B0)
+    /* {S!d9186}Disable for M-S-Function: '<S882>/S-Function' incorporates:
+ *  Constant: '<S877>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[235345*/",tlcDisableFcnOfS60B0,"/*@]*/")>\
+%endif
+    /* {S!d9188}Disable for Outport: '<S877>/CAN_new' */
+    /*@>233b7b*/localB->/*@>2377be*/SFunction_o1_i/*@>202ac1*/ = %<SLibCG_DumpSSCode("/*@[2355be*/",(SLibCG_SE(SLibCGIR_PV(84, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9190}Disable for Outport: '<S877>/Out2' */
+    /*@>233b90*/localB->/*@>2377c4*/In1_k/*@>202ac3*/ = %<SLibCG_DumpSSCode("/*@[2355e0*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9192}Disable for Outport: '<S877>/Out3' */
+    /*@>233ba5*/localB->/*@>2377cd*/In2_a/*@>202ac5*/ = %<SLibCG_DumpSSCode("/*@[235602*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9194}Disable for Outport: '<S877>/Out4' */
+    /*@>233bc1*/localB->/*@>2377d6*/In3_e/*@>202ac7*/ = %<SLibCG_DumpSSCode("/*@[235624*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9196}Disable for Outport: '<S877>/Out5' */
+    /*@>233bdd*/localB->/*@>2377e2*/In4_b/*@>202ac9*/ = %<SLibCG_DumpSSCode("/*@[235646*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9198}Disable for Outport: '<S877>/Out6' */
+    /*@>233bf9*/localB->/*@>2377ee*/In5_j/*@>202acb*/ = %<SLibCG_DumpSSCode("/*@[235668*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9200}Disable for Outport: '<S877>/Out7' */
+    /*@>233c15*/localB->/*@>2377fa*/In6_g/*@>202acd*/ = %<SLibCG_DumpSSCode("/*@[23568a*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9202}Disable for Outport: '<S877>/Out8' */
+    /*@>233c31*/localB->/*@>237806*/In7_o/*@>202acf*/ = %<SLibCG_DumpSSCode("/*@[2356ac*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9204}Disable for Outport: '<S877>/Out9' */
+    /*@>233c46*/localB->/*@>23780f*/In8_my/*@>202ad1*/ = %<SLibCG_DumpSSCode("/*@[2356ce*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+%<SLibCG_DumpSSCode("/*@[235426*/",SLibCG_SetDWV(242, 0, 66, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d9159}End of Disable for SubSystem: '<S874>/Vote1_ID_CAN' */
+
+/* {S!d9161}Disable for Enabled SubSystem: '<S874>/Vote2_ID_CAN' */
+/*@>202a4c*/if (%<SLibCG_DumpSSCode("/*@[2353be*/",(SLibCG_DWV(241, 0, 66, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS62B0)
+    /* {S!d9206}Disable for M-S-Function: '<S884>/S-Function' incorporates:
+ *  Constant: '<S878>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[235350*/",tlcDisableFcnOfS62B0,"/*@]*/")>\
+%endif
+    /* {S!d9208}Disable for Outport: '<S878>/CAN_new' */
+    /*@>233b9e*/localB->/*@>2377ca*/SFunction_o1_e/*@>202b0c*/ = %<SLibCG_DumpSSCode("/*@[2356f0*/",(SLibCG_SE(SLibCGIR_PV(84, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9210}Disable for Outport: '<S878>/Out2' */
+    /*@>233bba*/localB->/*@>2377d3*/In1_d/*@>202b0e*/ = %<SLibCG_DumpSSCode("/*@[235712*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9212}Disable for Outport: '<S878>/Out3' */
+    /*@>233bd6*/localB->/*@>2377df*/In2_n/*@>202b10*/ = %<SLibCG_DumpSSCode("/*@[235734*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9214}Disable for Outport: '<S878>/Out4' */
+    /*@>233bf2*/localB->/*@>2377eb*/In3_n/*@>202b12*/ = %<SLibCG_DumpSSCode("/*@[235756*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9216}Disable for Outport: '<S878>/Out5' */
+    /*@>233c0e*/localB->/*@>2377f7*/In4_l/*@>202b14*/ = %<SLibCG_DumpSSCode("/*@[235778*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9218}Disable for Outport: '<S878>/Out6' */
+    /*@>233c2a*/localB->/*@>237803*/In5_g/*@>202b16*/ = %<SLibCG_DumpSSCode("/*@[23579a*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9220}Disable for Outport: '<S878>/Out7' */
+    /*@>233c3f*/localB->/*@>23780c*/In6_o/*@>202b18*/ = %<SLibCG_DumpSSCode("/*@[2357bc*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9222}Disable for Outport: '<S878>/Out8' */
+    /*@>233c54*/localB->/*@>237815*/In7_i/*@>202b1a*/ = %<SLibCG_DumpSSCode("/*@[2357de*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9224}Disable for Outport: '<S878>/Out9' */
+    /*@>233c62*/localB->/*@>23781b*/In8_m/*@>202b1c*/ = %<SLibCG_DumpSSCode("/*@[235800*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+%<SLibCG_DumpSSCode("/*@[235449*/",SLibCG_SetDWV(241, 0, 66, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d9161}End of Disable for SubSystem: '<S874>/Vote2_ID_CAN' */
+
+/* {S!d9163}Disable for Enabled SubSystem: '<S874>/Vote3_ID_CAN' */
+/*@>202a51*/if (%<SLibCG_DumpSSCode("/*@[2353df*/",(SLibCG_DWV(240, 0, 66, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS64B0)
+    /* {S!d9226}Disable for M-S-Function: '<S886>/S-Function' incorporates:
+ *  Constant: '<S879>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[23535b*/",tlcDisableFcnOfS64B0,"/*@]*/")>\
+%endif
+    /* {S!d9228}Disable for Outport: '<S879>/CAN_new' */
+    /*@>233bcf*/localB->/*@>2377dc*/SFunction_o1/*@>202b57*/ = %<SLibCG_DumpSSCode("/*@[235822*/",(SLibCG_SE(SLibCGIR_PV(84, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9230}Disable for Outport: '<S879>/Out2' */
+    /*@>233beb*/localB->/*@>2377e8*/In1/*@>202b59*/ = %<SLibCG_DumpSSCode("/*@[235844*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9232}Disable for Outport: '<S879>/Out3' */
+    /*@>233c07*/localB->/*@>2377f4*/In2/*@>202b5b*/ = %<SLibCG_DumpSSCode("/*@[235866*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9234}Disable for Outport: '<S879>/Out4' */
+    /*@>233c23*/localB->/*@>237800*/In3/*@>202b5d*/ = %<SLibCG_DumpSSCode("/*@[235888*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9236}Disable for Outport: '<S879>/Out5' */
+    /*@>233c38*/localB->/*@>237809*/In4/*@>202b5f*/ = %<SLibCG_DumpSSCode("/*@[2358aa*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9238}Disable for Outport: '<S879>/Out6' */
+    /*@>233c4d*/localB->/*@>237812*/In5/*@>202b61*/ = %<SLibCG_DumpSSCode("/*@[2358cc*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9240}Disable for Outport: '<S879>/Out7' */
+    /*@>233c5b*/localB->/*@>237818*/In6/*@>202b63*/ = %<SLibCG_DumpSSCode("/*@[2358ee*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9242}Disable for Outport: '<S879>/Out8' */
+    /*@>233c69*/localB->/*@>23781e*/In7/*@>202b65*/ = %<SLibCG_DumpSSCode("/*@[235910*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9244}Disable for Outport: '<S879>/Out9' */
+    /*@>233c70*/localB->/*@>237821*/In8/*@>202b67*/ = %<SLibCG_DumpSSCode("/*@[235932*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 66, 1, "", -1, "", 0))),"/*@]*/")>;
+%<SLibCG_DumpSSCode("/*@[23546c*/",SLibCG_SetDWV(240, 0, 66, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d9163}End of Disable for SubSystem: '<S874>/Vote3_ID_CAN' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[2].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Disable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))
+%<SLibCG_AccessArg(2, 2, 0)>
+%endif
+%if SLibCG_ArgAccessed(2, 2, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Disable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(2, 2, 0)>
+%endif
+%endfunction
+%function DisableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CAN2Recieve_Disable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(2, 2, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>rtB_CAN2Recieve *localB\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(2, 2, 2)
+%<comma>rtDW_CAN2Recieve *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 2, fcnProtoType)>
+%endfunction

@@ -1,0 +1,3498 @@
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 2
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"Controller_ValueDomain_TEST.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.global	__aeabi_dadd
+  21              		.global	__aeabi_dcmpgt
+  22              		.global	__aeabi_dcmpeq
+  23              		.global	__aeabi_dmul
+  24              		.global	__aeabi_dsub
+  25              		.global	__aeabi_ddiv
+  26              		.global	__aeabi_dcmplt
+  27              		.global	__aeabi_f2d
+  28              		.section	.text.Controller_ValueDomain_TEST_step,"ax",%progbits
+  29              		.align	2
+  30              		.global	Controller_ValueDomain_TEST_step
+  31              		.thumb
+  32              		.thumb_func
+  34              	Controller_ValueDomain_TEST_step:
+  35              	.LFB112:
+  36              		.file 1 "Controller_ValueDomain_TEST.c"
+   1:Controller_ValueDomain_TEST.c **** /*
+   2:Controller_ValueDomain_TEST.c ****  * Academic License - for use in teaching, academic research, and meeting
+   3:Controller_ValueDomain_TEST.c ****  * course requirements at degree granting institutions only.  Not for
+   4:Controller_ValueDomain_TEST.c ****  * government, commercial, or other organizational use.
+   5:Controller_ValueDomain_TEST.c ****  *
+   6:Controller_ValueDomain_TEST.c ****  * File: Controller_ValueDomain_TEST.c
+   7:Controller_ValueDomain_TEST.c ****  *
+   8:Controller_ValueDomain_TEST.c ****  * Code generated for Simulink model 'Controller_ValueDomain_TEST'.
+   9:Controller_ValueDomain_TEST.c ****  *
+  10:Controller_ValueDomain_TEST.c ****  * Model version                  : 1.82
+  11:Controller_ValueDomain_TEST.c ****  * Simulink Coder version         : 9.0 (R2018b) 24-May-2018
+  12:Controller_ValueDomain_TEST.c ****  * C/C++ source code generated on : Tue Feb 15 09:06:24 2022
+  13:Controller_ValueDomain_TEST.c ****  *
+  14:Controller_ValueDomain_TEST.c ****  * Target selection: ert.tlc
+  15:Controller_ValueDomain_TEST.c ****  * Embedded hardware selection: Generic->32-bit Embedded Processor
+  16:Controller_ValueDomain_TEST.c ****  * Code generation objectives: Unspecified
+  17:Controller_ValueDomain_TEST.c ****  * Validation result: Not run
+  18:Controller_ValueDomain_TEST.c ****  */
+  19:Controller_ValueDomain_TEST.c **** 
+  20:Controller_ValueDomain_TEST.c **** #include "Controller_ValueDomain_TEST.h"
+  21:Controller_ValueDomain_TEST.c **** #include "Controller_ValueDomain_TEST_private.h"
+  22:Controller_ValueDomain_TEST.c **** 
+  23:Controller_ValueDomain_TEST.c **** /* Exported block signals */
+  24:Controller_ValueDomain_TEST.c **** real_T LT_s;                           /* '<S8>/Data Store Read' */
+  25:Controller_ValueDomain_TEST.c **** real_T simulation_time;                /* '<S8>/Digital Clock' */
+  26:Controller_ValueDomain_TEST.c **** real_T theta_fr_s;                     /* '<S48>/Minus2' */
+  27:Controller_ValueDomain_TEST.c **** real_T theta_fl_s;                     /* '<S47>/Minus2' */
+  28:Controller_ValueDomain_TEST.c **** real_T theta_ar_s;                     /* '<S46>/Minus2' */
+  29:Controller_ValueDomain_TEST.c **** real_T theta_al_s;                     /* '<S45>/Minus2' */
+  30:Controller_ValueDomain_TEST.c **** real_T rx_data_time_s;                 /* '<S27>/Gain' */
+  31:Controller_ValueDomain_TEST.c **** real_T theta_fr_stored_s;              /* '<S23>/Data Store Read1' */
+  32:Controller_ValueDomain_TEST.c **** real_T theta_fl_stored_s;              /* '<S23>/Data Store Read' */
+  33:Controller_ValueDomain_TEST.c **** real_T delta_dot_f_s;                  /* '<S23>/Gain4' */
+  34:Controller_ValueDomain_TEST.c **** real_T theta_ar_stored_s;              /* '<S23>/Data Store Read2' */
+  35:Controller_ValueDomain_TEST.c **** real_T theta_al_stored_s;              /* '<S23>/Data Store Read3' */
+  36:Controller_ValueDomain_TEST.c **** real_T delta_dot_a_s;                  /* '<S23>/Gain5' */
+  37:Controller_ValueDomain_TEST.c **** real_T delta_f_est_current_s;          /* '<S23>/Data Store Read20' */
+  38:Controller_ValueDomain_TEST.c **** real_T delta_dot_f_prev_s;             /* '<S23>/Data Store Read22' */
+  39:Controller_ValueDomain_TEST.c **** real_T rx_data_t_steerF_s;             /* '<S23>/Data Store Read16' */
+  40:Controller_ValueDomain_TEST.c **** real_T rx_data_prev_t_steerF_s;        /* '<S23>/Data Store Read17' */
+  41:Controller_ValueDomain_TEST.c **** real_T delta_f_est_s;                  /* '<S37>/Minus2' */
+  42:Controller_ValueDomain_TEST.c **** real_T delta_a_est_current_s;          /* '<S23>/Data Store Read21' */
+  43:Controller_ValueDomain_TEST.c **** real_T delta_dot_a_prev_s;             /* '<S23>/Data Store Read23' */
+  44:Controller_ValueDomain_TEST.c **** real_T rx_data_t_steerA_s;             /* '<S23>/Data Store Read18' */
+  45:Controller_ValueDomain_TEST.c **** real_T rx_data_prev_t_steerA_s;        /* '<S23>/Data Store Read19' */
+  46:Controller_ValueDomain_TEST.c **** real_T delta_a_est_s;                  /* '<S36>/Minus2' */
+  47:Controller_ValueDomain_TEST.c **** real_T v_est_s;                        /* '<S22>/Gain4' */
+  48:Controller_ValueDomain_TEST.c **** real_T v_integral_s;                   /* '<S31>/Minus2' */
+  49:Controller_ValueDomain_TEST.c **** real_T v_ctreff_s;                     /* '<S22>/Sum2' */
+  50:Controller_ValueDomain_TEST.c **** real_T torque_fr_set_s;                /* '<S22>/Sum3' */
+  51:Controller_ValueDomain_TEST.c **** real_T torque_fl_set_s;                /* '<S22>/Sum4' */
+  52:Controller_ValueDomain_TEST.c **** real_T torque_ar_set_s;                /* '<S22>/Sum5' */
+  53:Controller_ValueDomain_TEST.c **** real_T torque_al_set_s;                /* '<S22>/Sum6' */
+  54:Controller_ValueDomain_TEST.c **** uint32_T SI_FreeHeap;                  /* '<S19>/Level-2 M-file S-Function' */
+  55:Controller_ValueDomain_TEST.c **** uint32_T SI_FreeStack;                 /* '<S20>/Level-2 M-file S-Function' */
+  56:Controller_ValueDomain_TEST.c **** uint8_T SI_CPUload;                    /* '<S18>/Level-2 M-file S-Function' */
+  57:Controller_ValueDomain_TEST.c **** boolean_T LedValue;                    /* '<S2>/Data Type Conversion' */
+  58:Controller_ValueDomain_TEST.c **** 
+  59:Controller_ValueDomain_TEST.c **** /* Exported block parameters */
+  60:Controller_ValueDomain_TEST.c **** real_T delta_a_set = 0.0;              /* Variable: delta_a_set
+  61:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S28>/Constant2'
+  62:Controller_ValueDomain_TEST.c ****                                         */
+  63:Controller_ValueDomain_TEST.c **** real_T delta_f_set = 0.0;              /* Variable: delta_f_set
+  64:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S28>/Constant1'
+  65:Controller_ValueDomain_TEST.c ****                                         */
+  66:Controller_ValueDomain_TEST.c **** real_T speed_k_d = 0.0;                /* Variable: speed_k_d
+  67:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S22>/Gain7'
+  68:Controller_ValueDomain_TEST.c ****                                         */
+  69:Controller_ValueDomain_TEST.c **** real_T speed_k_i = 0.0;                /* Variable: speed_k_i
+  70:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S22>/Gain6'
+  71:Controller_ValueDomain_TEST.c ****                                         */
+  72:Controller_ValueDomain_TEST.c **** real_T speed_k_p = 0.0;                /* Variable: speed_k_p
+  73:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S22>/Gain5'
+  74:Controller_ValueDomain_TEST.c ****                                         */
+  75:Controller_ValueDomain_TEST.c **** real_T torque_a_k_d = 0.0;             /* Variable: torque_a_k_d
+  76:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S24>/Gain7'
+  77:Controller_ValueDomain_TEST.c ****                                         */
+  78:Controller_ValueDomain_TEST.c **** real_T torque_a_k_i = 0.0;             /* Variable: torque_a_k_i
+  79:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S24>/Gain6'
+  80:Controller_ValueDomain_TEST.c ****                                         */
+  81:Controller_ValueDomain_TEST.c **** real_T torque_a_k_p = 0.0;             /* Variable: torque_a_k_p
+  82:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S24>/Gain5'
+  83:Controller_ValueDomain_TEST.c ****                                         */
+  84:Controller_ValueDomain_TEST.c **** real_T torque_f_k_d = 0.0;             /* Variable: torque_f_k_d
+  85:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S24>/Gain4'
+  86:Controller_ValueDomain_TEST.c ****                                         */
+  87:Controller_ValueDomain_TEST.c **** real_T torque_f_k_i = 0.0;             /* Variable: torque_f_k_i
+  88:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S24>/Gain3'
+  89:Controller_ValueDomain_TEST.c ****                                         */
+  90:Controller_ValueDomain_TEST.c **** real_T torque_f_k_p = 0.0;             /* Variable: torque_f_k_p
+  91:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S24>/Gain2'
+  92:Controller_ValueDomain_TEST.c ****                                         */
+  93:Controller_ValueDomain_TEST.c **** real_T v_set = 0.0;                    /* Variable: v_set
+  94:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S28>/Constant'
+  95:Controller_ValueDomain_TEST.c ****                                         */
+  96:Controller_ValueDomain_TEST.c **** boolean_T HANtuneOverride = 0;         /* Variable: HANtuneOverride
+  97:Controller_ValueDomain_TEST.c ****                                         * Referenced by: '<S2>/Constant'
+  98:Controller_ValueDomain_TEST.c ****                                         */
+  99:Controller_ValueDomain_TEST.c **** 
+ 100:Controller_ValueDomain_TEST.c **** /* Block signals (default storage) */
+ 101:Controller_ValueDomain_TEST.c **** BlockIO rtB;
+ 102:Controller_ValueDomain_TEST.c **** 
+ 103:Controller_ValueDomain_TEST.c **** /* Block states (default storage) */
+ 104:Controller_ValueDomain_TEST.c **** D_Work rtDWork;
+ 105:Controller_ValueDomain_TEST.c **** 
+ 106:Controller_ValueDomain_TEST.c **** /* Real-time model */
+ 107:Controller_ValueDomain_TEST.c **** RT_MODEL rtM_;
+ 108:Controller_ValueDomain_TEST.c **** RT_MODEL *const rtM = &rtM_;
+ 109:Controller_ValueDomain_TEST.c **** static void rate_scheduler(void);
+ 110:Controller_ValueDomain_TEST.c **** 
+ 111:Controller_ValueDomain_TEST.c **** /*
+ 112:Controller_ValueDomain_TEST.c ****  *   This function updates active task flag for each subrate.
+ 113:Controller_ValueDomain_TEST.c ****  * The function is called at model base rate, hence the
+ 114:Controller_ValueDomain_TEST.c ****  * generated code self-manages all its subrates.
+ 115:Controller_ValueDomain_TEST.c ****  */
+ 116:Controller_ValueDomain_TEST.c **** static void rate_scheduler(void)
+ 117:Controller_ValueDomain_TEST.c **** {
+ 118:Controller_ValueDomain_TEST.c ****   /* Compute which subrates run during the next base time step.  Subrates
+ 119:Controller_ValueDomain_TEST.c ****    * are an integer multiple of the base rate counter.  Therefore, the subtask
+ 120:Controller_ValueDomain_TEST.c ****    * counter is reset when it reaches its limit (zero means run).
+ 121:Controller_ValueDomain_TEST.c ****    */
+ 122:Controller_ValueDomain_TEST.c ****   (rtM->Timing.TaskCounters.TID[1])++;
+ 123:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[1]) > 99) {/* Sample time: [0.1s, 0.0s] */
+ 124:Controller_ValueDomain_TEST.c ****     rtM->Timing.TaskCounters.TID[1] = 0;
+ 125:Controller_ValueDomain_TEST.c ****   }
+ 126:Controller_ValueDomain_TEST.c **** 
+ 127:Controller_ValueDomain_TEST.c ****   (rtM->Timing.TaskCounters.TID[2])++;
+ 128:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[2]) > 199) {/* Sample time: [0.2s, 0.0s] */
+ 129:Controller_ValueDomain_TEST.c ****     rtM->Timing.TaskCounters.TID[2] = 0;
+ 130:Controller_ValueDomain_TEST.c ****   }
+ 131:Controller_ValueDomain_TEST.c **** 
+ 132:Controller_ValueDomain_TEST.c ****   (rtM->Timing.TaskCounters.TID[3])++;
+ 133:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[3]) > 999) {/* Sample time: [1.0s, 0.0s] */
+ 134:Controller_ValueDomain_TEST.c ****     rtM->Timing.TaskCounters.TID[3] = 0;
+ 135:Controller_ValueDomain_TEST.c ****   }
+ 136:Controller_ValueDomain_TEST.c **** }
+ 137:Controller_ValueDomain_TEST.c **** 
+ 138:Controller_ValueDomain_TEST.c **** /* Model step function */
+ 139:Controller_ValueDomain_TEST.c **** void Controller_ValueDomain_TEST_step(void)
+ 140:Controller_ValueDomain_TEST.c **** {
+  37              		.loc 1 140 0
+  38              		.cfi_startproc
+  39              		@ args = 0, pretend = 0, frame = 56
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  42              		.cfi_def_cfa_offset 36
+  43              		.cfi_offset 4, -36
+  44              		.cfi_offset 5, -32
+  45              		.cfi_offset 6, -28
+  46              		.cfi_offset 7, -24
+  47              		.cfi_offset 8, -20
+  48              		.cfi_offset 9, -16
+  49              		.cfi_offset 10, -12
+  50              		.cfi_offset 11, -8
+  51              		.cfi_offset 14, -4
+ 141:Controller_ValueDomain_TEST.c ****   /* local block i/o variables */
+ 142:Controller_ValueDomain_TEST.c ****   boolean_T rtb_Level2MfileSFunction;
+ 143:Controller_ValueDomain_TEST.c ****   uint8_T rtb_Output;
+ 144:Controller_ValueDomain_TEST.c ****   real_T rtb_Gain5_h;
+ 145:Controller_ValueDomain_TEST.c ****   uint8_T rtb_FixPtSum1;
+ 146:Controller_ValueDomain_TEST.c ****   uint8_T rtb_FixPtSum1_b;
+ 147:Controller_ValueDomain_TEST.c ****   real_T speed_derivative;
+ 148:Controller_ValueDomain_TEST.c ****   real_T torque_fr_derivative;
+ 149:Controller_ValueDomain_TEST.c ****   real_T torque_ar_derivative;
+ 150:Controller_ValueDomain_TEST.c ****   real_T v_integral_s_tmp;
+ 151:Controller_ValueDomain_TEST.c **** 
+ 152:Controller_ValueDomain_TEST.c ****   /* DataStoreWrite: '<S25>/Data Store Write' incorporates:
+ 153:Controller_ValueDomain_TEST.c ****    *  Constant: '<S25>/Constant'
+ 154:Controller_ValueDomain_TEST.c ****    *  DataStoreRead: '<S25>/Data Store Read'
+ 155:Controller_ValueDomain_TEST.c ****    *  Sum: '<S25>/Minus'
+ 156:Controller_ValueDomain_TEST.c ****    */
+ 157:Controller_ValueDomain_TEST.c ****   rtDWork.Local_Ticks += 1.0;
+  52              		.loc 1 157 0
+  53 0004 DFF8B0A1 		ldr	r10, .L97+68
+  54 0008 5A4B     		ldr	r3, .L97
+ 158:Controller_ValueDomain_TEST.c **** 
+ 159:Controller_ValueDomain_TEST.c ****   /* DataStoreRead: '<S8>/Data Store Read' */
+ 160:Controller_ValueDomain_TEST.c ****   LT_s = rtDWork.Local_Ticks;
+  55              		.loc 1 160 0
+  56 000a 5B4C     		ldr	r4, .L97+4
+ 140:Controller_ValueDomain_TEST.c ****   /* local block i/o variables */
+  57              		.loc 1 140 0
+  58 000c 8FB0     		sub	sp, sp, #60
+  59              		.cfi_def_cfa_offset 96
+ 157:Controller_ValueDomain_TEST.c **** 
+  60              		.loc 1 157 0
+  61 000e 0022     		movs	r2, #0
+  62 0010 DAE90001 		ldrd	r0, [r10]
+  63 0014 FFF7FEFF 		bl	__aeabi_dadd
+  64              	.LVL0:
+  65 0018 0546     		mov	r5, r0
+  66 001a 0E46     		mov	r6, r1
+  67 001c 46EC175B 		vmov	d7, r5, r6
+ 161:Controller_ValueDomain_TEST.c **** 
+ 162:Controller_ValueDomain_TEST.c ****   /* Outputs for Enabled SubSystem: '<S8>/Basic_Cycle_Manager' incorporates:
+ 163:Controller_ValueDomain_TEST.c ****    *  EnablePort: '<S21>/Enable'
+ 164:Controller_ValueDomain_TEST.c ****    */
+ 165:Controller_ValueDomain_TEST.c ****   /* RelationalOperator: '<S8>/GreaterThan' incorporates:
+ 166:Controller_ValueDomain_TEST.c ****    *  Constant: '<S8>/Constant'
+ 167:Controller_ValueDomain_TEST.c ****    */
+ 168:Controller_ValueDomain_TEST.c ****   if (LT_s > 500.0) {
+  68              		.loc 1 168 0
+  69 0020 0022     		movs	r2, #0
+  70 0022 564B     		ldr	r3, .L97+8
+ 160:Controller_ValueDomain_TEST.c **** 
+  71              		.loc 1 160 0
+  72 0024 84ED007B 		vstr.64	d7, [r4]
+ 157:Controller_ValueDomain_TEST.c **** 
+  73              		.loc 1 157 0
+  74 0028 CDE90256 		strd	r5, [sp, #8]
+  75 002c 8AED007B 		vstr.64	d7, [r10]
+  76              		.loc 1 168 0
+  77 0030 FFF7FEFF 		bl	__aeabi_dcmpgt
+  78              	.LVL1:
+ 169:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S21>/Data Store Write' incorporates:
+ 170:Controller_ValueDomain_TEST.c ****      *  Constant: '<S21>/Constant'
+ 171:Controller_ValueDomain_TEST.c ****      */
+ 172:Controller_ValueDomain_TEST.c ****     rtDWork.Local_Ticks = 0.0;
+  79              		.loc 1 172 0
+  80 0034 0022     		movs	r2, #0
+ 168:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S21>/Data Store Write' incorporates:
+  81              		.loc 1 168 0
+  82 0036 0028     		cmp	r0, #0
+  83 0038 00F0C080 		beq	.L77
+  84              		.loc 1 172 0
+  85 003c 0023     		movs	r3, #0
+  86 003e CAE90023 		strd	r2, [r10]
+ 173:Controller_ValueDomain_TEST.c ****   }
+ 174:Controller_ValueDomain_TEST.c **** 
+ 175:Controller_ValueDomain_TEST.c ****   /* End of RelationalOperator: '<S8>/GreaterThan' */
+ 176:Controller_ValueDomain_TEST.c ****   /* End of Outputs for SubSystem: '<S8>/Basic_Cycle_Manager' */
+ 177:Controller_ValueDomain_TEST.c **** 
+ 178:Controller_ValueDomain_TEST.c ****   /* Outputs for Enabled SubSystem: '<S8>/Calculate speed' incorporates:
+ 179:Controller_ValueDomain_TEST.c ****    *  EnablePort: '<S22>/Enable'
+ 180:Controller_ValueDomain_TEST.c ****    */
+ 181:Controller_ValueDomain_TEST.c ****   /* RelationalOperator: '<S8>/Equal4' incorporates:
+ 182:Controller_ValueDomain_TEST.c ****    *  Constant: '<S8>/Constant5'
+ 183:Controller_ValueDomain_TEST.c ****    *  DataStoreRead: '<S8>/Data Store Read5'
+ 184:Controller_ValueDomain_TEST.c ****    */
+ 185:Controller_ValueDomain_TEST.c ****   if (rtDWork.Local_Ticks == 144.0) {
+  87              		.loc 1 185 0
+  88 0042 CDE90223 		strd	r2, [sp, #8]
+  89              	.L4:
+ 186:Controller_ValueDomain_TEST.c ****     /* Gain: '<S22>/Gain4' incorporates:
+ 187:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read'
+ 188:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read1'
+ 189:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read2'
+ 190:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read3'
+ 191:Controller_ValueDomain_TEST.c ****      *  Gain: '<S22>/Gain'
+ 192:Controller_ValueDomain_TEST.c ****      *  Gain: '<S22>/Gain1'
+ 193:Controller_ValueDomain_TEST.c ****      *  Gain: '<S22>/Gain2'
+ 194:Controller_ValueDomain_TEST.c ****      *  Gain: '<S22>/Gain3'
+ 195:Controller_ValueDomain_TEST.c ****      *  Sum: '<S22>/Sum'
+ 196:Controller_ValueDomain_TEST.c ****      */
+ 197:Controller_ValueDomain_TEST.c ****     v_est_s = (((0.1 * rtDWork.theta_dot_fr + 0.1 * rtDWork.theta_dot_fl) + 0.1 *
+ 198:Controller_ValueDomain_TEST.c ****                 rtDWork.theta_dot_ar) + 0.1 * rtDWork.theta_dot_al) * 0.25;
+ 199:Controller_ValueDomain_TEST.c **** 
+ 200:Controller_ValueDomain_TEST.c ****     /* Sum: '<S22>/Sum1' incorporates:
+ 201:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read5'
+ 202:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S22>/Data Store Write'
+ 203:Controller_ValueDomain_TEST.c ****      */
+ 204:Controller_ValueDomain_TEST.c ****     rtb_Gain5_h = rtDWork.v_set_stored - v_est_s;
+ 205:Controller_ValueDomain_TEST.c **** 
+ 206:Controller_ValueDomain_TEST.c ****     /* Sum: '<S31>/Minus1' incorporates:
+ 207:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read7'
+ 208:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read8'
+ 209:Controller_ValueDomain_TEST.c ****      *  Sum: '<S30>/Minus1'
+ 210:Controller_ValueDomain_TEST.c ****      */
+ 211:Controller_ValueDomain_TEST.c ****     v_integral_s_tmp = rtDWork.rx_data_time - rtDWork.rx_data_prev_time;
+ 212:Controller_ValueDomain_TEST.c **** 
+ 213:Controller_ValueDomain_TEST.c ****     /* Sum: '<S31>/Minus2' incorporates:
+ 214:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read6'
+ 215:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read9'
+ 216:Controller_ValueDomain_TEST.c ****      *  Gain: '<S31>/Gain'
+ 217:Controller_ValueDomain_TEST.c ****      *  Product: '<S31>/Multiply'
+ 218:Controller_ValueDomain_TEST.c ****      *  Sum: '<S31>/Minus'
+ 219:Controller_ValueDomain_TEST.c ****      *  Sum: '<S31>/Minus1'
+ 220:Controller_ValueDomain_TEST.c ****      */
+ 221:Controller_ValueDomain_TEST.c ****     v_integral_s = (rtb_Gain5_h + rtDWork.speed_error_prev) * 0.5 *
+ 222:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.speed_integral;
+ 223:Controller_ValueDomain_TEST.c **** 
+ 224:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S22>/Data Store Write2' */
+ 225:Controller_ValueDomain_TEST.c ****     rtDWork.speed_integral = v_integral_s;
+ 226:Controller_ValueDomain_TEST.c **** 
+ 227:Controller_ValueDomain_TEST.c ****     /* Product: '<S30>/Divide' incorporates:
+ 228:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read6'
+ 229:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S22>/Data Store Write3'
+ 230:Controller_ValueDomain_TEST.c ****      *  Sum: '<S30>/Minus'
+ 231:Controller_ValueDomain_TEST.c ****      */
+ 232:Controller_ValueDomain_TEST.c ****     speed_derivative = (rtb_Gain5_h - rtDWork.speed_error_prev) /
+ 233:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp;
+ 234:Controller_ValueDomain_TEST.c **** 
+ 235:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S22>/Data Store Write1' */
+ 236:Controller_ValueDomain_TEST.c ****     rtDWork.speed_error_prev = rtb_Gain5_h;
+ 237:Controller_ValueDomain_TEST.c **** 
+ 238:Controller_ValueDomain_TEST.c ****     /* Sum: '<S22>/Sum2' incorporates:
+ 239:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read10'
+ 240:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read11'
+ 241:Controller_ValueDomain_TEST.c ****      *  Gain: '<S22>/Gain5'
+ 242:Controller_ValueDomain_TEST.c ****      *  Gain: '<S22>/Gain6'
+ 243:Controller_ValueDomain_TEST.c ****      *  Gain: '<S22>/Gain7'
+ 244:Controller_ValueDomain_TEST.c ****      */
+ 245:Controller_ValueDomain_TEST.c ****     v_ctreff_s = (speed_k_p * rtb_Gain5_h + speed_k_i * rtDWork.speed_integral)
+ 246:Controller_ValueDomain_TEST.c ****       + speed_k_d * speed_derivative;
+ 247:Controller_ValueDomain_TEST.c **** 
+ 248:Controller_ValueDomain_TEST.c ****     /* Sum: '<S22>/Sum3' incorporates:
+ 249:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read12'
+ 250:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S22>/Data Store Write4'
+ 251:Controller_ValueDomain_TEST.c ****      */
+ 252:Controller_ValueDomain_TEST.c ****     torque_fr_set_s = v_ctreff_s + rtDWork.torque_fr_out;
+ 253:Controller_ValueDomain_TEST.c **** 
+ 254:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S22>/Data Store Write6' */
+ 255:Controller_ValueDomain_TEST.c ****     rtDWork.torque_fr_set = torque_fr_set_s;
+ 256:Controller_ValueDomain_TEST.c **** 
+ 257:Controller_ValueDomain_TEST.c ****     /* Sum: '<S22>/Sum4' incorporates:
+ 258:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read14'
+ 259:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S22>/Data Store Write4'
+ 260:Controller_ValueDomain_TEST.c ****      */
+ 261:Controller_ValueDomain_TEST.c ****     torque_fl_set_s = v_ctreff_s + rtDWork.torque_fl_out;
+ 262:Controller_ValueDomain_TEST.c **** 
+ 263:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S22>/Data Store Write5' */
+ 264:Controller_ValueDomain_TEST.c ****     rtDWork.torque_fl_set = torque_fl_set_s;
+ 265:Controller_ValueDomain_TEST.c **** 
+ 266:Controller_ValueDomain_TEST.c ****     /* Sum: '<S22>/Sum5' incorporates:
+ 267:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read15'
+ 268:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S22>/Data Store Write4'
+ 269:Controller_ValueDomain_TEST.c ****      */
+ 270:Controller_ValueDomain_TEST.c ****     torque_ar_set_s = v_ctreff_s + rtDWork.torque_ar_out;
+ 271:Controller_ValueDomain_TEST.c **** 
+ 272:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S22>/Data Store Write7' */
+ 273:Controller_ValueDomain_TEST.c ****     rtDWork.torque_ar_set = torque_ar_set_s;
+ 274:Controller_ValueDomain_TEST.c **** 
+ 275:Controller_ValueDomain_TEST.c ****     /* Sum: '<S22>/Sum6' incorporates:
+ 276:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S22>/Data Store Read16'
+ 277:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S22>/Data Store Write4'
+ 278:Controller_ValueDomain_TEST.c ****      */
+ 279:Controller_ValueDomain_TEST.c ****     torque_al_set_s = v_ctreff_s + rtDWork.torque_al_out;
+ 280:Controller_ValueDomain_TEST.c **** 
+ 281:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S22>/Data Store Write8' */
+ 282:Controller_ValueDomain_TEST.c ****     rtDWork.torque_al_set = torque_al_set_s;
+ 283:Controller_ValueDomain_TEST.c ****   }
+ 284:Controller_ValueDomain_TEST.c **** 
+ 285:Controller_ValueDomain_TEST.c ****   /* End of RelationalOperator: '<S8>/Equal4' */
+ 286:Controller_ValueDomain_TEST.c ****   /* End of Outputs for SubSystem: '<S8>/Calculate speed' */
+ 287:Controller_ValueDomain_TEST.c **** 
+ 288:Controller_ValueDomain_TEST.c ****   /* Outputs for Enabled SubSystem: '<S8>/Calculate steering' incorporates:
+ 289:Controller_ValueDomain_TEST.c ****    *  EnablePort: '<S23>/Enable'
+ 290:Controller_ValueDomain_TEST.c ****    */
+ 291:Controller_ValueDomain_TEST.c ****   /* RelationalOperator: '<S8>/Equal2' incorporates:
+ 292:Controller_ValueDomain_TEST.c ****    *  Constant: '<S8>/Constant3'
+ 293:Controller_ValueDomain_TEST.c ****    *  DataStoreRead: '<S8>/Data Store Read3'
+ 294:Controller_ValueDomain_TEST.c ****    */
+ 295:Controller_ValueDomain_TEST.c ****   if (rtDWork.Local_Ticks == 136.0) {
+ 296:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read1' */
+ 297:Controller_ValueDomain_TEST.c ****     theta_fr_stored_s = rtDWork.theta_fr_stored;
+ 298:Controller_ValueDomain_TEST.c **** 
+ 299:Controller_ValueDomain_TEST.c ****     /* Product: '<S35>/Divide' incorporates:
+ 300:Controller_ValueDomain_TEST.c ****      *  Constant: '<S23>/Constant'
+ 301:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S23>/Data Store Read5'
+ 302:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S23>/Data Store Read6'
+ 303:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S23>/Data Store Write4'
+ 304:Controller_ValueDomain_TEST.c ****      *  Sum: '<S35>/Minus'
+ 305:Controller_ValueDomain_TEST.c ****      *  Sum: '<S35>/Minus1'
+ 306:Controller_ValueDomain_TEST.c ****      */
+ 307:Controller_ValueDomain_TEST.c ****     rtDWork.theta_dot_fr = (theta_fr_stored_s - 0.0) / (rtDWork.rx_data_time -
+ 308:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 309:Controller_ValueDomain_TEST.c **** 
+ 310:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read' */
+ 311:Controller_ValueDomain_TEST.c ****     theta_fl_stored_s = rtDWork.theta_fl_stored;
+ 312:Controller_ValueDomain_TEST.c **** 
+ 313:Controller_ValueDomain_TEST.c ****     /* Product: '<S34>/Divide' incorporates:
+ 314:Controller_ValueDomain_TEST.c ****      *  Constant: '<S23>/Constant1'
+ 315:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S23>/Data Store Read7'
+ 316:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S23>/Data Store Read8'
+ 317:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S23>/Data Store Write5'
+ 318:Controller_ValueDomain_TEST.c ****      *  Sum: '<S34>/Minus'
+ 319:Controller_ValueDomain_TEST.c ****      *  Sum: '<S34>/Minus1'
+ 320:Controller_ValueDomain_TEST.c ****      */
+ 321:Controller_ValueDomain_TEST.c ****     rtDWork.theta_dot_fl = (theta_fl_stored_s - 0.0) / (rtDWork.rx_data_time -
+ 322:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 323:Controller_ValueDomain_TEST.c **** 
+ 324:Controller_ValueDomain_TEST.c ****     /* Gain: '<S23>/Gain4' incorporates:
+ 325:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S23>/Data Store Write4'
+ 326:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S23>/Data Store Write5'
+ 327:Controller_ValueDomain_TEST.c ****      *  Gain: '<S23>/Gain'
+ 328:Controller_ValueDomain_TEST.c ****      *  Gain: '<S23>/Gain1'
+ 329:Controller_ValueDomain_TEST.c ****      *  Sum: '<S23>/Minus'
+ 330:Controller_ValueDomain_TEST.c ****      */
+ 331:Controller_ValueDomain_TEST.c ****     delta_dot_f_s = (0.1 * rtDWork.theta_dot_fr - 0.1 * rtDWork.theta_dot_fl) *
+ 332:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 333:Controller_ValueDomain_TEST.c **** 
+ 334:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read2' */
+ 335:Controller_ValueDomain_TEST.c ****     theta_ar_stored_s = rtDWork.theta_ar_stored;
+ 336:Controller_ValueDomain_TEST.c **** 
+ 337:Controller_ValueDomain_TEST.c ****     /* Product: '<S33>/Divide' incorporates:
+ 338:Controller_ValueDomain_TEST.c ****      *  Constant: '<S23>/Constant2'
+ 339:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S23>/Data Store Read10'
+ 340:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S23>/Data Store Read9'
+ 341:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S23>/Data Store Write6'
+ 342:Controller_ValueDomain_TEST.c ****      *  Sum: '<S33>/Minus'
+ 343:Controller_ValueDomain_TEST.c ****      *  Sum: '<S33>/Minus1'
+ 344:Controller_ValueDomain_TEST.c ****      */
+ 345:Controller_ValueDomain_TEST.c ****     rtDWork.theta_dot_ar = (theta_ar_stored_s - 0.0) / (rtDWork.rx_data_time -
+ 346:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 347:Controller_ValueDomain_TEST.c **** 
+ 348:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read3' */
+ 349:Controller_ValueDomain_TEST.c ****     theta_al_stored_s = rtDWork.theta_al_stored;
+ 350:Controller_ValueDomain_TEST.c **** 
+ 351:Controller_ValueDomain_TEST.c ****     /* Product: '<S32>/Divide' incorporates:
+ 352:Controller_ValueDomain_TEST.c ****      *  Constant: '<S23>/Constant3'
+ 353:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S23>/Data Store Read11'
+ 354:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S23>/Data Store Read12'
+ 355:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S23>/Data Store Write7'
+ 356:Controller_ValueDomain_TEST.c ****      *  Sum: '<S32>/Minus'
+ 357:Controller_ValueDomain_TEST.c ****      *  Sum: '<S32>/Minus1'
+ 358:Controller_ValueDomain_TEST.c ****      */
+ 359:Controller_ValueDomain_TEST.c ****     rtDWork.theta_dot_al = (theta_al_stored_s - 0.0) / (rtDWork.rx_data_time -
+ 360:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 361:Controller_ValueDomain_TEST.c **** 
+ 362:Controller_ValueDomain_TEST.c ****     /* Gain: '<S23>/Gain5' incorporates:
+ 363:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S23>/Data Store Write6'
+ 364:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S23>/Data Store Write7'
+ 365:Controller_ValueDomain_TEST.c ****      *  Gain: '<S23>/Gain2'
+ 366:Controller_ValueDomain_TEST.c ****      *  Gain: '<S23>/Gain3'
+ 367:Controller_ValueDomain_TEST.c ****      *  Sum: '<S23>/Minus1'
+ 368:Controller_ValueDomain_TEST.c ****      */
+ 369:Controller_ValueDomain_TEST.c ****     delta_dot_a_s = (0.1 * rtDWork.theta_dot_ar - 0.1 * rtDWork.theta_dot_al) *
+ 370:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 371:Controller_ValueDomain_TEST.c **** 
+ 372:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read20' */
+ 373:Controller_ValueDomain_TEST.c ****     delta_f_est_current_s = rtDWork.delta_f_est;
+ 374:Controller_ValueDomain_TEST.c **** 
+ 375:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read22' */
+ 376:Controller_ValueDomain_TEST.c ****     delta_dot_f_prev_s = rtDWork.delta_dot_f_prev;
+ 377:Controller_ValueDomain_TEST.c **** 
+ 378:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read16' */
+ 379:Controller_ValueDomain_TEST.c ****     rx_data_t_steerF_s = rtDWork.rx_data_time;
+ 380:Controller_ValueDomain_TEST.c **** 
+ 381:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read17' */
+ 382:Controller_ValueDomain_TEST.c ****     rx_data_prev_t_steerF_s = rtDWork.rx_data_prev_time;
+ 383:Controller_ValueDomain_TEST.c **** 
+ 384:Controller_ValueDomain_TEST.c ****     /* Sum: '<S37>/Minus2' incorporates:
+ 385:Controller_ValueDomain_TEST.c ****      *  Gain: '<S37>/Gain'
+ 386:Controller_ValueDomain_TEST.c ****      *  Product: '<S37>/Multiply'
+ 387:Controller_ValueDomain_TEST.c ****      *  Sum: '<S37>/Minus'
+ 388:Controller_ValueDomain_TEST.c ****      *  Sum: '<S37>/Minus1'
+ 389:Controller_ValueDomain_TEST.c ****      */
+ 390:Controller_ValueDomain_TEST.c ****     delta_f_est_s = (delta_dot_f_s + delta_dot_f_prev_s) * 0.5 *
+ 391:Controller_ValueDomain_TEST.c ****       (rx_data_t_steerF_s - rx_data_prev_t_steerF_s) + delta_f_est_current_s;
+ 392:Controller_ValueDomain_TEST.c **** 
+ 393:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S23>/Data Store Write' */
+ 394:Controller_ValueDomain_TEST.c ****     rtDWork.delta_f_est = delta_f_est_s;
+ 395:Controller_ValueDomain_TEST.c **** 
+ 396:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S23>/Data Store Write2' */
+ 397:Controller_ValueDomain_TEST.c ****     rtDWork.delta_dot_f_prev = delta_dot_f_s;
+ 398:Controller_ValueDomain_TEST.c **** 
+ 399:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read21' */
+ 400:Controller_ValueDomain_TEST.c ****     delta_a_est_current_s = rtDWork.delta_a_est;
+ 401:Controller_ValueDomain_TEST.c **** 
+ 402:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read23' */
+ 403:Controller_ValueDomain_TEST.c ****     delta_dot_a_prev_s = rtDWork.delta_dot_a_prev;
+ 404:Controller_ValueDomain_TEST.c **** 
+ 405:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read18' */
+ 406:Controller_ValueDomain_TEST.c ****     rx_data_t_steerA_s = rtDWork.rx_data_time;
+ 407:Controller_ValueDomain_TEST.c **** 
+ 408:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read19' */
+ 409:Controller_ValueDomain_TEST.c ****     rx_data_prev_t_steerA_s = rtDWork.rx_data_prev_time;
+ 410:Controller_ValueDomain_TEST.c **** 
+ 411:Controller_ValueDomain_TEST.c ****     /* Sum: '<S36>/Minus2' incorporates:
+ 412:Controller_ValueDomain_TEST.c ****      *  Gain: '<S36>/Gain'
+ 413:Controller_ValueDomain_TEST.c ****      *  Product: '<S36>/Multiply'
+ 414:Controller_ValueDomain_TEST.c ****      *  Sum: '<S36>/Minus'
+ 415:Controller_ValueDomain_TEST.c ****      *  Sum: '<S36>/Minus1'
+ 416:Controller_ValueDomain_TEST.c ****      */
+ 417:Controller_ValueDomain_TEST.c ****     delta_a_est_s = (delta_dot_a_s + delta_dot_a_prev_s) * 0.5 *
+ 418:Controller_ValueDomain_TEST.c ****       (rx_data_t_steerA_s - rx_data_prev_t_steerA_s) + delta_a_est_current_s;
+ 419:Controller_ValueDomain_TEST.c **** 
+ 420:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S23>/Data Store Write1' */
+ 421:Controller_ValueDomain_TEST.c ****     rtDWork.delta_a_est = delta_a_est_s;
+ 422:Controller_ValueDomain_TEST.c **** 
+ 423:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S23>/Data Store Write3' */
+ 424:Controller_ValueDomain_TEST.c ****     rtDWork.delta_dot_a_prev = delta_dot_a_s;
+ 425:Controller_ValueDomain_TEST.c ****   }
+ 426:Controller_ValueDomain_TEST.c **** 
+ 427:Controller_ValueDomain_TEST.c ****   /* End of RelationalOperator: '<S8>/Equal2' */
+ 428:Controller_ValueDomain_TEST.c ****   /* End of Outputs for SubSystem: '<S8>/Calculate steering' */
+ 429:Controller_ValueDomain_TEST.c **** 
+ 430:Controller_ValueDomain_TEST.c ****   /* Outputs for Enabled SubSystem: '<S8>/Calculate torque' incorporates:
+ 431:Controller_ValueDomain_TEST.c ****    *  EnablePort: '<S24>/Enable'
+ 432:Controller_ValueDomain_TEST.c ****    */
+ 433:Controller_ValueDomain_TEST.c ****   /* RelationalOperator: '<S8>/Equal3' incorporates:
+ 434:Controller_ValueDomain_TEST.c ****    *  Constant: '<S8>/Constant4'
+ 435:Controller_ValueDomain_TEST.c ****    *  DataStoreRead: '<S8>/Data Store Read4'
+ 436:Controller_ValueDomain_TEST.c ****    */
+ 437:Controller_ValueDomain_TEST.c ****   if (rtDWork.Local_Ticks == 140.0) {
+ 438:Controller_ValueDomain_TEST.c ****     /* Sum: '<S24>/Minus' incorporates:
+ 439:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read2'
+ 440:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read3'
+ 441:Controller_ValueDomain_TEST.c ****      */
+ 442:Controller_ValueDomain_TEST.c ****     rtb_Gain5_h = rtDWork.delta_f_set_stored - rtDWork.delta_f_est;
+ 443:Controller_ValueDomain_TEST.c **** 
+ 444:Controller_ValueDomain_TEST.c ****     /* Sum: '<S24>/Minus1' incorporates:
+ 445:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read4'
+ 446:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read5'
+ 447:Controller_ValueDomain_TEST.c ****      */
+ 448:Controller_ValueDomain_TEST.c ****     speed_derivative = rtDWork.delta_a_set_stored - rtDWork.delta_a_est;
+ 449:Controller_ValueDomain_TEST.c **** 
+ 450:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S24>/Data Store Write4' incorporates:
+ 451:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read6'
+ 452:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read7'
+ 453:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read8'
+ 454:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read9'
+ 455:Controller_ValueDomain_TEST.c ****      *  Gain: '<S41>/Gain'
+ 456:Controller_ValueDomain_TEST.c ****      *  Product: '<S41>/Multiply'
+ 457:Controller_ValueDomain_TEST.c ****      *  Sum: '<S41>/Minus'
+ 458:Controller_ValueDomain_TEST.c ****      *  Sum: '<S41>/Minus1'
+ 459:Controller_ValueDomain_TEST.c ****      *  Sum: '<S41>/Minus2'
+ 460:Controller_ValueDomain_TEST.c ****      */
+ 461:Controller_ValueDomain_TEST.c ****     rtDWork.torque_fr_integral += (rtb_Gain5_h + rtDWork.delta_f_error_prev) *
+ 462:Controller_ValueDomain_TEST.c ****       0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 463:Controller_ValueDomain_TEST.c **** 
+ 464:Controller_ValueDomain_TEST.c ****     /* Product: '<S39>/Divide' incorporates:
+ 465:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read6'
+ 466:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read7'
+ 467:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read9'
+ 468:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S24>/Data Store Write6'
+ 469:Controller_ValueDomain_TEST.c ****      *  Sum: '<S39>/Minus'
+ 470:Controller_ValueDomain_TEST.c ****      *  Sum: '<S39>/Minus1'
+ 471:Controller_ValueDomain_TEST.c ****      */
+ 472:Controller_ValueDomain_TEST.c ****     torque_fr_derivative = (rtb_Gain5_h - rtDWork.delta_f_error_prev) /
+ 473:Controller_ValueDomain_TEST.c ****       (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 474:Controller_ValueDomain_TEST.c **** 
+ 475:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S24>/Data Store Write7' incorporates:
+ 476:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read10'
+ 477:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read11'
+ 478:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read6'
+ 479:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read7'
+ 480:Controller_ValueDomain_TEST.c ****      *  Gain: '<S40>/Gain'
+ 481:Controller_ValueDomain_TEST.c ****      *  Product: '<S40>/Multiply'
+ 482:Controller_ValueDomain_TEST.c ****      *  Sum: '<S40>/Minus'
+ 483:Controller_ValueDomain_TEST.c ****      *  Sum: '<S40>/Minus1'
+ 484:Controller_ValueDomain_TEST.c ****      *  Sum: '<S40>/Minus2'
+ 485:Controller_ValueDomain_TEST.c ****      */
+ 486:Controller_ValueDomain_TEST.c ****     rtDWork.torque_ar_integral += (speed_derivative + rtDWork.delta_a_error_prev)
+ 487:Controller_ValueDomain_TEST.c ****       * 0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 488:Controller_ValueDomain_TEST.c **** 
+ 489:Controller_ValueDomain_TEST.c ****     /* Product: '<S38>/Divide' incorporates:
+ 490:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read11'
+ 491:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read6'
+ 492:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read7'
+ 493:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S24>/Data Store Write8'
+ 494:Controller_ValueDomain_TEST.c ****      *  Sum: '<S38>/Minus'
+ 495:Controller_ValueDomain_TEST.c ****      *  Sum: '<S38>/Minus1'
+ 496:Controller_ValueDomain_TEST.c ****      */
+ 497:Controller_ValueDomain_TEST.c ****     torque_ar_derivative = (speed_derivative - rtDWork.delta_a_error_prev) /
+ 498:Controller_ValueDomain_TEST.c ****       (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 499:Controller_ValueDomain_TEST.c **** 
+ 500:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S24>/Data Store Write5' */
+ 501:Controller_ValueDomain_TEST.c ****     rtDWork.delta_f_error_prev = rtb_Gain5_h;
+ 502:Controller_ValueDomain_TEST.c **** 
+ 503:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S24>/Data Store Write9' */
+ 504:Controller_ValueDomain_TEST.c ****     rtDWork.delta_a_error_prev = speed_derivative;
+ 505:Controller_ValueDomain_TEST.c **** 
+ 506:Controller_ValueDomain_TEST.c ****     /* Sum: '<S24>/Sum' incorporates:
+ 507:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read12'
+ 508:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read13'
+ 509:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S24>/Data Store Write'
+ 510:Controller_ValueDomain_TEST.c ****      *  Gain: '<S24>/Gain2'
+ 511:Controller_ValueDomain_TEST.c ****      *  Gain: '<S24>/Gain3'
+ 512:Controller_ValueDomain_TEST.c ****      *  Gain: '<S24>/Gain4'
+ 513:Controller_ValueDomain_TEST.c ****      */
+ 514:Controller_ValueDomain_TEST.c ****     rtDWork.torque_fr_out = (torque_f_k_p * rtb_Gain5_h + torque_f_k_i *
+ 515:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr_integral) + torque_f_k_d * torque_fr_derivative;
+ 516:Controller_ValueDomain_TEST.c **** 
+ 517:Controller_ValueDomain_TEST.c ****     /* Sum: '<S24>/Sum1' incorporates:
+ 518:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read14'
+ 519:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read15'
+ 520:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S24>/Data Store Write2'
+ 521:Controller_ValueDomain_TEST.c ****      *  Gain: '<S24>/Gain5'
+ 522:Controller_ValueDomain_TEST.c ****      *  Gain: '<S24>/Gain6'
+ 523:Controller_ValueDomain_TEST.c ****      *  Gain: '<S24>/Gain7'
+ 524:Controller_ValueDomain_TEST.c ****      */
+ 525:Controller_ValueDomain_TEST.c ****     rtDWork.torque_ar_out = (torque_a_k_p * speed_derivative + torque_a_k_i *
+ 526:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar_integral) + torque_a_k_d * torque_ar_derivative;
+ 527:Controller_ValueDomain_TEST.c **** 
+ 528:Controller_ValueDomain_TEST.c ****     /* Gain: '<S24>/Gain' incorporates:
+ 529:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read'
+ 530:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S24>/Data Store Write1'
+ 531:Controller_ValueDomain_TEST.c ****      */
+ 532:Controller_ValueDomain_TEST.c ****     rtDWork.torque_fl_out = (-1.0) * rtDWork.torque_fr_out;
+ 533:Controller_ValueDomain_TEST.c **** 
+ 534:Controller_ValueDomain_TEST.c ****     /* Gain: '<S24>/Gain1' incorporates:
+ 535:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S24>/Data Store Read1'
+ 536:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S24>/Data Store Write3'
+ 537:Controller_ValueDomain_TEST.c ****      */
+ 538:Controller_ValueDomain_TEST.c ****     rtDWork.torque_al_out = (-1.0) * rtDWork.torque_ar_out;
+ 539:Controller_ValueDomain_TEST.c ****   }
+ 540:Controller_ValueDomain_TEST.c **** 
+ 541:Controller_ValueDomain_TEST.c ****   /* End of RelationalOperator: '<S8>/Equal3' */
+ 542:Controller_ValueDomain_TEST.c ****   /* End of Outputs for SubSystem: '<S8>/Calculate torque' */
+ 543:Controller_ValueDomain_TEST.c **** 
+ 544:Controller_ValueDomain_TEST.c ****   /* Outputs for Enabled SubSystem: '<S8>/Rx_Set_Values' incorporates:
+ 545:Controller_ValueDomain_TEST.c ****    *  EnablePort: '<S28>/Enable'
+ 546:Controller_ValueDomain_TEST.c ****    */
+ 547:Controller_ValueDomain_TEST.c ****   /* RelationalOperator: '<S8>/Equal' incorporates:
+ 548:Controller_ValueDomain_TEST.c ****    *  Constant: '<S8>/Constant1'
+ 549:Controller_ValueDomain_TEST.c ****    *  DataStoreRead: '<S8>/Data Store Read1'
+ 550:Controller_ValueDomain_TEST.c ****    */
+ 551:Controller_ValueDomain_TEST.c ****   if (rtDWork.Local_Ticks == 48.0) {
+  90              		.loc 1 551 0
+  91 0046 0022     		movs	r2, #0
+  92 0048 4D4B     		ldr	r3, .L97+12
+  93 004a DDE90201 		ldrd	r0, [sp, #8]
+  94 004e FFF7FEFF 		bl	__aeabi_dcmpeq
+  95              	.LVL2:
+  96 0052 0028     		cmp	r0, #0
+  97 0054 00F08C81 		beq	.L7
+ 552:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S28>/Data Store Write' incorporates:
+ 553:Controller_ValueDomain_TEST.c ****      *  Constant: '<S28>/Constant'
+ 554:Controller_ValueDomain_TEST.c ****      */
+ 555:Controller_ValueDomain_TEST.c ****     rtDWork.v_set_stored = v_set;
+  98              		.loc 1 555 0
+  99 0058 4A49     		ldr	r1, .L97+16
+ 556:Controller_ValueDomain_TEST.c **** 
+ 557:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S28>/Data Store Write1' incorporates:
+ 558:Controller_ValueDomain_TEST.c ****      *  Constant: '<S28>/Constant1'
+ 559:Controller_ValueDomain_TEST.c ****      */
+ 560:Controller_ValueDomain_TEST.c ****     rtDWork.delta_f_set_stored = delta_f_set;
+ 100              		.loc 1 560 0
+ 101 005a 4B4A     		ldr	r2, .L97+20
+ 561:Controller_ValueDomain_TEST.c **** 
+ 562:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S28>/Data Store Write2' incorporates:
+ 563:Controller_ValueDomain_TEST.c ****      *  Constant: '<S28>/Constant2'
+ 564:Controller_ValueDomain_TEST.c ****      */
+ 565:Controller_ValueDomain_TEST.c ****     rtDWork.delta_a_set_stored = delta_a_set;
+ 102              		.loc 1 565 0
+ 103 005c 4B4B     		ldr	r3, .L97+24
+ 555:Controller_ValueDomain_TEST.c **** 
+ 104              		.loc 1 555 0
+ 105 005e D1E90045 		ldrd	r4, [r1]
+ 560:Controller_ValueDomain_TEST.c **** 
+ 106              		.loc 1 560 0
+ 107 0062 D2E90001 		ldrd	r0, [r2]
+ 108              		.loc 1 565 0
+ 109 0066 D3E90023 		ldrd	r2, [r3]
+ 555:Controller_ValueDomain_TEST.c **** 
+ 110              		.loc 1 555 0
+ 111 006a CAE90245 		strd	r4, [r10, #8]
+ 560:Controller_ValueDomain_TEST.c **** 
+ 112              		.loc 1 560 0
+ 113 006e CAE91801 		strd	r0, [r10, #96]
+ 114              		.loc 1 565 0
+ 115 0072 CAE92C23 		strd	r2, [r10, #176]
+ 116              	.L56:
+ 566:Controller_ValueDomain_TEST.c ****   }
+ 567:Controller_ValueDomain_TEST.c **** 
+ 568:Controller_ValueDomain_TEST.c ****   /* End of RelationalOperator: '<S8>/Equal' */
+ 569:Controller_ValueDomain_TEST.c ****   /* End of Outputs for SubSystem: '<S8>/Rx_Set_Values' */
+ 570:Controller_ValueDomain_TEST.c **** 
+ 571:Controller_ValueDomain_TEST.c ****   /* Outputs for Enabled SubSystem: '<S8>/Rx_Sensor_Values' incorporates:
+ 572:Controller_ValueDomain_TEST.c ****    *  EnablePort: '<S27>/Enable'
+ 573:Controller_ValueDomain_TEST.c ****    */
+ 574:Controller_ValueDomain_TEST.c ****   /* RelationalOperator: '<S8>/Equal1' incorporates:
+ 575:Controller_ValueDomain_TEST.c ****    *  Constant: '<S8>/Constant2'
+ 576:Controller_ValueDomain_TEST.c ****    *  DataStoreRead: '<S8>/Data Store Read2'
+ 577:Controller_ValueDomain_TEST.c ****    */
+ 578:Controller_ValueDomain_TEST.c ****   if (rtDWork.Local_Ticks == 92.0) {
+ 579:Controller_ValueDomain_TEST.c ****     /* Gain: '<S27>/Gain' incorporates:
+ 580:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S27>/Data Store Read4'
+ 581:Controller_ValueDomain_TEST.c ****      */
+ 582:Controller_ValueDomain_TEST.c ****     rx_data_time_s = 0.0001 * rtDWork.Local_Ticks;
+ 583:Controller_ValueDomain_TEST.c **** 
+ 584:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S27>/Data Store Write9' */
+ 585:Controller_ValueDomain_TEST.c ****     rtDWork.rx_data_prev_time = rx_data_time_s;
+ 586:Controller_ValueDomain_TEST.c **** 
+ 587:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S27>/Data Store Write' incorporates:
+ 588:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S27>/Data Store Read8'
+ 589:Controller_ValueDomain_TEST.c ****      */
+ 590:Controller_ValueDomain_TEST.c ****     rtDWork.theta_fr_stored = rtDWork.theta_fr_incr;
+ 591:Controller_ValueDomain_TEST.c **** 
+ 592:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S27>/Data Store Write1' incorporates:
+ 593:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S27>/Data Store Read9'
+ 594:Controller_ValueDomain_TEST.c ****      */
+ 595:Controller_ValueDomain_TEST.c ****     rtDWork.theta_fl_stored = rtDWork.theta_fl_incr;
+ 596:Controller_ValueDomain_TEST.c **** 
+ 597:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S27>/Data Store Write2' incorporates:
+ 598:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S27>/Data Store Read10'
+ 599:Controller_ValueDomain_TEST.c ****      */
+ 600:Controller_ValueDomain_TEST.c ****     rtDWork.theta_ar_stored = rtDWork.theta_ar_incr;
+ 601:Controller_ValueDomain_TEST.c **** 
+ 602:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S27>/Data Store Write3' incorporates:
+ 603:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S27>/Data Store Read11'
+ 604:Controller_ValueDomain_TEST.c ****      */
+ 605:Controller_ValueDomain_TEST.c ****     rtDWork.theta_al_stored = rtDWork.theta_al_incr;
+ 606:Controller_ValueDomain_TEST.c **** 
+ 607:Controller_ValueDomain_TEST.c ****     /* Sum: '<S27>/Sum' incorporates:
+ 608:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S27>/Data Store Write8'
+ 609:Controller_ValueDomain_TEST.c ****      */
+ 610:Controller_ValueDomain_TEST.c ****     rtDWork.rx_data_time = rx_data_time_s + rtConstB.Gain1;
+ 611:Controller_ValueDomain_TEST.c ****   }
+ 612:Controller_ValueDomain_TEST.c **** 
+ 613:Controller_ValueDomain_TEST.c ****   /* End of RelationalOperator: '<S8>/Equal1' */
+ 614:Controller_ValueDomain_TEST.c ****   /* End of Outputs for SubSystem: '<S8>/Rx_Sensor_Values' */
+ 615:Controller_ValueDomain_TEST.c **** 
+ 616:Controller_ValueDomain_TEST.c ****   /* Outputs for Enabled SubSystem: '<S8>/Output torques' incorporates:
+ 617:Controller_ValueDomain_TEST.c ****    *  EnablePort: '<S26>/Enable'
+ 618:Controller_ValueDomain_TEST.c ****    */
+ 619:Controller_ValueDomain_TEST.c ****   /* RelationalOperator: '<S8>/Equal5' incorporates:
+ 620:Controller_ValueDomain_TEST.c ****    *  Constant: '<S8>/Constant6'
+ 621:Controller_ValueDomain_TEST.c ****    *  DataStoreRead: '<S8>/Data Store Read6'
+ 622:Controller_ValueDomain_TEST.c ****    */
+ 623:Controller_ValueDomain_TEST.c ****   if (rtDWork.Local_Ticks == 240.0) {
+ 624:Controller_ValueDomain_TEST.c ****     /* Saturate: '<S26>/Saturation' incorporates:
+ 625:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S26>/Data Store Read'
+ 626:Controller_ValueDomain_TEST.c ****      */
+ 627:Controller_ValueDomain_TEST.c ****     if (rtDWork.torque_fr_set > 5.0) {
+ 628:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr = 5.0;
+ 629:Controller_ValueDomain_TEST.c ****     } else if (rtDWork.torque_fr_set < (-5.0)) {
+ 630:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr = (-5.0);
+ 631:Controller_ValueDomain_TEST.c ****     } else {
+ 632:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr = rtDWork.torque_fr_set;
+ 633:Controller_ValueDomain_TEST.c ****     }
+ 634:Controller_ValueDomain_TEST.c **** 
+ 635:Controller_ValueDomain_TEST.c ****     /* End of Saturate: '<S26>/Saturation' */
+ 636:Controller_ValueDomain_TEST.c **** 
+ 637:Controller_ValueDomain_TEST.c ****     /* Saturate: '<S26>/Saturation2' incorporates:
+ 638:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S26>/Data Store Read1'
+ 639:Controller_ValueDomain_TEST.c ****      */
+ 640:Controller_ValueDomain_TEST.c ****     if (rtDWork.torque_ar_set > 5.0) {
+ 641:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar = 5.0;
+ 642:Controller_ValueDomain_TEST.c ****     } else if (rtDWork.torque_ar_set < (-5.0)) {
+ 643:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar = (-5.0);
+ 644:Controller_ValueDomain_TEST.c ****     } else {
+ 645:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar = rtDWork.torque_ar_set;
+ 646:Controller_ValueDomain_TEST.c ****     }
+ 647:Controller_ValueDomain_TEST.c **** 
+ 648:Controller_ValueDomain_TEST.c ****     /* End of Saturate: '<S26>/Saturation2' */
+ 649:Controller_ValueDomain_TEST.c **** 
+ 650:Controller_ValueDomain_TEST.c ****     /* Saturate: '<S26>/Saturation1' incorporates:
+ 651:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S26>/Data Store Read2'
+ 652:Controller_ValueDomain_TEST.c ****      */
+ 653:Controller_ValueDomain_TEST.c ****     if (rtDWork.torque_fl_set > 5.0) {
+ 654:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fl = 5.0;
+ 655:Controller_ValueDomain_TEST.c ****     } else if (rtDWork.torque_fl_set < (-5.0)) {
+ 656:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fl = (-5.0);
+ 657:Controller_ValueDomain_TEST.c ****     } else {
+ 658:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fl = rtDWork.torque_fl_set;
+ 659:Controller_ValueDomain_TEST.c ****     }
+ 660:Controller_ValueDomain_TEST.c **** 
+ 661:Controller_ValueDomain_TEST.c ****     /* End of Saturate: '<S26>/Saturation1' */
+ 662:Controller_ValueDomain_TEST.c **** 
+ 663:Controller_ValueDomain_TEST.c ****     /* Saturate: '<S26>/Saturation3' incorporates:
+ 664:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S26>/Data Store Read3'
+ 665:Controller_ValueDomain_TEST.c ****      */
+ 666:Controller_ValueDomain_TEST.c ****     if (rtDWork.torque_al_set > 5.0) {
+ 667:Controller_ValueDomain_TEST.c ****       rtDWork.torque_al = 5.0;
+ 668:Controller_ValueDomain_TEST.c ****     } else if (rtDWork.torque_al_set < (-5.0)) {
+ 669:Controller_ValueDomain_TEST.c ****       rtDWork.torque_al = (-5.0);
+ 670:Controller_ValueDomain_TEST.c ****     } else {
+ 671:Controller_ValueDomain_TEST.c ****       rtDWork.torque_al = rtDWork.torque_al_set;
+ 672:Controller_ValueDomain_TEST.c ****     }
+ 673:Controller_ValueDomain_TEST.c **** 
+ 674:Controller_ValueDomain_TEST.c ****     /* End of Saturate: '<S26>/Saturation3' */
+ 675:Controller_ValueDomain_TEST.c ****   }
+ 676:Controller_ValueDomain_TEST.c **** 
+ 677:Controller_ValueDomain_TEST.c ****   /* End of RelationalOperator: '<S8>/Equal5' */
+ 678:Controller_ValueDomain_TEST.c ****   /* End of Outputs for SubSystem: '<S8>/Output torques' */
+ 679:Controller_ValueDomain_TEST.c **** 
+ 680:Controller_ValueDomain_TEST.c ****   /* Outputs for Enabled SubSystem: '<S8>/Vehicle emulator' incorporates:
+ 681:Controller_ValueDomain_TEST.c ****    *  EnablePort: '<S29>/Enable'
+ 682:Controller_ValueDomain_TEST.c ****    */
+ 683:Controller_ValueDomain_TEST.c ****   /* RelationalOperator: '<S8>/Equal6' incorporates:
+ 684:Controller_ValueDomain_TEST.c ****    *  Constant: '<S8>/Constant7'
+ 685:Controller_ValueDomain_TEST.c ****    *  DataStoreRead: '<S8>/Data Store Read7'
+ 686:Controller_ValueDomain_TEST.c ****    */
+ 687:Controller_ValueDomain_TEST.c ****   if (rtDWork.Local_Ticks == 280.0) {
+ 688:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain' incorporates:
+ 689:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read'
+ 690:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain12'
+ 691:Controller_ValueDomain_TEST.c ****      */
+ 692:Controller_ValueDomain_TEST.c ****     torque_fr_derivative = 10.0 * rtDWork.torque_fr;
+ 693:Controller_ValueDomain_TEST.c **** 
+ 694:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain2' incorporates:
+ 695:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read1'
+ 696:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain'
+ 697:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain1'
+ 698:Controller_ValueDomain_TEST.c ****      *  Sum: '<S29>/Minus'
+ 699:Controller_ValueDomain_TEST.c ****      */
+ 700:Controller_ValueDomain_TEST.c ****     speed_derivative = (torque_fr_derivative - 10.0 * rtDWork.torque_fl) *
+ 701:Controller_ValueDomain_TEST.c ****       0.26666666666666666;
+ 702:Controller_ValueDomain_TEST.c **** 
+ 703:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain5' incorporates:
+ 704:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read2'
+ 705:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read3'
+ 706:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain3'
+ 707:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain4'
+ 708:Controller_ValueDomain_TEST.c ****      *  Sum: '<S29>/Minus1'
+ 709:Controller_ValueDomain_TEST.c ****      */
+ 710:Controller_ValueDomain_TEST.c ****     rtb_Gain5_h = (10.0 * rtDWork.torque_ar - 10.0 * rtDWork.torque_al) *
+ 711:Controller_ValueDomain_TEST.c ****       0.26666666666666666;
+ 712:Controller_ValueDomain_TEST.c **** 
+ 713:Controller_ValueDomain_TEST.c ****     /* Sum: '<S43>/Minus1' incorporates:
+ 714:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read10'
+ 715:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read11'
+ 716:Controller_ValueDomain_TEST.c ****      *  Sum: '<S42>/Minus1'
+ 717:Controller_ValueDomain_TEST.c ****      *  Sum: '<S44>/Minus1'
+ 718:Controller_ValueDomain_TEST.c ****      *  Sum: '<S45>/Minus1'
+ 719:Controller_ValueDomain_TEST.c ****      *  Sum: '<S46>/Minus1'
+ 720:Controller_ValueDomain_TEST.c ****      *  Sum: '<S47>/Minus1'
+ 721:Controller_ValueDomain_TEST.c ****      *  Sum: '<S48>/Minus1'
+ 722:Controller_ValueDomain_TEST.c ****      */
+ 723:Controller_ValueDomain_TEST.c ****     v_integral_s_tmp = rtDWork.rx_data_time - rtDWork.rx_data_prev_time;
+ 724:Controller_ValueDomain_TEST.c **** 
+ 725:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write4' incorporates:
+ 726:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read4'
+ 727:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read6'
+ 728:Controller_ValueDomain_TEST.c ****      *  Gain: '<S43>/Gain'
+ 729:Controller_ValueDomain_TEST.c ****      *  Product: '<S43>/Multiply'
+ 730:Controller_ValueDomain_TEST.c ****      *  Sum: '<S43>/Minus'
+ 731:Controller_ValueDomain_TEST.c ****      *  Sum: '<S43>/Minus1'
+ 732:Controller_ValueDomain_TEST.c ****      *  Sum: '<S43>/Minus2'
+ 733:Controller_ValueDomain_TEST.c ****      */
+ 734:Controller_ValueDomain_TEST.c ****     rtDWork.delta_dot_f += (speed_derivative + rtDWork.delta_double_dot_f_prev) *
+ 735:Controller_ValueDomain_TEST.c ****       0.5 * v_integral_s_tmp;
+ 736:Controller_ValueDomain_TEST.c **** 
+ 737:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write5' incorporates:
+ 738:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read5'
+ 739:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read7'
+ 740:Controller_ValueDomain_TEST.c ****      *  Gain: '<S42>/Gain'
+ 741:Controller_ValueDomain_TEST.c ****      *  Product: '<S42>/Multiply'
+ 742:Controller_ValueDomain_TEST.c ****      *  Sum: '<S42>/Minus'
+ 743:Controller_ValueDomain_TEST.c ****      *  Sum: '<S42>/Minus2'
+ 744:Controller_ValueDomain_TEST.c ****      */
+ 745:Controller_ValueDomain_TEST.c ****     rtDWork.delta_dot_a += (rtb_Gain5_h + rtDWork.delta_double_dot_a_prev) * 0.5
+ 746:Controller_ValueDomain_TEST.c ****       * v_integral_s_tmp;
+ 747:Controller_ValueDomain_TEST.c **** 
+ 748:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write7' */
+ 749:Controller_ValueDomain_TEST.c ****     rtDWork.delta_double_dot_f_prev = speed_derivative;
+ 750:Controller_ValueDomain_TEST.c **** 
+ 751:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write6' */
+ 752:Controller_ValueDomain_TEST.c ****     rtDWork.delta_double_dot_a_prev = rtb_Gain5_h;
+ 753:Controller_ValueDomain_TEST.c **** 
+ 754:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain16' incorporates:
+ 755:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read20'
+ 756:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read21'
+ 757:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read22'
+ 758:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write9'
+ 759:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain13'
+ 760:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain14'
+ 761:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain15'
+ 762:Controller_ValueDomain_TEST.c ****      *  Sum: '<S29>/Sum'
+ 763:Controller_ValueDomain_TEST.c ****      */
+ 764:Controller_ValueDomain_TEST.c ****     rtb_Gain5_h = (((torque_fr_derivative + 10.0 * rtDWork.torque_fl) + 10.0 *
+ 765:Controller_ValueDomain_TEST.c ****                     rtDWork.torque_ar) + 10.0 * rtDWork.torque_al) * 0.01;
+ 766:Controller_ValueDomain_TEST.c **** 
+ 767:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write8' incorporates:
+ 768:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read16'
+ 769:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read23'
+ 770:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read24'
+ 771:Controller_ValueDomain_TEST.c ****      *  Gain: '<S44>/Gain'
+ 772:Controller_ValueDomain_TEST.c ****      *  Product: '<S44>/Multiply'
+ 773:Controller_ValueDomain_TEST.c ****      *  Sum: '<S44>/Minus'
+ 774:Controller_ValueDomain_TEST.c ****      *  Sum: '<S44>/Minus2'
+ 775:Controller_ValueDomain_TEST.c ****      */
+ 776:Controller_ValueDomain_TEST.c ****     rtDWork.speed_act += (rtb_Gain5_h + rtDWork.avg_force_prev) * 0.5 *
+ 777:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp;
+ 778:Controller_ValueDomain_TEST.c **** 
+ 779:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write10' incorporates:
+ 780:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read25'
+ 781:Controller_ValueDomain_TEST.c ****      */
+ 782:Controller_ValueDomain_TEST.c ****     rtDWork.avg_force_prev = rtb_Gain5_h;
+ 783:Controller_ValueDomain_TEST.c **** 
+ 784:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain17' incorporates:
+ 785:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read27'
+ 786:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain18'
+ 787:Controller_ValueDomain_TEST.c ****      */
+ 788:Controller_ValueDomain_TEST.c ****     speed_derivative = 0.3 * rtDWork.delta_dot_f;
+ 789:Controller_ValueDomain_TEST.c **** 
+ 790:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain21' incorporates:
+ 791:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read26'
+ 792:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write11'
+ 793:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain17'
+ 794:Controller_ValueDomain_TEST.c ****      *  Sum: '<S29>/Sum1'
+ 795:Controller_ValueDomain_TEST.c ****      */
+ 796:Controller_ValueDomain_TEST.c ****     rtb_Gain5_h = (speed_derivative + rtDWork.speed_act) * 10.0;
+ 797:Controller_ValueDomain_TEST.c **** 
+ 798:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain22' incorporates:
+ 799:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read26'
+ 800:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write12'
+ 801:Controller_ValueDomain_TEST.c ****      *  Sum: '<S29>/Sum2'
+ 802:Controller_ValueDomain_TEST.c ****      */
+ 803:Controller_ValueDomain_TEST.c ****     speed_derivative = (rtDWork.speed_act - speed_derivative) * 10.0;
+ 804:Controller_ValueDomain_TEST.c **** 
+ 805:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain19' incorporates:
+ 806:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read29'
+ 807:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain20'
+ 808:Controller_ValueDomain_TEST.c ****      */
+ 809:Controller_ValueDomain_TEST.c ****     torque_ar_derivative = 0.3 * rtDWork.delta_dot_a;
+ 810:Controller_ValueDomain_TEST.c **** 
+ 811:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain24' incorporates:
+ 812:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read26'
+ 813:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write13'
+ 814:Controller_ValueDomain_TEST.c ****      *  Gain: '<S29>/Gain19'
+ 815:Controller_ValueDomain_TEST.c ****      *  Sum: '<S29>/Sum3'
+ 816:Controller_ValueDomain_TEST.c ****      */
+ 817:Controller_ValueDomain_TEST.c ****     torque_fr_derivative = (torque_ar_derivative + rtDWork.speed_act) * 10.0;
+ 818:Controller_ValueDomain_TEST.c **** 
+ 819:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain23' incorporates:
+ 820:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read26'
+ 821:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write14'
+ 822:Controller_ValueDomain_TEST.c ****      *  Sum: '<S29>/Sum4'
+ 823:Controller_ValueDomain_TEST.c ****      */
+ 824:Controller_ValueDomain_TEST.c ****     torque_ar_derivative = (rtDWork.speed_act - torque_ar_derivative) * 10.0;
+ 825:Controller_ValueDomain_TEST.c **** 
+ 826:Controller_ValueDomain_TEST.c ****     /* Sum: '<S48>/Minus2' incorporates:
+ 827:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read31'
+ 828:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read32'
+ 829:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read33'
+ 830:Controller_ValueDomain_TEST.c ****      *  Gain: '<S48>/Gain'
+ 831:Controller_ValueDomain_TEST.c ****      *  Product: '<S48>/Multiply'
+ 832:Controller_ValueDomain_TEST.c ****      *  Sum: '<S48>/Minus'
+ 833:Controller_ValueDomain_TEST.c ****      */
+ 834:Controller_ValueDomain_TEST.c ****     theta_fr_s = (rtb_Gain5_h + rtDWork.theta_dot_fr_prev_ve) * 0.5 *
+ 835:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_fr;
+ 836:Controller_ValueDomain_TEST.c **** 
+ 837:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write' */
+ 838:Controller_ValueDomain_TEST.c ****     rtDWork.theta_fr = theta_fr_s;
+ 839:Controller_ValueDomain_TEST.c **** 
+ 840:Controller_ValueDomain_TEST.c ****     /* Sum: '<S47>/Minus2' incorporates:
+ 841:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read34'
+ 842:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read35'
+ 843:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read36'
+ 844:Controller_ValueDomain_TEST.c ****      *  Gain: '<S47>/Gain'
+ 845:Controller_ValueDomain_TEST.c ****      *  Product: '<S47>/Multiply'
+ 846:Controller_ValueDomain_TEST.c ****      *  Sum: '<S47>/Minus'
+ 847:Controller_ValueDomain_TEST.c ****      */
+ 848:Controller_ValueDomain_TEST.c ****     theta_fl_s = (speed_derivative + rtDWork.theta_dot_fl_prev_ve) * 0.5 *
+ 849:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_fl;
+ 850:Controller_ValueDomain_TEST.c **** 
+ 851:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write1' */
+ 852:Controller_ValueDomain_TEST.c ****     rtDWork.theta_fl = theta_fl_s;
+ 853:Controller_ValueDomain_TEST.c **** 
+ 854:Controller_ValueDomain_TEST.c ****     /* Sum: '<S46>/Minus2' incorporates:
+ 855:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read37'
+ 856:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read38'
+ 857:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read39'
+ 858:Controller_ValueDomain_TEST.c ****      *  Gain: '<S46>/Gain'
+ 859:Controller_ValueDomain_TEST.c ****      *  Product: '<S46>/Multiply'
+ 860:Controller_ValueDomain_TEST.c ****      *  Sum: '<S46>/Minus'
+ 861:Controller_ValueDomain_TEST.c ****      */
+ 862:Controller_ValueDomain_TEST.c ****     theta_ar_s = (torque_fr_derivative + rtDWork.theta_dot_ar_prev_ve) * 0.5 *
+ 863:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_ar;
+ 864:Controller_ValueDomain_TEST.c **** 
+ 865:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write2' */
+ 866:Controller_ValueDomain_TEST.c ****     rtDWork.theta_ar = theta_ar_s;
+ 867:Controller_ValueDomain_TEST.c **** 
+ 868:Controller_ValueDomain_TEST.c ****     /* Sum: '<S45>/Minus2' incorporates:
+ 869:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read40'
+ 870:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read41'
+ 871:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read42'
+ 872:Controller_ValueDomain_TEST.c ****      *  Gain: '<S45>/Gain'
+ 873:Controller_ValueDomain_TEST.c ****      *  Product: '<S45>/Multiply'
+ 874:Controller_ValueDomain_TEST.c ****      *  Sum: '<S45>/Minus'
+ 875:Controller_ValueDomain_TEST.c ****      */
+ 876:Controller_ValueDomain_TEST.c ****     theta_al_s = (torque_ar_derivative + rtDWork.theta_dot_al_prev_ve) * 0.5 *
+ 877:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_al;
+ 878:Controller_ValueDomain_TEST.c **** 
+ 879:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write3' */
+ 880:Controller_ValueDomain_TEST.c ****     rtDWork.theta_al = theta_al_s;
+ 881:Controller_ValueDomain_TEST.c **** 
+ 882:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write15' incorporates:
+ 883:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read43'
+ 884:Controller_ValueDomain_TEST.c ****      */
+ 885:Controller_ValueDomain_TEST.c ****     rtDWork.theta_dot_fr_prev_ve = rtb_Gain5_h;
+ 886:Controller_ValueDomain_TEST.c **** 
+ 887:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write16' incorporates:
+ 888:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read44'
+ 889:Controller_ValueDomain_TEST.c ****      */
+ 890:Controller_ValueDomain_TEST.c ****     rtDWork.theta_dot_fl_prev_ve = speed_derivative;
+ 891:Controller_ValueDomain_TEST.c **** 
+ 892:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write17' incorporates:
+ 893:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read45'
+ 894:Controller_ValueDomain_TEST.c ****      */
+ 895:Controller_ValueDomain_TEST.c ****     rtDWork.theta_dot_ar_prev_ve = torque_fr_derivative;
+ 896:Controller_ValueDomain_TEST.c **** 
+ 897:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write18' incorporates:
+ 898:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read46'
+ 899:Controller_ValueDomain_TEST.c ****      */
+ 900:Controller_ValueDomain_TEST.c ****     rtDWork.theta_dot_al_prev_ve = torque_ar_derivative;
+ 901:Controller_ValueDomain_TEST.c **** 
+ 902:Controller_ValueDomain_TEST.c ****     /* Sum: '<S29>/Minus2' incorporates:
+ 903:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read17'
+ 904:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read9'
+ 905:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write20'
+ 906:Controller_ValueDomain_TEST.c ****      */
+ 907:Controller_ValueDomain_TEST.c ****     rtDWork.theta_fr_incr = rtDWork.theta_fr - rtDWork.theta_fr_prev;
+ 908:Controller_ValueDomain_TEST.c **** 
+ 909:Controller_ValueDomain_TEST.c ****     /* Sum: '<S29>/Minus3' incorporates:
+ 910:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read18'
+ 911:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read48'
+ 912:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write22'
+ 913:Controller_ValueDomain_TEST.c ****      */
+ 914:Controller_ValueDomain_TEST.c ****     rtDWork.theta_fl_incr = rtDWork.theta_fl - rtDWork.theta_fl_prev;
+ 915:Controller_ValueDomain_TEST.c **** 
+ 916:Controller_ValueDomain_TEST.c ****     /* Sum: '<S29>/Minus4' incorporates:
+ 917:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read49'
+ 918:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read51'
+ 919:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write24'
+ 920:Controller_ValueDomain_TEST.c ****      */
+ 921:Controller_ValueDomain_TEST.c ****     rtDWork.theta_ar_incr = rtDWork.theta_ar - rtDWork.theta_ar_prev;
+ 922:Controller_ValueDomain_TEST.c **** 
+ 923:Controller_ValueDomain_TEST.c ****     /* Sum: '<S29>/Minus5' incorporates:
+ 924:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read52'
+ 925:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read54'
+ 926:Controller_ValueDomain_TEST.c ****      *  DataStoreWrite: '<S29>/Data Store Write26'
+ 927:Controller_ValueDomain_TEST.c ****      */
+ 928:Controller_ValueDomain_TEST.c ****     rtDWork.theta_al_incr = rtDWork.theta_al - rtDWork.theta_al_prev;
+ 929:Controller_ValueDomain_TEST.c **** 
+ 930:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write19' incorporates:
+ 931:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read8'
+ 932:Controller_ValueDomain_TEST.c ****      */
+ 933:Controller_ValueDomain_TEST.c ****     rtDWork.theta_fr_prev = rtDWork.theta_fr;
+ 934:Controller_ValueDomain_TEST.c **** 
+ 935:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write21' incorporates:
+ 936:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read47'
+ 937:Controller_ValueDomain_TEST.c ****      */
+ 938:Controller_ValueDomain_TEST.c ****     rtDWork.theta_fl_prev = rtDWork.theta_fl;
+ 939:Controller_ValueDomain_TEST.c **** 
+ 940:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write23' incorporates:
+ 941:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read50'
+ 942:Controller_ValueDomain_TEST.c ****      */
+ 943:Controller_ValueDomain_TEST.c ****     rtDWork.theta_ar_prev = rtDWork.theta_ar;
+ 944:Controller_ValueDomain_TEST.c **** 
+ 945:Controller_ValueDomain_TEST.c ****     /* DataStoreWrite: '<S29>/Data Store Write25' incorporates:
+ 946:Controller_ValueDomain_TEST.c ****      *  DataStoreRead: '<S29>/Data Store Read53'
+ 947:Controller_ValueDomain_TEST.c ****      */
+ 948:Controller_ValueDomain_TEST.c ****     rtDWork.theta_al_prev = rtDWork.theta_al;
+ 949:Controller_ValueDomain_TEST.c ****   }
+ 950:Controller_ValueDomain_TEST.c **** 
+ 951:Controller_ValueDomain_TEST.c ****   /* End of RelationalOperator: '<S8>/Equal6' */
+ 952:Controller_ValueDomain_TEST.c ****   /* End of Outputs for SubSystem: '<S8>/Vehicle emulator' */
+ 953:Controller_ValueDomain_TEST.c ****   if (rtM->Timing.TaskCounters.TID[3] == 0) {
+ 117              		.loc 1 953 0
+ 118 0076 464C     		ldr	r4, .L97+28
+ 119 0078 E389     		ldrh	r3, [r4, #14]
+ 120 007a 93B9     		cbnz	r3, .L37
+ 954:Controller_ValueDomain_TEST.c ****     /* DigitalClock: '<S8>/Digital Clock' */
+ 955:Controller_ValueDomain_TEST.c ****     simulation_time = (((rtM->Timing.clockTick3+rtM->Timing.clockTickH3*
+ 121              		.loc 1 955 0
+ 122 007c D4ED017A 		vldr.32	s15, [r4, #4]	@ int
+ 123 0080 DFED446A 		vldr.32	s13, .L97+32
+ 124 0084 444D     		ldr	r5, .L97+36
+ 125 0086 B8EE677A 		vcvt.f32.u32	s14, s15
+ 126 008a D4ED007A 		vldr.32	s15, [r4]	@ int
+ 127 008e F8EE677A 		vcvt.f32.u32	s15, s15
+ 128 0092 E7EE267A 		vfma.f32	s15, s14, s13
+ 129 0096 17EE900A 		vmov	r0, s15
+ 130 009a FFF7FEFF 		bl	__aeabi_f2d
+ 131              	.LVL3:
+ 132 009e C5E90001 		strd	r0, [r5]
+ 133              	.L37:
+ 956:Controller_ValueDomain_TEST.c ****                          4294967296.0)) * 1.0);
+ 957:Controller_ValueDomain_TEST.c ****   }
+ 958:Controller_ValueDomain_TEST.c **** 
+ 959:Controller_ValueDomain_TEST.c ****   if (rtM->Timing.TaskCounters.TID[1] == 0) {
+ 134              		.loc 1 959 0
+ 135 00a2 6389     		ldrh	r3, [r4, #10]
+ 136 00a4 3A4A     		ldr	r2, .L97+28
+ 137 00a6 002B     		cmp	r3, #0
+ 138 00a8 40F08B81 		bne	.L38
+ 960:Controller_ValueDomain_TEST.c ****     /* UnitDelay: '<S10>/Output' */
+ 961:Controller_ValueDomain_TEST.c ****     rtb_Output = rtDWork.Output_DSTATE;
+ 139              		.loc 1 961 0
+ 140 00ac 9AF8D051 		ldrb	r5, [r10, #464]	@ zero_extendqisi2
+ 141              	.LVL4:
+ 962:Controller_ValueDomain_TEST.c **** 
+ 963:Controller_ValueDomain_TEST.c ****     /* Sum: '<S12>/FixPt Sum1' incorporates:
+ 964:Controller_ValueDomain_TEST.c ****      *  Constant: '<S12>/FixPt Constant'
+ 965:Controller_ValueDomain_TEST.c ****      *  UnitDelay: '<S10>/Output'
+ 966:Controller_ValueDomain_TEST.c ****      */
+ 967:Controller_ValueDomain_TEST.c ****     rtb_FixPtSum1 = (uint8_T)((uint32_T)rtDWork.Output_DSTATE + ((uint8_T)1U));
+ 968:Controller_ValueDomain_TEST.c **** 
+ 969:Controller_ValueDomain_TEST.c ****     /* Switch: '<S13>/FixPt Switch' incorporates:
+ 970:Controller_ValueDomain_TEST.c ****      *  Constant: '<S13>/Constant'
+ 971:Controller_ValueDomain_TEST.c ****      */
+ 972:Controller_ValueDomain_TEST.c ****     if (rtb_FixPtSum1 > ((uint8_T)1U)) {
+ 973:Controller_ValueDomain_TEST.c ****       rtb_FixPtSum1 = ((uint8_T)0U);
+ 974:Controller_ValueDomain_TEST.c ****     }
+ 975:Controller_ValueDomain_TEST.c **** 
+ 976:Controller_ValueDomain_TEST.c ****     /* End of Switch: '<S13>/FixPt Switch' */
+ 977:Controller_ValueDomain_TEST.c ****   }
+ 978:Controller_ValueDomain_TEST.c **** 
+ 979:Controller_ValueDomain_TEST.c ****   if (rtM->Timing.TaskCounters.TID[2] == 0) {
+ 142              		.loc 1 979 0
+ 143 00b0 A389     		ldrh	r3, [r4, #12]
+ 967:Controller_ValueDomain_TEST.c **** 
+ 144              		.loc 1 967 0
+ 145 00b2 05F1010B 		add	fp, r5, #1
+ 146 00b6 5FFA8BFB 		uxtb	fp, fp
+ 147              	.LVL5:
+ 973:Controller_ValueDomain_TEST.c ****     }
+ 148              		.loc 1 973 0
+ 149 00ba BBF1020F 		cmp	fp, #2
+ 150 00be 28BF     		it	cs
+ 151 00c0 4FF0000B 		movcs	fp, #0
+ 152              	.LVL6:
+ 153              		.loc 1 979 0
+ 154 00c4 002B     		cmp	r3, #0
+ 155 00c6 00F08E81 		beq	.L58
+ 156              	.L59:
+ 157              	.LVL7:
+ 980:Controller_ValueDomain_TEST.c ****     /* UnitDelay: '<S11>/Output' */
+ 981:Controller_ValueDomain_TEST.c ****     rtB.Output = rtDWork.Output_DSTATE_k;
+ 982:Controller_ValueDomain_TEST.c **** 
+ 983:Controller_ValueDomain_TEST.c ****     /* Sum: '<S14>/FixPt Sum1' incorporates:
+ 984:Controller_ValueDomain_TEST.c ****      *  Constant: '<S14>/FixPt Constant'
+ 985:Controller_ValueDomain_TEST.c ****      */
+ 986:Controller_ValueDomain_TEST.c ****     rtb_FixPtSum1_b = (uint8_T)((uint32_T)rtB.Output + ((uint8_T)1U));
+ 987:Controller_ValueDomain_TEST.c **** 
+ 988:Controller_ValueDomain_TEST.c ****     /* Switch: '<S15>/FixPt Switch' incorporates:
+ 989:Controller_ValueDomain_TEST.c ****      *  Constant: '<S15>/Constant'
+ 990:Controller_ValueDomain_TEST.c ****      */
+ 991:Controller_ValueDomain_TEST.c ****     if (rtb_FixPtSum1_b > ((uint8_T)1U)) {
+ 992:Controller_ValueDomain_TEST.c ****       rtb_FixPtSum1_b = ((uint8_T)0U);
+ 993:Controller_ValueDomain_TEST.c ****     }
+ 994:Controller_ValueDomain_TEST.c **** 
+ 995:Controller_ValueDomain_TEST.c ****     /* End of Switch: '<S15>/FixPt Switch' */
+ 996:Controller_ValueDomain_TEST.c ****   }
+ 997:Controller_ValueDomain_TEST.c **** 
+ 998:Controller_ValueDomain_TEST.c ****   if (rtM->Timing.TaskCounters.TID[1] == 0) {
+ 999:Controller_ValueDomain_TEST.c ****     /* M-S-Function: '<S16>/Level-2 M-file S-Function' */
+1000:Controller_ValueDomain_TEST.c ****     /* read from digital input */
+1001:Controller_ValueDomain_TEST.c ****     rtb_Level2MfileSFunction = DiginGet(DIGIN_PORTA_PIN0);
+ 158              		.loc 1 1001 0
+ 159 00ca 4720     		movs	r0, #71
+ 160 00cc FFF7FEFF 		bl	DiginGet
+ 161              	.LVL8:
+1002:Controller_ValueDomain_TEST.c **** 
+1003:Controller_ValueDomain_TEST.c ****     /* Switch: '<S2>/Switch' incorporates:
+1004:Controller_ValueDomain_TEST.c ****      *  Constant: '<S2>/Constant'
+1005:Controller_ValueDomain_TEST.c ****      *  Logic: '<S2>/Logical Operator'
+1006:Controller_ValueDomain_TEST.c ****      */
+1007:Controller_ValueDomain_TEST.c ****     if (HANtuneOverride || rtb_Level2MfileSFunction) {
+ 162              		.loc 1 1007 0
+ 163 00d0 324B     		ldr	r3, .L97+40
+ 164 00d2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 165 00d4 002B     		cmp	r3, #0
+ 166 00d6 40F09281 		bne	.L40
+ 167              		.loc 1 1007 0 is_stmt 0 discriminator 1
+ 168 00da 0028     		cmp	r0, #0
+ 169 00dc 40F08F81 		bne	.L40
+1008:Controller_ValueDomain_TEST.c ****       /* DataTypeConversion: '<S2>/Data Type Conversion' */
+1009:Controller_ValueDomain_TEST.c ****       LedValue = (rtb_Output != 0);
+1010:Controller_ValueDomain_TEST.c ****     } else {
+1011:Controller_ValueDomain_TEST.c ****       /* DataTypeConversion: '<S2>/Data Type Conversion' */
+1012:Controller_ValueDomain_TEST.c ****       LedValue = (rtB.Output != 0);
+ 170              		.loc 1 1012 0 is_stmt 1
+ 171 00e0 2F4B     		ldr	r3, .L97+44
+ 172 00e2 304A     		ldr	r2, .L97+48
+ 173 00e4 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 174 00e6 0033     		adds	r3, r3, #0
+ 175 00e8 18BF     		it	ne
+ 176 00ea 0123     		movne	r3, #1
+ 177 00ec 1370     		strb	r3, [r2]
+ 178              	.LVL9:
+ 179              	.L42:
+1013:Controller_ValueDomain_TEST.c ****     }
+1014:Controller_ValueDomain_TEST.c **** 
+1015:Controller_ValueDomain_TEST.c ****     /* End of Switch: '<S2>/Switch' */
+1016:Controller_ValueDomain_TEST.c ****   }
+1017:Controller_ValueDomain_TEST.c **** 
+1018:Controller_ValueDomain_TEST.c ****   /* M-S-Function: '<S18>/Level-2 M-file S-Function' */
+1019:Controller_ValueDomain_TEST.c ****   /* read the current CPU load */
+1020:Controller_ValueDomain_TEST.c ****   SI_CPUload = OsGetCpuLoad();
+ 180              		.loc 1 1020 0
+ 181 00ee FFF7FEFF 		bl	OsGetCpuLoad
+ 182              	.LVL10:
+ 183 00f2 2D4B     		ldr	r3, .L97+52
+ 184 00f4 1870     		strb	r0, [r3]
+1021:Controller_ValueDomain_TEST.c **** 
+1022:Controller_ValueDomain_TEST.c ****   /* M-S-Function: '<S19>/Level-2 M-file S-Function' */
+1023:Controller_ValueDomain_TEST.c ****   /* read the free heap size */
+1024:Controller_ValueDomain_TEST.c ****   SI_FreeHeap = OsGetFreeHeapSize();
+ 185              		.loc 1 1024 0
+ 186 00f6 FFF7FEFF 		bl	OsGetFreeHeapSize
+ 187              	.LVL11:
+ 188 00fa 2C4B     		ldr	r3, .L97+56
+ 189 00fc 1860     		str	r0, [r3]
+1025:Controller_ValueDomain_TEST.c **** 
+1026:Controller_ValueDomain_TEST.c ****   /* M-S-Function: '<S20>/Level-2 M-file S-Function' */
+1027:Controller_ValueDomain_TEST.c ****   /* read the task's free stack size */
+1028:Controller_ValueDomain_TEST.c ****   SI_FreeStack = OsGetTaskFreeStackSize("AppCtrlTask");
+ 190              		.loc 1 1028 0
+ 191 00fe 2C48     		ldr	r0, .L97+60
+ 192 0100 FFF7FEFF 		bl	OsGetTaskFreeStackSize
+ 193              	.LVL12:
+ 194 0104 2B4A     		ldr	r2, .L97+64
+1029:Controller_ValueDomain_TEST.c ****   if (rtM->Timing.TaskCounters.TID[1] == 0) {
+ 195              		.loc 1 1029 0
+ 196 0106 6389     		ldrh	r3, [r4, #10]
+1028:Controller_ValueDomain_TEST.c ****   if (rtM->Timing.TaskCounters.TID[1] == 0) {
+ 197              		.loc 1 1028 0
+ 198 0108 1060     		str	r0, [r2]
+ 199              		.loc 1 1029 0
+ 200 010a 53B9     		cbnz	r3, .L43
+1030:Controller_ValueDomain_TEST.c ****     /* Update for M-S-Function: '<S17>/Level-2 M-file S-Function' */
+1031:Controller_ValueDomain_TEST.c ****     /* update digital output */
+1032:Controller_ValueDomain_TEST.c ****     if (LedValue == 0) {
+ 201              		.loc 1 1032 0
+ 202 010c 254B     		ldr	r3, .L97+48
+ 203 010e 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 204 0110 0029     		cmp	r1, #0
+ 205 0112 40F06681 		bne	.L96
+ 206              	.L93:
+1033:Controller_ValueDomain_TEST.c ****       DigoutSet(DIGOUT_PORTC_PIN13, DIGOUT_LOW);
+1034:Controller_ValueDomain_TEST.c ****     } else {
+1035:Controller_ValueDomain_TEST.c ****       DigoutSet(DIGOUT_PORTC_PIN13, DIGOUT_HIGH);
+ 207              		.loc 1 1035 0
+ 208 0116 4720     		movs	r0, #71
+ 209 0118 FFF7FEFF 		bl	DigoutSet
+ 210              	.LVL13:
+ 211 011c 6389     		ldrh	r3, [r4, #10]
+1036:Controller_ValueDomain_TEST.c ****     }
+1037:Controller_ValueDomain_TEST.c **** 
+1038:Controller_ValueDomain_TEST.c ****     /* Update for UnitDelay: '<S10>/Output' */
+1039:Controller_ValueDomain_TEST.c ****     rtDWork.Output_DSTATE = rtb_FixPtSum1;
+ 212              		.loc 1 1039 0
+ 213 011e 8AF8D0B1 		strb	fp, [r10, #464]
+ 214              	.L43:
+1040:Controller_ValueDomain_TEST.c ****   }
+1041:Controller_ValueDomain_TEST.c **** 
+1042:Controller_ValueDomain_TEST.c ****   if (rtM->Timing.TaskCounters.TID[2] == 0) {
+ 215              		.loc 1 1042 0
+ 216 0122 A289     		ldrh	r2, [r4, #12]
+ 217 0124 1AB9     		cbnz	r2, .L46
+1043:Controller_ValueDomain_TEST.c ****     /* Update for UnitDelay: '<S11>/Output' */
+1044:Controller_ValueDomain_TEST.c ****     rtDWork.Output_DSTATE_k = rtb_FixPtSum1_b;
+ 218              		.loc 1 1044 0
+ 219 0126 9DF83410 		ldrb	r1, [sp, #52]	@ zero_extendqisi2
+ 220 012a 8AF8D111 		strb	r1, [r10, #465]
+ 221              	.L46:
+1045:Controller_ValueDomain_TEST.c ****   }
+1046:Controller_ValueDomain_TEST.c **** 
+1047:Controller_ValueDomain_TEST.c ****   if (rtM->Timing.TaskCounters.TID[3] == 0) {
+ 222              		.loc 1 1047 0
+ 223 012e E189     		ldrh	r1, [r4, #14]
+ 224 0130 174D     		ldr	r5, .L97+28
+ 225 0132 31B9     		cbnz	r1, .L48
+1048:Controller_ValueDomain_TEST.c ****     /* Update absolute timer for sample time: [1.0s, 0.0s] */
+1049:Controller_ValueDomain_TEST.c ****     /* The "clockTick3" counts the number of times the code of this task has
+1050:Controller_ValueDomain_TEST.c ****      * been executed. The resolution of this integer timer is 1.0, which is the step size
+1051:Controller_ValueDomain_TEST.c ****      * of the task. Size of "clockTick3" ensures timer will not overflow during the
+1052:Controller_ValueDomain_TEST.c ****      * application lifespan selected.
+1053:Controller_ValueDomain_TEST.c ****      * Timer of this task consists of two 32 bit unsigned integers.
+1054:Controller_ValueDomain_TEST.c ****      * The two integers represent the low bits Timing.clockTick3 and the high bits
+1055:Controller_ValueDomain_TEST.c ****      * Timing.clockTickH3. When the low bit overflows to 0, the high bits increment.
+1056:Controller_ValueDomain_TEST.c ****      */
+1057:Controller_ValueDomain_TEST.c ****     rtM->Timing.clockTick3++;
+ 226              		.loc 1 1057 0
+ 227 0134 2868     		ldr	r0, [r5]
+ 228 0136 0130     		adds	r0, r0, #1
+ 229 0138 2860     		str	r0, [r5]
+1058:Controller_ValueDomain_TEST.c ****     if (!rtM->Timing.clockTick3) {
+ 230              		.loc 1 1058 0
+ 231 013a 10B9     		cbnz	r0, .L48
+1059:Controller_ValueDomain_TEST.c ****       rtM->Timing.clockTickH3++;
+ 232              		.loc 1 1059 0
+ 233 013c 6868     		ldr	r0, [r5, #4]
+ 234 013e 0130     		adds	r0, r0, #1
+ 235 0140 6860     		str	r0, [r5, #4]
+ 236              	.L48:
+ 237              	.LBB4:
+ 238              	.LBB5:
+ 122:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[1]) > 99) {/* Sample time: [0.1s, 0.0s] */
+ 239              		.loc 1 122 0
+ 240 0142 0133     		adds	r3, r3, #1
+ 241 0144 9BB2     		uxth	r3, r3
+ 127:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[2]) > 199) {/* Sample time: [0.2s, 0.0s] */
+ 242              		.loc 1 127 0
+ 243 0146 0132     		adds	r2, r2, #1
+ 123:Controller_ValueDomain_TEST.c ****     rtM->Timing.TaskCounters.TID[1] = 0;
+ 244              		.loc 1 123 0
+ 245 0148 632B     		cmp	r3, #99
+ 127:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[2]) > 199) {/* Sample time: [0.2s, 0.0s] */
+ 246              		.loc 1 127 0
+ 247 014a 92B2     		uxth	r2, r2
+ 124:Controller_ValueDomain_TEST.c ****   }
+ 248              		.loc 1 124 0
+ 249 014c 88BF     		it	hi
+ 250 014e 0023     		movhi	r3, #0
+ 132:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[3]) > 999) {/* Sample time: [1.0s, 0.0s] */
+ 251              		.loc 1 132 0
+ 252 0150 0131     		adds	r1, r1, #1
+ 128:Controller_ValueDomain_TEST.c ****     rtM->Timing.TaskCounters.TID[2] = 0;
+ 253              		.loc 1 128 0
+ 254 0152 C72A     		cmp	r2, #199
+ 124:Controller_ValueDomain_TEST.c ****   }
+ 255              		.loc 1 124 0
+ 256 0154 6381     		strh	r3, [r4, #10]	@ movhi
+ 132:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[3]) > 999) {/* Sample time: [1.0s, 0.0s] */
+ 257              		.loc 1 132 0
+ 258 0156 89B2     		uxth	r1, r1
+ 129:Controller_ValueDomain_TEST.c ****   }
+ 259              		.loc 1 129 0
+ 260 0158 86BF     		itte	hi
+ 261 015a 0023     		movhi	r3, #0
+ 262 015c A381     		strhhi	r3, [r4, #12]	@ movhi
+ 127:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[2]) > 199) {/* Sample time: [0.2s, 0.0s] */
+ 263              		.loc 1 127 0
+ 264 015e A281     		strhls	r2, [r4, #12]	@ movhi
+ 133:Controller_ValueDomain_TEST.c ****     rtM->Timing.TaskCounters.TID[3] = 0;
+ 265              		.loc 1 133 0
+ 266 0160 B1F57A7F 		cmp	r1, #1000
+ 134:Controller_ValueDomain_TEST.c ****   }
+ 267              		.loc 1 134 0
+ 268 0164 2ABF     		itet	cs
+ 269 0166 0023     		movcs	r3, #0
+ 132:Controller_ValueDomain_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[3]) > 999) {/* Sample time: [1.0s, 0.0s] */
+ 270              		.loc 1 132 0
+ 271 0168 E181     		strhcc	r1, [r4, #14]	@ movhi
+ 134:Controller_ValueDomain_TEST.c ****   }
+ 272              		.loc 1 134 0
+ 273 016a E381     		strhcs	r3, [r4, #14]	@ movhi
+ 274              	.LBE5:
+ 275              	.LBE4:
+1060:Controller_ValueDomain_TEST.c ****     }
+1061:Controller_ValueDomain_TEST.c ****   }
+1062:Controller_ValueDomain_TEST.c **** 
+1063:Controller_ValueDomain_TEST.c ****   rate_scheduler();
+1064:Controller_ValueDomain_TEST.c **** }
+ 276              		.loc 1 1064 0
+ 277 016c 0FB0     		add	sp, sp, #60
+ 278              		.cfi_remember_state
+ 279              		.cfi_def_cfa_offset 36
+ 280              		@ sp needed
+ 281 016e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 282              	.L98:
+ 283 0172 00BF     		.align	2
+ 284              	.L97:
+ 285 0174 0000F03F 		.word	1072693248
+ 286 0178 00000000 		.word	LT_s
+ 287 017c 00407F40 		.word	1082081280
+ 288 0180 00004840 		.word	1078460416
+ 289 0184 00000000 		.word	.LANCHOR9
+ 290 0188 00000000 		.word	.LANCHOR10
+ 291 018c 00000000 		.word	.LANCHOR11
+ 292 0190 00000000 		.word	rtM_
+ 293 0194 0000804F 		.word	1333788672
+ 294 0198 00000000 		.word	simulation_time
+ 295 019c 00000000 		.word	.LANCHOR12
+ 296 01a0 00000000 		.word	rtB
+ 297 01a4 00000000 		.word	LedValue
+ 298 01a8 00000000 		.word	SI_CPUload
+ 299 01ac 00000000 		.word	SI_FreeHeap
+ 300 01b0 00000000 		.word	.LC0
+ 301 01b4 00000000 		.word	SI_FreeStack
+ 302 01b8 00000000 		.word	rtDWork
+ 303              	.L77:
+ 304              		.cfi_restore_state
+ 185:Controller_ValueDomain_TEST.c ****     /* Gain: '<S22>/Gain4' incorporates:
+ 305              		.loc 1 185 0
+ 306 01bc 984B     		ldr	r3, .L99+16
+ 307 01be DDE90201 		ldrd	r0, [sp, #8]
+ 308 01c2 FFF7FEFF 		bl	__aeabi_dcmpeq
+ 309              	.LVL14:
+ 310 01c6 0028     		cmp	r0, #0
+ 311 01c8 00F04E81 		beq	.L78
+ 198:Controller_ValueDomain_TEST.c **** 
+ 312              		.loc 1 198 0
+ 313 01cc 90A3     		adr	r3, .L99
+ 314 01ce D3E90023 		ldrd	r2, [r3]
+ 315 01d2 DAE93001 		ldrd	r0, [r10, #192]
+ 316 01d6 FFF7FEFF 		bl	__aeabi_dmul
+ 317              	.LVL15:
+ 318 01da 8DA3     		adr	r3, .L99
+ 319 01dc D3E90023 		ldrd	r2, [r3]
+ 320 01e0 0446     		mov	r4, r0
+ 321 01e2 0D46     		mov	r5, r1
+ 322 01e4 DAE93401 		ldrd	r0, [r10, #208]
+ 323 01e8 FFF7FEFF 		bl	__aeabi_dmul
+ 324              	.LVL16:
+ 325 01ec 0246     		mov	r2, r0
+ 326 01ee 0B46     		mov	r3, r1
+ 327 01f0 2046     		mov	r0, r4
+ 328 01f2 2946     		mov	r1, r5
+ 329 01f4 FFF7FEFF 		bl	__aeabi_dadd
+ 330              	.LVL17:
+ 331 01f8 85A3     		adr	r3, .L99
+ 332 01fa D3E90023 		ldrd	r2, [r3]
+ 333 01fe 0446     		mov	r4, r0
+ 334 0200 0D46     		mov	r5, r1
+ 335 0202 DAE93201 		ldrd	r0, [r10, #200]
+ 336 0206 FFF7FEFF 		bl	__aeabi_dmul
+ 337              	.LVL18:
+ 338 020a 0246     		mov	r2, r0
+ 339 020c 0B46     		mov	r3, r1
+ 340 020e 2046     		mov	r0, r4
+ 341 0210 2946     		mov	r1, r5
+ 342 0212 FFF7FEFF 		bl	__aeabi_dadd
+ 343              	.LVL19:
+ 344 0216 7EA3     		adr	r3, .L99
+ 345 0218 D3E90023 		ldrd	r2, [r3]
+ 346 021c 0446     		mov	r4, r0
+ 347 021e 0D46     		mov	r5, r1
+ 348 0220 DAE93601 		ldrd	r0, [r10, #216]
+ 349 0224 FFF7FEFF 		bl	__aeabi_dmul
+ 350              	.LVL20:
+ 351 0228 0246     		mov	r2, r0
+ 352 022a 0B46     		mov	r3, r1
+ 353 022c 2046     		mov	r0, r4
+ 354 022e 2946     		mov	r1, r5
+ 355 0230 FFF7FEFF 		bl	__aeabi_dadd
+ 356              	.LVL21:
+ 357 0234 0022     		movs	r2, #0
+ 358 0236 7B4B     		ldr	r3, .L99+20
+ 197:Controller_ValueDomain_TEST.c ****                 rtDWork.theta_dot_ar) + 0.1 * rtDWork.theta_dot_al) * 0.25;
+ 359              		.loc 1 197 0
+ 360 0238 7B4E     		ldr	r6, .L99+24
+ 198:Controller_ValueDomain_TEST.c **** 
+ 361              		.loc 1 198 0
+ 362 023a FFF7FEFF 		bl	__aeabi_dmul
+ 363              	.LVL22:
+ 364 023e 0446     		mov	r4, r0
+ 365 0240 0D46     		mov	r5, r1
+ 197:Controller_ValueDomain_TEST.c ****                 rtDWork.theta_dot_ar) + 0.1 * rtDWork.theta_dot_al) * 0.25;
+ 366              		.loc 1 197 0
+ 367 0242 C6E90045 		strd	r4, [r6]
+ 204:Controller_ValueDomain_TEST.c **** 
+ 368              		.loc 1 204 0
+ 369 0246 0246     		mov	r2, r0
+ 370 0248 0B46     		mov	r3, r1
+ 371 024a DAE90201 		ldrd	r0, [r10, #8]
+ 372 024e FFF7FEFF 		bl	__aeabi_dsub
+ 373              	.LVL23:
+ 211:Controller_ValueDomain_TEST.c **** 
+ 374              		.loc 1 211 0
+ 375 0252 DAE91623 		ldrd	r2, [r10, #88]
+ 204:Controller_ValueDomain_TEST.c **** 
+ 376              		.loc 1 204 0
+ 377 0256 0446     		mov	r4, r0
+ 378 0258 0D46     		mov	r5, r1
+ 379              	.LVL24:
+ 211:Controller_ValueDomain_TEST.c **** 
+ 380              		.loc 1 211 0
+ 381 025a DAE91401 		ldrd	r0, [r10, #80]
+ 382 025e FFF7FEFF 		bl	__aeabi_dsub
+ 383              	.LVL25:
+ 221:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.speed_integral;
+ 384              		.loc 1 221 0
+ 385 0262 9AED427B 		vldr.64	d7, [r10, #264]
+ 211:Controller_ValueDomain_TEST.c **** 
+ 386              		.loc 1 211 0
+ 387 0266 8046     		mov	r8, r0
+ 222:Controller_ValueDomain_TEST.c **** 
+ 388              		.loc 1 222 0
+ 389 0268 53EC172B 		vmov	r2, r3, d7
+ 211:Controller_ValueDomain_TEST.c **** 
+ 390              		.loc 1 211 0
+ 391 026c 8946     		mov	r9, r1
+ 392              	.LVL26:
+ 222:Controller_ValueDomain_TEST.c **** 
+ 393              		.loc 1 222 0
+ 394 026e 2046     		mov	r0, r4
+ 395 0270 2946     		mov	r1, r5
+ 221:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.speed_integral;
+ 396              		.loc 1 221 0
+ 397 0272 8DED007B 		vstr.64	d7, [sp]
+ 222:Controller_ValueDomain_TEST.c **** 
+ 398              		.loc 1 222 0
+ 399 0276 FFF7FEFF 		bl	__aeabi_dadd
+ 400              	.LVL27:
+ 401 027a 0022     		movs	r2, #0
+ 402 027c 6B4B     		ldr	r3, .L99+28
+ 403 027e FFF7FEFF 		bl	__aeabi_dmul
+ 404              	.LVL28:
+ 405 0282 4246     		mov	r2, r8
+ 406 0284 4B46     		mov	r3, r9
+ 407 0286 FFF7FEFF 		bl	__aeabi_dmul
+ 408              	.LVL29:
+ 409 028a DAE94423 		ldrd	r2, [r10, #272]
+ 410 028e FFF7FEFF 		bl	__aeabi_dadd
+ 411              	.LVL30:
+ 221:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.speed_integral;
+ 412              		.loc 1 221 0
+ 413 0292 DFF8C4E1 		ldr	lr, .L99+72
+ 245:Controller_ValueDomain_TEST.c ****       + speed_k_d * speed_derivative;
+ 414              		.loc 1 245 0
+ 415 0296 664B     		ldr	r3, .L99+32
+ 222:Controller_ValueDomain_TEST.c **** 
+ 416              		.loc 1 222 0
+ 417 0298 0646     		mov	r6, r0
+ 418 029a 0F46     		mov	r7, r1
+ 221:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.speed_integral;
+ 419              		.loc 1 221 0
+ 420 029c CEE90067 		strd	r6, [lr]
+ 246:Controller_ValueDomain_TEST.c **** 
+ 421              		.loc 1 246 0
+ 422 02a0 D3E90023 		ldrd	r2, [r3]
+ 423 02a4 2046     		mov	r0, r4
+ 424 02a6 2946     		mov	r1, r5
+ 236:Controller_ValueDomain_TEST.c **** 
+ 425              		.loc 1 236 0
+ 426 02a8 CAE94245 		strd	r4, [r10, #264]
+ 225:Controller_ValueDomain_TEST.c **** 
+ 427              		.loc 1 225 0
+ 428 02ac CAE94467 		strd	r6, [r10, #272]
+ 429              	.LVL31:
+ 246:Controller_ValueDomain_TEST.c **** 
+ 430              		.loc 1 246 0
+ 431 02b0 FFF7FEFF 		bl	__aeabi_dmul
+ 432              	.LVL32:
+ 245:Controller_ValueDomain_TEST.c ****       + speed_k_d * speed_derivative;
+ 433              		.loc 1 245 0
+ 434 02b4 5F4B     		ldr	r3, .L99+36
+ 246:Controller_ValueDomain_TEST.c **** 
+ 435              		.loc 1 246 0
+ 436 02b6 CDE90401 		strd	r0, [sp, #16]
+ 437 02ba D3E90023 		ldrd	r2, [r3]
+ 438 02be 3046     		mov	r0, r6
+ 439 02c0 3946     		mov	r1, r7
+ 440 02c2 FFF7FEFF 		bl	__aeabi_dmul
+ 441              	.LVL33:
+ 442 02c6 0246     		mov	r2, r0
+ 443 02c8 0B46     		mov	r3, r1
+ 444 02ca DDE90401 		ldrd	r0, [sp, #16]
+ 445 02ce FFF7FEFF 		bl	__aeabi_dadd
+ 446              	.LVL34:
+ 447 02d2 DDE90023 		ldrd	r2, [sp]
+ 448 02d6 0646     		mov	r6, r0
+ 449 02d8 0F46     		mov	r7, r1
+ 450 02da 2046     		mov	r0, r4
+ 451 02dc 2946     		mov	r1, r5
+ 452 02de FFF7FEFF 		bl	__aeabi_dsub
+ 453              	.LVL35:
+ 454 02e2 4246     		mov	r2, r8
+ 455 02e4 4B46     		mov	r3, r9
+ 456 02e6 FFF7FEFF 		bl	__aeabi_ddiv
+ 457              	.LVL36:
+ 458 02ea 534B     		ldr	r3, .L99+40
+ 459 02ec D3E90023 		ldrd	r2, [r3]
+ 460 02f0 FFF7FEFF 		bl	__aeabi_dmul
+ 461              	.LVL37:
+ 462 02f4 0246     		mov	r2, r0
+ 463 02f6 0B46     		mov	r3, r1
+ 464 02f8 3046     		mov	r0, r6
+ 465 02fa 3946     		mov	r1, r7
+ 466 02fc FFF7FEFF 		bl	__aeabi_dadd
+ 467              	.LVL38:
+ 245:Controller_ValueDomain_TEST.c ****       + speed_k_d * speed_derivative;
+ 468              		.loc 1 245 0
+ 469 0300 4E4E     		ldr	r6, .L99+44
+ 246:Controller_ValueDomain_TEST.c **** 
+ 470              		.loc 1 246 0
+ 471 0302 0446     		mov	r4, r0
+ 472              	.LVL39:
+ 473 0304 0D46     		mov	r5, r1
+ 252:Controller_ValueDomain_TEST.c **** 
+ 474              		.loc 1 252 0
+ 475 0306 DAE91A23 		ldrd	r2, [r10, #104]
+ 245:Controller_ValueDomain_TEST.c ****       + speed_k_d * speed_derivative;
+ 476              		.loc 1 245 0
+ 477 030a C6E90045 		strd	r4, [r6]
+ 252:Controller_ValueDomain_TEST.c **** 
+ 478              		.loc 1 252 0
+ 479 030e FFF7FEFF 		bl	__aeabi_dadd
+ 480              	.LVL40:
+ 481 0312 DFF848E1 		ldr	lr, .L99+76
+ 482 0316 0646     		mov	r6, r0
+ 483 0318 0F46     		mov	r7, r1
+ 484 031a CEE90067 		strd	r6, [lr]
+ 261:Controller_ValueDomain_TEST.c **** 
+ 485              		.loc 1 261 0
+ 486 031e DAE91C23 		ldrd	r2, [r10, #112]
+ 487 0322 2046     		mov	r0, r4
+ 488 0324 2946     		mov	r1, r5
+ 255:Controller_ValueDomain_TEST.c **** 
+ 489              		.loc 1 255 0
+ 490 0326 CAE93867 		strd	r6, [r10, #224]
+ 261:Controller_ValueDomain_TEST.c **** 
+ 491              		.loc 1 261 0
+ 492 032a FFF7FEFF 		bl	__aeabi_dadd
+ 493              	.LVL41:
+ 494 032e DFF830E1 		ldr	lr, .L99+80
+ 495 0332 0646     		mov	r6, r0
+ 496 0334 0F46     		mov	r7, r1
+ 497 0336 CEE90067 		strd	r6, [lr]
+ 270:Controller_ValueDomain_TEST.c **** 
+ 498              		.loc 1 270 0
+ 499 033a DAE92223 		ldrd	r2, [r10, #136]
+ 500 033e 2046     		mov	r0, r4
+ 501 0340 2946     		mov	r1, r5
+ 264:Controller_ValueDomain_TEST.c **** 
+ 502              		.loc 1 264 0
+ 503 0342 CAE93A67 		strd	r6, [r10, #232]
+ 270:Controller_ValueDomain_TEST.c **** 
+ 504              		.loc 1 270 0
+ 505 0346 FFF7FEFF 		bl	__aeabi_dadd
+ 506              	.LVL42:
+ 507 034a DFF818E1 		ldr	lr, .L99+84
+ 508 034e 0646     		mov	r6, r0
+ 509 0350 0F46     		mov	r7, r1
+ 279:Controller_ValueDomain_TEST.c **** 
+ 510              		.loc 1 279 0
+ 511 0352 DAE92423 		ldrd	r2, [r10, #144]
+ 512 0356 2046     		mov	r0, r4
+ 513 0358 2946     		mov	r1, r5
+ 270:Controller_ValueDomain_TEST.c **** 
+ 514              		.loc 1 270 0
+ 515 035a CEE90067 		strd	r6, [lr]
+ 273:Controller_ValueDomain_TEST.c **** 
+ 516              		.loc 1 273 0
+ 517 035e CAE93C67 		strd	r6, [r10, #240]
+ 279:Controller_ValueDomain_TEST.c **** 
+ 518              		.loc 1 279 0
+ 519 0362 FFF7FEFF 		bl	__aeabi_dadd
+ 520              	.LVL43:
+ 521 0366 364B     		ldr	r3, .L99+48
+ 282:Controller_ValueDomain_TEST.c ****   }
+ 522              		.loc 1 282 0
+ 523 0368 CAE94001 		strd	r0, [r10, #256]
+ 279:Controller_ValueDomain_TEST.c **** 
+ 524              		.loc 1 279 0
+ 525 036c C3E90001 		strd	r0, [r3]
+ 526              	.LVL44:
+ 527              	.L7:
+ 578:Controller_ValueDomain_TEST.c ****     /* Gain: '<S27>/Gain' incorporates:
+ 528              		.loc 1 578 0
+ 529 0370 0022     		movs	r2, #0
+ 530 0372 344B     		ldr	r3, .L99+52
+ 531 0374 DDE90201 		ldrd	r0, [sp, #8]
+ 532 0378 FFF7FEFF 		bl	__aeabi_dcmpeq
+ 533              	.LVL45:
+ 534 037c 0028     		cmp	r0, #0
+ 535 037e 00F07081 		beq	.L10
+ 590:Controller_ValueDomain_TEST.c **** 
+ 536              		.loc 1 590 0
+ 537 0382 DAE95A67 		ldrd	r6, [r10, #360]
+ 595:Controller_ValueDomain_TEST.c **** 
+ 538              		.loc 1 595 0
+ 539 0386 DAE95C45 		ldrd	r4, [r10, #368]
+ 582:Controller_ValueDomain_TEST.c **** 
+ 540              		.loc 1 582 0
+ 541 038a 23A3     		adr	r3, .L99+8
+ 542 038c D3E90023 		ldrd	r2, [r3]
+ 543 0390 2D48     		ldr	r0, .L99+56
+ 610:Controller_ValueDomain_TEST.c ****   }
+ 544              		.loc 1 610 0
+ 545 0392 2E49     		ldr	r1, .L99+60
+ 590:Controller_ValueDomain_TEST.c **** 
+ 546              		.loc 1 590 0
+ 547 0394 CAE97067 		strd	r6, [r10, #448]
+ 595:Controller_ValueDomain_TEST.c **** 
+ 548              		.loc 1 595 0
+ 549 0398 CAE97245 		strd	r4, [r10, #456]
+ 600:Controller_ValueDomain_TEST.c **** 
+ 550              		.loc 1 600 0
+ 551 039c DAE96A67 		ldrd	r6, [r10, #424]
+ 605:Controller_ValueDomain_TEST.c **** 
+ 552              		.loc 1 605 0
+ 553 03a0 DAE96C45 		ldrd	r4, [r10, #432]
+ 582:Controller_ValueDomain_TEST.c **** 
+ 554              		.loc 1 582 0
+ 555 03a4 C0E90023 		strd	r2, [r0]
+ 610:Controller_ValueDomain_TEST.c ****   }
+ 556              		.loc 1 610 0
+ 557 03a8 D1E90001 		ldrd	r0, [r1]
+ 585:Controller_ValueDomain_TEST.c **** 
+ 558              		.loc 1 585 0
+ 559 03ac CAE91623 		strd	r2, [r10, #88]
+ 600:Controller_ValueDomain_TEST.c **** 
+ 560              		.loc 1 600 0
+ 561 03b0 CAE90467 		strd	r6, [r10, #16]
+ 605:Controller_ValueDomain_TEST.c **** 
+ 562              		.loc 1 605 0
+ 563 03b4 CAE90645 		strd	r4, [r10, #24]
+ 610:Controller_ValueDomain_TEST.c ****   }
+ 564              		.loc 1 610 0
+ 565 03b8 FFF7FEFF 		bl	__aeabi_dadd
+ 566              	.LVL46:
+ 567 03bc CAE91401 		strd	r0, [r10, #80]
+ 568 03c0 59E6     		b	.L56
+ 569              	.L38:
+ 979:Controller_ValueDomain_TEST.c ****     /* UnitDelay: '<S11>/Output' */
+ 570              		.loc 1 979 0
+ 571 03c2 9389     		ldrh	r3, [r2, #12]
+ 572 03c4 002B     		cmp	r3, #0
+ 573 03c6 7FF492AE 		bne	.L42
+ 981:Controller_ValueDomain_TEST.c **** 
+ 574              		.loc 1 981 0
+ 575 03ca 9AF8D131 		ldrb	r3, [r10, #465]	@ zero_extendqisi2
+ 576 03ce 204A     		ldr	r2, .L99+64
+ 986:Controller_ValueDomain_TEST.c **** 
+ 577              		.loc 1 986 0
+ 578 03d0 591C     		adds	r1, r3, #1
+ 579 03d2 C9B2     		uxtb	r1, r1
+ 580              	.LVL47:
+ 992:Controller_ValueDomain_TEST.c ****     }
+ 581              		.loc 1 992 0
+ 582 03d4 0229     		cmp	r1, #2
+ 981:Controller_ValueDomain_TEST.c **** 
+ 583              		.loc 1 981 0
+ 584 03d6 1370     		strb	r3, [r2]
+ 992:Controller_ValueDomain_TEST.c ****     }
+ 585              		.loc 1 992 0
+ 586 03d8 34BF     		ite	cc
+ 587 03da 0B46     		movcc	r3, r1
+ 588 03dc 0023     		movcs	r3, #0
+ 589 03de 0D93     		str	r3, [sp, #52]
+ 590 03e0 85E6     		b	.L42
+ 591              	.LVL48:
+ 592              	.L96:
+1035:Controller_ValueDomain_TEST.c ****     }
+ 593              		.loc 1 1035 0
+ 594 03e2 0121     		movs	r1, #1
+ 595 03e4 97E6     		b	.L93
+ 596              	.LVL49:
+ 597              	.L58:
+ 981:Controller_ValueDomain_TEST.c **** 
+ 598              		.loc 1 981 0
+ 599 03e6 9AF8D131 		ldrb	r3, [r10, #465]	@ zero_extendqisi2
+ 600 03ea 194A     		ldr	r2, .L99+64
+ 986:Controller_ValueDomain_TEST.c **** 
+ 601              		.loc 1 986 0
+ 602 03ec 591C     		adds	r1, r3, #1
+ 603 03ee C9B2     		uxtb	r1, r1
+ 604              	.LVL50:
+ 992:Controller_ValueDomain_TEST.c ****     }
+ 605              		.loc 1 992 0
+ 606 03f0 0229     		cmp	r1, #2
+ 981:Controller_ValueDomain_TEST.c **** 
+ 607              		.loc 1 981 0
+ 608 03f2 1370     		strb	r3, [r2]
+ 992:Controller_ValueDomain_TEST.c ****     }
+ 609              		.loc 1 992 0
+ 610 03f4 34BF     		ite	cc
+ 611 03f6 0B46     		movcc	r3, r1
+ 612 03f8 0023     		movcs	r3, #0
+ 613 03fa 0D93     		str	r3, [sp, #52]
+ 614 03fc 65E6     		b	.L59
+ 615              	.LVL51:
+ 616              	.L40:
+1009:Controller_ValueDomain_TEST.c ****     } else {
+ 617              		.loc 1 1009 0
+ 618 03fe 0035     		adds	r5, r5, #0
+ 619 0400 144B     		ldr	r3, .L99+68
+ 620 0402 18BF     		it	ne
+ 621 0404 0125     		movne	r5, #1
+ 622              	.LVL52:
+ 623 0406 1D70     		strb	r5, [r3]
+ 624 0408 71E6     		b	.L42
+ 625              	.L100:
+ 626 040a 00BFAFF3 		.align	3
+ 626      0080
+ 627              	.L99:
+ 628 0410 000000A0 		.word	-1610612736
+ 629 0414 9999B93F 		.word	1069128089
+ 630 0418 00000011 		.word	285212672
+ 631 041c 73D7823F 		.word	1065539443
+ 632 0420 00006240 		.word	1080164352
+ 633 0424 0000D03F 		.word	1070596096
+ 634 0428 00000000 		.word	v_est_s
+ 635 042c 0000E03F 		.word	1071644672
+ 636 0430 00000000 		.word	.LANCHOR0
+ 637 0434 00000000 		.word	.LANCHOR1
+ 638 0438 00000000 		.word	.LANCHOR2
+ 639 043c 00000000 		.word	v_ctreff_s
+ 640 0440 00000000 		.word	torque_al_set_s
+ 641 0444 00005740 		.word	1079443456
+ 642 0448 00000000 		.word	rx_data_time_s
+ 643 044c 00000000 		.word	rtConstB
+ 644 0450 00000000 		.word	rtB
+ 645 0454 00000000 		.word	LedValue
+ 646 0458 00000000 		.word	v_integral_s
+ 647 045c 00000000 		.word	torque_fr_set_s
+ 648 0460 00000000 		.word	torque_fl_set_s
+ 649 0464 00000000 		.word	torque_ar_set_s
+ 650              	.LVL53:
+ 651              	.L78:
+ 295:Controller_ValueDomain_TEST.c ****     /* DataStoreRead: '<S23>/Data Store Read1' */
+ 652              		.loc 1 295 0
+ 653 0468 0022     		movs	r2, #0
+ 654 046a BD4B     		ldr	r3, .L101+16
+ 655 046c DDE90201 		ldrd	r0, [sp, #8]
+ 656 0470 FFF7FEFF 		bl	__aeabi_dcmpeq
+ 657              	.LVL54:
+ 658 0474 0028     		cmp	r0, #0
+ 659 0476 00F0A881 		beq	.L79
+ 307:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 660              		.loc 1 307 0
+ 661 047a 9AED147B 		vldr.64	d7, [r10, #80]
+ 297:Controller_ValueDomain_TEST.c **** 
+ 662              		.loc 1 297 0
+ 663 047e DAE97045 		ldrd	r4, [r10, #448]
+ 307:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 664              		.loc 1 307 0
+ 665 0482 8DED007B 		vstr.64	d7, [sp]
+ 308:Controller_ValueDomain_TEST.c **** 
+ 666              		.loc 1 308 0
+ 667 0486 9AED167B 		vldr.64	d7, [r10, #88]
+ 297:Controller_ValueDomain_TEST.c **** 
+ 668              		.loc 1 297 0
+ 669 048a B64E     		ldr	r6, .L101+20
+ 307:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 670              		.loc 1 307 0
+ 671 048c 53EC172B 		vmov	r2, r3, d7
+ 297:Controller_ValueDomain_TEST.c **** 
+ 672              		.loc 1 297 0
+ 673 0490 C6E90045 		strd	r4, [r6]
+ 307:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 674              		.loc 1 307 0
+ 675 0494 DDE90001 		ldrd	r0, [sp]
+ 308:Controller_ValueDomain_TEST.c **** 
+ 676              		.loc 1 308 0
+ 677 0498 8DED047B 		vstr.64	d7, [sp, #16]
+ 307:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 678              		.loc 1 307 0
+ 679 049c FFF7FEFF 		bl	__aeabi_dsub
+ 680              	.LVL55:
+ 681 04a0 8046     		mov	r8, r0
+ 682 04a2 8946     		mov	r9, r1
+ 683 04a4 0246     		mov	r2, r0
+ 684 04a6 0B46     		mov	r3, r1
+ 685 04a8 2046     		mov	r0, r4
+ 686 04aa 2946     		mov	r1, r5
+ 687 04ac FFF7FEFF 		bl	__aeabi_ddiv
+ 688              	.LVL56:
+ 311:Controller_ValueDomain_TEST.c **** 
+ 689              		.loc 1 311 0
+ 690 04b0 DAE97245 		ldrd	r4, [r10, #456]
+ 691 04b4 DFF8E4E2 		ldr	lr, .L101+76
+ 307:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 692              		.loc 1 307 0
+ 693 04b8 0646     		mov	r6, r0
+ 311:Controller_ValueDomain_TEST.c **** 
+ 694              		.loc 1 311 0
+ 695 04ba CEE90045 		strd	r4, [lr]
+ 307:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 696              		.loc 1 307 0
+ 697 04be 0F46     		mov	r7, r1
+ 321:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 698              		.loc 1 321 0
+ 699 04c0 4246     		mov	r2, r8
+ 700 04c2 4B46     		mov	r3, r9
+ 701 04c4 2046     		mov	r0, r4
+ 702 04c6 2946     		mov	r1, r5
+ 307:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 703              		.loc 1 307 0
+ 704 04c8 CAE93067 		strd	r6, [r10, #192]
+ 321:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 705              		.loc 1 321 0
+ 706 04cc FFF7FEFF 		bl	__aeabi_ddiv
+ 707              	.LVL57:
+ 331:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 708              		.loc 1 331 0
+ 709 04d0 9FA3     		adr	r3, .L101
+ 710 04d2 D3E90023 		ldrd	r2, [r3]
+ 321:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 711              		.loc 1 321 0
+ 712 04d6 0446     		mov	r4, r0
+ 713 04d8 0D46     		mov	r5, r1
+ 331:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 714              		.loc 1 331 0
+ 715 04da 3046     		mov	r0, r6
+ 716 04dc 3946     		mov	r1, r7
+ 321:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 717              		.loc 1 321 0
+ 718 04de CAE93445 		strd	r4, [r10, #208]
+ 331:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 719              		.loc 1 331 0
+ 720 04e2 FFF7FEFF 		bl	__aeabi_dmul
+ 721              	.LVL58:
+ 722 04e6 9AA3     		adr	r3, .L101
+ 723 04e8 D3E90023 		ldrd	r2, [r3]
+ 724 04ec 0646     		mov	r6, r0
+ 725 04ee 0F46     		mov	r7, r1
+ 726 04f0 2046     		mov	r0, r4
+ 727 04f2 2946     		mov	r1, r5
+ 728 04f4 FFF7FEFF 		bl	__aeabi_dmul
+ 729              	.LVL59:
+ 730 04f8 0246     		mov	r2, r0
+ 731 04fa 0B46     		mov	r3, r1
+ 732 04fc 3046     		mov	r0, r6
+ 733 04fe 3946     		mov	r1, r7
+ 734 0500 FFF7FEFF 		bl	__aeabi_dsub
+ 735              	.LVL60:
+ 736 0504 94A3     		adr	r3, .L101+8
+ 737 0506 D3E90023 		ldrd	r2, [r3]
+ 738 050a FFF7FEFF 		bl	__aeabi_dmul
+ 739              	.LVL61:
+ 740 050e CDE90601 		strd	r0, [sp, #24]
+ 741 0512 9DED067B 		vldr.64	d7, [sp, #24]
+ 335:Controller_ValueDomain_TEST.c **** 
+ 742              		.loc 1 335 0
+ 743 0516 DAE90445 		ldrd	r4, [r10, #16]
+ 331:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 744              		.loc 1 331 0
+ 745 051a 934F     		ldr	r7, .L101+24
+ 335:Controller_ValueDomain_TEST.c **** 
+ 746              		.loc 1 335 0
+ 747 051c 934E     		ldr	r6, .L101+28
+ 331:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 748              		.loc 1 331 0
+ 749 051e 87ED007B 		vstr.64	d7, [r7]
+ 335:Controller_ValueDomain_TEST.c **** 
+ 750              		.loc 1 335 0
+ 751 0522 C6E90045 		strd	r4, [r6]
+ 345:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 752              		.loc 1 345 0
+ 753 0526 4246     		mov	r2, r8
+ 754 0528 4B46     		mov	r3, r9
+ 755 052a 2046     		mov	r0, r4
+ 756 052c 2946     		mov	r1, r5
+ 757 052e FFF7FEFF 		bl	__aeabi_ddiv
+ 758              	.LVL62:
+ 349:Controller_ValueDomain_TEST.c **** 
+ 759              		.loc 1 349 0
+ 760 0532 DAE90645 		ldrd	r4, [r10, #24]
+ 761 0536 DFF868E2 		ldr	lr, .L101+80
+ 345:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 762              		.loc 1 345 0
+ 763 053a 0646     		mov	r6, r0
+ 349:Controller_ValueDomain_TEST.c **** 
+ 764              		.loc 1 349 0
+ 765 053c CEE90045 		strd	r4, [lr]
+ 345:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 766              		.loc 1 345 0
+ 767 0540 0F46     		mov	r7, r1
+ 359:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 768              		.loc 1 359 0
+ 769 0542 4246     		mov	r2, r8
+ 770 0544 4B46     		mov	r3, r9
+ 771 0546 2046     		mov	r0, r4
+ 772 0548 2946     		mov	r1, r5
+ 345:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 773              		.loc 1 345 0
+ 774 054a CAE93267 		strd	r6, [r10, #200]
+ 359:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 775              		.loc 1 359 0
+ 776 054e FFF7FEFF 		bl	__aeabi_ddiv
+ 777              	.LVL63:
+ 369:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 778              		.loc 1 369 0
+ 779 0552 7FA3     		adr	r3, .L101
+ 780 0554 D3E90023 		ldrd	r2, [r3]
+ 359:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 781              		.loc 1 359 0
+ 782 0558 0446     		mov	r4, r0
+ 783 055a 0D46     		mov	r5, r1
+ 369:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 784              		.loc 1 369 0
+ 785 055c 3046     		mov	r0, r6
+ 786 055e 3946     		mov	r1, r7
+ 359:Controller_ValueDomain_TEST.c ****       rtDWork.rx_data_prev_time);
+ 787              		.loc 1 359 0
+ 788 0560 CAE93645 		strd	r4, [r10, #216]
+ 369:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 789              		.loc 1 369 0
+ 790 0564 FFF7FEFF 		bl	__aeabi_dmul
+ 791              	.LVL64:
+ 792 0568 79A3     		adr	r3, .L101
+ 793 056a D3E90023 		ldrd	r2, [r3]
+ 794 056e 0646     		mov	r6, r0
+ 795 0570 0F46     		mov	r7, r1
+ 796 0572 2046     		mov	r0, r4
+ 797 0574 2946     		mov	r1, r5
+ 798 0576 FFF7FEFF 		bl	__aeabi_dmul
+ 799              	.LVL65:
+ 800 057a 0246     		mov	r2, r0
+ 801 057c 0B46     		mov	r3, r1
+ 802 057e 3046     		mov	r0, r6
+ 803 0580 3946     		mov	r1, r7
+ 804 0582 FFF7FEFF 		bl	__aeabi_dsub
+ 805              	.LVL66:
+ 806 0586 74A3     		adr	r3, .L101+8
+ 807 0588 D3E90023 		ldrd	r2, [r3]
+ 808 058c FFF7FEFF 		bl	__aeabi_dmul
+ 809              	.LVL67:
+ 379:Controller_ValueDomain_TEST.c **** 
+ 810              		.loc 1 379 0
+ 811 0590 9DED007B 		vldr.64	d7, [sp]
+ 812 0594 764B     		ldr	r3, .L101+32
+ 376:Controller_ValueDomain_TEST.c **** 
+ 813              		.loc 1 376 0
+ 814 0596 DFF80CC2 		ldr	ip, .L101+84
+ 373:Controller_ValueDomain_TEST.c **** 
+ 815              		.loc 1 373 0
+ 816 059a DFF80CE2 		ldr	lr, .L101+88
+ 369:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 817              		.loc 1 369 0
+ 818 059e 0446     		mov	r4, r0
+ 819 05a0 0D46     		mov	r5, r1
+ 379:Controller_ValueDomain_TEST.c **** 
+ 820              		.loc 1 379 0
+ 821 05a2 83ED007B 		vstr.64	d7, [r3]
+ 369:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 822              		.loc 1 369 0
+ 823 05a6 7348     		ldr	r0, .L101+36
+ 382:Controller_ValueDomain_TEST.c **** 
+ 824              		.loc 1 382 0
+ 825 05a8 7349     		ldr	r1, .L101+40
+ 369:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 826              		.loc 1 369 0
+ 827 05aa 45EC174B 		vmov	d7, r4, r5
+ 828 05ae 80ED007B 		vstr.64	d7, [r0]
+ 382:Controller_ValueDomain_TEST.c **** 
+ 829              		.loc 1 382 0
+ 830 05b2 9DED047B 		vldr.64	d7, [sp, #16]
+ 373:Controller_ValueDomain_TEST.c **** 
+ 831              		.loc 1 373 0
+ 832 05b6 DAE90867 		ldrd	r6, [r10, #32]
+ 382:Controller_ValueDomain_TEST.c **** 
+ 833              		.loc 1 382 0
+ 834 05ba 81ED007B 		vstr.64	d7, [r1]
+ 369:Controller_ValueDomain_TEST.c ****       1.6666666666666667;
+ 835              		.loc 1 369 0
+ 836 05be CDE90845 		strd	r4, [sp, #32]
+ 376:Controller_ValueDomain_TEST.c **** 
+ 837              		.loc 1 376 0
+ 838 05c2 9AED1E7B 		vldr.64	d7, [r10, #120]
+ 391:Controller_ValueDomain_TEST.c **** 
+ 839              		.loc 1 391 0
+ 840 05c6 DDE90645 		ldrd	r4, [sp, #24]
+ 841 05ca 53EC172B 		vmov	r2, r3, d7
+ 376:Controller_ValueDomain_TEST.c **** 
+ 842              		.loc 1 376 0
+ 843 05ce 8CED007B 		vstr.64	d7, [ip]
+ 373:Controller_ValueDomain_TEST.c **** 
+ 844              		.loc 1 373 0
+ 845 05d2 CEE90067 		strd	r6, [lr]
+ 391:Controller_ValueDomain_TEST.c **** 
+ 846              		.loc 1 391 0
+ 847 05d6 2046     		mov	r0, r4
+ 848 05d8 2946     		mov	r1, r5
+ 849 05da FFF7FEFF 		bl	__aeabi_dadd
+ 850              	.LVL68:
+ 851 05de 0022     		movs	r2, #0
+ 852 05e0 664B     		ldr	r3, .L101+44
+ 853 05e2 FFF7FEFF 		bl	__aeabi_dmul
+ 854              	.LVL69:
+ 855 05e6 4246     		mov	r2, r8
+ 856 05e8 4B46     		mov	r3, r9
+ 857 05ea FFF7FEFF 		bl	__aeabi_dmul
+ 858              	.LVL70:
+ 859 05ee 3246     		mov	r2, r6
+ 860 05f0 3B46     		mov	r3, r7
+ 861 05f2 FFF7FEFF 		bl	__aeabi_dadd
+ 862              	.LVL71:
+ 406:Controller_ValueDomain_TEST.c **** 
+ 863              		.loc 1 406 0
+ 864 05f6 9DED007B 		vldr.64	d7, [sp]
+ 865 05fa DFF8B0C1 		ldr	ip, .L101+92
+ 390:Controller_ValueDomain_TEST.c ****       (rx_data_t_steerF_s - rx_data_prev_t_steerF_s) + delta_f_est_current_s;
+ 866              		.loc 1 390 0
+ 867 05fe 604B     		ldr	r3, .L101+48
+ 409:Controller_ValueDomain_TEST.c **** 
+ 868              		.loc 1 409 0
+ 869 0600 DFF8ACE1 		ldr	lr, .L101+96
+ 406:Controller_ValueDomain_TEST.c **** 
+ 870              		.loc 1 406 0
+ 871 0604 8CED007B 		vstr.64	d7, [ip]
+ 400:Controller_ValueDomain_TEST.c **** 
+ 872              		.loc 1 400 0
+ 873 0608 DAE90A67 		ldrd	r6, [r10, #40]
+ 409:Controller_ValueDomain_TEST.c **** 
+ 874              		.loc 1 409 0
+ 875 060c 9DED047B 		vldr.64	d7, [sp, #16]
+ 390:Controller_ValueDomain_TEST.c ****       (rx_data_t_steerF_s - rx_data_prev_t_steerF_s) + delta_f_est_current_s;
+ 876              		.loc 1 390 0
+ 877 0610 C3E90001 		strd	r0, [r3]
+ 418:Controller_ValueDomain_TEST.c **** 
+ 878              		.loc 1 418 0
+ 879 0614 DAE92023 		ldrd	r2, [r10, #128]
+ 394:Controller_ValueDomain_TEST.c **** 
+ 880              		.loc 1 394 0
+ 881 0618 CAE90801 		strd	r0, [r10, #32]
+ 397:Controller_ValueDomain_TEST.c **** 
+ 882              		.loc 1 397 0
+ 883 061c CAE91E45 		strd	r4, [r10, #120]
+ 403:Controller_ValueDomain_TEST.c **** 
+ 884              		.loc 1 403 0
+ 885 0620 5849     		ldr	r1, .L101+52
+ 400:Controller_ValueDomain_TEST.c **** 
+ 886              		.loc 1 400 0
+ 887 0622 594C     		ldr	r4, .L101+56
+ 409:Controller_ValueDomain_TEST.c **** 
+ 888              		.loc 1 409 0
+ 889 0624 8EED007B 		vstr.64	d7, [lr]
+ 403:Controller_ValueDomain_TEST.c **** 
+ 890              		.loc 1 403 0
+ 891 0628 C1E90023 		strd	r2, [r1]
+ 400:Controller_ValueDomain_TEST.c **** 
+ 892              		.loc 1 400 0
+ 893 062c C4E90067 		strd	r6, [r4]
+ 418:Controller_ValueDomain_TEST.c **** 
+ 894              		.loc 1 418 0
+ 895 0630 DDE90801 		ldrd	r0, [sp, #32]
+ 896 0634 FFF7FEFF 		bl	__aeabi_dadd
+ 897              	.LVL72:
+ 898 0638 0022     		movs	r2, #0
+ 899 063a 504B     		ldr	r3, .L101+44
+ 900 063c FFF7FEFF 		bl	__aeabi_dmul
+ 901              	.LVL73:
+ 902 0640 4246     		mov	r2, r8
+ 903 0642 4B46     		mov	r3, r9
+ 904 0644 FFF7FEFF 		bl	__aeabi_dmul
+ 905              	.LVL74:
+ 906 0648 3B46     		mov	r3, r7
+ 907 064a 3246     		mov	r2, r6
+ 908 064c FFF7FEFF 		bl	__aeabi_dadd
+ 909              	.LVL75:
+ 424:Controller_ValueDomain_TEST.c ****   }
+ 910              		.loc 1 424 0
+ 911 0650 9DED087B 		vldr.64	d7, [sp, #32]
+ 417:Controller_ValueDomain_TEST.c ****       (rx_data_t_steerA_s - rx_data_prev_t_steerA_s) + delta_a_est_current_s;
+ 912              		.loc 1 417 0
+ 913 0654 4D4B     		ldr	r3, .L101+60
+ 424:Controller_ValueDomain_TEST.c ****   }
+ 914              		.loc 1 424 0
+ 915 0656 8AED207B 		vstr.64	d7, [r10, #128]
+ 421:Controller_ValueDomain_TEST.c **** 
+ 916              		.loc 1 421 0
+ 917 065a CAE90A01 		strd	r0, [r10, #40]
+ 417:Controller_ValueDomain_TEST.c ****       (rx_data_t_steerA_s - rx_data_prev_t_steerA_s) + delta_a_est_current_s;
+ 918              		.loc 1 417 0
+ 919 065e C3E90001 		strd	r0, [r3]
+ 920              	.L10:
+ 623:Controller_ValueDomain_TEST.c ****     /* Saturate: '<S26>/Saturation' incorporates:
+ 921              		.loc 1 623 0
+ 922 0662 0022     		movs	r2, #0
+ 923 0664 4A4B     		ldr	r3, .L101+64
+ 924 0666 DDE90201 		ldrd	r0, [sp, #8]
+ 925 066a FFF7FEFF 		bl	__aeabi_dcmpeq
+ 926              	.LVL76:
+ 927 066e 0028     		cmp	r0, #0
+ 928 0670 00F07781 		beq	.L12
+ 627:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr = 5.0;
+ 929              		.loc 1 627 0
+ 930 0674 DAE93845 		ldrd	r4, [r10, #224]
+ 931 0678 464F     		ldr	r7, .L101+68
+ 932 067a DFF83881 		ldr	r8, .L101+100
+ 933 067e 0026     		movs	r6, #0
+ 934 0680 2046     		mov	r0, r4
+ 935 0682 2946     		mov	r1, r5
+ 936 0684 3246     		mov	r2, r6
+ 937 0686 3B46     		mov	r3, r7
+ 938 0688 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 939              	.LVL77:
+ 940 068c 0028     		cmp	r0, #0
+ 941 068e 5AD1     		bne	.L89
+ 629:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr = (-5.0);
+ 942              		.loc 1 629 0
+ 943 0690 414F     		ldr	r7, .L101+72
+ 944 0692 0026     		movs	r6, #0
+ 945 0694 2046     		mov	r0, r4
+ 946 0696 2946     		mov	r1, r5
+ 947 0698 3246     		mov	r2, r6
+ 948 069a 3B46     		mov	r3, r7
+ 949 069c FFF7FEFF 		bl	__aeabi_dcmplt
+ 950              	.LVL78:
+ 951 06a0 0028     		cmp	r0, #0
+ 952 06a2 50D1     		bne	.L89
+ 632:Controller_ValueDomain_TEST.c ****     }
+ 953              		.loc 1 632 0
+ 954 06a4 C8E94645 		strd	r4, [r8, #280]
+ 955              	.L19:
+ 640:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar = 5.0;
+ 956              		.loc 1 640 0
+ 957 06a8 DAE93C45 		ldrd	r4, [r10, #240]
+ 958 06ac 394F     		ldr	r7, .L101+68
+ 959 06ae DFF80481 		ldr	r8, .L101+100
+ 960 06b2 0026     		movs	r6, #0
+ 961 06b4 2046     		mov	r0, r4
+ 962 06b6 2946     		mov	r1, r5
+ 963 06b8 3246     		mov	r2, r6
+ 964 06ba 3B46     		mov	r3, r7
+ 965 06bc FFF7FEFF 		bl	__aeabi_dcmpgt
+ 966              	.LVL79:
+ 967 06c0 0028     		cmp	r0, #0
+ 968 06c2 7FD1     		bne	.L90
+ 642:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar = (-5.0);
+ 969              		.loc 1 642 0
+ 970 06c4 344F     		ldr	r7, .L101+72
+ 971 06c6 0026     		movs	r6, #0
+ 972 06c8 2046     		mov	r0, r4
+ 973 06ca 2946     		mov	r1, r5
+ 974 06cc 3246     		mov	r2, r6
+ 975 06ce 3B46     		mov	r3, r7
+ 976 06d0 FFF7FEFF 		bl	__aeabi_dcmplt
+ 977              	.LVL80:
+ 978 06d4 0028     		cmp	r0, #0
+ 979 06d6 75D1     		bne	.L90
+ 645:Controller_ValueDomain_TEST.c ****     }
+ 980              		.loc 1 645 0
+ 981 06d8 C8E94A45 		strd	r4, [r8, #296]
+ 982              	.L24:
+ 653:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fl = 5.0;
+ 983              		.loc 1 653 0
+ 984 06dc DAE93A45 		ldrd	r4, [r10, #232]
+ 985 06e0 2C4F     		ldr	r7, .L101+68
+ 986 06e2 DFF8D080 		ldr	r8, .L101+100
+ 987 06e6 0026     		movs	r6, #0
+ 988 06e8 2046     		mov	r0, r4
+ 989 06ea 2946     		mov	r1, r5
+ 990 06ec 3246     		mov	r2, r6
+ 991 06ee 3B46     		mov	r3, r7
+ 992 06f0 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 993              	.LVL81:
+ 994 06f4 0028     		cmp	r0, #0
+ 995 06f6 62D1     		bne	.L91
+ 655:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fl = (-5.0);
+ 996              		.loc 1 655 0
+ 997 06f8 274F     		ldr	r7, .L101+72
+ 998 06fa 0026     		movs	r6, #0
+ 999 06fc 2046     		mov	r0, r4
+ 1000 06fe 2946     		mov	r1, r5
+ 1001 0700 3246     		mov	r2, r6
+ 1002 0702 3B46     		mov	r3, r7
+ 1003 0704 FFF7FEFF 		bl	__aeabi_dcmplt
+ 1004              	.LVL82:
+ 1005 0708 0028     		cmp	r0, #0
+ 1006 070a 58D1     		bne	.L91
+ 658:Controller_ValueDomain_TEST.c ****     }
+ 1007              		.loc 1 658 0
+ 1008 070c C8E94845 		strd	r4, [r8, #288]
+ 1009              	.L29:
+ 666:Controller_ValueDomain_TEST.c ****       rtDWork.torque_al = 5.0;
+ 1010              		.loc 1 666 0
+ 1011 0710 DAE94045 		ldrd	r4, [r10, #256]
+ 1012 0714 1F4F     		ldr	r7, .L101+68
+ 1013 0716 DFF89C80 		ldr	r8, .L101+100
+ 1014 071a 0026     		movs	r6, #0
+ 1015 071c 2046     		mov	r0, r4
+ 1016 071e 2946     		mov	r1, r5
+ 1017 0720 3246     		mov	r2, r6
+ 1018 0722 3B46     		mov	r3, r7
+ 1019 0724 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 1020              	.LVL83:
+ 1021 0728 0028     		cmp	r0, #0
+ 1022 072a 45D1     		bne	.L92
+ 668:Controller_ValueDomain_TEST.c ****       rtDWork.torque_al = (-5.0);
+ 1023              		.loc 1 668 0
+ 1024 072c 1A4F     		ldr	r7, .L101+72
+ 1025 072e 0026     		movs	r6, #0
+ 1026 0730 2046     		mov	r0, r4
+ 1027 0732 2946     		mov	r1, r5
+ 1028 0734 3246     		mov	r2, r6
+ 1029 0736 3B46     		mov	r3, r7
+ 1030 0738 FFF7FEFF 		bl	__aeabi_dcmplt
+ 1031              	.LVL84:
+ 1032 073c 0028     		cmp	r0, #0
+ 1033 073e 3BD1     		bne	.L92
+ 671:Controller_ValueDomain_TEST.c ****     }
+ 1034              		.loc 1 671 0
+ 1035 0740 C8E94C45 		strd	r4, [r8, #304]
+ 1036 0744 97E4     		b	.L56
+ 1037              	.L89:
+ 630:Controller_ValueDomain_TEST.c ****     } else {
+ 1038              		.loc 1 630 0
+ 1039 0746 C8E94667 		strd	r6, [r8, #280]
+ 1040 074a ADE7     		b	.L19
+ 1041              	.L102:
+ 1042 074c AFF30080 		.align	3
+ 1043              	.L101:
+ 1044 0750 000000A0 		.word	-1610612736
+ 1045 0754 9999B93F 		.word	1069128089
+ 1046 0758 000000A0 		.word	-1610612736
+ 1047 075c AAAAFA3F 		.word	1073392298
+ 1048 0760 00006140 		.word	1080098816
+ 1049 0764 00000000 		.word	theta_fr_stored_s
+ 1050 0768 00000000 		.word	delta_dot_f_s
+ 1051 076c 00000000 		.word	theta_ar_stored_s
+ 1052 0770 00000000 		.word	rx_data_t_steerF_s
+ 1053 0774 00000000 		.word	delta_dot_a_s
+ 1054 0778 00000000 		.word	rx_data_prev_t_steerF_s
+ 1055 077c 0000E03F 		.word	1071644672
+ 1056 0780 00000000 		.word	delta_f_est_s
+ 1057 0784 00000000 		.word	delta_dot_a_prev_s
+ 1058 0788 00000000 		.word	delta_a_est_current_s
+ 1059 078c 00000000 		.word	delta_a_est_s
+ 1060 0790 00006E40 		.word	1080950784
+ 1061 0794 00001440 		.word	1075052544
+ 1062 0798 000014C0 		.word	-1072431104
+ 1063 079c 00000000 		.word	theta_fl_stored_s
+ 1064 07a0 00000000 		.word	theta_al_stored_s
+ 1065 07a4 00000000 		.word	delta_dot_f_prev_s
+ 1066 07a8 00000000 		.word	delta_f_est_current_s
+ 1067 07ac 00000000 		.word	rx_data_t_steerA_s
+ 1068 07b0 00000000 		.word	rx_data_prev_t_steerA_s
+ 1069 07b4 00000000 		.word	rtDWork
+ 1070              	.L92:
+ 669:Controller_ValueDomain_TEST.c ****     } else {
+ 1071              		.loc 1 669 0
+ 1072 07b8 C8E94C67 		strd	r6, [r8, #304]
+ 1073 07bc 5BE4     		b	.L56
+ 1074              	.L91:
+ 656:Controller_ValueDomain_TEST.c ****     } else {
+ 1075              		.loc 1 656 0
+ 1076 07be C8E94867 		strd	r6, [r8, #288]
+ 1077 07c2 A5E7     		b	.L29
+ 1078              	.L90:
+ 643:Controller_ValueDomain_TEST.c ****     } else {
+ 1079              		.loc 1 643 0
+ 1080 07c4 C8E94A67 		strd	r6, [r8, #296]
+ 1081 07c8 88E7     		b	.L24
+ 1082              	.L79:
+ 437:Controller_ValueDomain_TEST.c ****     /* Sum: '<S24>/Minus' incorporates:
+ 1083              		.loc 1 437 0
+ 1084 07ca 0022     		movs	r2, #0
+ 1085 07cc B84B     		ldr	r3, .L103+8
+ 1086 07ce DDE90201 		ldrd	r0, [sp, #8]
+ 1087 07d2 FFF7FEFF 		bl	__aeabi_dcmpeq
+ 1088              	.LVL85:
+ 1089 07d6 0028     		cmp	r0, #0
+ 1090 07d8 3FF435AC 		beq	.L4
+ 442:Controller_ValueDomain_TEST.c **** 
+ 1091              		.loc 1 442 0
+ 1092 07dc DAE90823 		ldrd	r2, [r10, #32]
+ 1093 07e0 DAE91801 		ldrd	r0, [r10, #96]
+ 1094 07e4 FFF7FEFF 		bl	__aeabi_dsub
+ 1095              	.LVL86:
+ 448:Controller_ValueDomain_TEST.c **** 
+ 1096              		.loc 1 448 0
+ 1097 07e8 DAE90A23 		ldrd	r2, [r10, #40]
+ 442:Controller_ValueDomain_TEST.c **** 
+ 1098              		.loc 1 442 0
+ 1099 07ec 8046     		mov	r8, r0
+ 1100 07ee 8946     		mov	r9, r1
+ 1101              	.LVL87:
+ 448:Controller_ValueDomain_TEST.c **** 
+ 1102              		.loc 1 448 0
+ 1103 07f0 DAE92C01 		ldrd	r0, [r10, #176]
+ 1104 07f4 FFF7FEFF 		bl	__aeabi_dsub
+ 1105              	.LVL88:
+ 462:Controller_ValueDomain_TEST.c **** 
+ 1106              		.loc 1 462 0
+ 1107 07f8 DAE91623 		ldrd	r2, [r10, #88]
+ 448:Controller_ValueDomain_TEST.c **** 
+ 1108              		.loc 1 448 0
+ 1109 07fc CDE90001 		strd	r0, [sp]
+ 1110              	.LVL89:
+ 462:Controller_ValueDomain_TEST.c **** 
+ 1111              		.loc 1 462 0
+ 1112 0800 DAE91401 		ldrd	r0, [r10, #80]
+ 1113 0804 FFF7FEFF 		bl	__aeabi_dsub
+ 1114              	.LVL90:
+ 461:Controller_ValueDomain_TEST.c ****       0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1115              		.loc 1 461 0
+ 1116 0808 DAE92667 		ldrd	r6, [r10, #152]
+ 462:Controller_ValueDomain_TEST.c **** 
+ 1117              		.loc 1 462 0
+ 1118 080c 0446     		mov	r4, r0
+ 1119 080e 0D46     		mov	r5, r1
+ 461:Controller_ValueDomain_TEST.c ****       0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1120              		.loc 1 461 0
+ 1121 0810 3246     		mov	r2, r6
+ 1122 0812 3B46     		mov	r3, r7
+ 1123 0814 4046     		mov	r0, r8
+ 1124 0816 4946     		mov	r1, r9
+ 1125 0818 FFF7FEFF 		bl	__aeabi_dadd
+ 1126              	.LVL91:
+ 1127 081c 0022     		movs	r2, #0
+ 1128 081e A54B     		ldr	r3, .L103+12
+ 1129 0820 FFF7FEFF 		bl	__aeabi_dmul
+ 1130              	.LVL92:
+ 1131 0824 2246     		mov	r2, r4
+ 1132 0826 2B46     		mov	r3, r5
+ 1133 0828 CDE90645 		strd	r4, [sp, #24]
+ 1134 082c FFF7FEFF 		bl	__aeabi_dmul
+ 1135              	.LVL93:
+ 1136 0830 DAE92A23 		ldrd	r2, [r10, #168]
+ 1137 0834 FFF7FEFF 		bl	__aeabi_dadd
+ 1138              	.LVL94:
+ 486:Controller_ValueDomain_TEST.c ****       * 0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1139              		.loc 1 486 0
+ 1140 0838 9AED287B 		vldr.64	d7, [r10, #160]
+ 461:Controller_ValueDomain_TEST.c ****       0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1141              		.loc 1 461 0
+ 1142 083c 0446     		mov	r4, r0
+ 486:Controller_ValueDomain_TEST.c ****       * 0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1143              		.loc 1 486 0
+ 1144 083e 53EC172B 		vmov	r2, r3, d7
+ 461:Controller_ValueDomain_TEST.c ****       0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1145              		.loc 1 461 0
+ 1146 0842 0D46     		mov	r5, r1
+ 486:Controller_ValueDomain_TEST.c ****       * 0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1147              		.loc 1 486 0
+ 1148 0844 DDE90001 		ldrd	r0, [sp]
+ 1149 0848 8DED047B 		vstr.64	d7, [sp, #16]
+ 461:Controller_ValueDomain_TEST.c ****       0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1150              		.loc 1 461 0
+ 1151 084c CAE92A45 		strd	r4, [r10, #168]
+ 1152              	.LVL95:
+ 486:Controller_ValueDomain_TEST.c ****       * 0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1153              		.loc 1 486 0
+ 1154 0850 FFF7FEFF 		bl	__aeabi_dadd
+ 1155              	.LVL96:
+ 1156 0854 0022     		movs	r2, #0
+ 1157 0856 974B     		ldr	r3, .L103+12
+ 1158 0858 FFF7FEFF 		bl	__aeabi_dmul
+ 1159              	.LVL97:
+ 1160 085c DDE90623 		ldrd	r2, [sp, #24]
+ 1161 0860 FFF7FEFF 		bl	__aeabi_dmul
+ 1162              	.LVL98:
+ 1163 0864 DAE92E23 		ldrd	r2, [r10, #184]
+ 1164 0868 FFF7FEFF 		bl	__aeabi_dadd
+ 1165              	.LVL99:
+ 504:Controller_ValueDomain_TEST.c **** 
+ 1166              		.loc 1 504 0
+ 1167 086c 9DED007B 		vldr.64	d7, [sp]
+ 486:Controller_ValueDomain_TEST.c ****       * 0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1168              		.loc 1 486 0
+ 1169 0870 CDE90801 		strd	r0, [sp, #32]
+ 504:Controller_ValueDomain_TEST.c **** 
+ 1170              		.loc 1 504 0
+ 1171 0874 8AED287B 		vstr.64	d7, [r10, #160]
+ 514:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr_integral) + torque_f_k_d * torque_fr_derivative;
+ 1172              		.loc 1 514 0
+ 1173 0878 8F4B     		ldr	r3, .L103+16
+ 486:Controller_ValueDomain_TEST.c ****       * 0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1174              		.loc 1 486 0
+ 1175 087a 9DED087B 		vldr.64	d7, [sp, #32]
+ 515:Controller_ValueDomain_TEST.c **** 
+ 1176              		.loc 1 515 0
+ 1177 087e D3E90023 		ldrd	r2, [r3]
+ 1178 0882 4046     		mov	r0, r8
+ 1179 0884 4946     		mov	r1, r9
+ 486:Controller_ValueDomain_TEST.c ****       * 0.5 * (rtDWork.rx_data_time - rtDWork.rx_data_prev_time);
+ 1180              		.loc 1 486 0
+ 1181 0886 8AED2E7B 		vstr.64	d7, [r10, #184]
+ 1182              	.LVL100:
+ 501:Controller_ValueDomain_TEST.c **** 
+ 1183              		.loc 1 501 0
+ 1184 088a CAE92689 		strd	r8, [r10, #152]
+ 515:Controller_ValueDomain_TEST.c **** 
+ 1185              		.loc 1 515 0
+ 1186 088e FFF7FEFF 		bl	__aeabi_dmul
+ 1187              	.LVL101:
+ 514:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr_integral) + torque_f_k_d * torque_fr_derivative;
+ 1188              		.loc 1 514 0
+ 1189 0892 8A4B     		ldr	r3, .L103+20
+ 515:Controller_ValueDomain_TEST.c **** 
+ 1190              		.loc 1 515 0
+ 1191 0894 CDE90A01 		strd	r0, [sp, #40]
+ 1192 0898 D3E90023 		ldrd	r2, [r3]
+ 1193 089c 2046     		mov	r0, r4
+ 1194 089e 2946     		mov	r1, r5
+ 1195 08a0 FFF7FEFF 		bl	__aeabi_dmul
+ 1196              	.LVL102:
+ 1197 08a4 0246     		mov	r2, r0
+ 1198 08a6 0B46     		mov	r3, r1
+ 1199 08a8 DDE90A01 		ldrd	r0, [sp, #40]
+ 1200 08ac FFF7FEFF 		bl	__aeabi_dadd
+ 1201              	.LVL103:
+ 1202 08b0 3246     		mov	r2, r6
+ 1203 08b2 0446     		mov	r4, r0
+ 1204 08b4 0D46     		mov	r5, r1
+ 1205 08b6 3B46     		mov	r3, r7
+ 1206 08b8 4046     		mov	r0, r8
+ 1207 08ba 4946     		mov	r1, r9
+ 1208 08bc FFF7FEFF 		bl	__aeabi_dsub
+ 1209              	.LVL104:
+ 1210 08c0 DDE90689 		ldrd	r8, [sp, #24]
+ 1211              	.LVL105:
+ 1212 08c4 4246     		mov	r2, r8
+ 1213 08c6 4B46     		mov	r3, r9
+ 1214 08c8 FFF7FEFF 		bl	__aeabi_ddiv
+ 1215              	.LVL106:
+ 1216 08cc 7C4B     		ldr	r3, .L103+24
+ 1217 08ce D3E90023 		ldrd	r2, [r3]
+ 1218 08d2 FFF7FEFF 		bl	__aeabi_dmul
+ 1219              	.LVL107:
+ 1220 08d6 0246     		mov	r2, r0
+ 1221 08d8 0B46     		mov	r3, r1
+ 1222 08da 2046     		mov	r0, r4
+ 1223 08dc 2946     		mov	r1, r5
+ 1224 08de FFF7FEFF 		bl	__aeabi_dadd
+ 1225              	.LVL108:
+ 525:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar_integral) + torque_a_k_d * torque_ar_derivative;
+ 1226              		.loc 1 525 0
+ 1227 08e2 784B     		ldr	r3, .L103+28
+ 515:Controller_ValueDomain_TEST.c **** 
+ 1228              		.loc 1 515 0
+ 1229 08e4 0446     		mov	r4, r0
+ 1230 08e6 0D46     		mov	r5, r1
+ 526:Controller_ValueDomain_TEST.c **** 
+ 1231              		.loc 1 526 0
+ 1232 08e8 D3E90023 		ldrd	r2, [r3]
+ 1233 08ec DDE90001 		ldrd	r0, [sp]
+ 514:Controller_ValueDomain_TEST.c ****       rtDWork.torque_fr_integral) + torque_f_k_d * torque_fr_derivative;
+ 1234              		.loc 1 514 0
+ 1235 08f0 CAE91A45 		strd	r4, [r10, #104]
+ 526:Controller_ValueDomain_TEST.c **** 
+ 1236              		.loc 1 526 0
+ 1237 08f4 FFF7FEFF 		bl	__aeabi_dmul
+ 1238              	.LVL109:
+ 525:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar_integral) + torque_a_k_d * torque_ar_derivative;
+ 1239              		.loc 1 525 0
+ 1240 08f8 734B     		ldr	r3, .L103+32
+ 526:Controller_ValueDomain_TEST.c **** 
+ 1241              		.loc 1 526 0
+ 1242 08fa 0646     		mov	r6, r0
+ 1243 08fc 0F46     		mov	r7, r1
+ 1244 08fe D3E90023 		ldrd	r2, [r3]
+ 1245 0902 DDE90801 		ldrd	r0, [sp, #32]
+ 1246 0906 FFF7FEFF 		bl	__aeabi_dmul
+ 1247              	.LVL110:
+ 1248 090a 0246     		mov	r2, r0
+ 1249 090c 0B46     		mov	r3, r1
+ 1250 090e 3046     		mov	r0, r6
+ 1251 0910 3946     		mov	r1, r7
+ 1252 0912 FFF7FEFF 		bl	__aeabi_dadd
+ 1253              	.LVL111:
+ 1254 0916 DDE90423 		ldrd	r2, [sp, #16]
+ 1255 091a 0646     		mov	r6, r0
+ 1256 091c 0F46     		mov	r7, r1
+ 1257 091e DDE90001 		ldrd	r0, [sp]
+ 1258 0922 FFF7FEFF 		bl	__aeabi_dsub
+ 1259              	.LVL112:
+ 1260 0926 4246     		mov	r2, r8
+ 1261 0928 4B46     		mov	r3, r9
+ 1262 092a FFF7FEFF 		bl	__aeabi_ddiv
+ 1263              	.LVL113:
+ 1264 092e 674B     		ldr	r3, .L103+36
+ 1265 0930 D3E90023 		ldrd	r2, [r3]
+ 1266 0934 FFF7FEFF 		bl	__aeabi_dmul
+ 1267              	.LVL114:
+ 1268 0938 0B46     		mov	r3, r1
+ 1269 093a 0246     		mov	r2, r0
+ 1270 093c 3946     		mov	r1, r7
+ 1271 093e 3046     		mov	r0, r6
+ 1272 0940 FFF7FEFF 		bl	__aeabi_dadd
+ 1273              	.LVL115:
+ 525:Controller_ValueDomain_TEST.c ****       rtDWork.torque_ar_integral) + torque_a_k_d * torque_ar_derivative;
+ 1274              		.loc 1 525 0
+ 1275 0944 CAE92201 		strd	r0, [r10, #136]
+ 532:Controller_ValueDomain_TEST.c **** 
+ 1276              		.loc 1 532 0
+ 1277 0948 2646     		mov	r6, r4
+ 538:Controller_ValueDomain_TEST.c ****   }
+ 1278              		.loc 1 538 0
+ 1279 094a 01F10043 		add	r3, r1, #-2147483648
+ 532:Controller_ValueDomain_TEST.c **** 
+ 1280              		.loc 1 532 0
+ 1281 094e 05F10044 		add	r4, r5, #-2147483648
+ 1282 0952 CAF87060 		str	r6, [r10, #112]
+ 1283 0956 CAF87440 		str	r4, [r10, #116]
+ 538:Controller_ValueDomain_TEST.c ****   }
+ 1284              		.loc 1 538 0
+ 1285 095a CAF89000 		str	r0, [r10, #144]
+ 1286 095e CAF89430 		str	r3, [r10, #148]
+ 1287              	.LVL116:
+ 1288              	.L12:
+ 687:Controller_ValueDomain_TEST.c ****     /* Gain: '<S29>/Gain' incorporates:
+ 1289              		.loc 1 687 0
+ 1290 0962 DDE90201 		ldrd	r0, [sp, #8]
+ 1291 0966 0022     		movs	r2, #0
+ 1292 0968 594B     		ldr	r3, .L103+40
+ 1293 096a FFF7FEFF 		bl	__aeabi_dcmpeq
+ 1294              	.LVL117:
+ 1295 096e 0028     		cmp	r0, #0
+ 1296 0970 3FF481AB 		beq	.L56
+ 692:Controller_ValueDomain_TEST.c **** 
+ 1297              		.loc 1 692 0
+ 1298 0974 0022     		movs	r2, #0
+ 1299 0976 574B     		ldr	r3, .L103+44
+ 1300 0978 DAE94601 		ldrd	r0, [r10, #280]
+ 1301 097c FFF7FEFF 		bl	__aeabi_dmul
+ 1302              	.LVL118:
+ 700:Controller_ValueDomain_TEST.c ****       0.26666666666666666;
+ 1303              		.loc 1 700 0
+ 1304 0980 0022     		movs	r2, #0
+ 692:Controller_ValueDomain_TEST.c **** 
+ 1305              		.loc 1 692 0
+ 1306 0982 0646     		mov	r6, r0
+ 1307 0984 0F46     		mov	r7, r1
+ 1308              	.LVL119:
+ 700:Controller_ValueDomain_TEST.c ****       0.26666666666666666;
+ 1309              		.loc 1 700 0
+ 1310 0986 534B     		ldr	r3, .L103+44
+ 1311 0988 DAE94801 		ldrd	r0, [r10, #288]
+ 1312 098c FFF7FEFF 		bl	__aeabi_dmul
+ 1313              	.LVL120:
+ 1314 0990 CDE90601 		strd	r0, [sp, #24]
+ 1315 0994 0246     		mov	r2, r0
+ 1316 0996 0B46     		mov	r3, r1
+ 1317 0998 3046     		mov	r0, r6
+ 1318 099a 3946     		mov	r1, r7
+ 1319 099c FFF7FEFF 		bl	__aeabi_dsub
+ 1320              	.LVL121:
+ 1321 09a0 4FF00052 		mov	r2, #536870912
+ 1322 09a4 4C4B     		ldr	r3, .L103+48
+ 1323 09a6 FFF7FEFF 		bl	__aeabi_dmul
+ 1324              	.LVL122:
+ 710:Controller_ValueDomain_TEST.c ****       0.26666666666666666;
+ 1325              		.loc 1 710 0
+ 1326 09aa 0022     		movs	r2, #0
+ 700:Controller_ValueDomain_TEST.c ****       0.26666666666666666;
+ 1327              		.loc 1 700 0
+ 1328 09ac CDE90201 		strd	r0, [sp, #8]
+ 1329              	.LVL123:
+ 710:Controller_ValueDomain_TEST.c ****       0.26666666666666666;
+ 1330              		.loc 1 710 0
+ 1331 09b0 484B     		ldr	r3, .L103+44
+ 1332 09b2 DAE94A01 		ldrd	r0, [r10, #296]
+ 1333 09b6 FFF7FEFF 		bl	__aeabi_dmul
+ 1334              	.LVL124:
+ 1335 09ba 0022     		movs	r2, #0
+ 1336 09bc 0446     		mov	r4, r0
+ 1337 09be 0D46     		mov	r5, r1
+ 1338 09c0 444B     		ldr	r3, .L103+44
+ 1339 09c2 DAE94C01 		ldrd	r0, [r10, #304]
+ 1340 09c6 FFF7FEFF 		bl	__aeabi_dmul
+ 1341              	.LVL125:
+ 1342 09ca 0A46     		mov	r2, r1
+ 1343 09cc 0146     		mov	r1, r0
+ 1344 09ce CDE90A12 		strd	r1, [sp, #40]
+ 1345 09d2 1346     		mov	r3, r2
+ 1346 09d4 2946     		mov	r1, r5
+ 1347 09d6 0246     		mov	r2, r0
+ 1348 09d8 2046     		mov	r0, r4
+ 1349 09da CDE90845 		strd	r4, [sp, #32]
+ 1350 09de FFF7FEFF 		bl	__aeabi_dsub
+ 1351              	.LVL126:
+ 1352 09e2 4FF00052 		mov	r2, #536870912
+ 1353 09e6 3C4B     		ldr	r3, .L103+48
+ 1354 09e8 FFF7FEFF 		bl	__aeabi_dmul
+ 1355              	.LVL127:
+ 723:Controller_ValueDomain_TEST.c **** 
+ 1356              		.loc 1 723 0
+ 1357 09ec DAE91623 		ldrd	r2, [r10, #88]
+ 710:Controller_ValueDomain_TEST.c ****       0.26666666666666666;
+ 1358              		.loc 1 710 0
+ 1359 09f0 0446     		mov	r4, r0
+ 1360 09f2 0D46     		mov	r5, r1
+ 1361              	.LVL128:
+ 723:Controller_ValueDomain_TEST.c **** 
+ 1362              		.loc 1 723 0
+ 1363 09f4 DAE91401 		ldrd	r0, [r10, #80]
+ 1364 09f8 FFF7FEFF 		bl	__aeabi_dsub
+ 1365              	.LVL129:
+ 734:Controller_ValueDomain_TEST.c ****       0.5 * v_integral_s_tmp;
+ 1366              		.loc 1 734 0
+ 1367 09fc DAE95423 		ldrd	r2, [r10, #336]
+ 723:Controller_ValueDomain_TEST.c **** 
+ 1368              		.loc 1 723 0
+ 1369 0a00 8046     		mov	r8, r0
+ 1370 0a02 8946     		mov	r9, r1
+ 1371              	.LVL130:
+ 734:Controller_ValueDomain_TEST.c ****       0.5 * v_integral_s_tmp;
+ 1372              		.loc 1 734 0
+ 1373 0a04 DDE90201 		ldrd	r0, [sp, #8]
+ 1374 0a08 FFF7FEFF 		bl	__aeabi_dadd
+ 1375              	.LVL131:
+ 1376 0a0c 0022     		movs	r2, #0
+ 1377 0a0e 294B     		ldr	r3, .L103+12
+ 1378 0a10 FFF7FEFF 		bl	__aeabi_dmul
+ 1379              	.LVL132:
+ 1380 0a14 4246     		mov	r2, r8
+ 1381 0a16 4B46     		mov	r3, r9
+ 1382 0a18 FFF7FEFF 		bl	__aeabi_dmul
+ 1383              	.LVL133:
+ 1384 0a1c DAE94E23 		ldrd	r2, [r10, #312]
+ 1385 0a20 FFF7FEFF 		bl	__aeabi_dadd
+ 1386              	.LVL134:
+ 1387 0a24 CDE90401 		strd	r0, [sp, #16]
+ 1388 0a28 9DED047B 		vldr.64	d7, [sp, #16]
+ 745:Controller_ValueDomain_TEST.c ****       * v_integral_s_tmp;
+ 1389              		.loc 1 745 0
+ 1390 0a2c DAE95623 		ldrd	r2, [r10, #344]
+ 1391 0a30 2046     		mov	r0, r4
+ 1392 0a32 2946     		mov	r1, r5
+ 734:Controller_ValueDomain_TEST.c ****       0.5 * v_integral_s_tmp;
+ 1393              		.loc 1 734 0
+ 1394 0a34 8AED4E7B 		vstr.64	d7, [r10, #312]
+ 745:Controller_ValueDomain_TEST.c ****       * v_integral_s_tmp;
+ 1395              		.loc 1 745 0
+ 1396 0a38 FFF7FEFF 		bl	__aeabi_dadd
+ 1397              	.LVL135:
+ 1398 0a3c 0022     		movs	r2, #0
+ 1399 0a3e 1D4B     		ldr	r3, .L103+12
+ 1400 0a40 FFF7FEFF 		bl	__aeabi_dmul
+ 1401              	.LVL136:
+ 1402 0a44 4246     		mov	r2, r8
+ 1403 0a46 4B46     		mov	r3, r9
+ 1404 0a48 CDE90089 		strd	r8, [sp]
+ 1405 0a4c FFF7FEFF 		bl	__aeabi_dmul
+ 1406              	.LVL137:
+ 1407 0a50 DAE95223 		ldrd	r2, [r10, #328]
+ 1408 0a54 FFF7FEFF 		bl	__aeabi_dadd
+ 1409              	.LVL138:
+ 749:Controller_ValueDomain_TEST.c **** 
+ 1410              		.loc 1 749 0
+ 1411 0a58 9DED027B 		vldr.64	d7, [sp, #8]
+ 745:Controller_ValueDomain_TEST.c ****       * v_integral_s_tmp;
+ 1412              		.loc 1 745 0
+ 1413 0a5c 8046     		mov	r8, r0
+ 1414              	.LVL139:
+ 1415 0a5e 8946     		mov	r9, r1
+ 764:Controller_ValueDomain_TEST.c ****                     rtDWork.torque_ar) + 10.0 * rtDWork.torque_al) * 0.01;
+ 1416              		.loc 1 764 0
+ 1417 0a60 DDE90623 		ldrd	r2, [sp, #24]
+ 1418 0a64 3046     		mov	r0, r6
+ 1419 0a66 3946     		mov	r1, r7
+ 749:Controller_ValueDomain_TEST.c **** 
+ 1420              		.loc 1 749 0
+ 1421 0a68 8AED547B 		vstr.64	d7, [r10, #336]
+ 752:Controller_ValueDomain_TEST.c **** 
+ 1422              		.loc 1 752 0
+ 1423 0a6c CAE95645 		strd	r4, [r10, #344]
+ 745:Controller_ValueDomain_TEST.c ****       * v_integral_s_tmp;
+ 1424              		.loc 1 745 0
+ 1425 0a70 CAE95289 		strd	r8, [r10, #328]
+ 764:Controller_ValueDomain_TEST.c ****                     rtDWork.torque_ar) + 10.0 * rtDWork.torque_al) * 0.01;
+ 1426              		.loc 1 764 0
+ 1427 0a74 FFF7FEFF 		bl	__aeabi_dadd
+ 1428              	.LVL140:
+ 1429 0a78 DDE90823 		ldrd	r2, [sp, #32]
+ 1430 0a7c FFF7FEFF 		bl	__aeabi_dadd
+ 1431              	.LVL141:
+ 1432 0a80 DDE90A23 		ldrd	r2, [sp, #40]
+ 1433 0a84 FFF7FEFF 		bl	__aeabi_dadd
+ 1434              	.LVL142:
+ 1435 0a88 07A3     		adr	r3, .L103
+ 1436 0a8a D3E90023 		ldrd	r2, [r3]
+ 1437 0a8e FFF7FEFF 		bl	__aeabi_dmul
+ 1438              	.LVL143:
+ 776:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp;
+ 1439              		.loc 1 776 0
+ 1440 0a92 DAE96823 		ldrd	r2, [r10, #416]
+ 764:Controller_ValueDomain_TEST.c ****                     rtDWork.torque_ar) + 10.0 * rtDWork.torque_al) * 0.01;
+ 1441              		.loc 1 764 0
+ 1442 0a96 0646     		mov	r6, r0
+ 1443              	.LVL144:
+ 1444 0a98 0F46     		mov	r7, r1
+ 1445              	.LVL145:
+ 776:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp;
+ 1446              		.loc 1 776 0
+ 1447 0a9a FFF7FEFF 		bl	__aeabi_dadd
+ 1448              	.LVL146:
+ 1449 0a9e 0022     		movs	r2, #0
+ 1450 0aa0 044B     		ldr	r3, .L103+12
+ 1451 0aa2 FFF7FEFF 		bl	__aeabi_dmul
+ 1452              	.LVL147:
+ 1453 0aa6 19E0     		b	.L104
+ 1454              	.L105:
+ 1455              		.align	3
+ 1456              	.L103:
+ 1457 0aa8 00000040 		.word	1073741824
+ 1458 0aac E17A843F 		.word	1065646817
+ 1459 0ab0 00806140 		.word	1080131584
+ 1460 0ab4 0000E03F 		.word	1071644672
+ 1461 0ab8 00000000 		.word	.LANCHOR3
+ 1462 0abc 00000000 		.word	.LANCHOR4
+ 1463 0ac0 00000000 		.word	.LANCHOR5
+ 1464 0ac4 00000000 		.word	.LANCHOR6
+ 1465 0ac8 00000000 		.word	.LANCHOR7
+ 1466 0acc 00000000 		.word	.LANCHOR8
+ 1467 0ad0 00807140 		.word	1081180160
+ 1468 0ad4 00002440 		.word	1076101120
+ 1469 0ad8 1111D13F 		.word	1070666001
+ 1470              	.L104:
+ 1471 0adc DDE90023 		ldrd	r2, [sp]
+ 1472 0ae0 FFF7FEFF 		bl	__aeabi_dmul
+ 1473              	.LVL148:
+ 1474 0ae4 DAE95823 		ldrd	r2, [r10, #352]
+ 1475 0ae8 FFF7FEFF 		bl	__aeabi_dadd
+ 1476              	.LVL149:
+ 788:Controller_ValueDomain_TEST.c **** 
+ 1477              		.loc 1 788 0
+ 1478 0aec 78A3     		adr	r3, .L106
+ 1479 0aee D3E90023 		ldrd	r2, [r3]
+ 776:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp;
+ 1480              		.loc 1 776 0
+ 1481 0af2 0446     		mov	r4, r0
+ 1482 0af4 0D46     		mov	r5, r1
+ 788:Controller_ValueDomain_TEST.c **** 
+ 1483              		.loc 1 788 0
+ 1484 0af6 DDE90401 		ldrd	r0, [sp, #16]
+ 782:Controller_ValueDomain_TEST.c **** 
+ 1485              		.loc 1 782 0
+ 1486 0afa CAE96867 		strd	r6, [r10, #416]
+ 776:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp;
+ 1487              		.loc 1 776 0
+ 1488 0afe CAE95845 		strd	r4, [r10, #352]
+ 788:Controller_ValueDomain_TEST.c **** 
+ 1489              		.loc 1 788 0
+ 1490 0b02 FFF7FEFF 		bl	__aeabi_dmul
+ 1491              	.LVL150:
+ 1492 0b06 0646     		mov	r6, r0
+ 1493              	.LVL151:
+ 1494 0b08 0F46     		mov	r7, r1
+ 1495              	.LVL152:
+ 796:Controller_ValueDomain_TEST.c **** 
+ 1496              		.loc 1 796 0
+ 1497 0b0a 0246     		mov	r2, r0
+ 1498 0b0c 0B46     		mov	r3, r1
+ 1499 0b0e 2046     		mov	r0, r4
+ 1500 0b10 2946     		mov	r1, r5
+ 1501 0b12 FFF7FEFF 		bl	__aeabi_dadd
+ 1502              	.LVL153:
+ 1503 0b16 0022     		movs	r2, #0
+ 1504 0b18 6F4B     		ldr	r3, .L106+8
+ 1505 0b1a FFF7FEFF 		bl	__aeabi_dmul
+ 1506              	.LVL154:
+ 803:Controller_ValueDomain_TEST.c **** 
+ 1507              		.loc 1 803 0
+ 1508 0b1e 3246     		mov	r2, r6
+ 796:Controller_ValueDomain_TEST.c **** 
+ 1509              		.loc 1 796 0
+ 1510 0b20 CDE90201 		strd	r0, [sp, #8]
+ 1511              	.LVL155:
+ 803:Controller_ValueDomain_TEST.c **** 
+ 1512              		.loc 1 803 0
+ 1513 0b24 3B46     		mov	r3, r7
+ 1514 0b26 2046     		mov	r0, r4
+ 1515 0b28 2946     		mov	r1, r5
+ 1516 0b2a FFF7FEFF 		bl	__aeabi_dsub
+ 1517              	.LVL156:
+ 1518 0b2e 0022     		movs	r2, #0
+ 1519 0b30 694B     		ldr	r3, .L106+8
+ 1520 0b32 FFF7FEFF 		bl	__aeabi_dmul
+ 1521              	.LVL157:
+ 809:Controller_ValueDomain_TEST.c **** 
+ 1522              		.loc 1 809 0
+ 1523 0b36 66A3     		adr	r3, .L106
+ 1524 0b38 D3E90023 		ldrd	r2, [r3]
+ 803:Controller_ValueDomain_TEST.c **** 
+ 1525              		.loc 1 803 0
+ 1526 0b3c CDE90401 		strd	r0, [sp, #16]
+ 1527              	.LVL158:
+ 809:Controller_ValueDomain_TEST.c **** 
+ 1528              		.loc 1 809 0
+ 1529 0b40 4046     		mov	r0, r8
+ 1530 0b42 4946     		mov	r1, r9
+ 1531 0b44 FFF7FEFF 		bl	__aeabi_dmul
+ 1532              	.LVL159:
+ 1533 0b48 0646     		mov	r6, r0
+ 1534 0b4a 0F46     		mov	r7, r1
+ 1535              	.LVL160:
+ 817:Controller_ValueDomain_TEST.c **** 
+ 1536              		.loc 1 817 0
+ 1537 0b4c 0246     		mov	r2, r0
+ 1538 0b4e 0B46     		mov	r3, r1
+ 1539 0b50 2046     		mov	r0, r4
+ 1540 0b52 2946     		mov	r1, r5
+ 1541 0b54 FFF7FEFF 		bl	__aeabi_dadd
+ 1542              	.LVL161:
+ 1543 0b58 0022     		movs	r2, #0
+ 1544 0b5a 5F4B     		ldr	r3, .L106+8
+ 1545 0b5c FFF7FEFF 		bl	__aeabi_dmul
+ 1546              	.LVL162:
+ 824:Controller_ValueDomain_TEST.c **** 
+ 1547              		.loc 1 824 0
+ 1548 0b60 3246     		mov	r2, r6
+ 817:Controller_ValueDomain_TEST.c **** 
+ 1549              		.loc 1 817 0
+ 1550 0b62 CDE90601 		strd	r0, [sp, #24]
+ 1551              	.LVL163:
+ 824:Controller_ValueDomain_TEST.c **** 
+ 1552              		.loc 1 824 0
+ 1553 0b66 3B46     		mov	r3, r7
+ 1554 0b68 2046     		mov	r0, r4
+ 1555 0b6a 2946     		mov	r1, r5
+ 1556 0b6c FFF7FEFF 		bl	__aeabi_dsub
+ 1557              	.LVL164:
+ 1558 0b70 0022     		movs	r2, #0
+ 1559 0b72 594B     		ldr	r3, .L106+8
+ 834:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_fr;
+ 1560              		.loc 1 834 0
+ 1561 0b74 594C     		ldr	r4, .L106+12
+ 824:Controller_ValueDomain_TEST.c **** 
+ 1562              		.loc 1 824 0
+ 1563 0b76 FFF7FEFF 		bl	__aeabi_dmul
+ 1564              	.LVL165:
+ 835:Controller_ValueDomain_TEST.c **** 
+ 1565              		.loc 1 835 0
+ 1566 0b7a DAE96023 		ldrd	r2, [r10, #384]
+ 824:Controller_ValueDomain_TEST.c **** 
+ 1567              		.loc 1 824 0
+ 1568 0b7e CDE90801 		strd	r0, [sp, #32]
+ 1569              	.LVL166:
+ 835:Controller_ValueDomain_TEST.c **** 
+ 1570              		.loc 1 835 0
+ 1571 0b82 DDE90201 		ldrd	r0, [sp, #8]
+ 1572 0b86 FFF7FEFF 		bl	__aeabi_dadd
+ 1573              	.LVL167:
+ 1574 0b8a 0022     		movs	r2, #0
+ 1575 0b8c 544B     		ldr	r3, .L106+16
+ 1576 0b8e FFF7FEFF 		bl	__aeabi_dmul
+ 1577              	.LVL168:
+ 1578 0b92 DDE90056 		ldrd	r5, [sp]
+ 1579 0b96 2A46     		mov	r2, r5
+ 1580 0b98 3346     		mov	r3, r6
+ 1581 0b9a FFF7FEFF 		bl	__aeabi_dmul
+ 1582              	.LVL169:
+ 1583 0b9e DAE93E23 		ldrd	r2, [r10, #248]
+ 1584 0ba2 FFF7FEFF 		bl	__aeabi_dadd
+ 1585              	.LVL170:
+ 1586 0ba6 0746     		mov	r7, r0
+ 1587 0ba8 8846     		mov	r8, r1
+ 838:Controller_ValueDomain_TEST.c **** 
+ 1588              		.loc 1 838 0
+ 1589 0baa 48EC177B 		vmov	d7, r7, r8
+ 835:Controller_ValueDomain_TEST.c **** 
+ 1590              		.loc 1 835 0
+ 1591 0bae CDE90A78 		strd	r7, [sp, #40]
+ 834:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_fr;
+ 1592              		.loc 1 834 0
+ 1593 0bb2 84ED007B 		vstr.64	d7, [r4]
+ 849:Controller_ValueDomain_TEST.c **** 
+ 1594              		.loc 1 849 0
+ 1595 0bb6 DAE96223 		ldrd	r2, [r10, #392]
+ 1596 0bba DDE90401 		ldrd	r0, [sp, #16]
+ 838:Controller_ValueDomain_TEST.c **** 
+ 1597              		.loc 1 838 0
+ 1598 0bbe 8AED3E7B 		vstr.64	d7, [r10, #248]
+ 849:Controller_ValueDomain_TEST.c **** 
+ 1599              		.loc 1 849 0
+ 1600 0bc2 FFF7FEFF 		bl	__aeabi_dadd
+ 1601              	.LVL171:
+ 1602 0bc6 0022     		movs	r2, #0
+ 1603 0bc8 454B     		ldr	r3, .L106+16
+ 848:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_fl;
+ 1604              		.loc 1 848 0
+ 1605 0bca 464C     		ldr	r4, .L106+20
+ 849:Controller_ValueDomain_TEST.c **** 
+ 1606              		.loc 1 849 0
+ 1607 0bcc FFF7FEFF 		bl	__aeabi_dmul
+ 1608              	.LVL172:
+ 1609 0bd0 2A46     		mov	r2, r5
+ 1610 0bd2 3346     		mov	r3, r6
+ 1611 0bd4 FFF7FEFF 		bl	__aeabi_dmul
+ 1612              	.LVL173:
+ 1613 0bd8 DAE95023 		ldrd	r2, [r10, #320]
+ 1614 0bdc FFF7FEFF 		bl	__aeabi_dadd
+ 1615              	.LVL174:
+ 1616 0be0 8046     		mov	r8, r0
+ 1617 0be2 8946     		mov	r9, r1
+ 863:Controller_ValueDomain_TEST.c **** 
+ 1618              		.loc 1 863 0
+ 1619 0be4 DAE96423 		ldrd	r2, [r10, #400]
+ 1620 0be8 DDE90601 		ldrd	r0, [sp, #24]
+ 848:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_fl;
+ 1621              		.loc 1 848 0
+ 1622 0bec C4E90089 		strd	r8, [r4]
+ 852:Controller_ValueDomain_TEST.c **** 
+ 1623              		.loc 1 852 0
+ 1624 0bf0 CAE95089 		strd	r8, [r10, #320]
+ 863:Controller_ValueDomain_TEST.c **** 
+ 1625              		.loc 1 863 0
+ 1626 0bf4 FFF7FEFF 		bl	__aeabi_dadd
+ 1627              	.LVL175:
+ 1628 0bf8 0022     		movs	r2, #0
+ 1629 0bfa 394B     		ldr	r3, .L106+16
+ 862:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_ar;
+ 1630              		.loc 1 862 0
+ 1631 0bfc 3A4C     		ldr	r4, .L106+24
+ 863:Controller_ValueDomain_TEST.c **** 
+ 1632              		.loc 1 863 0
+ 1633 0bfe FFF7FEFF 		bl	__aeabi_dmul
+ 1634              	.LVL176:
+ 1635 0c02 2A46     		mov	r2, r5
+ 1636 0c04 3346     		mov	r3, r6
+ 1637 0c06 CDE90056 		strd	r5, [sp]
+ 1638              	.LVL177:
+ 1639 0c0a FFF7FEFF 		bl	__aeabi_dmul
+ 1640              	.LVL178:
+ 1641 0c0e DAE95E23 		ldrd	r2, [r10, #376]
+ 1642 0c12 FFF7FEFF 		bl	__aeabi_dadd
+ 1643              	.LVL179:
+ 1644 0c16 0646     		mov	r6, r0
+ 1645 0c18 0F46     		mov	r7, r1
+ 877:Controller_ValueDomain_TEST.c **** 
+ 1646              		.loc 1 877 0
+ 1647 0c1a DAE96623 		ldrd	r2, [r10, #408]
+ 1648 0c1e DDE90801 		ldrd	r0, [sp, #32]
+ 862:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_ar;
+ 1649              		.loc 1 862 0
+ 1650 0c22 C4E90067 		strd	r6, [r4]
+ 866:Controller_ValueDomain_TEST.c **** 
+ 1651              		.loc 1 866 0
+ 1652 0c26 CAE95E67 		strd	r6, [r10, #376]
+ 877:Controller_ValueDomain_TEST.c **** 
+ 1653              		.loc 1 877 0
+ 1654 0c2a FFF7FEFF 		bl	__aeabi_dadd
+ 1655              	.LVL180:
+ 1656 0c2e 0022     		movs	r2, #0
+ 1657 0c30 2B4B     		ldr	r3, .L106+16
+ 1658 0c32 FFF7FEFF 		bl	__aeabi_dmul
+ 1659              	.LVL181:
+ 1660 0c36 DDE90023 		ldrd	r2, [sp]
+ 1661 0c3a FFF7FEFF 		bl	__aeabi_dmul
+ 1662              	.LVL182:
+ 1663 0c3e DAE96E23 		ldrd	r2, [r10, #440]
+ 1664 0c42 FFF7FEFF 		bl	__aeabi_dadd
+ 1665              	.LVL183:
+ 885:Controller_ValueDomain_TEST.c **** 
+ 1666              		.loc 1 885 0
+ 1667 0c46 9DED027B 		vldr.64	d7, [sp, #8]
+ 1668 0c4a 8AED607B 		vstr.64	d7, [r10, #384]
+ 890:Controller_ValueDomain_TEST.c **** 
+ 1669              		.loc 1 890 0
+ 1670 0c4e 9DED047B 		vldr.64	d7, [sp, #16]
+ 1671 0c52 8AED627B 		vstr.64	d7, [r10, #392]
+ 895:Controller_ValueDomain_TEST.c **** 
+ 1672              		.loc 1 895 0
+ 1673 0c56 9DED067B 		vldr.64	d7, [sp, #24]
+ 1674 0c5a 8AED647B 		vstr.64	d7, [r10, #400]
+ 900:Controller_ValueDomain_TEST.c **** 
+ 1675              		.loc 1 900 0
+ 1676 0c5e 9DED087B 		vldr.64	d7, [sp, #32]
+ 876:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_al;
+ 1677              		.loc 1 876 0
+ 1678 0c62 DFF888E0 		ldr	lr, .L106+28
+ 877:Controller_ValueDomain_TEST.c **** 
+ 1679              		.loc 1 877 0
+ 1680 0c66 0446     		mov	r4, r0
+ 1681 0c68 0D46     		mov	r5, r1
+ 1682              	.LVL184:
+ 900:Controller_ValueDomain_TEST.c **** 
+ 1683              		.loc 1 900 0
+ 1684 0c6a 8AED667B 		vstr.64	d7, [r10, #408]
+ 907:Controller_ValueDomain_TEST.c **** 
+ 1685              		.loc 1 907 0
+ 1686 0c6e DAE91023 		ldrd	r2, [r10, #64]
+ 1687 0c72 DDE90A01 		ldrd	r0, [sp, #40]
+ 880:Controller_ValueDomain_TEST.c **** 
+ 1688              		.loc 1 880 0
+ 1689 0c76 CAE96E45 		strd	r4, [r10, #440]
+ 876:Controller_ValueDomain_TEST.c ****       v_integral_s_tmp + rtDWork.theta_al;
+ 1690              		.loc 1 876 0
+ 1691 0c7a CEE90045 		strd	r4, [lr]
+ 907:Controller_ValueDomain_TEST.c **** 
+ 1692              		.loc 1 907 0
+ 1693 0c7e FFF7FEFF 		bl	__aeabi_dsub
+ 1694              	.LVL185:
+ 914:Controller_ValueDomain_TEST.c **** 
+ 1695              		.loc 1 914 0
+ 1696 0c82 DAE91223 		ldrd	r2, [r10, #72]
+ 907:Controller_ValueDomain_TEST.c **** 
+ 1697              		.loc 1 907 0
+ 1698 0c86 CAE95A01 		strd	r0, [r10, #360]
+ 914:Controller_ValueDomain_TEST.c **** 
+ 1699              		.loc 1 914 0
+ 1700 0c8a 4046     		mov	r0, r8
+ 1701 0c8c 4946     		mov	r1, r9
+ 1702 0c8e FFF7FEFF 		bl	__aeabi_dsub
+ 1703              	.LVL186:
+ 921:Controller_ValueDomain_TEST.c **** 
+ 1704              		.loc 1 921 0
+ 1705 0c92 DAE90C23 		ldrd	r2, [r10, #48]
+ 914:Controller_ValueDomain_TEST.c **** 
+ 1706              		.loc 1 914 0
+ 1707 0c96 CAE95C01 		strd	r0, [r10, #368]
+ 921:Controller_ValueDomain_TEST.c **** 
+ 1708              		.loc 1 921 0
+ 1709 0c9a 3046     		mov	r0, r6
+ 1710 0c9c 3946     		mov	r1, r7
+ 1711 0c9e FFF7FEFF 		bl	__aeabi_dsub
+ 1712              	.LVL187:
+ 928:Controller_ValueDomain_TEST.c **** 
+ 1713              		.loc 1 928 0
+ 1714 0ca2 DAE90E23 		ldrd	r2, [r10, #56]
+ 921:Controller_ValueDomain_TEST.c **** 
+ 1715              		.loc 1 921 0
+ 1716 0ca6 CAE96A01 		strd	r0, [r10, #424]
+ 928:Controller_ValueDomain_TEST.c **** 
+ 1717              		.loc 1 928 0
+ 1718 0caa 2046     		mov	r0, r4
+ 1719 0cac 2946     		mov	r1, r5
+ 1720 0cae FFF7FEFF 		bl	__aeabi_dsub
+ 1721              	.LVL188:
+ 933:Controller_ValueDomain_TEST.c **** 
+ 1722              		.loc 1 933 0
+ 1723 0cb2 9DED0A7B 		vldr.64	d7, [sp, #40]
+ 928:Controller_ValueDomain_TEST.c **** 
+ 1724              		.loc 1 928 0
+ 1725 0cb6 CAE96C01 		strd	r0, [r10, #432]
+ 933:Controller_ValueDomain_TEST.c **** 
+ 1726              		.loc 1 933 0
+ 1727 0cba 8AED107B 		vstr.64	d7, [r10, #64]
+ 938:Controller_ValueDomain_TEST.c **** 
+ 1728              		.loc 1 938 0
+ 1729 0cbe CAE91289 		strd	r8, [r10, #72]
+ 943:Controller_ValueDomain_TEST.c **** 
+ 1730              		.loc 1 943 0
+ 1731 0cc2 CAE90C67 		strd	r6, [r10, #48]
+ 948:Controller_ValueDomain_TEST.c ****   }
+ 1732              		.loc 1 948 0
+ 1733 0cc6 CAE90E45 		strd	r4, [r10, #56]
+ 1734 0cca FFF7D4B9 		b	.L56
+ 1735              	.L107:
+ 1736 0cce 00BF     		.align	3
+ 1737              	.L106:
+ 1738 0cd0 00000040 		.word	1073741824
+ 1739 0cd4 3333D33F 		.word	1070805811
+ 1740 0cd8 00002440 		.word	1076101120
+ 1741 0cdc 00000000 		.word	theta_fr_s
+ 1742 0ce0 0000E03F 		.word	1071644672
+ 1743 0ce4 00000000 		.word	theta_fl_s
+ 1744 0ce8 00000000 		.word	theta_ar_s
+ 1745 0cec 00000000 		.word	theta_al_s
+ 1746              		.cfi_endproc
+ 1747              	.LFE112:
+ 1749              		.section	.text.Controller_ValueDomain_TEST_initialize,"ax",%progbits
+ 1750              		.align	2
+ 1751              		.global	Controller_ValueDomain_TEST_initialize
+ 1752              		.thumb
+ 1753              		.thumb_func
+ 1755              	Controller_ValueDomain_TEST_initialize:
+ 1756              	.LFB113:
+1065:Controller_ValueDomain_TEST.c **** 
+1066:Controller_ValueDomain_TEST.c **** /* Model initialize function */
+1067:Controller_ValueDomain_TEST.c **** void Controller_ValueDomain_TEST_initialize(void)
+1068:Controller_ValueDomain_TEST.c **** {
+ 1757              		.loc 1 1068 0
+ 1758              		.cfi_startproc
+ 1759              		@ args = 0, pretend = 0, frame = 0
+ 1760              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1761 0000 38B5     		push	{r3, r4, r5, lr}
+ 1762              		.cfi_def_cfa_offset 16
+ 1763              		.cfi_offset 3, -16
+ 1764              		.cfi_offset 4, -12
+ 1765              		.cfi_offset 5, -8
+ 1766              		.cfi_offset 14, -4
+1069:Controller_ValueDomain_TEST.c ****   /* Start for DataStoreMemory: '<S8>/Data Store Memory18' */
+1070:Controller_ValueDomain_TEST.c ****   rtDWork.rx_data_time = 1.0;
+ 1767              		.loc 1 1070 0
+ 1768 0002 0F4B     		ldr	r3, .L110
+ 1769 0004 0F4D     		ldr	r5, .L110+4
+ 1770 0006 0024     		movs	r4, #0
+1071:Controller_ValueDomain_TEST.c **** 
+1072:Controller_ValueDomain_TEST.c ****   /* Start for M-S-Function: '<S17>/Level-2 M-file S-Function' */
+1073:Controller_ValueDomain_TEST.c **** 
+1074:Controller_ValueDomain_TEST.c ****   /* configure the digital output */
+1075:Controller_ValueDomain_TEST.c ****   DigoutConfigure(DIGOUT_PORTC_PIN13, DIGOUT_CFG_PUSHPULL);
+ 1771              		.loc 1 1075 0
+ 1772 0008 0121     		movs	r1, #1
+ 1773 000a 4720     		movs	r0, #71
+1070:Controller_ValueDomain_TEST.c **** 
+ 1774              		.loc 1 1070 0
+ 1775 000c C3E91445 		strd	r4, [r3, #80]
+ 1776              		.loc 1 1075 0
+ 1777 0010 FFF7FEFF 		bl	DigoutConfigure
+ 1778              	.LVL189:
+1076:Controller_ValueDomain_TEST.c **** 
+1077:Controller_ValueDomain_TEST.c ****   /* Start for M-S-Function: '<S16>/Level-2 M-file S-Function' */
+1078:Controller_ValueDomain_TEST.c **** 
+1079:Controller_ValueDomain_TEST.c ****   /* configure the digital input */
+1080:Controller_ValueDomain_TEST.c ****   DiginConfigure(DIGIN_PORTA_PIN0, DIGIN_CFG_PULLDOWN);
+ 1779              		.loc 1 1080 0
+ 1780 0014 0221     		movs	r1, #2
+ 1781 0016 4720     		movs	r0, #71
+ 1782 0018 FFF7FEFF 		bl	DiginConfigure
+ 1783              	.LVL190:
+1081:Controller_ValueDomain_TEST.c **** 
+1082:Controller_ValueDomain_TEST.c ****   /* Start for M-S-Function: '<S3>/Level-2 M-file S-Function' */
+1083:Controller_ValueDomain_TEST.c **** 
+1084:Controller_ValueDomain_TEST.c ****   /* configure the stack size for the task that executes the model */
+1085:Controller_ValueDomain_TEST.c ****   AppCtrlTaskSetStackSize((configMINIMAL_STACK_SIZE*sizeof(portBASE_TYPE)) + 0);
+ 1784              		.loc 1 1085 0
+ 1785 001c 4FF40070 		mov	r0, #512
+ 1786 0020 FFF7FEFF 		bl	AppCtrlTaskSetStackSize
+ 1787              	.LVL191:
+1086:Controller_ValueDomain_TEST.c **** 
+1087:Controller_ValueDomain_TEST.c ****   /* configure the sample time of the model in microseconds */
+1088:Controller_ValueDomain_TEST.c ****   AppCtrlTaskSetPeriod(1000);
+ 1788              		.loc 1 1088 0
+ 1789 0024 4FF47A70 		mov	r0, #1000
+ 1790 0028 FFF7FEFF 		bl	AppCtrlTaskSetPeriod
+ 1791              	.LVL192:
+1089:Controller_ValueDomain_TEST.c **** 
+1090:Controller_ValueDomain_TEST.c ****   /* Run the ADC conversions ten times faster than the Simulink model */
+1091:Controller_ValueDomain_TEST.c ****   ADCconversionTaskSetPeriod(1000/10);
+ 1792              		.loc 1 1091 0
+ 1793 002c 6420     		movs	r0, #100
+ 1794 002e FFF7FEFF 		bl	ADCconversionTaskSetPeriod
+ 1795              	.LVL193:
+1092:Controller_ValueDomain_TEST.c **** 
+1093:Controller_ValueDomain_TEST.c ****   /* Start for M-S-Function: '<S9>/Level-2 M-file S-Function' */
+1094:Controller_ValueDomain_TEST.c **** 
+1095:Controller_ValueDomain_TEST.c ****   /* initialize the measurement and calibration interface */
+1096:Controller_ValueDomain_TEST.c ****   MacUsbComInit();
+ 1796              		.loc 1 1096 0
+ 1797 0032 FFF7FEFF 		bl	MacUsbComInit
+ 1798              	.LVL194:
+1097:Controller_ValueDomain_TEST.c ****   MacInit();
+1098:Controller_ValueDomain_TEST.c **** }
+ 1799              		.loc 1 1098 0
+ 1800 0036 BDE83840 		pop	{r3, r4, r5, lr}
+ 1801              		.cfi_restore 14
+ 1802              		.cfi_restore 5
+ 1803              		.cfi_restore 4
+ 1804              		.cfi_restore 3
+ 1805              		.cfi_def_cfa_offset 0
+1097:Controller_ValueDomain_TEST.c ****   MacInit();
+ 1806              		.loc 1 1097 0
+ 1807 003a FFF7FEBF 		b	MacInit
+ 1808              	.LVL195:
+ 1809              	.L111:
+ 1810 003e 00BF     		.align	2
+ 1811              	.L110:
+ 1812 0040 00000000 		.word	rtDWork
+ 1813 0044 0000F03F 		.word	1072693248
+ 1814              		.cfi_endproc
+ 1815              	.LFE113:
+ 1817              		.global	rtM
+ 1818              		.comm	rtM_,16,4
+ 1819              		.comm	rtDWork,472,8
+ 1820              		.comm	rtB,1,4
+ 1821              		.global	HANtuneOverride
+ 1822              		.global	v_set
+ 1823              		.global	torque_f_k_p
+ 1824              		.global	torque_f_k_i
+ 1825              		.global	torque_f_k_d
+ 1826              		.global	torque_a_k_p
+ 1827              		.global	torque_a_k_i
+ 1828              		.global	torque_a_k_d
+ 1829              		.global	speed_k_p
+ 1830              		.global	speed_k_i
+ 1831              		.global	speed_k_d
+ 1832              		.global	delta_f_set
+ 1833              		.global	delta_a_set
+ 1834              		.comm	LedValue,1,1
+ 1835              		.comm	SI_CPUload,1,1
+ 1836              		.comm	SI_FreeStack,4,4
+ 1837              		.comm	SI_FreeHeap,4,4
+ 1838              		.comm	torque_al_set_s,8,8
+ 1839              		.comm	torque_ar_set_s,8,8
+ 1840              		.comm	torque_fl_set_s,8,8
+ 1841              		.comm	torque_fr_set_s,8,8
+ 1842              		.comm	v_ctreff_s,8,8
+ 1843              		.comm	v_integral_s,8,8
+ 1844              		.comm	v_est_s,8,8
+ 1845              		.comm	delta_a_est_s,8,8
+ 1846              		.comm	rx_data_prev_t_steerA_s,8,8
+ 1847              		.comm	rx_data_t_steerA_s,8,8
+ 1848              		.comm	delta_dot_a_prev_s,8,8
+ 1849              		.comm	delta_a_est_current_s,8,8
+ 1850              		.comm	delta_f_est_s,8,8
+ 1851              		.comm	rx_data_prev_t_steerF_s,8,8
+ 1852              		.comm	rx_data_t_steerF_s,8,8
+ 1853              		.comm	delta_dot_f_prev_s,8,8
+ 1854              		.comm	delta_f_est_current_s,8,8
+ 1855              		.comm	delta_dot_a_s,8,8
+ 1856              		.comm	theta_al_stored_s,8,8
+ 1857              		.comm	theta_ar_stored_s,8,8
+ 1858              		.comm	delta_dot_f_s,8,8
+ 1859              		.comm	theta_fl_stored_s,8,8
+ 1860              		.comm	theta_fr_stored_s,8,8
+ 1861              		.comm	rx_data_time_s,8,8
+ 1862              		.comm	theta_al_s,8,8
+ 1863              		.comm	theta_ar_s,8,8
+ 1864              		.comm	theta_fl_s,8,8
+ 1865              		.comm	theta_fr_s,8,8
+ 1866              		.comm	simulation_time,8,8
+ 1867              		.comm	LT_s,8,8
+ 1868              		.section	.data.delta_a_set,"aw",%progbits
+ 1869              		.align	3
+ 1870              		.set	.LANCHOR11,. + 0
+ 1873              	delta_a_set:
+ 1874 0000 00000000 		.space	8
+ 1874      00000000 
+ 1875              		.section	.data.torque_a_k_i,"aw",%progbits
+ 1876              		.align	3
+ 1877              		.set	.LANCHOR7,. + 0
+ 1880              	torque_a_k_i:
+ 1881 0000 00000000 		.space	8
+ 1881      00000000 
+ 1882              		.section	.data.torque_f_k_p,"aw",%progbits
+ 1883              		.align	3
+ 1884              		.set	.LANCHOR3,. + 0
+ 1887              	torque_f_k_p:
+ 1888 0000 00000000 		.space	8
+ 1888      00000000 
+ 1889              		.section	.data.speed_k_p,"aw",%progbits
+ 1890              		.align	3
+ 1891              		.set	.LANCHOR0,. + 0
+ 1894              	speed_k_p:
+ 1895 0000 00000000 		.space	8
+ 1895      00000000 
+ 1896              		.section	.data.torque_a_k_p,"aw",%progbits
+ 1897              		.align	3
+ 1898              		.set	.LANCHOR6,. + 0
+ 1901              	torque_a_k_p:
+ 1902 0000 00000000 		.space	8
+ 1902      00000000 
+ 1903              		.section	.rodata.rtM,"a",%progbits
+ 1904              		.align	2
+ 1907              	rtM:
+ 1908 0000 00000000 		.word	rtM_
+ 1909              		.section	.data.HANtuneOverride,"aw",%progbits
+ 1910              		.set	.LANCHOR12,. + 0
+ 1913              	HANtuneOverride:
+ 1914 0000 00       		.space	1
+ 1915              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 1916              		.align	2
+ 1917              	.LC0:
+ 1918 0000 41707043 		.ascii	"AppCtrlTask\000"
+ 1918      74726C54 
+ 1918      61736B00 
+ 1919              		.section	.data.v_set,"aw",%progbits
+ 1920              		.align	3
+ 1921              		.set	.LANCHOR9,. + 0
+ 1924              	v_set:
+ 1925 0000 00000000 		.space	8
+ 1925      00000000 
+ 1926              		.section	.data.torque_f_k_d,"aw",%progbits
+ 1927              		.align	3
+ 1928              		.set	.LANCHOR5,. + 0
+ 1931              	torque_f_k_d:
+ 1932 0000 00000000 		.space	8
+ 1932      00000000 
+ 1933              		.section	.data.delta_f_set,"aw",%progbits
+ 1934              		.align	3
+ 1935              		.set	.LANCHOR10,. + 0
+ 1938              	delta_f_set:
+ 1939 0000 00000000 		.space	8
+ 1939      00000000 
+ 1940              		.section	.data.speed_k_d,"aw",%progbits
+ 1941              		.align	3
+ 1942              		.set	.LANCHOR2,. + 0
+ 1945              	speed_k_d:
+ 1946 0000 00000000 		.space	8
+ 1946      00000000 
+ 1947              		.section	.data.torque_f_k_i,"aw",%progbits
+ 1948              		.align	3
+ 1949              		.set	.LANCHOR4,. + 0
+ 1952              	torque_f_k_i:
+ 1953 0000 00000000 		.space	8
+ 1953      00000000 
+ 1954              		.section	.data.torque_a_k_d,"aw",%progbits
+ 1955              		.align	3
+ 1956              		.set	.LANCHOR8,. + 0
+ 1959              	torque_a_k_d:
+ 1960 0000 00000000 		.space	8
+ 1960      00000000 
+ 1961              		.section	.data.speed_k_i,"aw",%progbits
+ 1962              		.align	3
+ 1963              		.set	.LANCHOR1,. + 0
+ 1966              	speed_k_i:
+ 1967 0000 00000000 		.space	8
+ 1967      00000000 
+ 1968              		.text
+ 1969              	.Letext0:
+ 1970              		.file 2 "rtwtypes.h"
+ 1971              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\arm-none-eabi\\include\\mach
+ 1972              		.file 4 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\arm-none-eabi\\include\\sys\
+ 1973              		.file 5 "../blockset/rtw/STM32/inc/STM32_E407/digout.h"
+ 1974              		.file 6 "../blockset/rtw/STM32/inc/STM32_E407/digin.h"
+ 1975              		.file 7 "Controller_ValueDomain_TEST_types.h"
+ 1976              		.file 8 "Controller_ValueDomain_TEST.h"
+ 1977              		.file 9 "../blockset/rtw/STM32/inc/STM32_E407/core_cm4.h"
+ 1978              		.file 10 "../blockset/rtw/STM32/inc/os.h"
+ 1979              		.file 11 "../blockset/rtw/STM32/inc/app.h"
+ 1980              		.file 12 "../blockset/rtw/STM32/inc/STM32_E407/anin.h"
+ 1981              		.file 13 "../blockset/rtw/STM32/inc/STM32_E407/mac.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Controller_ValueDomain_TEST.c
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:29     .text.Controller_ValueDomain_TEST_step:00000000 $t
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:34     .text.Controller_ValueDomain_TEST_step:00000000 Controller_ValueDomain_TEST_step
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:285    .text.Controller_ValueDomain_TEST_step:00000174 $d
+                            *COM*:00000008 LT_s
+                            *COM*:00000010 rtM_
+                            *COM*:00000008 simulation_time
+                            *COM*:00000001 rtB
+                            *COM*:00000001 LedValue
+                            *COM*:00000001 SI_CPUload
+                            *COM*:00000004 SI_FreeHeap
+                            *COM*:00000004 SI_FreeStack
+                            *COM*:000001d8 rtDWork
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:306    .text.Controller_ValueDomain_TEST_step:000001bc $t
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:628    .text.Controller_ValueDomain_TEST_step:00000410 $d
+                            *COM*:00000008 v_est_s
+                            *COM*:00000008 v_ctreff_s
+                            *COM*:00000008 torque_al_set_s
+                            *COM*:00000008 rx_data_time_s
+                            *COM*:00000008 v_integral_s
+                            *COM*:00000008 torque_fr_set_s
+                            *COM*:00000008 torque_fl_set_s
+                            *COM*:00000008 torque_ar_set_s
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:653    .text.Controller_ValueDomain_TEST_step:00000468 $t
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1044   .text.Controller_ValueDomain_TEST_step:00000750 $d
+                            *COM*:00000008 theta_fr_stored_s
+                            *COM*:00000008 delta_dot_f_s
+                            *COM*:00000008 theta_ar_stored_s
+                            *COM*:00000008 rx_data_t_steerF_s
+                            *COM*:00000008 delta_dot_a_s
+                            *COM*:00000008 rx_data_prev_t_steerF_s
+                            *COM*:00000008 delta_f_est_s
+                            *COM*:00000008 delta_dot_a_prev_s
+                            *COM*:00000008 delta_a_est_current_s
+                            *COM*:00000008 delta_a_est_s
+                            *COM*:00000008 theta_fl_stored_s
+                            *COM*:00000008 theta_al_stored_s
+                            *COM*:00000008 delta_dot_f_prev_s
+                            *COM*:00000008 delta_f_est_current_s
+                            *COM*:00000008 rx_data_t_steerA_s
+                            *COM*:00000008 rx_data_prev_t_steerA_s
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1072   .text.Controller_ValueDomain_TEST_step:000007b8 $t
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1457   .text.Controller_ValueDomain_TEST_step:00000aa8 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1471   .text.Controller_ValueDomain_TEST_step:00000adc $t
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1738   .text.Controller_ValueDomain_TEST_step:00000cd0 $d
+                            *COM*:00000008 theta_fr_s
+                            *COM*:00000008 theta_fl_s
+                            *COM*:00000008 theta_ar_s
+                            *COM*:00000008 theta_al_s
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1750   .text.Controller_ValueDomain_TEST_initialize:00000000 $t
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1755   .text.Controller_ValueDomain_TEST_initialize:00000000 Controller_ValueDomain_TEST_initialize
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1812   .text.Controller_ValueDomain_TEST_initialize:00000040 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1907   .rodata.rtM:00000000 rtM
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1913   .data.HANtuneOverride:00000000 HANtuneOverride
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1924   .data.v_set:00000000 v_set
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1887   .data.torque_f_k_p:00000000 torque_f_k_p
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1952   .data.torque_f_k_i:00000000 torque_f_k_i
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1931   .data.torque_f_k_d:00000000 torque_f_k_d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1901   .data.torque_a_k_p:00000000 torque_a_k_p
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1880   .data.torque_a_k_i:00000000 torque_a_k_i
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1959   .data.torque_a_k_d:00000000 torque_a_k_d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1894   .data.speed_k_p:00000000 speed_k_p
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1966   .data.speed_k_i:00000000 speed_k_i
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1945   .data.speed_k_d:00000000 speed_k_d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1938   .data.delta_f_set:00000000 delta_f_set
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1873   .data.delta_a_set:00000000 delta_a_set
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1869   .data.delta_a_set:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1876   .data.torque_a_k_i:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1883   .data.torque_f_k_p:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1890   .data.speed_k_p:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1897   .data.torque_a_k_p:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1904   .rodata.rtM:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1914   .data.HANtuneOverride:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1916   .rodata.str1.4:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1920   .data.v_set:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1927   .data.torque_f_k_d:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1934   .data.delta_f_set:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1941   .data.speed_k_d:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1948   .data.torque_f_k_i:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1955   .data.torque_a_k_d:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc5IjICM.s:1962   .data.speed_k_i:00000000 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dadd
+__aeabi_dcmpgt
+__aeabi_dcmpeq
+__aeabi_dmul
+__aeabi_dsub
+__aeabi_ddiv
+__aeabi_dcmplt
+__aeabi_f2d
+DiginGet
+OsGetCpuLoad
+OsGetFreeHeapSize
+OsGetTaskFreeStackSize
+DigoutSet
+rtConstB
+DigoutConfigure
+DiginConfigure
+AppCtrlTaskSetStackSize
+AppCtrlTaskSetPeriod
+ADCconversionTaskSetPeriod
+MacUsbComInit
+MacInit

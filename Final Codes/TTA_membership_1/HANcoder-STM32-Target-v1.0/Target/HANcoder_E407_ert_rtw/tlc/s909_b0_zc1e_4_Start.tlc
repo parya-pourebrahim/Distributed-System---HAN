@@ -1,0 +1,59 @@
+%implements s909_b0_zc1e_4_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS70B2 = OpaqueTLCBlockFcn("Start", 70, 2, 4, 0)
+%assign   Start_open_DEBUGToggledigitalpinA3_71_1 = ""
+%openfile Start_open_DEBUGToggledigitalpinA3_71_1
+
+/* Start for Enabled SubSystem: '<S27>/DEBUG - Toggle digital pin A3' */
+%closefile Start_open_DEBUGToggledigitalpinA3_71_1
+
+%assign    Start_body_DEBUGToggledigitalpinA3_71_1 = ""
+%openfile  Start_body_DEBUGToggledigitalpinA3_71_1
+
+%if !WHITE_SPACE(tlcStartFcnOfS70B2)
+/* Start for M-S-Function: '<S899>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[23a05f*/",tlcStartFcnOfS70B2,"/*@]*/")>\
+%endif
+%closefile Start_body_DEBUGToggledigitalpinA3_71_1
+
+%assign    Start_close_DEBUGToggledigitalpinA3_71_1 = ""
+%openfile  Start_close_DEBUGToggledigitalpinA3_71_1
+
+/* End of Start for SubSystem: '<S27>/DEBUG - Toggle digital pin A3' */
+%closefile Start_close_DEBUGToggledigitalpinA3_71_1
+%<SLibCG_DumpSSCode(Start_open_DEBUGToggledigitalpinA3_71_1, Start_body_DEBUGToggledigitalpinA3_71_1, Start_close_DEBUGToggledigitalpinA3_71_1)>
+
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[4].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Start", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Start"))
+%<SLibCG_AccessArg(4, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(4, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Start", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Start"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(4, 0, 0)>
+%endif
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void MeasureEXecutiontime_Start(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(4, 0, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(4, 0, 1)
+%<comma>rtB_MeasureEXecutiontime *localB\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(4, 0, fcnProtoType)>
+%endfunction

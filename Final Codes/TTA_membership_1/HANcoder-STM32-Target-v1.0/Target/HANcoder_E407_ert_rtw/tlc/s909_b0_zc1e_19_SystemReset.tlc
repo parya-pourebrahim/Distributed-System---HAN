@@ -1,0 +1,46 @@
+%implements s909_b0_zc1e_19_SystemReset "C"
+
+%function SystemReset(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* SystemReset for Chart: '<S18>/Chart' */
+%<SLibCG_DumpSSCode("/*@[2c5cd2*/",SLibCG_SetDWV(200, 0, 522, 1, "", -1, "", 0, "0U"),"/*@]*/")>\
+/* SystemReset for Chart: '<S18>/Chart1' */
+%<SLibCG_DumpSSCode("/*@[2c5cf5*/",SLibCG_SetDWV(199, 0, 522, 1, "", -1, "", 0, "0U"),"/*@]*/")>\
+/* SystemReset for Chart: '<S18>/Chart2' */
+%<SLibCG_DumpSSCode("/*@[2c5d18*/",SLibCG_SetDWV(198, 0, 522, 1, "", -1, "", 0, "0U"),"/*@]*/")>\
+/* SystemReset for Chart: '<S18>/Chart3' */
+%<SLibCG_DumpSSCode("/*@[2c5d3b*/",SLibCG_SetDWV(197, 0, 522, 1, "", -1, "", 0, "0U"),"/*@]*/")>\
+/* SystemReset for Chart: '<S18>/Chart4' */
+%<SLibCG_DumpSSCode("/*@[2c5d5e*/",SLibCG_SetDWV(196, 0, 522, 1, "", -1, "", 0, "0U"),"/*@]*/")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[19].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("SystemReset", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "SystemReset"))
+%<SLibCG_AccessArg(19, 4, 0)>
+%endif
+%if SLibCG_ArgAccessed(19, 4, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "SystemReset", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "SystemReset"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(19, 4, 0)>
+%endif
+%endfunction
+%function SystemResetFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CANManagement_Reset(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(19, 4, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(19, 4, 1)
+%<comma>rtDW_CANManagement *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(19, 4, fcnProtoType)>
+%endfunction

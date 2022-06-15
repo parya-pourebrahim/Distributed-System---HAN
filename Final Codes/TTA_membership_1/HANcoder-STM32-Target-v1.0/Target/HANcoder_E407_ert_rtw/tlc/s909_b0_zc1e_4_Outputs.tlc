@@ -1,0 +1,94 @@
+%implements s909_b0_zc1e_4_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcDisableFcnOfS70B2 = OpaqueTLCBlockFcn("Disable", 70, 2, 4, 1)
+%assign tlcEnableFcnOfS70B2 = OpaqueTLCBlockFcn("Enable", 70, 2, 4, 1)
+%assign tlcOutputsFcnOfS70B2 = OpaqueTLCBlockFcn("Outputs", 70, 2, 4, 1)
+%assign tlcUpdateFcnOfS70B2 = OpaqueTLCBlockFcn("Update", 70, 2, 4, 1)
+/* {S!d9297}Outputs for Enabled SubSystem: '<S27>/DEBUG - Toggle digital pin A3' incorporates:
+ *  EnablePort: '<S898>/Enable'
+ */
+/* {S!d9316}Constant: '<S27>/Constant1' */
+/*@>202d06*/if (%<SLibCG_DumpSSCode("/*@[23a096*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 71, 1, "", -1, "", 0))),"/*@]*/")>/*@>202d05*/ > /*@>239b66*/0.0) {
+    /*@>202d09*/if (!/*@<202d08*/%<SLibCG_DumpSSCode("/*@[23a0b8*/",(SLibCG_SE(SLibCG_DWV(237, 0, 71, 1, "", -1, "", 0))),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcEnableFcnOfS70B2)
+        /* {S!d9300}Enable for M-S-Function: '<S899>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[23a071*/",tlcEnableFcnOfS70B2,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[23a0fe*/",SLibCG_SetDWV(237, 0, 71, 1, "", -1, "", 0, "true"),"/*@]*/")>\
+    }
+    /* {S!d9306}Switch: '<S898>/Switch' incorporates:
+ *  DataStoreRead: '<S898>/Data Store Read'
+ */
+    /*@>239c78*/if (%<SLibCG_DumpSSCode("/*@[23a1c9*/",(SLibCG_DWV(236, 0, 71, 1, "", -1, "", 0)),"/*@]*/")>) {
+        /* {S!d9302}DataStoreWrite: '<S898>/Data Store Write1' incorporates:
+ *  Constant: '<S898>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[23a20e*/",SLibCG_SetDWV(236, 0, 71, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[23a459*/",(SLibCGIR_PV(78, 0, 71, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+    } else {
+        /* {S!d9304}DataStoreWrite: '<S898>/Data Store Write1' incorporates:
+ *  Constant: '<S898>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[23a1a9*/",SLibCG_SetDWV(236, 0, 71, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[23a477*/",(SLibCGIR_PV(79, 0, 71, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+    }
+    /* {E!d9306}End of Switch: '<S898>/Switch' */
+%if !WHITE_SPACE(tlcOutputsFcnOfS70B2)
+
+    /* {S!d9308}M-S-Function: '<S899>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[23a073*/",tlcOutputsFcnOfS70B2,"/*@]*/")>\
+%endif
+    /* {S!d9310}DataStoreRead: '<S898>/Data Store Read1' */
+%<SLibCG_DumpSSCode("/*@[23a165*/",SLibCG_SetBOV(447, 0, 71, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[23a49e*/",(SLibCG_DWV(236, 0, 71, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%if !WHITE_SPACE(tlcUpdateFcnOfS70B2)
+    /* {S!d9312}Update for M-S-Function: '<S899>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[23a075*/",tlcUpdateFcnOfS70B2,"/*@]*/")>\
+%endif
+} else {
+    /*@>202d10*/if (%<SLibCG_DumpSSCode("/*@[23a0da*/",(SLibCG_DWV(237, 0, 71, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS70B2)
+        /* {S!d9314}Disable for M-S-Function: '<S899>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[23a06f*/",tlcDisableFcnOfS70B2,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[23a121*/",SLibCG_SetDWV(237, 0, 71, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+    }
+}
+/* {E!d9316}End of Constant: '<S27>/Constant1' */
+/* {E!d9297}End of Outputs for SubSystem: '<S27>/DEBUG - Toggle digital pin A3' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[4].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(4, 1, 0)>
+%endif
+%if SLibCG_ArgAccessed(4, 1, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(4, 1, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void MeasureEXecutiontime(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(4, 1, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(4, 1, 1)
+%<comma>rtB_MeasureEXecutiontime *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(4, 1, 2)
+%<comma>rtDW_MeasureEXecutiontime *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(4, 1, fcnProtoType)>
+%endfunction

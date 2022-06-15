@@ -1,0 +1,41 @@
+%implements s909_b0_zc1e_17_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* MATLAB Function: '<S821>/bit_shift' */
+/* MATLAB Function 'Logic and Bit Operations/Bit Shift/bit_shift': '<S842>:1' */
+/* '<S842>:1:6' */
+/*@>250221*/localB->/*@>250268*/y/*@>203ed9*/ = /*@>250207*/(uint8_T)(/*@>250213*/rtu_u/*@>25015a*/ << /*@>250154*/2);
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[17].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(17, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(17, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(17, 0, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void BitShift19(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(17, 0, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>uint8_T rtu_u\
+%assign comma = ", "
+%<comma>rtB_BitShift19 *localB\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(17, 0, fcnProtoType)>
+%endfunction

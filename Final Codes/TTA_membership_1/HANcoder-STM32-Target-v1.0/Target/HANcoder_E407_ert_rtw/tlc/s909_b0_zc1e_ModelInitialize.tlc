@@ -1,0 +1,282 @@
+%implements s909_b0_zc1e_ModelInitialize "C"
+
+%function ModelInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS526B1 = OpaqueTLCBlockFcn("Start", 526, 1, 21, 2)
+%assign tlcStartFcnOfS525B1 = OpaqueTLCBlockFcn("Start", 525, 1, 21, 2)
+%assign tlcStartFcnOfS525B3 = OpaqueTLCBlockFcn("Start", 525, 3, 21, 2)
+%assign tlcStartFcnOfS525B5 = OpaqueTLCBlockFcn("Start", 525, 5, 21, 2)
+%assign tlcStartFcnOfS525B7 = OpaqueTLCBlockFcn("Start", 525, 7, 21, 2)
+%assign tlcStartFcnOfS528B2 = OpaqueTLCBlockFcn("Start", 528, 2, 21, 2)
+%assign tlcStartFcnOfS528B4 = OpaqueTLCBlockFcn("Start", 528, 4, 21, 2)
+%assign tlcStartFcnOfS528B12 = OpaqueTLCBlockFcn("Start", 528, 12, 21, 2)
+%assign tlcStartFcnOfS528B13 = OpaqueTLCBlockFcn("Start", 528, 13, 21, 2)
+%assign tlcStartFcnOfS528B20 = OpaqueTLCBlockFcn("Start", 528, 20, 21, 2)
+%assign tlcStartFcnOfS528B21 = OpaqueTLCBlockFcn("Start", 528, 21, 21, 2)
+%assign tlcStartFcnOfS528B26 = OpaqueTLCBlockFcn("Start", 528, 26, 21, 2)
+%assign tlcEnableFcnOfS528B2 = OpaqueTLCBlockFcn("Enable", 528, 2, 21, 2)
+%assign tlcEnableFcnOfS528B4 = OpaqueTLCBlockFcn("Enable", 528, 4, 21, 2)
+%assign tlcEnableFcnOfS528B13 = OpaqueTLCBlockFcn("Enable", 528, 13, 21, 2)
+%assign tlcEnableFcnOfS528B20 = OpaqueTLCBlockFcn("Enable", 528, 20, 21, 2)
+%assign tlcEnableFcnOfS528B21 = OpaqueTLCBlockFcn("Enable", 528, 21, 21, 2)
+%assign tlcEnableFcnOfS528B22 = OpaqueTLCBlockFcn("Enable", 528, 22, 21, 2)
+%assign tlcEnableFcnOfS528B23 = OpaqueTLCBlockFcn("Enable", 528, 23, 21, 2)
+%assign tlcEnableFcnOfS528B24 = OpaqueTLCBlockFcn("Enable", 528, 24, 21, 2)
+%assign tlcEnableFcnOfS528B25 = OpaqueTLCBlockFcn("Enable", 528, 25, 21, 2)
+%assign tlcEnableFcnOfS528B26 = OpaqueTLCBlockFcn("Enable", 528, 26, 21, 2)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+%<SLibCGIRDumpSystemUserCode(528, "Start", "Header")>\
+%<SLibCGIRDumpSystemUserCode(528, "Start", "Body")>\
+%assign   Start_open_InitializeClockSchedule_528_4 = ""
+%openfile Start_open_InitializeClockSchedule_528_4
+
+/* Start for Enabled SubSystem: '<S6>/Initialize Clock Schedule' */
+%closefile Start_open_InitializeClockSchedule_528_4
+
+%assign    Start_body_InitializeClockSchedule_528_4 = ""
+%openfile  Start_body_InitializeClockSchedule_528_4
+
+%if !WHITE_SPACE(tlcStartFcnOfS526B1)
+/* Start for M-S-Function: '<S894>/Level-2 M-file S-Function' incorporates:
+ *  Constant: '<S25>/Constant'
+ *  Constant: '<S25>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[2fcd86*/",tlcStartFcnOfS526B1,"/*@]*/")>\
+%endif
+%closefile Start_body_InitializeClockSchedule_528_4
+
+%assign    Start_close_InitializeClockSchedule_528_4 = ""
+%openfile  Start_close_InitializeClockSchedule_528_4
+
+/* End of Start for SubSystem: '<S6>/Initialize Clock Schedule' */
+%closefile Start_close_InitializeClockSchedule_528_4
+%<SLibCG_DumpSSCode(Start_open_InitializeClockSchedule_528_4, Start_body_InitializeClockSchedule_528_4, Start_close_InitializeClockSchedule_528_4)>
+
+
+/* Start for DataStoreMemory: '<S6>/Data Store Memory5' */
+/*@>2fc219*/rtDWork./*@>2fe097*/Master_ID/*@>20dc1f*/ = %<SLibCG_DumpSSCode("/*@[2fcdce*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+/* Start for If: '<S6>/If' */
+/*@>2fc21f*/rtDWork./*@>2fe09a*/If_ActiveSubsystem/*@>20dc21*/ = /*@>2fe01a*/-1;
+%assign   Start_open_IfActionSubsystem_528_11 = ""
+%openfile Start_open_IfActionSubsystem_528_11
+
+/* Start for IfAction SubSystem: '<S6>/If Action Subsystem' */
+%closefile Start_open_IfActionSubsystem_528_11
+
+%assign    Start_body_IfActionSubsystem_528_11 = ""
+%openfile  Start_body_IfActionSubsystem_528_11
+
+%if !WHITE_SPACE(tlcStartFcnOfS525B1)
+/* Start for M-S-Function: '<S890>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd88*/",tlcStartFcnOfS525B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS525B3)
+/* Start for M-S-Function: '<S891>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd8a*/",tlcStartFcnOfS525B3,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS525B5)
+/* Start for M-S-Function: '<S892>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd8c*/",tlcStartFcnOfS525B5,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS525B7)
+/* Start for M-S-Function: '<S893>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd8e*/",tlcStartFcnOfS525B7,"/*@]*/")>\
+%endif
+%closefile Start_body_IfActionSubsystem_528_11
+
+%assign    Start_close_IfActionSubsystem_528_11 = ""
+%openfile  Start_close_IfActionSubsystem_528_11
+
+/* End of Start for SubSystem: '<S6>/If Action Subsystem' */
+%closefile Start_close_IfActionSubsystem_528_11
+%<SLibCG_DumpSSCode(Start_open_IfActionSubsystem_528_11, Start_body_IfActionSubsystem_528_11, Start_close_IfActionSubsystem_528_11)>
+
+%if !WHITE_SPACE(tlcStartFcnOfS528B2)
+
+/* Start for M-S-Function: '<S900>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd90*/",tlcStartFcnOfS528B2,"/*@]*/")>\
+%endif
+%assign   Start_open_SFunction_528_17 = ""
+%openfile Start_open_SFunction_528_17
+
+/* Start for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' incorporates:
+ *  SubSystem: '<S6>/Local Time generation'
+ */
+%closefile Start_open_SFunction_528_17
+
+%assign    Start_body_SFunction_528_17 = ""
+%openfile  Start_body_SFunction_528_17
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[524], "Start",0)
+%<SLibCG_DumpSSCode("/*@[2fcdab*/",SLibCGIRGenReusableSysCall("Start", [], 524, 0, 0, 0, 20, 528),"/*@]*/")>\
+
+%endif
+%<SLibCG_DumpSSCode("/*@[2fcd92*/",tlcStartFcnOfS528B4,"/*@]*/")>\
+%closefile Start_body_SFunction_528_17
+
+%assign    Start_close_SFunction_528_17 = ""
+%openfile  Start_close_SFunction_528_17
+
+/* End of Start for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' */
+%closefile Start_close_SFunction_528_17
+%<SLibCG_DumpSSCode(Start_open_SFunction_528_17, Start_body_SFunction_528_17, Start_close_SFunction_528_17)>
+
+
+/* Start for DataStoreMemory: '<S6>/Data Store Memory14' */
+/*@>2fc225*/rtDWork./*@>2fe09d*/RxID_CAN2/*@>20dc27*/ = %<SLibCG_DumpSSCode("/*@[2fcdf0*/",(SLibCG_SE(SLibCGIR_PV(73, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+/* Start for DataStoreMemory: '<S6>/Data Store Memory8' */
+/*@>2fc22b*/rtDWork./*@>2fe0a0*/RxID_CAN1/*@>20dc29*/ = %<SLibCG_DumpSSCode("/*@[2fce12*/",(SLibCG_SE(SLibCGIR_PV(73, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+%if !WHITE_SPACE(tlcStartFcnOfS528B12)
+/* Start for S-Function (sfcn_timeout_init): '<S28>/S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd94*/",tlcStartFcnOfS528B12,"/*@]*/")>\
+%endif
+/* Start for DataStoreMemory: '<S6>/Data Store Memory' */
+/*@>2fc231*/rtDWork./*@>2fe0a3*/Tx_msg_count_CAN1/*@>20dc2c*/ = %<SLibCG_DumpSSCode("/*@[2fce34*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+/* Start for DataStoreMemory: '<S6>/Data Store Memory20' */
+/*@>2fc237*/rtDWork./*@>2fe0a6*/Tx_msg_count_CAN2/*@>20dc2e*/ = %<SLibCG_DumpSSCode("/*@[2fce56*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+%if !WHITE_SPACE(tlcStartFcnOfS528B13)
+/* Start for M-S-Function: '<S904>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd96*/",tlcStartFcnOfS528B13,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS528B20)
+/* Start for M-S-Function: '<S3>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd97*/",tlcStartFcnOfS528B20,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS528B21)
+/* Start for M-S-Function: '<S4>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd98*/",tlcStartFcnOfS528B21,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS528B26)
+/* Start for M-S-Function: '<S11>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd99*/",tlcStartFcnOfS528B26,"/*@]*/")>\
+%endif
+%<SLibCGIRDumpSystemUserCode(528, "Start", "Trailer")>\
+rtPrevZCSigState.JKFlipFlop_Trig_ZCE = ZERO_ZCSIG;
+/* SystemInitialize for Triggered SubSystem: '<S902>/J-K Flip-Flop' */
+/* SystemInitialize for Outport: '<S903>/!Q' */
+/*@>2fbf2e*/rtB./*@>2fe091*/Logic/*@>21ec63*/[/*@>2fadd9*/1]/*@>20ddaa*/ = %<SLibCG_DumpSSCode("/*@[2fce78*/",(SLibCG_SE(SLibCGIR_PV(81, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+/* End of SystemInitialize for SubSystem: '<S902>/J-K Flip-Flop' */
+
+%assign   SystemInitialize_open_SFunction_528_17 = ""
+%openfile SystemInitialize_open_SFunction_528_17
+
+/* SystemInitialize for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' incorporates:
+ *  SubSystem: '<S6>/Local Time generation'
+ */
+%closefile SystemInitialize_open_SFunction_528_17
+
+%assign    SystemInitialize_body_SFunction_528_17 = ""
+%openfile  SystemInitialize_body_SFunction_528_17
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[524], "SystemInitialize",0)
+%<SLibCG_DumpSSCode("/*@[2fcdac*/",SLibCGIRGenReusableSysCall("SystemInitialize", [], 524, 0, 4, 0, 20, 528),"/*@]*/")>\
+
+
+%endif
+%closefile SystemInitialize_body_SFunction_528_17
+
+%assign    SystemInitialize_close_SFunction_528_17 = ""
+%openfile  SystemInitialize_close_SFunction_528_17
+
+/* End of SystemInitialize for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' */
+%closefile SystemInitialize_close_SFunction_528_17
+%<SLibCG_DumpSSCode(SystemInitialize_open_SFunction_528_17, SystemInitialize_body_SFunction_528_17, SystemInitialize_close_SFunction_528_17)>
+
+%if !WHITE_SPACE(tlcEnableFcnOfS528B2)
+
+/* Enable for M-S-Function: '<S900>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcd9c*/",tlcEnableFcnOfS528B2,"/*@]*/")>\
+%endif
+%assign   Enable_open_SFunction_528_17 = ""
+%openfile Enable_open_SFunction_528_17
+
+/* Enable for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' */
+%closefile Enable_open_SFunction_528_17
+
+%assign    Enable_body_SFunction_528_17 = ""
+%openfile  Enable_body_SFunction_528_17
+
+%<SLibCG_DumpSSCode("/*@[2fcd9e*/",tlcEnableFcnOfS528B4,"/*@]*/")>\
+%closefile Enable_body_SFunction_528_17
+
+%assign    Enable_close_SFunction_528_17 = ""
+%openfile  Enable_close_SFunction_528_17
+
+/* End of Enable for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' */
+%closefile Enable_close_SFunction_528_17
+%<SLibCG_DumpSSCode(Enable_open_SFunction_528_17, Enable_body_SFunction_528_17, Enable_close_SFunction_528_17)>
+
+
+%assign   Enable_open_SFunction_528_17 = ""
+%openfile Enable_open_SFunction_528_17
+
+/* Enable for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' incorporates:
+ *  SubSystem: '<S6>/Local Time generation'
+ */
+%closefile Enable_open_SFunction_528_17
+
+%assign    Enable_body_SFunction_528_17 = ""
+%openfile  Enable_body_SFunction_528_17
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[524], "Enable",0)
+%<SLibCG_DumpSSCode("/*@[2fcdad*/",SLibCGIRGenReusableSysCall("Enable", [], 524, 0, 14, 0, 20, 528),"/*@]*/")>\
+
+
+%endif
+%closefile Enable_body_SFunction_528_17
+
+%assign    Enable_close_SFunction_528_17 = ""
+%openfile  Enable_close_SFunction_528_17
+
+/* End of Enable for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' */
+%closefile Enable_close_SFunction_528_17
+%<SLibCG_DumpSSCode(Enable_open_SFunction_528_17, Enable_body_SFunction_528_17, Enable_close_SFunction_528_17)>
+
+%if !WHITE_SPACE(tlcEnableFcnOfS528B13)
+
+/* Enable for M-S-Function: '<S904>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcda0*/",tlcEnableFcnOfS528B13,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS528B20)
+/* Enable for M-S-Function: '<S3>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcda1*/",tlcEnableFcnOfS528B20,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS528B21)
+/* Enable for M-S-Function: '<S4>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcda2*/",tlcEnableFcnOfS528B21,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS528B22)
+/* Enable for M-S-Function: '<S5>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcda3*/",tlcEnableFcnOfS528B22,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS528B23)
+/* Enable for M-S-Function: '<S905>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcda5*/",tlcEnableFcnOfS528B23,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS528B24)
+/* Enable for M-S-Function: '<S906>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcda7*/",tlcEnableFcnOfS528B24,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS528B25)
+/* Enable for M-S-Function: '<S907>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcda9*/",tlcEnableFcnOfS528B25,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS528B26)
+/* Enable for M-S-Function: '<S11>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fcdaa*/",tlcEnableFcnOfS528B26,"/*@]*/")>\
+%endif
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function ModelInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(21, 2, fcnProtoType)>
+%endfunction

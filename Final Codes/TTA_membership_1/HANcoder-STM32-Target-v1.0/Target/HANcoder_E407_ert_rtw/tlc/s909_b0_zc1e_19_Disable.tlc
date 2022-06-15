@@ -1,0 +1,1031 @@
+%implements s909_b0_zc1e_19_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%assign tlcDisableFcnOfS75B2 = OpaqueTLCBlockFcn("Disable", 75, 2, 19, 7)
+%assign tlcDisableFcnOfS73B3 = OpaqueTLCBlockFcn("Disable", 73, 3, 19, 7)
+%assign tlcDisableFcnOfS74B3 = OpaqueTLCBlockFcn("Disable", 74, 3, 19, 7)
+%assign tlcDisableFcnOfS76B2 = OpaqueTLCBlockFcn("Disable", 76, 2, 19, 7)
+/* {S!d13629}Disable for Enabled SubSystem: '<S18>/DEBUG - Toggle digital pin A2' */
+/*@>20ce29*/if (%<SLibCG_DumpSSCode("/*@[2daa96*/",(SLibCG_DWV(193, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS75B2)
+    /* {S!d13812}Disable for M-S-Function: '<S44>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2daa59*/",tlcDisableFcnOfS75B2,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[2db5af*/",SLibCG_SetDWV(193, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d13629}End of Disable for SubSystem: '<S18>/DEBUG - Toggle digital pin A2' */
+
+/* {S!d13631}Disable for Enabled SubSystem: '<S18>/Initialization' */
+/*@>20ce2e*/if (%<SLibCG_DumpSSCode("/*@[2daab7*/",(SLibCG_DWV(190, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+    /* {S!d13632}Disable for Enabled SubSystem: '<S39>/RoleID and Global Time init' */
+    /*@>20ce96*/if (%<SLibCG_DumpSSCode("/*@[2dab5c*/",(SLibCG_DWV(191, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+        /* {S!d13814}Disable for Outport: '<S47>/Finish Initialization' */
+        /*@>2b9ad1*/localB->/*@>2f0774*/SET/*@>20cf4a*/ = %<SLibCG_DumpSSCode("/*@[2db7f7*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+%<SLibCG_DumpSSCode("/*@[2db681*/",SLibCG_SetDWV(191, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+    }
+    /* {E!d13632}End of Disable for SubSystem: '<S39>/RoleID and Global Time init' */
+%<SLibCG_DumpSSCode("/*@[2db5d2*/",SLibCG_SetDWV(190, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d13631}End of Disable for SubSystem: '<S18>/Initialization' */
+
+/* {S!d13635}Disable for Enabled SubSystem: '<S18>/Matrix Cycle Manager' */
+/*@>20ce33*/if (%<SLibCG_DumpSSCode("/*@[2daad8*/",(SLibCG_DWV(127, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+    /* {S!d13636}Disable for Enabled SubSystem: '<S41>/controller basic cycle 0' */
+    /*@>20cea8*/if (%<SLibCG_DumpSSCode("/*@[2dab7d*/",(SLibCG_DWV(170, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+        /* {S!d13637}Disable for Enabled SubSystem: '<S89>/COMP Task - Sync bc0 check' */
+        /*@>20cf56*/if (%<SLibCG_DumpSSCode("/*@[2dabbf*/",(SLibCG_DWV(183, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13638}Disable for Enabled SubSystem: '<S100>/Process_Messages' */
+            /*@>20d0a1*/if (%<SLibCG_DumpSSCode("/*@[2dae74*/",(SLibCG_DWV(184, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13639}Disable for Enabled SubSystem: '<S205>/Demux message CAN1 and check coherence' */
+                /*@>20d311*/if (%<SLibCG_DumpSSCode("/*@[2db1ef*/",(SLibCG_DWV(186, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13816}Disable for Outport: '<S207>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcca9*/",SLibCG_SetBOV(215, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f088a*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc73f*/",SLibCG_SetDWV(186, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13639}End of Disable for SubSystem: '<S205>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13641}Disable for Enabled SubSystem: '<S205>/Demux message CAN1 and check coherence1' */
+                /*@>20d316*/if (%<SLibCG_DumpSSCode("/*@[2db210*/",(SLibCG_DWV(185, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13818}Disable for Outport: '<S208>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcced*/",SLibCG_SetBOV(214, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f08bb*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc762*/",SLibCG_SetDWV(185, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13641}End of Disable for SubSystem: '<S205>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dbcd5*/",SLibCG_SetDWV(184, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13638}End of Disable for SubSystem: '<S100>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2db81c*/",SLibCG_SetDWV(183, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13637}End of Disable for SubSystem: '<S89>/COMP Task - Sync bc0 check' */
+
+        /* {S!d13645}Disable for Enabled SubSystem: '<S89>/COMP Task - Vote1 check' */
+        /*@>20cf5b*/if (%<SLibCG_DumpSSCode("/*@[2dabe0*/",(SLibCG_DWV(179, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13646}Disable for Enabled SubSystem: '<S104>/Process_Messages1' */
+            /*@>20d0b3*/if (%<SLibCG_DumpSSCode("/*@[2dae95*/",(SLibCG_DWV(180, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13647}Disable for Enabled SubSystem: '<S240>/Demux message CAN1 and check coherence' */
+                /*@>20d32e*/if (%<SLibCG_DumpSSCode("/*@[2db231*/",(SLibCG_DWV(182, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13820}Disable for Outport: '<S242>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcd31*/",SLibCG_SetBOV(213, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0912*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc785*/",SLibCG_SetDWV(182, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13647}End of Disable for SubSystem: '<S240>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13649}Disable for Enabled SubSystem: '<S240>/Demux message CAN1 and check coherence1' */
+                /*@>20d333*/if (%<SLibCG_DumpSSCode("/*@[2db252*/",(SLibCG_DWV(181, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13822}Disable for Outport: '<S243>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcd75*/",SLibCG_SetBOV(212, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0943*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc7a8*/",SLibCG_SetDWV(181, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13649}End of Disable for SubSystem: '<S240>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dbcf8*/",SLibCG_SetDWV(180, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13646}End of Disable for SubSystem: '<S104>/Process_Messages1' */
+%<SLibCG_DumpSSCode("/*@[2db83f*/",SLibCG_SetDWV(179, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13645}End of Disable for SubSystem: '<S89>/COMP Task - Vote1 check' */
+
+        /* {S!d13653}Disable for Enabled SubSystem: '<S89>/COMP Task - Vote2 check' */
+        /*@>20cf60*/if (%<SLibCG_DumpSSCode("/*@[2dac01*/",(SLibCG_DWV(175, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13654}Disable for Enabled SubSystem: '<S106>/Process_Messages' */
+            /*@>20d0c5*/if (%<SLibCG_DumpSSCode("/*@[2daeb6*/",(SLibCG_DWV(176, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13655}Disable for Enabled SubSystem: '<S269>/Demux message CAN1 and check coherence' */
+                /*@>20d34b*/if (%<SLibCG_DumpSSCode("/*@[2db273*/",(SLibCG_DWV(178, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13824}Disable for Outport: '<S271>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcdb9*/",SLibCG_SetBOV(211, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f099a*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc7cb*/",SLibCG_SetDWV(178, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13655}End of Disable for SubSystem: '<S269>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13657}Disable for Enabled SubSystem: '<S269>/Demux message CAN1 and check coherence1' */
+                /*@>20d350*/if (%<SLibCG_DumpSSCode("/*@[2db294*/",(SLibCG_DWV(177, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13826}Disable for Outport: '<S272>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcdfd*/",SLibCG_SetBOV(210, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f09cb*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc7ee*/",SLibCG_SetDWV(177, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13657}End of Disable for SubSystem: '<S269>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dbd1b*/",SLibCG_SetDWV(176, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13654}End of Disable for SubSystem: '<S106>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2db862*/",SLibCG_SetDWV(175, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13653}End of Disable for SubSystem: '<S89>/COMP Task - Vote2 check' */
+
+        /* {S!d13661}Disable for Enabled SubSystem: '<S89>/COMP Task - Vote3 check' */
+        /*@>20cf65*/if (%<SLibCG_DumpSSCode("/*@[2dac22*/",(SLibCG_DWV(171, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13662}Disable for Enabled SubSystem: '<S108>/Process_Messages' */
+            /*@>20d0d7*/if (%<SLibCG_DumpSSCode("/*@[2daed7*/",(SLibCG_DWV(172, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13663}Disable for Enabled SubSystem: '<S298>/Demux message CAN1 and check coherence' */
+                /*@>20d368*/if (%<SLibCG_DumpSSCode("/*@[2db2b5*/",(SLibCG_DWV(174, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13828}Disable for Outport: '<S300>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dce41*/",SLibCG_SetBOV(209, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0a22*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc811*/",SLibCG_SetDWV(174, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13663}End of Disable for SubSystem: '<S298>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13665}Disable for Enabled SubSystem: '<S298>/Demux message CAN1 and check coherence1' */
+                /*@>20d36d*/if (%<SLibCG_DumpSSCode("/*@[2db2d6*/",(SLibCG_DWV(173, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13830}Disable for Outport: '<S301>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dce85*/",SLibCG_SetBOV(208, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0a53*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc834*/",SLibCG_SetDWV(173, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13665}End of Disable for SubSystem: '<S298>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dbd3e*/",SLibCG_SetDWV(172, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13662}End of Disable for SubSystem: '<S108>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2db885*/",SLibCG_SetDWV(171, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13661}End of Disable for SubSystem: '<S89>/COMP Task - Vote3 check' */
+
+        /* {S!d13669}Disable for Enabled SubSystem: '<S89>/COMM Task - Sync bc 0' */
+        /*@>20cf6a*/if (%<SLibCG_DumpSSCode("/*@[2dac43*/",(SLibCG_DWV(231, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[126], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("COMMTaskSyncbc0_Disable",126,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("COMMTaskSyncbc0_Disable",126,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("COMMTaskSyncbc0_Disable",126,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa64*/",SLibCGIRGenReusableSysCall("COMMTaskSyncbc0_Disable", ["/*@>2f0abe*/%<::tSimStruct>", "&/*@>2f0aca*/localB->/*@>2f0ac9*/COMMTaskSyncbc0_b", "&/*@>2f0ad7*/localDW->/*@>2f0ad6*/COMMTaskSyncbc0_b"], 126, 0, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+        }
+        /* {E!d13669}End of Disable for SubSystem: '<S89>/COMM Task - Sync bc 0' */
+
+        /* {S!d13671}Disable for Enabled SubSystem: '<S89>/COMM Task - Vote1' */
+        /*@>20cf6f*/if (%<SLibCG_DumpSSCode("/*@[2dac64*/",(SLibCG_DWV(189, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13672}Disable for Enabled SubSystem: '<S93>/Reception substasks' */
+            /*@>20d0e9*/if (%<SLibCG_DumpSSCode("/*@[2daef8*/",(SLibCG_DWV(230, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa65*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2f0b00*/%<::tSimStruct>", "&/*@>2f0b0c*/localB->/*@>2f0b0b*/Receptionsubstasks_k", "&/*@>2f0b19*/localDW->/*@>2f0b18*/Receptionsubstasks_k"], 109, 1, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13672}End of Disable for SubSystem: '<S93>/Reception substasks' */
+
+            /* {S!d13674}Disable for Enabled SubSystem: '<S93>/Transmission subtasks' */
+            /*@>20d0ee*/if (%<SLibCG_DumpSSCode("/*@[2daf19*/",(SLibCG_DWV(227, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[132], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa67*/",SLibCGIRGenReusableSysCall("Transmissionsubtasks_Disable", ["/*@>2f0b42*/%<::tSimStruct>", "&/*@>2f0b4e*/localB->/*@>2f0b4d*/Transmissionsubtasks_ik", "&/*@>2f0b5b*/localDW->/*@>2f0b5a*/Transmissionsubtasks_ik"], 132, 0, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13674}End of Disable for SubSystem: '<S93>/Transmission subtasks' */
+
+            /* {S!d13832}Disable for Outport: '<S93>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dbd82*/",SLibCG_SetBOV(409, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0b70*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13834}Disable for Outport: '<S93>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dbdc6*/",SLibCG_SetBOV(414, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0b8e*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13836}Disable for Outport: '<S93>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dbe0a*/",SLibCG_SetBOV(408, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0bac*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13838}Disable for Outport: '<S93>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dbe4e*/",SLibCG_SetBOV(415, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0bca*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2db8a8*/",SLibCG_SetDWV(189, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13671}End of Disable for SubSystem: '<S89>/COMM Task - Vote1' */
+
+        /* {S!d13677}Disable for Enabled SubSystem: '<S89>/COMM Task - Vote2' */
+        /*@>20cf74*/if (%<SLibCG_DumpSSCode("/*@[2dac85*/",(SLibCG_DWV(188, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13678}Disable for Enabled SubSystem: '<S94>/Reception substasks' */
+            /*@>20d116*/if (%<SLibCG_DumpSSCode("/*@[2daf3a*/",(SLibCG_DWV(226, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa66*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2f0c0f*/%<::tSimStruct>", "&/*@>2f0c1b*/localB->/*@>2f0c1a*/Receptionsubstasks_g", "&/*@>2f0c28*/localDW->/*@>2f0c27*/Receptionsubstasks_g"], 109, 2, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13678}End of Disable for SubSystem: '<S94>/Reception substasks' */
+
+            /* {S!d13680}Disable for Enabled SubSystem: '<S94>/Transmission subtasks' */
+            /*@>20d11b*/if (%<SLibCG_DumpSSCode("/*@[2daf5b*/",(SLibCG_DWV(223, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[132], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa6a*/",SLibCGIRGenReusableSysCall("Transmissionsubtasks_Disable", ["/*@>2f0c51*/%<::tSimStruct>", "&/*@>2f0c5d*/localB->/*@>2f0c5c*/Transmissionsubtasks_l", "&/*@>2f0c6a*/localDW->/*@>2f0c69*/Transmissionsubtasks_l"], 132, 1, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13680}End of Disable for SubSystem: '<S94>/Transmission subtasks' */
+
+            /* {S!d13840}Disable for Outport: '<S94>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dbe92*/",SLibCG_SetBOV(399, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0c7f*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13842}Disable for Outport: '<S94>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dbed6*/",SLibCG_SetBOV(404, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0c9d*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13844}Disable for Outport: '<S94>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dbf1a*/",SLibCG_SetBOV(398, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0cbb*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13846}Disable for Outport: '<S94>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dbf5e*/",SLibCG_SetBOV(405, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0cd9*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2db8cb*/",SLibCG_SetDWV(188, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13677}End of Disable for SubSystem: '<S89>/COMM Task - Vote2' */
+
+        /* {S!d13683}Disable for Enabled SubSystem: '<S89>/COMM Task - Vote3' */
+        /*@>20cf79*/if (%<SLibCG_DumpSSCode("/*@[2daca6*/",(SLibCG_DWV(187, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13684}Disable for Enabled SubSystem: '<S95>/Reception substasks' */
+            /*@>20d143*/if (%<SLibCG_DumpSSCode("/*@[2daf7c*/",(SLibCG_DWV(222, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa69*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2f0d1e*/%<::tSimStruct>", "&/*@>2f0d2a*/localB->/*@>2f0d29*/Receptionsubstasks_e", "&/*@>2f0d37*/localDW->/*@>2f0d36*/Receptionsubstasks_e"], 109, 3, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13684}End of Disable for SubSystem: '<S95>/Reception substasks' */
+
+            /* {S!d13686}Disable for Enabled SubSystem: '<S95>/Transmission subtasks' */
+            /*@>20d148*/if (%<SLibCG_DumpSSCode("/*@[2daf9d*/",(SLibCG_DWV(219, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[132], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa6c*/",SLibCGIRGenReusableSysCall("Transmissionsubtasks_Disable", ["/*@>2f0d60*/%<::tSimStruct>", "&/*@>2f0d6c*/localB->/*@>2f0d6b*/Transmissionsubtasks_g", "&/*@>2f0d79*/localDW->/*@>2f0d78*/Transmissionsubtasks_g"], 132, 2, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13686}End of Disable for SubSystem: '<S95>/Transmission subtasks' */
+
+            /* {S!d13848}Disable for Outport: '<S95>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dbfa2*/",SLibCG_SetBOV(389, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0d8e*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13850}Disable for Outport: '<S95>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dbfe6*/",SLibCG_SetBOV(394, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0dac*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13852}Disable for Outport: '<S95>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc02a*/",SLibCG_SetBOV(388, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0dca*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13854}Disable for Outport: '<S95>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc06e*/",SLibCG_SetBOV(395, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0de8*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2db8ee*/",SLibCG_SetDWV(187, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13683}End of Disable for SubSystem: '<S89>/COMM Task - Vote3' */
+
+        /* {S!d13856}Disable for Outport: '<S89>/Send_Message_CAN1' */
+%<SLibCG_DumpSSCode("/*@[2db932*/",SLibCG_SetBOV(204, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0e19*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+        /* {S!d13858}Disable for Outport: '<S89>/Send_Message_CAN2' */
+%<SLibCG_DumpSSCode("/*@[2db976*/",SLibCG_SetBOV(207, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0e37*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+        /* {S!d13860}Disable for Outport: '<S89>/Receive_Message_CAN1' */
+%<SLibCG_DumpSSCode("/*@[2db9ba*/",SLibCG_SetBOV(205, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0e55*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+        /* {S!d13862}Disable for Outport: '<S89>/Receive_Message_CAN2' */
+%<SLibCG_DumpSSCode("/*@[2db9fe*/",SLibCG_SetBOV(206, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0e73*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2db6a4*/",SLibCG_SetDWV(170, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+    }
+    /* {E!d13636}End of Disable for SubSystem: '<S41>/controller basic cycle 0' */
+
+    /* {S!d13690}Disable for Enabled SubSystem: '<S41>/controller basic cycle 1' */
+    /*@>20cead*/if (%<SLibCG_DumpSSCode("/*@[2dab9e*/",(SLibCG_DWV(128, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+        /* {S!d13691}Disable for Enabled SubSystem: '<S90>/COMP Task - Rx_Output_Control1_Check' */
+        /*@>20cfc7*/if (%<SLibCG_DumpSSCode("/*@[2dacc7*/",(SLibCG_DWV(154, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13692}Disable for Enabled SubSystem: '<S337>/Process_Messages' */
+            /*@>20d170*/if (%<SLibCG_DumpSSCode("/*@[2dafbe*/",(SLibCG_DWV(155, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13693}Disable for Enabled SubSystem: '<S552>/Demux message CAN1 and check coherence' */
+                /*@>20d385*/if (%<SLibCG_DumpSSCode("/*@[2db2f7*/",(SLibCG_DWV(157, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13864}Disable for Outport: '<S554>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcec9*/",SLibCG_SetBOV(199, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0ea4*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc857*/",SLibCG_SetDWV(157, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13693}End of Disable for SubSystem: '<S552>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13695}Disable for Enabled SubSystem: '<S552>/Demux message CAN1 and check coherence1' */
+                /*@>20d38a*/if (%<SLibCG_DumpSSCode("/*@[2db318*/",(SLibCG_DWV(156, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13866}Disable for Outport: '<S555>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcf0d*/",SLibCG_SetBOV(198, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0ed5*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc87a*/",SLibCG_SetDWV(156, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13695}End of Disable for SubSystem: '<S552>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dc091*/",SLibCG_SetDWV(155, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13692}End of Disable for SubSystem: '<S337>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2dba21*/",SLibCG_SetDWV(154, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13691}End of Disable for SubSystem: '<S90>/COMP Task - Rx_Output_Control1_Check' */
+
+        /* {S!d13699}Disable for Enabled SubSystem: '<S90>/COMP Task - Rx_Output_Control2_Check' */
+        /*@>20cfcc*/if (%<SLibCG_DumpSSCode("/*@[2dace8*/",(SLibCG_DWV(150, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13700}Disable for Enabled SubSystem: '<S338>/Process_Messages' */
+            /*@>20d182*/if (%<SLibCG_DumpSSCode("/*@[2dafdf*/",(SLibCG_DWV(151, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13701}Disable for Enabled SubSystem: '<S581>/Demux message CAN1 and check coherence' */
+                /*@>20d3a2*/if (%<SLibCG_DumpSSCode("/*@[2db339*/",(SLibCG_DWV(153, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13868}Disable for Outport: '<S583>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcf51*/",SLibCG_SetBOV(197, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0f2c*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc89d*/",SLibCG_SetDWV(153, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13701}End of Disable for SubSystem: '<S581>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13703}Disable for Enabled SubSystem: '<S581>/Demux message CAN1 and check coherence1' */
+                /*@>20d3a7*/if (%<SLibCG_DumpSSCode("/*@[2db35a*/",(SLibCG_DWV(152, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13870}Disable for Outport: '<S584>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcf95*/",SLibCG_SetBOV(196, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0f5d*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc8c0*/",SLibCG_SetDWV(152, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13703}End of Disable for SubSystem: '<S581>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dc0b4*/",SLibCG_SetDWV(151, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13700}End of Disable for SubSystem: '<S338>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2dba44*/",SLibCG_SetDWV(150, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13699}End of Disable for SubSystem: '<S90>/COMP Task - Rx_Output_Control2_Check' */
+
+        /* {S!d13707}Disable for Enabled SubSystem: '<S90>/COMP Task - Rx_Output_Emulator_Check' */
+        /*@>20cfd1*/if (%<SLibCG_DumpSSCode("/*@[2dad09*/",(SLibCG_DWV(146, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13708}Disable for Enabled SubSystem: '<S339>/Process_Messages' */
+            /*@>20d194*/if (%<SLibCG_DumpSSCode("/*@[2db000*/",(SLibCG_DWV(147, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13709}Disable for Enabled SubSystem: '<S609>/Demux message CAN1 and check coherence' */
+                /*@>20d3bf*/if (%<SLibCG_DumpSSCode("/*@[2db37b*/",(SLibCG_DWV(149, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13872}Disable for Outport: '<S611>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dcfd9*/",SLibCG_SetBOV(195, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0fb4*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc8e3*/",SLibCG_SetDWV(149, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13709}End of Disable for SubSystem: '<S609>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13711}Disable for Enabled SubSystem: '<S609>/Demux message CAN1 and check coherence1' */
+                /*@>20d3c4*/if (%<SLibCG_DumpSSCode("/*@[2db39c*/",(SLibCG_DWV(148, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13874}Disable for Outport: '<S612>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dd01d*/",SLibCG_SetBOV(194, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f0fe5*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc906*/",SLibCG_SetDWV(148, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13711}End of Disable for SubSystem: '<S609>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dc0d7*/",SLibCG_SetDWV(147, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13708}End of Disable for SubSystem: '<S339>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2dba67*/",SLibCG_SetDWV(146, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13707}End of Disable for SubSystem: '<S90>/COMP Task - Rx_Output_Emulator_Check' */
+
+        /* {S!d13715}Disable for Enabled SubSystem: '<S90>/COMP Task - Rx_Sensor_Values_Check' */
+        /*@>20cfd6*/if (%<SLibCG_DumpSSCode("/*@[2dad2a*/",(SLibCG_DWV(142, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13716}Disable for Enabled SubSystem: '<S340>/Process_Messages' */
+            /*@>20d1a6*/if (%<SLibCG_DumpSSCode("/*@[2db021*/",(SLibCG_DWV(143, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13717}Disable for Enabled SubSystem: '<S637>/Demux message CAN1 and check coherence' */
+                /*@>20d3dc*/if (%<SLibCG_DumpSSCode("/*@[2db3bd*/",(SLibCG_DWV(145, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13876}Disable for Outport: '<S640>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dd061*/",SLibCG_SetBOV(193, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f103c*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc929*/",SLibCG_SetDWV(145, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13717}End of Disable for SubSystem: '<S637>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13719}Disable for Enabled SubSystem: '<S637>/Demux message CAN1 and check coherence1' */
+                /*@>20d3e1*/if (%<SLibCG_DumpSSCode("/*@[2db3de*/",(SLibCG_DWV(144, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13878}Disable for Outport: '<S641>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dd0a5*/",SLibCG_SetBOV(192, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f106d*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc94c*/",SLibCG_SetDWV(144, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13719}End of Disable for SubSystem: '<S637>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dc0fa*/",SLibCG_SetDWV(143, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13716}End of Disable for SubSystem: '<S340>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2dba8a*/",SLibCG_SetDWV(142, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13715}End of Disable for SubSystem: '<S90>/COMP Task - Rx_Sensor_Values_Check' */
+
+        /* {S!d13723}Disable for Enabled SubSystem: '<S90>/COMP Task - Rx_Set_Values_Check' */
+        /*@>20cfdb*/if (%<SLibCG_DumpSSCode("/*@[2dad4b*/",(SLibCG_DWV(138, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13724}Disable for Enabled SubSystem: '<S341>/Process_Messages' */
+            /*@>20d1b8*/if (%<SLibCG_DumpSSCode("/*@[2db042*/",(SLibCG_DWV(139, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13725}Disable for Enabled SubSystem: '<S690>/Demux message CAN1 and check coherence' */
+                /*@>20d3f9*/if (%<SLibCG_DumpSSCode("/*@[2db3ff*/",(SLibCG_DWV(141, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13880}Disable for Outport: '<S693>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dd0e9*/",SLibCG_SetBOV(191, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f10c4*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc96f*/",SLibCG_SetDWV(141, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13725}End of Disable for SubSystem: '<S690>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13727}Disable for Enabled SubSystem: '<S690>/Demux message CAN1 and check coherence1' */
+                /*@>20d3fe*/if (%<SLibCG_DumpSSCode("/*@[2db420*/",(SLibCG_DWV(140, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13882}Disable for Outport: '<S694>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dd12d*/",SLibCG_SetBOV(190, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f10f5*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc992*/",SLibCG_SetDWV(140, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13727}End of Disable for SubSystem: '<S690>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dc11d*/",SLibCG_SetDWV(139, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13724}End of Disable for SubSystem: '<S341>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2dbaad*/",SLibCG_SetDWV(138, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13723}End of Disable for SubSystem: '<S90>/COMP Task - Rx_Set_Values_Check' */
+
+        /* {S!d13731}Disable for Enabled SubSystem: '<S90>/COMP Task - Sync bc1 check' */
+        /*@>20cfe0*/if (%<SLibCG_DumpSSCode("/*@[2dad6c*/",(SLibCG_DWV(134, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13732}Disable for Enabled SubSystem: '<S342>/Process_Messages' */
+            /*@>20d1ca*/if (%<SLibCG_DumpSSCode("/*@[2db063*/",(SLibCG_DWV(135, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13733}Disable for Enabled SubSystem: '<S736>/Demux message CAN1 and check coherence' */
+                /*@>20d416*/if (%<SLibCG_DumpSSCode("/*@[2db441*/",(SLibCG_DWV(137, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13884}Disable for Outport: '<S738>/CAN1_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dd171*/",SLibCG_SetBOV(189, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f114c*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc9b5*/",SLibCG_SetDWV(137, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13733}End of Disable for SubSystem: '<S736>/Demux message CAN1 and check coherence' */
+
+                /* {S!d13735}Disable for Enabled SubSystem: '<S736>/Demux message CAN1 and check coherence1' */
+                /*@>20d41b*/if (%<SLibCG_DumpSSCode("/*@[2db462*/",(SLibCG_DWV(136, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13886}Disable for Outport: '<S739>/CAN2_msg_coherent' */
+%<SLibCG_DumpSSCode("/*@[2dd1b5*/",SLibCG_SetBOV(188, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f117d*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc9d8*/",SLibCG_SetDWV(136, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13735}End of Disable for SubSystem: '<S736>/Demux message CAN1 and check coherence1' */
+%<SLibCG_DumpSSCode("/*@[2dc140*/",SLibCG_SetDWV(135, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13732}End of Disable for SubSystem: '<S342>/Process_Messages' */
+%<SLibCG_DumpSSCode("/*@[2dbad0*/",SLibCG_SetDWV(134, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13731}End of Disable for SubSystem: '<S90>/COMP Task - Sync bc1 check' */
+
+        /* {S!d13739}Disable for Enabled SubSystem: '<S90>/COMP Task - TMR' */
+        /*@>20cfe5*/if (%<SLibCG_DumpSSCode("/*@[2dad8d*/",(SLibCG_DWV(129, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13740}Disable for Enabled SubSystem: '<S343>/TMR_main' */
+            /*@>20d1dc*/if (%<SLibCG_DumpSSCode("/*@[2db084*/",(SLibCG_DWV(130, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13741}Disable for Enabled SubSystem: '<S766>/Agreement Out1' */
+                /*@>20d433*/if (%<SLibCG_DumpSSCode("/*@[2db483*/",(SLibCG_DWV(133, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13888}Disable for Outport: '<S807>/tau_fr_agree' */
+                    /*@>28e557*/tau_fr1_agree_s/*@>20d5bc*/ = %<SLibCG_DumpSSCode("/*@[2dd1d5*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13890}Disable for Outport: '<S807>/tau_fl_agree ' */
+                    /*@>28e561*/tau_fl1_agree_s/*@>20d5be*/ = %<SLibCG_DumpSSCode("/*@[2dd1f7*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13892}Disable for Outport: '<S807>/tau_ar_agree' */
+                    /*@>28e56b*/tau_ar1_agree_s/*@>20d5c0*/ = %<SLibCG_DumpSSCode("/*@[2dd219*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13894}Disable for Outport: '<S807>/tau_al_agree' */
+                    /*@>28e575*/tau_al1_agree_s/*@>20d5c2*/ = %<SLibCG_DumpSSCode("/*@[2dd23b*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+%<SLibCG_DumpSSCode("/*@[2dc9fb*/",SLibCG_SetDWV(133, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13741}End of Disable for SubSystem: '<S766>/Agreement Out1' */
+
+                /* {S!d13743}Disable for Enabled SubSystem: '<S766>/Agreement Out2' */
+                /*@>20d438*/if (%<SLibCG_DumpSSCode("/*@[2db4a4*/",(SLibCG_DWV(132, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13896}Disable for Outport: '<S808>/tau_fr_agree' */
+                    /*@>28e569*/tau_fr2_agree_s/*@>20d5d7*/ = %<SLibCG_DumpSSCode("/*@[2dd25d*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13898}Disable for Outport: '<S808>/tau_fl_agree ' */
+                    /*@>28e573*/tau_fl2_agree_s/*@>20d5d9*/ = %<SLibCG_DumpSSCode("/*@[2dd27f*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13900}Disable for Outport: '<S808>/tau_ar_agree' */
+                    /*@>28e57f*/tau_ar2_agree_s/*@>20d5db*/ = %<SLibCG_DumpSSCode("/*@[2dd2a1*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13902}Disable for Outport: '<S808>/tau_al_agree' */
+                    /*@>28e587*/tau_al2_agree_s/*@>20d5dd*/ = %<SLibCG_DumpSSCode("/*@[2dd2c3*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+%<SLibCG_DumpSSCode("/*@[2dca1e*/",SLibCG_SetDWV(132, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13743}End of Disable for SubSystem: '<S766>/Agreement Out2' */
+
+                /* {S!d13745}Disable for Enabled SubSystem: '<S766>/Agreement Out3' */
+                /*@>20d43d*/if (%<SLibCG_DumpSSCode("/*@[2db4c5*/",(SLibCG_DWV(131, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13904}Disable for Outport: '<S809>/tau_fr_agree' */
+                    /*@>28e57d*/tau_fr_agree_s/*@>20d5f2*/ = %<SLibCG_DumpSSCode("/*@[2dd2e5*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13906}Disable for Outport: '<S809>/tau_fl_agree ' */
+                    /*@>28e585*/tau_fl_agree_s/*@>20d5f4*/ = %<SLibCG_DumpSSCode("/*@[2dd307*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13908}Disable for Outport: '<S809>/tau_ar_agree' */
+                    /*@>28e58f*/tau_ar_agree_s/*@>20d5f6*/ = %<SLibCG_DumpSSCode("/*@[2dd329*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+                    /* {S!d13910}Disable for Outport: '<S809>/tau_al_agree' */
+                    /*@>28e595*/tau_al_agree_s/*@>20d5f8*/ = %<SLibCG_DumpSSCode("/*@[2dd34b*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+%<SLibCG_DumpSSCode("/*@[2dca41*/",SLibCG_SetDWV(131, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13745}End of Disable for SubSystem: '<S766>/Agreement Out3' */
+%<SLibCG_DumpSSCode("/*@[2dc163*/",SLibCG_SetDWV(130, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13740}End of Disable for SubSystem: '<S343>/TMR_main' */
+%<SLibCG_DumpSSCode("/*@[2dbaf3*/",SLibCG_SetDWV(129, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13739}End of Disable for SubSystem: '<S90>/COMP Task - TMR' */
+
+        /* {S!d13749}Disable for Enabled SubSystem: '<S90>/COMM Task - Output Control1' */
+        /*@>20cfea*/if (%<SLibCG_DumpSSCode("/*@[2dadae*/",(SLibCG_DWV(169, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13750}Disable for Enabled SubSystem: '<S326>/Reception substasks' */
+            /*@>20d1ee*/if (%<SLibCG_DumpSSCode("/*@[2db0a5*/",(SLibCG_DWV(218, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa6b*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2f1247*/%<::tSimStruct>", "&/*@>2f1253*/localB->/*@>2f1252*/Receptionsubstasks_a", "&/*@>2f1260*/localDW->/*@>2f125f*/Receptionsubstasks_a"], 109, 4, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13750}End of Disable for SubSystem: '<S326>/Reception substasks' */
+
+            /* {S!d13752}Disable for Enabled SubSystem: '<S326>/Transmission subtasks' */
+            /*@>20d1f3*/if (%<SLibCG_DumpSSCode("/*@[2db0c6*/",(SLibCG_DWV(215, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[268], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa6e*/",SLibCGIRGenReusableSysCall("Transmissionsubtasks_g_Disable", ["/*@>2f1289*/%<::tSimStruct>", "&/*@>2f1295*/localB->/*@>2f1294*/Transmissionsubtasks_ic", "&/*@>2f12a2*/localDW->/*@>2f12a1*/Transmissionsubtasks_ic"], 268, 0, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13752}End of Disable for SubSystem: '<S326>/Transmission subtasks' */
+
+            /* {S!d13912}Disable for Outport: '<S326>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc1a7*/",SLibCG_SetBOV(365, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f12b7*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13914}Disable for Outport: '<S326>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc1eb*/",SLibCG_SetBOV(368, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f12d5*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13916}Disable for Outport: '<S326>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc22f*/",SLibCG_SetBOV(362, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f12f3*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13918}Disable for Outport: '<S326>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc273*/",SLibCG_SetBOV(369, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1311*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dbb16*/",SLibCG_SetDWV(169, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13749}End of Disable for SubSystem: '<S90>/COMM Task - Output Control1' */
+
+        /* {S!d13755}Disable for Enabled SubSystem: '<S90>/COMM Task - Output Control2' */
+        /*@>20cfef*/if (%<SLibCG_DumpSSCode("/*@[2dadcf*/",(SLibCG_DWV(168, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13756}Disable for Enabled SubSystem: '<S327>/Reception substasks' */
+            /*@>20d21b*/if (%<SLibCG_DumpSSCode("/*@[2db0e7*/",(SLibCG_DWV(214, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa6d*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2f1356*/%<::tSimStruct>", "&/*@>2f1362*/localB->/*@>2f1361*/Receptionsubstasks_ah", "&/*@>2f136f*/localDW->/*@>2f136e*/Receptionsubstasks_ah"], 109, 5, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13756}End of Disable for SubSystem: '<S327>/Reception substasks' */
+
+            /* {S!d13758}Disable for Enabled SubSystem: '<S327>/Transmission subtasks' */
+            /*@>20d220*/if (%<SLibCG_DumpSSCode("/*@[2db108*/",(SLibCG_DWV(211, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[268], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa70*/",SLibCGIRGenReusableSysCall("Transmissionsubtasks_g_Disable", ["/*@>2f1398*/%<::tSimStruct>", "&/*@>2f13a4*/localB->/*@>2f13a3*/Transmissionsubtasks_m", "&/*@>2f13b1*/localDW->/*@>2f13b0*/Transmissionsubtasks_m"], 268, 1, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13758}End of Disable for SubSystem: '<S327>/Transmission subtasks' */
+
+            /* {S!d13920}Disable for Outport: '<S327>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc2b7*/",SLibCG_SetBOV(346, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f13c6*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13922}Disable for Outport: '<S327>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc2fb*/",SLibCG_SetBOV(349, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f13e4*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13924}Disable for Outport: '<S327>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc33f*/",SLibCG_SetBOV(343, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1402*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13926}Disable for Outport: '<S327>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc383*/",SLibCG_SetBOV(350, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1420*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dbb39*/",SLibCG_SetDWV(168, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13755}End of Disable for SubSystem: '<S90>/COMM Task - Output Control2' */
+
+        /* {S!d13761}Disable for Enabled SubSystem: '<S90>/COMM Task - Output Emulator' */
+        /*@>20cff4*/if (%<SLibCG_DumpSSCode("/*@[2dadf0*/",(SLibCG_DWV(166, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13762}Disable for Enabled SubSystem: '<S328>/Reception substasks' */
+            /*@>20d248*/if (%<SLibCG_DumpSSCode("/*@[2db129*/",(SLibCG_DWV(210, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa6f*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2f1465*/%<::tSimStruct>", "&/*@>2f1471*/localB->/*@>2f1470*/Receptionsubstasks_b", "&/*@>2f147e*/localDW->/*@>2f147d*/Receptionsubstasks_b"], 109, 6, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13762}End of Disable for SubSystem: '<S328>/Reception substasks' */
+
+            /* {S!d13764}Disable for Enabled SubSystem: '<S328>/Transmission subtasks' */
+            /*@>20d24d*/if (%<SLibCG_DumpSSCode("/*@[2db14a*/",(SLibCG_DWV(167, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13765}Disable for Enabled SubSystem: '<S408>/Check msg transmission CAN1' */
+                /*@>20d45b*/if (%<SLibCG_DumpSSCode("/*@[2db4e6*/",(SLibCG_DWV(209, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[256], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN_Disable",256,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN_Disable",256,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN_Disable",256,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa72*/",SLibCGIRGenReusableSysCall("CheckmsgtransmissionCAN_Disable", ["/*@>2f14a7*/%<::tSimStruct>", "&/*@>2f14b3*/localB->/*@>2f14b2*/CheckmsgtransmissionCAN1_i", "&/*@>2f14c0*/localDW->/*@>2f14bf*/CheckmsgtransmissionCAN1_i"], 256, 2, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+                }
+                /* {E!d13765}End of Disable for SubSystem: '<S408>/Check msg transmission CAN1' */
+
+                /* {S!d13767}Disable for Enabled SubSystem: '<S408>/Check msg transmission CAN2' */
+                /*@>20d460*/if (%<SLibCG_DumpSSCode("/*@[2db507*/",(SLibCG_DWV(208, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[258], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionC_g_Disable",258,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionC_g_Disable",258,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionC_g_Disable",258,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa74*/",SLibCGIRGenReusableSysCall("CheckmsgtransmissionC_g_Disable", ["/*@>2f14e9*/%<::tSimStruct>", "&/*@>2f14f5*/localB->/*@>2f14f4*/CheckmsgtransmissionCAN2_c", "&/*@>2f1502*/localDW->/*@>2f1501*/CheckmsgtransmissionCAN2_c"], 258, 2, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+                }
+                /* {E!d13767}End of Disable for SubSystem: '<S408>/Check msg transmission CAN2' */
+
+                /* {S!d13928}Disable for Outport: '<S408>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dca85*/",SLibCG_SetBOV(327, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1517*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+                /* {S!d13930}Disable for Outport: '<S408>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dcac9*/",SLibCG_SetBOV(324, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1535*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc3a6*/",SLibCG_SetDWV(167, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13764}End of Disable for SubSystem: '<S328>/Transmission subtasks' */
+
+            /* {S!d13932}Disable for Outport: '<S328>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc3ea*/",SLibCG_SetBOV(327, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1566*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13934}Disable for Outport: '<S328>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc42e*/",SLibCG_SetBOV(330, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1584*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13936}Disable for Outport: '<S328>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc472*/",SLibCG_SetBOV(324, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f15a2*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13938}Disable for Outport: '<S328>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc4b6*/",SLibCG_SetBOV(331, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f15c0*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dbb5c*/",SLibCG_SetDWV(166, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13761}End of Disable for SubSystem: '<S90>/COMM Task - Output Emulator' */
+
+        /* {S!d13771}Disable for Enabled SubSystem: '<S90>/COMM Task - Sensor_Values' */
+        /*@>20cff9*/if (%<SLibCG_DumpSSCode("/*@[2dae11*/",(SLibCG_DWV(162, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13772}Disable for Enabled SubSystem: '<S329>/Reception substasks' */
+            /*@>20d277*/if (%<SLibCG_DumpSSCode("/*@[2db16b*/",(SLibCG_DWV(207, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa71*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2f1605*/%<::tSimStruct>", "&/*@>2f1611*/localB->/*@>2f1610*/Receptionsubstasks_gp", "&/*@>2f161e*/localDW->/*@>2f161d*/Receptionsubstasks_gp"], 109, 7, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13772}End of Disable for SubSystem: '<S329>/Reception substasks' */
+
+            /* {S!d13774}Disable for Enabled SubSystem: '<S329>/Transmission subtasks' */
+            /*@>20d27c*/if (%<SLibCG_DumpSSCode("/*@[2db18c*/",(SLibCG_DWV(163, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13775}Disable for Enabled SubSystem: '<S438>/Check msg transmission CAN1' */
+                /*@>20d47e*/if (%<SLibCG_DumpSSCode("/*@[2db528*/",(SLibCG_DWV(165, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13940}Disable for Outport: '<S440>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dd391*/",SLibCG_SetBOV(203, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1633*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dcaec*/",SLibCG_SetDWV(165, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13775}End of Disable for SubSystem: '<S438>/Check msg transmission CAN1' */
+
+                /* {S!d13777}Disable for Enabled SubSystem: '<S438>/Check msg transmission CAN2' */
+                /*@>20d483*/if (%<SLibCG_DumpSSCode("/*@[2db549*/",(SLibCG_DWV(164, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13942}Disable for Outport: '<S441>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dd3d5*/",SLibCG_SetBOV(202, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1664*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dcb0f*/",SLibCG_SetDWV(164, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13777}End of Disable for SubSystem: '<S438>/Check msg transmission CAN2' */
+
+                /* {S!d13944}Disable for Outport: '<S438>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dcb53*/",SLibCG_SetBOV(203, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1695*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+                /* {S!d13946}Disable for Outport: '<S438>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dcb97*/",SLibCG_SetBOV(202, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f16b3*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc4d9*/",SLibCG_SetDWV(163, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13774}End of Disable for SubSystem: '<S329>/Transmission subtasks' */
+
+            /* {S!d13948}Disable for Outport: '<S329>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc51d*/",SLibCG_SetBOV(203, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f16e4*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13950}Disable for Outport: '<S329>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc561*/",SLibCG_SetBOV(318, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1702*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13952}Disable for Outport: '<S329>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc5a5*/",SLibCG_SetBOV(202, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1720*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13954}Disable for Outport: '<S329>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc5e9*/",SLibCG_SetBOV(319, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f173e*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dbb7f*/",SLibCG_SetDWV(162, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13771}End of Disable for SubSystem: '<S90>/COMM Task - Sensor_Values' */
+
+        /* {S!d13781}Disable for Enabled SubSystem: '<S90>/COMM Task - Set_Values' */
+        /*@>20cffe*/if (%<SLibCG_DumpSSCode("/*@[2dae32*/",(SLibCG_DWV(158, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d13782}Disable for Enabled SubSystem: '<S330>/Reception substasks' */
+            /*@>20d2a6*/if (%<SLibCG_DumpSSCode("/*@[2db1ad*/",(SLibCG_DWV(206, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa73*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2f1783*/%<::tSimStruct>", "&/*@>2f178f*/localB->/*@>2f178e*/Receptionsubstasks_ga", "&/*@>2f179c*/localDW->/*@>2f179b*/Receptionsubstasks_ga"], 109, 8, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+            }
+            /* {E!d13782}End of Disable for SubSystem: '<S330>/Reception substasks' */
+
+            /* {S!d13784}Disable for Enabled SubSystem: '<S330>/Transmission subtasks' */
+            /*@>20d2ab*/if (%<SLibCG_DumpSSCode("/*@[2db1ce*/",(SLibCG_DWV(159, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                /* {S!d13785}Disable for Enabled SubSystem: '<S468>/Check msg transmission CAN1' */
+                /*@>20d4a5*/if (%<SLibCG_DumpSSCode("/*@[2db56a*/",(SLibCG_DWV(161, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13956}Disable for Outport: '<S470>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dd419*/",SLibCG_SetBOV(201, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f17b1*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dcbba*/",SLibCG_SetDWV(161, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13785}End of Disable for SubSystem: '<S468>/Check msg transmission CAN1' */
+
+                /* {S!d13787}Disable for Enabled SubSystem: '<S468>/Check msg transmission CAN2' */
+                /*@>20d4aa*/if (%<SLibCG_DumpSSCode("/*@[2db58b*/",(SLibCG_DWV(160, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+                    /* {S!d13958}Disable for Outport: '<S471>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dd45d*/",SLibCG_SetBOV(200, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f17e2*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dcbdd*/",SLibCG_SetDWV(160, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+                }
+                /* {E!d13787}End of Disable for SubSystem: '<S468>/Check msg transmission CAN2' */
+
+                /* {S!d13960}Disable for Outport: '<S468>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dcc21*/",SLibCG_SetBOV(201, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1813*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+                /* {S!d13962}Disable for Outport: '<S468>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dcc65*/",SLibCG_SetBOV(200, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1831*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dc60c*/",SLibCG_SetDWV(159, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+            }
+            /* {E!d13784}End of Disable for SubSystem: '<S330>/Transmission subtasks' */
+
+            /* {S!d13964}Disable for Outport: '<S330>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc650*/",SLibCG_SetBOV(201, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1862*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13966}Disable for Outport: '<S330>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dc694*/",SLibCG_SetBOV(308, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1880*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13968}Disable for Outport: '<S330>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc6d8*/",SLibCG_SetBOV(200, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f189e*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+            /* {S!d13970}Disable for Outport: '<S330>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dc71c*/",SLibCG_SetBOV(309, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f18bc*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2dbba2*/",SLibCG_SetDWV(158, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+        /* {E!d13781}End of Disable for SubSystem: '<S90>/COMM Task - Set_Values' */
+
+        /* {S!d13791}Disable for Enabled SubSystem: '<S90>/COMM Task - Sync bc 1' */
+        /*@>20d003*/if (%<SLibCG_DumpSSCode("/*@[2dae53*/",(SLibCG_DWV(201, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[126], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("COMMTaskSyncbc0_Disable",126,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("COMMTaskSyncbc0_Disable",126,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("COMMTaskSyncbc0_Disable",126,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa75*/",SLibCGIRGenReusableSysCall("COMMTaskSyncbc0_Disable", ["/*@>2f1901*/%<::tSimStruct>", "&/*@>2f190d*/localB->/*@>2f190c*/COMMTaskSyncbc1", "&/*@>2f191a*/localDW->/*@>2f1919*/COMMTaskSyncbc1"], 126, 1, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+        }
+        /* {E!d13791}End of Disable for SubSystem: '<S90>/COMM Task - Sync bc 1' */
+
+        /* {S!d13972}Disable for Outport: '<S90>/Send_Message_CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dbbe6*/",SLibCG_SetBOV(184, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f192f*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+        /* {S!d13974}Disable for Outport: '<S90>/Send_Message_CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dbc2a*/",SLibCG_SetBOV(187, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f194d*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+        /* {S!d13976}Disable for Outport: '<S90>/Receive_Message_CAN1' */
+%<SLibCG_DumpSSCode("/*@[2dbc6e*/",SLibCG_SetBOV(186, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f196b*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+        /* {S!d13978}Disable for Outport: '<S90>/Receive_Message_CAN2' */
+%<SLibCG_DumpSSCode("/*@[2dbcb2*/",SLibCG_SetBOV(185, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1989*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2db6c7*/",SLibCG_SetDWV(128, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+    }
+    /* {E!d13690}End of Disable for SubSystem: '<S41>/controller basic cycle 1' */
+
+    /* {S!d13980}Disable for Outport: '<S41>/Send_Message_CAN1' */
+%<SLibCG_DumpSSCode("/*@[2db70b*/",SLibCG_SetBOV(180, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f19ba*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+    /* {S!d13982}Disable for Outport: '<S41>/Send_Message_CAN2' */
+%<SLibCG_DumpSSCode("/*@[2db74f*/",SLibCG_SetBOV(181, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f19d8*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+    /* {S!d13984}Disable for Outport: '<S41>/Receive_Message_CAN1' */
+%<SLibCG_DumpSSCode("/*@[2db793*/",SLibCG_SetBOV(182, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f19f6*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+    /* {S!d13986}Disable for Outport: '<S41>/Receive_Message_CAN2' */
+%<SLibCG_DumpSSCode("/*@[2db7d7*/",SLibCG_SetBOV(183, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2f1a14*/",(SLibCGIR_PV(78, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2db5f5*/",SLibCG_SetDWV(127, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d13635}End of Disable for SubSystem: '<S18>/Matrix Cycle Manager' */
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[4], "Disable",1)
+
+/* {S!d13795}Disable for Chart: '<S18>/Chart' incorporates:
+ *  SubSystem: '<S6>/CAN1 Send'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN1Send_Disable",4,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN1Send_Disable",4,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa60*/",SLibCGIRGenReusableSysCall("CAN1Send_Disable", ["/*@>2f1a54*/%<::tSimStruct>", "&/*@>2f1a60*/localB->/*@>2f1a5f*/CAN1Send_o"], 4, 0, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[35], "Disable",1)
+
+/* {S!d13797}Disable for Chart: '<S18>/Chart1' incorporates:
+ *  SubSystem: '<S6>/CAN1 Recieve'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN1Recieve_Disable",35,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN1Recieve_Disable",35,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN1Recieve_Disable",35,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa61*/",SLibCGIRGenReusableSysCall("CAN1Recieve_Disable", ["/*@>2f1a89*/%<::tSimStruct>", "&/*@>2f1a95*/localB->/*@>2f1a94*/CAN1Recieve_h", "&/*@>2f1aa2*/localDW->/*@>2f1aa1*/CAN1Recieve_h"], 35, 0, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[66], "Disable",1)
+
+/* {S!d13799}Disable for Chart: '<S18>/Chart2' incorporates:
+ *  SubSystem: '<S6>/CAN2 Recieve'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN2Recieve_Disable",66,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN2Recieve_Disable",66,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN2Recieve_Disable",66,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa62*/",SLibCGIRGenReusableSysCall("CAN2Recieve_Disable", ["/*@>2f1acb*/%<::tSimStruct>", "&/*@>2f1ad7*/localB->/*@>2f1ad6*/CAN2Recieve_b", "&/*@>2f1ae4*/localDW->/*@>2f1ae3*/CAN2Recieve_b"], 66, 0, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[68], "Disable",1)
+
+/* {S!d13801}Disable for Chart: '<S18>/Chart3' incorporates:
+ *  SubSystem: '<S6>/CAN2 Send'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN2Send_Disable",68,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN2Send_Disable",68,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa63*/",SLibCGIRGenReusableSysCall("CAN2Send_Disable", ["/*@>2f1b08*/%<::tSimStruct>", "&/*@>2f1b14*/localB->/*@>2f1b13*/CAN2Send_h"], 68, 0, 15, 1, 15, 522),"/*@]*/")>\
+
+
+%endif
+/* {S!d13803}Disable for Enabled SubSystem: '<S18>/DEBUG - Toggle digital pin A0' */
+/*@>20ce3c*/if (%<SLibCG_DumpSSCode("/*@[2daaf9*/",(SLibCG_DWV(195, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS73B3)
+    /* {S!d13988}Disable for M-S-Function: '<S42>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2daa5b*/",tlcDisableFcnOfS73B3,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[2db618*/",SLibCG_SetDWV(195, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d13803}End of Disable for SubSystem: '<S18>/DEBUG - Toggle digital pin A0' */
+
+/* {S!d13805}Disable for Enabled SubSystem: '<S18>/DEBUG - Toggle digital pin A1' */
+/*@>20ce41*/if (%<SLibCG_DumpSSCode("/*@[2dab1a*/",(SLibCG_DWV(194, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS74B3)
+    /* {S!d13990}Disable for M-S-Function: '<S43>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2daa5d*/",tlcDisableFcnOfS74B3,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[2db63b*/",SLibCG_SetDWV(194, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d13805}End of Disable for SubSystem: '<S18>/DEBUG - Toggle digital pin A1' */
+
+/* {S!d13807}Disable for Enabled SubSystem: '<S18>/DEBUG - Toggle digital pin A4' */
+/*@>20ce46*/if (%<SLibCG_DumpSSCode("/*@[2dab3b*/",(SLibCG_DWV(192, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS76B2)
+    /* {S!d13992}Disable for M-S-Function: '<S45>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2daa5f*/",tlcDisableFcnOfS76B2,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[2db65e*/",SLibCG_SetDWV(192, 0, 522, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d13807}End of Disable for SubSystem: '<S18>/DEBUG - Toggle digital pin A4' */
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[71], "Disable",1)
+
+/* {S!d13809}Disable for Chart: '<S18>/Chart4' incorporates:
+ *  SubSystem: '<S6>/Measure EXecution time'
+ */
+%if SLibCG_SystemFcnArgAccessed("MeasureEXecutiontime_Disable",71,0)
+%<SLibCG_AccessArg(19 ,7, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("MeasureEXecutiontime_Disable",71,1)
+%<SLibCG_AccessArg(19 ,7, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("MeasureEXecutiontime_Disable",71,2)
+%<SLibCG_AccessArg(19 ,7, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2daa68*/",SLibCGIRGenReusableSysCall("MeasureEXecutiontime_Disable", ["/*@>2f1b91*/%<::tSimStruct>", "&/*@>2f1b9d*/localB->/*@>2f1b9c*/MeasureEXecutiontime_d", "&/*@>2f1baa*/localDW->/*@>2f1ba9*/MeasureEXecutiontime_d"], 71, 0, 15, 1, 15, 522),"/*@]*/")>\
+
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[19].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Disable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))
+%<SLibCG_AccessArg(19, 7, 0)>
+%endif
+%if SLibCG_ArgAccessed(19, 7, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Disable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(19, 7, 0)>
+%endif
+%endfunction
+%function DisableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CANManagement_Disable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(19, 7, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>rtB_CANManagement *localB\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(19, 7, 2)
+%<comma>rtDW_CANManagement *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(19, 7, fcnProtoType)>
+%endfunction

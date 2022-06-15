@@ -1,0 +1,130 @@
+%implements s909_b0_zc1e_20_TLCInterface "C"
+
+%function getInputAddr_524_4_20_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2f7863*//*@>2f785c*/rtB./*@>2f7868*/Sum"
+%endfunction
+
+%function getInput_524_4_20_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2f7875*/rtB./*@>2f7882*/Sum"
+%endfunction
+
+%function getInputAddr_524_4_20_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_524_4_20_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_524_7_20_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(23, 1, "")> %% rtb_Level2MfileSFunction
+
+%return "&/*@<2f78a5*//*@>2f78a0*/rtb_Level2MfileSFunction"
+%endfunction
+
+%function getOutput_524_7_20_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(23, 1, "")> %% rtb_Level2MfileSFunction
+
+%return "/*@>2f78b2*/rtb_Level2MfileSFunction"
+%endfunction
+
+%function getInputAddr_524_4_20_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2f7900*//*@>2f78f9*/rtB./*@>2f7905*/Sum"
+%endfunction
+
+%function getInput_524_4_20_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2f7912*/rtB./*@>2f791f*/Sum"
+%endfunction
+
+%function getInputAddr_524_4_20_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCGIR_PVAddr(87, 0, 524, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_524_4_20_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCGIR_PV(87, 0, 524, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getOutputAddr_524_7_20_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(23, 1, "")> %% rtb_Level2MfileSFunction
+
+%return "&/*@<2f7944*//*@>2f793f*/rtb_Level2MfileSFunction"
+%endfunction
+
+%function getOutput_524_7_20_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(23, 1, "")> %% rtb_Level2MfileSFunction
+
+%return "/*@>2f7951*/rtb_Level2MfileSFunction"
+%endfunction
+
+%function getInputAddr_524_4_20_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2f799b*//*@>2f7994*/rtB./*@>2f79a0*/Sum"
+%endfunction
+
+%function getInput_524_4_20_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2f79ad*/rtB./*@>2f79ba*/Sum"
+%endfunction
+
+%function getInputAddr_524_4_20_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_524_4_20_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_524_7_20_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(23, 1, "")> %% rtb_Level2MfileSFunction
+
+%return "&/*@<2f79dd*//*@>2f79d8*/rtb_Level2MfileSFunction"
+%endfunction
+
+%function getOutput_524_7_20_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(23, 1, "")> %% rtb_Level2MfileSFunction
+
+%return "/*@>2f79ea*/rtb_Level2MfileSFunction"
+%endfunction
+
+%function getInputAddr_524_4_20_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2f7a20*//*@>2f7a19*/rtB./*@>2f7a25*/Sum"
+%endfunction
+
+%function getInput_524_4_20_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2f7a32*/rtB./*@>2f7a3f*/Sum"
+%endfunction
+
+%function getInputAddr_524_4_20_5_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_524_4_20_5_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_524_7_20_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(23, 1, "")> %% rtb_Level2MfileSFunction
+
+%return "&/*@<2f7a62*//*@>2f7a5d*/rtb_Level2MfileSFunction"
+%endfunction
+
+%function getOutput_524_7_20_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(23, 1, "")> %% rtb_Level2MfileSFunction
+
+%return "/*@>2f7a6f*/rtb_Level2MfileSFunction"
+%endfunction
+

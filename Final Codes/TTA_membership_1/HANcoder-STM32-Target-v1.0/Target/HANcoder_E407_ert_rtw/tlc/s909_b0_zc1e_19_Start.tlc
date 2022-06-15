@@ -1,0 +1,156 @@
+%implements s909_b0_zc1e_19_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%assign tlcStartFcnOfS75B2 = OpaqueTLCBlockFcn("Start", 75, 2, 19, 2)
+%assign tlcStartFcnOfS73B3 = OpaqueTLCBlockFcn("Start", 73, 3, 19, 2)
+%assign tlcStartFcnOfS74B3 = OpaqueTLCBlockFcn("Start", 74, 3, 19, 2)
+%assign tlcStartFcnOfS76B2 = OpaqueTLCBlockFcn("Start", 76, 2, 19, 2)
+%if !WHITE_SPACE(tlcStartFcnOfS75B2)
+/* {S!d9843}Start for Enabled SubSystem: '<S18>/DEBUG - Toggle digital pin A2' */
+/* {S!d9870}Start for M-S-Function: '<S44>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2c5bf1*/",tlcStartFcnOfS75B2,"/*@]*/")>\
+/* {E!d9843}End of Start for SubSystem: '<S18>/DEBUG - Toggle digital pin A2' */
+
+%endif
+/* {S!d9872}Start for DataStoreMemory: '<S18>/Data Store Memory13' */
+%<SLibCG_DumpSSCode("/*@[2c5c41*/",SLibCG_SetDWV(108, 0, 522, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2e0476*/",(SLibCGIR_PV(79, 0, 522, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+/* {S!d9845}Start for Enabled SubSystem: '<S18>/Matrix Cycle Manager' */
+/* {S!d9846}Start for Enabled SubSystem: '<S41>/controller basic cycle 1' */
+/* {S!d9847}Start for Enabled SubSystem: '<S90>/COMP Task - Rx_Sensor_Values_Check' */
+/* {S!d9848}Start for Enabled SubSystem: '<S340>/Update Msg buffer' */
+/* {S!d9874}Start for DataStoreMemory: '<S639>/Data Store Memory' */
+/*@>2ba53d*/localDW->/*@>2e0414*/mc_counter/*@>203fe9*/ = %<SLibCG_DumpSSCode("/*@[2c5c83*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+/* {E!d9848}End of Start for SubSystem: '<S340>/Update Msg buffer' */
+/* {E!d9847}End of Start for SubSystem: '<S90>/COMP Task - Rx_Sensor_Values_Check' */
+
+/* {S!d9876}Start for DataStoreMemory: '<S90>/Data Store Memory18' */
+/*@>2ba544*/localDW->/*@>2e0417*/rx_data_incr_time/*@>203fd1*/ = %<SLibCG_DumpSSCode("/*@[2c5c61*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 522, 1, "", -1, "", 0))),"/*@]*/")>;
+/* {E!d9846}End of Start for SubSystem: '<S41>/controller basic cycle 1' */
+/* {E!d9845}End of Start for SubSystem: '<S18>/Matrix Cycle Manager' */
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[4], "Start",1)
+
+/* {S!d9853}Start for Chart: '<S18>/Chart' incorporates:
+ *  SubSystem: '<S6>/CAN1 Send'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN1Send_Start",4,0)
+%<SLibCG_AccessArg(19 ,2, 0)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2c5bf8*/",SLibCGIRGenReusableSysCall("CAN1Send_Start", ["/*@>2e049e*/%<::tSimStruct>"], 4, 0, 0, 1, 0, 522),"/*@]*/")>\
+
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[35], "Start",1)
+
+/* {S!d9855}Start for Chart: '<S18>/Chart1' incorporates:
+ *  SubSystem: '<S6>/CAN1 Recieve'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN1Recieve_Start",35,0)
+%<SLibCG_AccessArg(19 ,2, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN1Recieve_Start",35,1)
+%<SLibCG_AccessArg(19 ,2, 1)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2c5bf9*/",SLibCGIRGenReusableSysCall("CAN1Recieve_Start", ["/*@>2e04c1*/%<::tSimStruct>", "&/*@>2e04cd*/localB->/*@>2e04cc*/CAN1Recieve_h"], 35, 0, 0, 1, 0, 522),"/*@]*/")>\
+
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[66], "Start",1)
+
+/* {S!d9857}Start for Chart: '<S18>/Chart2' incorporates:
+ *  SubSystem: '<S6>/CAN2 Recieve'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN2Recieve_Start",66,0)
+%<SLibCG_AccessArg(19 ,2, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN2Recieve_Start",66,1)
+%<SLibCG_AccessArg(19 ,2, 1)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2c5bfa*/",SLibCGIRGenReusableSysCall("CAN2Recieve_Start", ["/*@>2e04f1*/%<::tSimStruct>", "&/*@>2e04fd*/localB->/*@>2e04fc*/CAN2Recieve_b"], 66, 0, 0, 1, 0, 522),"/*@]*/")>\
+
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[68], "Start",1)
+
+/* {S!d9859}Start for Chart: '<S18>/Chart3' incorporates:
+ *  SubSystem: '<S6>/CAN2 Send'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN2Send_Start",68,0)
+%<SLibCG_AccessArg(19 ,2, 0)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2c5bfb*/",SLibCGIRGenReusableSysCall("CAN2Send_Start", ["/*@>2e051c*/%<::tSimStruct>"], 68, 0, 0, 1, 0, 522),"/*@]*/")>\
+
+
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS73B3)
+/* {S!d9861}Start for Enabled SubSystem: '<S18>/DEBUG - Toggle digital pin A0' */
+/* {S!d9878}Start for M-S-Function: '<S42>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2c5bf3*/",tlcStartFcnOfS73B3,"/*@]*/")>\
+/* {E!d9861}End of Start for SubSystem: '<S18>/DEBUG - Toggle digital pin A0' */
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS74B3)
+
+/* {S!d9863}Start for Enabled SubSystem: '<S18>/DEBUG - Toggle digital pin A1' */
+/* {S!d9880}Start for M-S-Function: '<S43>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2c5bf5*/",tlcStartFcnOfS74B3,"/*@]*/")>\
+/* {E!d9863}End of Start for SubSystem: '<S18>/DEBUG - Toggle digital pin A1' */
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS76B2)
+
+/* {S!d9865}Start for Enabled SubSystem: '<S18>/DEBUG - Toggle digital pin A4' */
+/* {S!d9882}Start for M-S-Function: '<S45>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2c5bf7*/",tlcStartFcnOfS76B2,"/*@]*/")>\
+/* {E!d9865}End of Start for SubSystem: '<S18>/DEBUG - Toggle digital pin A4' */
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[71], "Start",1)
+
+/* {S!d9867}Start for Chart: '<S18>/Chart4' incorporates:
+ *  SubSystem: '<S6>/Measure EXecution time'
+ */
+%if SLibCG_SystemFcnArgAccessed("MeasureEXecutiontime_Start",71,0)
+%<SLibCG_AccessArg(19 ,2, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("MeasureEXecutiontime_Start",71,1)
+%<SLibCG_AccessArg(19 ,2, 1)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2c5bfc*/",SLibCGIRGenReusableSysCall("MeasureEXecutiontime_Start", ["/*@>2e055a*/%<::tSimStruct>", "&/*@>2e0566*/localB->/*@>2e0565*/MeasureEXecutiontime_d"], 71, 0, 0, 1, 0, 522),"/*@]*/")>\
+
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[19].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Start", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Start"))
+%<SLibCG_AccessArg(19, 2, 0)>
+%endif
+%if SLibCG_ArgAccessed(19, 2, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Start", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Start"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(19, 2, 0)>
+%endif
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CANManagement_Start(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(19, 2, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(19, 2, 1)
+%<comma>rtB_CANManagement *localB\
+%assign comma = ", "
+%endif
+%<comma>rtDW_CANManagement *localDW\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(19, 2, fcnProtoType)>
+%endfunction

@@ -1,0 +1,190 @@
+%implements s909_b0_zc1e_15_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+uint8_T rtb_Cast18_d;
+uint8_T rtb_Cast9_k;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(15,1,1,0)
+%<SLibCG_AccessArg(15 ,1, 2)>
+%<SLibCG_AccessArg(15 ,1, 3)>
+%endif
+%if SLibCG_FcnCallArgAccessed(15,1,1,2)
+%<SLibCG_AccessArg(15 ,1, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(15,1,0,0)
+%<SLibCG_AccessArg(15 ,1, 2)>
+%<SLibCG_AccessArg(15 ,1, 3)>
+%endif
+%if SLibCG_FcnCallArgAccessed(15,1,0,2)
+%<SLibCG_AccessArg(15 ,1, 0)>
+%endif
+
+/* {S!d9685}Outputs for Enabled SubSystem: '<S347>/Check msg transmission CAN2' incorporates:
+ *  EnablePort: '<S350>/Enable'
+ */
+/*@>1fb223*/if (/*@>24b2ea*/rtu_Enable) {
+    /*@>1fb227*/if (!/*@<1fb226*/%<SLibCG_DumpSSCode("/*@[24b6c5*/",(SLibCG_SE(SLibCG_DWV(216, 0, 258, 1, "", -1, "", 0))),"/*@]*/")>) {
+%<SLibCG_DumpSSCode("/*@[24b771*/",SLibCG_SetDWV(216, 0, 258, 1, "", -1, "", 0, "true"),"/*@]*/")>\
+    }
+    /* {S!d9686}Outputs for Enabled SubSystem: '<S350>/TX buffer update CAN2' incorporates:
+ *  EnablePort: '<S358>/Enable'
+ */
+    /* {S!d9702}RelationalOperator: '<S350>/Equal4' incorporates:
+ *  Constant: '<S350>/Constant22'
+ *  Constant: '<S350>/Constant24'
+ *  Constant: '<S350>/Constant8'
+ *  Math: '<S350>/Mod'
+ *  Sum: '<S350>/Minus'
+ */
+    /*@>2039dc*/if (%<SLibCG_DumpSSCode("/*@[24b848*/",(SLibCGCallSubFcn("rt_modd", ["(/*@>24b9de*/(real_T)/*@>24b9df*/rtu_LocalTime/*@>24b9dd*/ + %<SLibCG_DumpSSCode("/*@[24b9e0*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 258, 1, "", -1, "", 0))),"/*@]*/")>)/*@>24b9dc*/ - /*@>24b9ed*/rtu_TimeMark", "%<SLibCG_DumpSSCode("/*@[24b9f7*/",(SLibCGIR_PV(12, 0, 258, 1, "", -1, "", 0)),"/*@]*/")>", "/*@>24ba0b*/%<::tSimStruct>"], 15, 1, 0)),"/*@]*/")>/*@>24a1c6*/ == %<SLibCG_DumpSSCode("/*@[24b708*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 258, 1, "", -1, "", 0))),"/*@]*/")>) {
+        /* {S!d9694}DataTypeConversion: '<S358>/Cast18' */
+        /*@>24ab2e*/rtb_Cast18_d/*@>203a15*/ = */*@<24b915*/rtd_basic_cycle_count;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[97], "Output",1)
+        /* {S!d9687}Outputs for Atomic SubSystem: '<S359>/Bit Shift1' */
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,0)
+%<SLibCG_AccessArg(15 ,1, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,2)
+%<SLibCG_AccessArg(15 ,1, 11)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24b6a3*/",SLibCGIRGenReusableSysCall("BitShift1", ["/*@>24ba30*/%<::tSimStruct>", "/*@>24ba3a*/rtb_Cast18_d", "&/*@>24ba46*/localB->/*@>24ba45*/BitShift1_m"], 97, 19, 7, 1, 7, 258),"/*@]*/")>\
+
+
+        /* {E!d9687}End of Outputs for SubSystem: '<S359>/Bit Shift1' */
+
+%endif
+        /* {S!d9696}DataTypeConversion: '<S358>/Cast9' */
+        /*@>24ab32*/rtb_Cast9_k/*@>203a1c*/ = /*@>24ac0e*/(uint8_T)*/*@<24b916*/rtd_Tx_msg_count_CAN2;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[92], "Output",1)
+        /* {S!d9689}Outputs for Atomic SubSystem: '<S359>/Bit Shift' */
+%if SLibCG_SystemFcnArgAccessed("BitShift4",92,0)
+%<SLibCG_AccessArg(15 ,1, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift4",92,2)
+%<SLibCG_AccessArg(15 ,1, 11)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24b6a4*/",SLibCGIRGenReusableSysCall("BitShift4", ["/*@>24ba6c*/%<::tSimStruct>", "/*@>24ba76*/rtb_Cast9_k", "&/*@>24ba82*/localB->/*@>24ba81*/BitShift_j"], 92, 18, 7, 1, 7, 258),"/*@]*/")>\
+
+
+        /* {E!d9689}End of Outputs for SubSystem: '<S359>/Bit Shift' */
+
+%endif
+        /* {S!d9698}DataStoreWrite: '<S358>/Data Store Write4' incorporates:
+ *  DataTypeConversion: '<S358>/Cast17'
+ *  Sum: '<S359>/Minus'
+ */
+        rtd_Msg_Tx_CAN2->/*@>24b97e*/Buffer_1/*@>203a2c*/ = /*@>24abf3*/(uint8_T)(/*@>24ac9b*/(uint32_T)/*@>24ac00*/(uint8_T)(/*@>24ac98*/(uint32_T)/*@>24b39d*/localB->/*@>24b99f*/BitShift1_m./*@>24b99c*/y/*@>24abfc*/ + /*@>24b3a9*/localB->/*@>24b9a5*/BitShift_j./*@>24b9a2*/y)/*@>24abef*/ + /*@>24ac08*/(uint8_T)*/*@<24b91b*/rtd_Board_ID);
+        rtd_Msg_Tx_CAN2->/*@>24b981*/Buffer_2/*@>203a2f*/ = /*@>24b303*/rtu_ValueDomainMsg;
+        rtd_Msg_Tx_CAN2->/*@>24b984*/Buffer_3/*@>203a32*/ = /*@>24b308*/rtu_ValueDomainMsg_a;
+        rtd_Msg_Tx_CAN2->/*@>24b987*/Buffer_4/*@>203a35*/ = /*@>24b30d*/rtu_ValueDomainMsg_k;
+        rtd_Msg_Tx_CAN2->/*@>24b98a*/Buffer_5/*@>203a38*/ = /*@>24b312*/rtu_ValueDomainMsg_h;
+        rtd_Msg_Tx_CAN2->/*@>24b98d*/Buffer_6/*@>203a3b*/ = /*@>24b317*/rtu_ValueDomainMsg_hq;
+        rtd_Msg_Tx_CAN2->/*@>24b990*/Buffer_7/*@>203a3e*/ = /*@>24b31c*/rtu_ValueDomainMsg_e;
+        rtd_Msg_Tx_CAN2->/*@>24b993*/Buffer_8/*@>203a41*/ = /*@>24b321*/rtu_ValueDomainMsg_o;
+        /* {S!d9700}DataStoreWrite: '<S358>/Data Store Write5' */
+        *rtd_TxID_CAN2/*@>203a43*/ = /*@>24b3be*/localC->/*@>24b9a8*/Cast8;
+    }
+    /* {E!d9702}End of RelationalOperator: '<S350>/Equal4' */
+    /* {E!d9686}End of Outputs for SubSystem: '<S350>/TX buffer update CAN2' */
+
+    /* {S!d9704}RelationalOperator: '<S350>/Equal7' incorporates:
+ *  Constant: '<S350>/Constant11'
+ *  Constant: '<S350>/Constant27'
+ *  Math: '<S350>/Mod1'
+ *  Sum: '<S350>/Minus1'
+ */
+%<SLibCG_DumpSSCode("/*@[24b7d7*/",SLibCG_SetBOV(362, 0, 258, 1, "", -1, "", 0, "(%<SLibCG_DumpSSCode("/*@[24ba98*/",(SLibCGCallSubFcn("rt_modd", ["/*@>24baca*/(real_T)/*@>24bacb*/rtu_LocalTime/*@>24bac9*/ - /*@>24bacc*/rtu_TimeMark", "%<SLibCG_DumpSSCode("/*@[24bad6*/",(SLibCGIR_PV(12, 0, 258, 1, "", -1, "", 0)),"/*@]*/")>", "/*@>24baea*/%<::tSimStruct>"], 15, 1, 1)),"/*@]*/")>/*@>24ba97*/ == %<SLibCG_DumpSSCode("/*@[24bab3*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 258, 1, "", -1, "", 0))),"/*@]*/")>)"),"/*@]*/")>\
+} else {
+    /*@>1fb24c*/if (%<SLibCG_DumpSSCode("/*@[24b6e7*/",(SLibCG_DWV(216, 0, 258, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[258], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionC_g_Disable",258,0)
+%<SLibCG_AccessArg(15 ,1, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionC_g_Disable",258,1)
+%<SLibCG_AccessArg(15 ,1, 11)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionC_g_Disable",258,2)
+%<SLibCG_AccessArg(15 ,1, 13)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24b6a2*/",SLibCGIRGenReusableSysCall("CheckmsgtransmissionC_g_Disable", ["/*@>24bb0c*/%<::tSimStruct>", "/*@>24bb16*/localB", "/*@>24bb20*/localDW"], 258, 0, 15, 1, 7, 258),"/*@]*/")>\
+
+%endif
+    }
+}
+/* {E!d9685}End of Outputs for SubSystem: '<S347>/Check msg transmission CAN2' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[15].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(15, 1, 0)>
+%endif
+%if SLibCG_ArgAccessed(15, 1, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(15, 1, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CheckmsgtransmissionCAN2(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(15, 1, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>boolean_T rtu_Enable\
+%assign comma = ", "
+%<comma>uint16_T rtu_LocalTime\
+%assign comma = ", "
+%<comma>real_T rtu_TimeMark\
+%assign comma = ", "
+%<comma>uint8_T rtu_ValueDomainMsg\
+%assign comma = ", "
+%<comma>uint8_T rtu_ValueDomainMsg_a\
+%assign comma = ", "
+%<comma>uint8_T rtu_ValueDomainMsg_k\
+%assign comma = ", "
+%<comma>uint8_T rtu_ValueDomainMsg_h\
+%assign comma = ", "
+%<comma>uint8_T rtu_ValueDomainMsg_hq\
+%assign comma = ", "
+%<comma>uint8_T rtu_ValueDomainMsg_e\
+%assign comma = ", "
+%<comma>uint8_T rtu_ValueDomainMsg_o\
+%assign comma = ", "
+%<comma>rtB_CheckmsgtransmissionCAN2 *localB\
+%assign comma = ", "
+%<comma>const rtC_CheckmsgtransmissionCAN2 *localC\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(15, 1, 13)
+%<comma>rtDW_CheckmsgtransmissionCAN2 *localDW\
+%assign comma = ", "
+%endif
+%<comma>real_T *rtd_Board_ID\
+%assign comma = ", "
+%<comma>msg_buffer_type *rtd_Msg_Tx_CAN2\
+%assign comma = ", "
+%<comma>uint32_T *rtd_TxID_CAN2\
+%assign comma = ", "
+%<comma>real_T *rtd_Tx_msg_count_CAN2\
+%assign comma = ", "
+%<comma>uint8_T *rtd_basic_cycle_count\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(15, 1, fcnProtoType)>
+%endfunction

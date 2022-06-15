@@ -1,0 +1,31 @@
+%implements s909_b0_zc1e_20_SystemInitialize "C"
+
+%function SystemInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[522], "SystemInitialize",1)
+/* SystemInitialize for Chart: '<S26>/Chart' incorporates:
+ *  SubSystem: '<S6>/CAN Management'
+ */
+%if SLibCG_SystemFcnArgAccessed("CANManagement_Init",522,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2f74a1*/",SLibCGIRGenReusableSysCall("CANManagement_Init", ["%<_modelSS>", "&/*@>2f7b59*/rtB./*@>2f7b58*/CANManagement_c"], 522, 0, 4, 1, 4, 528),"/*@]*/")>\
+
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedSystemInitializeLocalVars", localVarDecl)>
+%endfunction
+%function SystemInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void SystemInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(20, 1, fcnProtoType)>
+%endfunction

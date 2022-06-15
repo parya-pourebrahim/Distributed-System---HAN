@@ -1,0 +1,45 @@
+%implements s909_b0_zc1e_9_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* Disable for Outport: '<S109>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[23b9b8*/",SLibCG_SetBOV(433, 0, 109, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[23bce7*/",(SLibCGIR_PV(78, 0, 109, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+/* Disable for Outport: '<S109>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[23b9fc*/",SLibCG_SetBOV(434, 0, 109, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[23bd05*/",(SLibCGIR_PV(78, 0, 109, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_SetDWV(235, 0, 109, 1, "", -1, "", 0, "false")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[9].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Disable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))
+%<SLibCG_AccessArg(9, 1, 0)>
+%endif
+%if SLibCG_ArgAccessed(9, 1, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Disable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(9, 1, 0)>
+%endif
+%endfunction
+%function DisableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Receptionsubstasks_Disable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(9, 1, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(9, 1, 1)
+%<comma>rtB_Receptionsubstasks *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(9, 1, 2)
+%<comma>rtDW_Receptionsubstasks *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(9, 1, fcnProtoType)>
+%endfunction

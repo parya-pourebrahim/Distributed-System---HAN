@@ -1,0 +1,366 @@
+%implements s909_b0_zc1e_3_TLCInterface "C"
+
+%function getOutputAddr_68_4_3_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<238d48*//*@>238d43*/FRC_Activation_CAN2_send"
+%endfunction
+
+%function getOutput_68_4_3_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>238d55*/FRC_Activation_CAN2_send"
+%endfunction
+
+%function getInputAddr_68_3_3_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238d83*//*@>238d7c*/localB->/*@>238d89*/DataTypeConversion1"
+%endfunction
+
+%function getInput_68_3_3_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238d97*/localB->/*@>238da5*/DataTypeConversion1"
+%endfunction
+
+%function getInputAddr_68_3_3_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238db8*//*@>238db1*/localB->/*@>238dbe*/DataTypeConversion"
+%endfunction
+
+%function getInput_68_3_3_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238dcc*/localB->/*@>238dda*/DataTypeConversion"
+%endfunction
+
+%function getInputAddr_68_3_3_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238ded*//*@>238de6*/localB->/*@>238df3*/DataTypeConversion4"
+%endfunction
+
+%function getInput_68_3_3_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238e01*/localB->/*@>238e0f*/DataTypeConversion4"
+%endfunction
+
+%function getInputAddr_68_3_3_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238e22*//*@>238e1b*/localB->/*@>238e28*/DataTypeConversion5"
+%endfunction
+
+%function getInput_68_3_3_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238e36*/localB->/*@>238e44*/DataTypeConversion5"
+%endfunction
+
+%function getInputAddr_68_3_3_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238e57*//*@>238e50*/localB->/*@>238e5d*/DataTypeConversion6"
+%endfunction
+
+%function getInput_68_3_3_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238e6b*/localB->/*@>238e79*/DataTypeConversion6"
+%endfunction
+
+%function getInputAddr_68_3_3_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238e8c*//*@>238e85*/localB->/*@>238e92*/DataTypeConversion7"
+%endfunction
+
+%function getInput_68_3_3_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238ea0*/localB->/*@>238eae*/DataTypeConversion7"
+%endfunction
+
+%function getInputAddr_68_3_3_1_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238ec1*//*@>238eba*/localB->/*@>238ec7*/DataTypeConversion8"
+%endfunction
+
+%function getInput_68_3_3_1_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238ed5*/localB->/*@>238ee3*/DataTypeConversion8"
+%endfunction
+
+%function getInputAddr_68_3_3_1_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238ef6*//*@>238eef*/localB->/*@>238efc*/DataTypeConversion9"
+%endfunction
+
+%function getInput_68_3_3_1_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238f0a*/localB->/*@>238f18*/DataTypeConversion9"
+%endfunction
+
+%function getInputAddr_68_3_3_1_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "&/*@<238f2b*//*@>238f24*/localB->/*@>238f31*/DataTypeConversion10"
+%endfunction
+
+%function getInput_68_3_3_1_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,1, 1)>
+
+%return "/*@>238f3f*/localB->/*@>238f4d*/DataTypeConversion10"
+%endfunction
+
+%function getOutputAddr_68_4_3_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<238f70*//*@>238f6b*/FRC_Activation_CAN2_send"
+%endfunction
+
+%function getOutput_68_4_3_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>238f7d*/FRC_Activation_CAN2_send"
+%endfunction
+
+%function getInputAddr_68_3_3_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<238fbf*//*@>238fb8*/localB->/*@>238fc5*/DataTypeConversion1"
+%endfunction
+
+%function getInput_68_3_3_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>238fd3*/localB->/*@>238fe1*/DataTypeConversion1"
+%endfunction
+
+%function getInputAddr_68_3_3_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<238ff4*//*@>238fed*/localB->/*@>238ffa*/DataTypeConversion"
+%endfunction
+
+%function getInput_68_3_3_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>239008*/localB->/*@>239016*/DataTypeConversion"
+%endfunction
+
+%function getInputAddr_68_3_3_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<239029*//*@>239022*/localB->/*@>23902f*/DataTypeConversion4"
+%endfunction
+
+%function getInput_68_3_3_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>23903d*/localB->/*@>23904b*/DataTypeConversion4"
+%endfunction
+
+%function getInputAddr_68_3_3_2_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<23905e*//*@>239057*/localB->/*@>239064*/DataTypeConversion5"
+%endfunction
+
+%function getInput_68_3_3_2_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>239072*/localB->/*@>239080*/DataTypeConversion5"
+%endfunction
+
+%function getInputAddr_68_3_3_2_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<239093*//*@>23908c*/localB->/*@>239099*/DataTypeConversion6"
+%endfunction
+
+%function getInput_68_3_3_2_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>2390a7*/localB->/*@>2390b5*/DataTypeConversion6"
+%endfunction
+
+%function getInputAddr_68_3_3_2_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<2390c8*//*@>2390c1*/localB->/*@>2390ce*/DataTypeConversion7"
+%endfunction
+
+%function getInput_68_3_3_2_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>2390dc*/localB->/*@>2390ea*/DataTypeConversion7"
+%endfunction
+
+%function getInputAddr_68_3_3_2_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<2390fd*//*@>2390f6*/localB->/*@>239103*/DataTypeConversion8"
+%endfunction
+
+%function getInput_68_3_3_2_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>239111*/localB->/*@>23911f*/DataTypeConversion8"
+%endfunction
+
+%function getInputAddr_68_3_3_2_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<239132*//*@>23912b*/localB->/*@>239138*/DataTypeConversion9"
+%endfunction
+
+%function getInput_68_3_3_2_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>239146*/localB->/*@>239154*/DataTypeConversion9"
+%endfunction
+
+%function getInputAddr_68_3_3_2_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "&/*@<239167*//*@>239160*/localB->/*@>23916d*/DataTypeConversion10"
+%endfunction
+
+%function getInput_68_3_3_2_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,2, 1)>
+
+%return "/*@>23917b*/localB->/*@>239189*/DataTypeConversion10"
+%endfunction
+
+%function getOutputAddr_68_4_3_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2391ac*//*@>2391a7*/FRC_Activation_CAN2_send"
+%endfunction
+
+%function getOutput_68_4_3_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2391b9*/FRC_Activation_CAN2_send"
+%endfunction
+
+%function getInputAddr_68_3_3_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<2391e7*//*@>2391e0*/localB->/*@>2391ed*/DataTypeConversion1"
+%endfunction
+
+%function getInput_68_3_3_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>2391fb*/localB->/*@>239209*/DataTypeConversion1"
+%endfunction
+
+%function getInputAddr_68_3_3_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<23921c*//*@>239215*/localB->/*@>239222*/DataTypeConversion"
+%endfunction
+
+%function getInput_68_3_3_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>239230*/localB->/*@>23923e*/DataTypeConversion"
+%endfunction
+
+%function getInputAddr_68_3_3_3_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<239251*//*@>23924a*/localB->/*@>239257*/DataTypeConversion4"
+%endfunction
+
+%function getInput_68_3_3_3_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>239265*/localB->/*@>239273*/DataTypeConversion4"
+%endfunction
+
+%function getInputAddr_68_3_3_3_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<239286*//*@>23927f*/localB->/*@>23928c*/DataTypeConversion5"
+%endfunction
+
+%function getInput_68_3_3_3_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>23929a*/localB->/*@>2392a8*/DataTypeConversion5"
+%endfunction
+
+%function getInputAddr_68_3_3_3_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<2392bb*//*@>2392b4*/localB->/*@>2392c1*/DataTypeConversion6"
+%endfunction
+
+%function getInput_68_3_3_3_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>2392cf*/localB->/*@>2392dd*/DataTypeConversion6"
+%endfunction
+
+%function getInputAddr_68_3_3_3_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<2392f0*//*@>2392e9*/localB->/*@>2392f6*/DataTypeConversion7"
+%endfunction
+
+%function getInput_68_3_3_3_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>239304*/localB->/*@>239312*/DataTypeConversion7"
+%endfunction
+
+%function getInputAddr_68_3_3_3_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<239325*//*@>23931e*/localB->/*@>23932b*/DataTypeConversion8"
+%endfunction
+
+%function getInput_68_3_3_3_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>239339*/localB->/*@>239347*/DataTypeConversion8"
+%endfunction
+
+%function getInputAddr_68_3_3_3_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<23935a*//*@>239353*/localB->/*@>239360*/DataTypeConversion9"
+%endfunction
+
+%function getInput_68_3_3_3_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>23936e*/localB->/*@>23937c*/DataTypeConversion9"
+%endfunction
+
+%function getInputAddr_68_3_3_3_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "&/*@<23938f*//*@>239388*/localB->/*@>239395*/DataTypeConversion10"
+%endfunction
+
+%function getInput_68_3_3_3_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(3 ,3, 1)>
+
+%return "/*@>2393a3*/localB->/*@>2393b1*/DataTypeConversion10"
+%endfunction
+
+%function getOutputAddr_68_4_3_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2393d4*//*@>2393cf*/FRC_Activation_CAN2_send"
+%endfunction
+
+%function getOutput_68_4_3_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2393e1*/FRC_Activation_CAN2_send"
+%endfunction
+

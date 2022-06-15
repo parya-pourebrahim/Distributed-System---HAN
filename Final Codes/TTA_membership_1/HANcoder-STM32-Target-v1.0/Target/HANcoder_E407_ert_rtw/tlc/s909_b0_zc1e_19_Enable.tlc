@@ -1,0 +1,67 @@
+%implements s909_b0_zc1e_19_Enable "C"
+
+%function Enable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[4], "Enable",1)
+/* Enable for Chart: '<S18>/Chart' incorporates:
+ *  SubSystem: '<S6>/CAN1 Send'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN1Send_Enable",4,0)
+%<SLibCG_AccessArg(19 ,6, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN1Send_Enable",4,1)
+%<SLibCG_AccessArg(19 ,6, 1)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2da61c*/",SLibCGIRGenReusableSysCall("CAN1Send_Enable", ["/*@>2f039d*/%<::tSimStruct>", "&/*@>2f03a9*/localB->/*@>2f03a8*/CAN1Send_o"], 4, 0, 14, 1, 14, 522),"/*@]*/")>\
+
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[68], "Enable",1)
+
+/* Enable for Chart: '<S18>/Chart3' incorporates:
+ *  SubSystem: '<S6>/CAN2 Send'
+ */
+%if SLibCG_SystemFcnArgAccessed("CAN2Send_Enable",68,0)
+%<SLibCG_AccessArg(19 ,6, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CAN2Send_Enable",68,1)
+%<SLibCG_AccessArg(19 ,6, 1)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2da61d*/",SLibCGIRGenReusableSysCall("CAN2Send_Enable", ["/*@>2f03cd*/%<::tSimStruct>", "&/*@>2f03d9*/localB->/*@>2f03d8*/CAN2Send_h"], 68, 0, 14, 1, 14, 522),"/*@]*/")>\
+
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[19].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Enable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Enable"))
+%<SLibCG_AccessArg(19, 6, 0)>
+%endif
+%if SLibCG_ArgAccessed(19, 6, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Enable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Enable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(19, 6, 0)>
+%endif
+%endfunction
+%function EnableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CANManagement_Enable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(19, 6, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(19, 6, 1)
+%<comma>rtB_CANManagement *localB\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(19, 6, fcnProtoType)>
+%endfunction

@@ -1,0 +1,43 @@
+%implements s909_b0_zc1e_20_Enable "C"
+
+%function Enable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%assign tlcEnableFcnOfS524B4 = OpaqueTLCBlockFcn("Enable", 524, 4, 20, 4)
+%assign tlcEnableFcnOfS524B7 = OpaqueTLCBlockFcn("Enable", 524, 7, 20, 4)
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[522], "Enable",1)
+/* Enable for Chart: '<S26>/Chart' incorporates:
+ *  SubSystem: '<S6>/CAN Management'
+ */
+%if SLibCG_SystemFcnArgAccessed("CANManagement_Enable",522,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2f76ff*/",SLibCGIRGenReusableSysCall("CANManagement_Enable", ["%<_modelSS>", "&/*@>2f81ea*/rtB./*@>2f81e9*/CANManagement_c"], 522, 0, 14, 1, 14, 528),"/*@]*/")>\
+
+
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS524B4)
+/* Enable for M-S-Function: '<S897>/Level-2 M-file S-Function' incorporates:
+ *  Constant: '<S26>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[2f76fc*/",tlcEnableFcnOfS524B4,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS524B7)
+/* Enable for M-S-Function: '<S896>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2f76fe*/",tlcEnableFcnOfS524B7,"/*@]*/")>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function EnableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Enable(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(20, 4, fcnProtoType)>
+%endfunction

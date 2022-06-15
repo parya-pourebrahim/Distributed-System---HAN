@@ -1,0 +1,96 @@
+%implements s909_b0_zc1e_10_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+/* {S!d9563}Disable for Enabled SubSystem: '<S92>/Reception substasks' */
+/*@>2035fc*/if (%<SLibCG_DumpSSCode("/*@[242407*/",(SLibCG_DWV(235, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(10 ,2, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(10 ,2, 1)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(10 ,2, 2)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2423e6*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>2441ae*/%<::tSimStruct>", "&/*@>2441ba*/localB->/*@>2441b9*/Receptionsubstasks_h", "&/*@>2441c7*/localDW->/*@>2441c6*/Receptionsubstasks_h"], 109, 0, 15, 1, 7, 126),"/*@]*/")>\
+
+%endif
+}
+/* {E!d9563}End of Disable for SubSystem: '<S92>/Reception substasks' */
+
+/* {S!d9565}Disable for Enabled SubSystem: '<S92>/Transmission subtasks' */
+/*@>203601*/if (%<SLibCG_DumpSSCode("/*@[242428*/",(SLibCG_DWV(232, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>) {
+    /* {S!d9566}Disable for Enabled SubSystem: '<S110>/Check msg transmission CAN1' */
+    /*@>20362b*/if (%<SLibCG_DumpSSCode("/*@[242449*/",(SLibCG_DWV(234, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>) {
+        /* {S!d9572}Disable for Outport: '<S112>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2426d3*/",SLibCG_SetBOV(423, 0, 126, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2441dc*/",(SLibCGIR_PV(78, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2425e4*/",SLibCG_SetDWV(234, 0, 126, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+    }
+    /* {E!d9566}End of Disable for SubSystem: '<S110>/Check msg transmission CAN1' */
+
+    /* {S!d9568}Disable for Enabled SubSystem: '<S110>/Check msg transmission CAN2' */
+    /*@>203630*/if (%<SLibCG_DumpSSCode("/*@[24246a*/",(SLibCG_DWV(233, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>) {
+        /* {S!d9574}Disable for Outport: '<S113>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[242717*/",SLibCG_SetBOV(422, 0, 126, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[24420d*/",(SLibCGIR_PV(78, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[242607*/",SLibCG_SetDWV(233, 0, 126, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+    }
+    /* {E!d9568}End of Disable for SubSystem: '<S110>/Check msg transmission CAN2' */
+
+    /* {S!d9576}Disable for Outport: '<S110>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[24264b*/",SLibCG_SetBOV(423, 0, 126, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[24423e*/",(SLibCGIR_PV(78, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+    /* {S!d9578}Disable for Outport: '<S110>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[24268f*/",SLibCG_SetBOV(422, 0, 126, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[24425c*/",(SLibCGIR_PV(78, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2424b1*/",SLibCG_SetDWV(232, 0, 126, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d9565}End of Disable for SubSystem: '<S92>/Transmission subtasks' */
+
+/* {S!d9580}Disable for Outport: '<S92>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[2424f5*/",SLibCG_SetBOV(423, 0, 126, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[24428d*/",(SLibCGIR_PV(78, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+/* {S!d9582}Disable for Outport: '<S92>/Receive CAN1' */
+%<SLibCG_DumpSSCode("/*@[242539*/",SLibCG_SetBOV(433, 0, 126, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2442ab*/",(SLibCGIR_PV(78, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+/* {S!d9584}Disable for Outport: '<S92>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[24257d*/",SLibCG_SetBOV(422, 0, 126, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2442c9*/",(SLibCGIR_PV(78, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+/* {S!d9586}Disable for Outport: '<S92>/Receive CAN2' */
+%<SLibCG_DumpSSCode("/*@[2425c1*/",SLibCG_SetBOV(434, 0, 126, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2442e7*/",(SLibCGIR_PV(78, 0, 126, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_SetDWV(231, 0, 126, 1, "", -1, "", 0, "false")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[10].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Disable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))
+%<SLibCG_AccessArg(10, 2, 0)>
+%endif
+%if SLibCG_ArgAccessed(10, 2, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Disable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(10, 2, 0)>
+%endif
+%endfunction
+%function DisableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void COMMTaskSyncbc0_Disable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(10, 2, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(10, 2, 1)
+%<comma>rtB_COMMTaskSyncbc0 *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(10, 2, 2)
+%<comma>rtDW_COMMTaskSyncbc0 *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(10, 2, fcnProtoType)>
+%endfunction

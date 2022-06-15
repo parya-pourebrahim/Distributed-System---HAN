@@ -1,0 +1,335 @@
+%implements s909_b0_zc1e_Outputs "C"
+
+%function Outputs(block, system) Output
+%<SLibCGIRAccessLocalVar(15, 0, "")> %% rtb_Level2MfileSFunction_g
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+int32_T rowIdx;
+int8_T rtPrevAction;
+int8_T rtAction;
+uint8_T rtb_Output;
+real_T rtb_Multiply;
+real_T rtb_Multiply1;
+real_T rtb_Multiply2;
+uint8_T rtb_FixPtSum1;
+uint8_T rtb_FixPtSum1_b;
+boolean_T rtb_SampleTimeCrowBar;
+%closefile localVarDecl
+%assign tlcDisableFcnOfS526B1 = OpaqueTLCBlockFcn("Disable", 526, 1, 21, 1)
+%assign tlcEnableFcnOfS526B1 = OpaqueTLCBlockFcn("Enable", 526, 1, 21, 1)
+%assign tlcOutputsFcnOfS526B1 = OpaqueTLCBlockFcn("Outputs", 526, 1, 21, 1)
+%assign tlcUpdateFcnOfS526B1 = OpaqueTLCBlockFcn("Update", 526, 1, 21, 1)
+%assign tlcDisableFcnOfS525B1 = OpaqueTLCBlockFcn("Disable", 525, 1, 21, 1)
+%assign tlcDisableFcnOfS525B3 = OpaqueTLCBlockFcn("Disable", 525, 3, 21, 1)
+%assign tlcDisableFcnOfS525B5 = OpaqueTLCBlockFcn("Disable", 525, 5, 21, 1)
+%assign tlcDisableFcnOfS525B7 = OpaqueTLCBlockFcn("Disable", 525, 7, 21, 1)
+%assign tlcEnableFcnOfS525B1 = OpaqueTLCBlockFcn("Enable", 525, 1, 21, 1)
+%assign tlcEnableFcnOfS525B3 = OpaqueTLCBlockFcn("Enable", 525, 3, 21, 1)
+%assign tlcEnableFcnOfS525B5 = OpaqueTLCBlockFcn("Enable", 525, 5, 21, 1)
+%assign tlcEnableFcnOfS525B7 = OpaqueTLCBlockFcn("Enable", 525, 7, 21, 1)
+%assign tlcOutputsFcnOfS525B1 = OpaqueTLCBlockFcn("Outputs", 525, 1, 21, 1)
+%assign tlcOutputsFcnOfS525B3 = OpaqueTLCBlockFcn("Outputs", 525, 3, 21, 1)
+%assign tlcOutputsFcnOfS525B5 = OpaqueTLCBlockFcn("Outputs", 525, 5, 21, 1)
+%assign tlcOutputsFcnOfS525B7 = OpaqueTLCBlockFcn("Outputs", 525, 7, 21, 1)
+%assign tlcOutputsFcnOfS528B2 = OpaqueTLCBlockFcn("Outputs", 528, 2, 21, 1)
+%assign tlcOutputsFcnOfS528B4 = OpaqueTLCBlockFcn("Outputs", 528, 4, 21, 1)
+%assign tlcOutputsFcnOfS528B12 = OpaqueTLCBlockFcn("Outputs", 528, 12, 21, 1)
+%assign tlcOutputsFcnOfS528B13 = OpaqueTLCBlockFcn("Outputs", 528, 13, 21, 1)
+%assign tlcOutputsFcnOfS528B20 = OpaqueTLCBlockFcn("Outputs", 528, 20, 21, 1)
+%assign tlcOutputsFcnOfS528B21 = OpaqueTLCBlockFcn("Outputs", 528, 21, 21, 1)
+%assign tlcOutputsFcnOfS528B22 = OpaqueTLCBlockFcn("Outputs", 528, 22, 21, 1)
+%assign tlcOutputsFcnOfS528B23 = OpaqueTLCBlockFcn("Outputs", 528, 23, 21, 1)
+%assign tlcOutputsFcnOfS528B24 = OpaqueTLCBlockFcn("Outputs", 528, 24, 21, 1)
+%assign tlcOutputsFcnOfS528B25 = OpaqueTLCBlockFcn("Outputs", 528, 25, 21, 1)
+%assign tlcOutputsFcnOfS528B26 = OpaqueTLCBlockFcn("Outputs", 528, 26, 21, 1)
+%assign tlcUpdateFcnOfS528B13 = OpaqueTLCBlockFcn("Update", 528, 13, 21, 1)
+/* {S!d14044}DigitalClock: '<S6>/Digital Clock' */
+/*@>2faada*/simulation_time/*@>20d847*/ = %<SLibCG_DumpSSCode("/*@[2fc91a*/",(SLibCG_SE(LibGetTaskTime(0))),"/*@]*/")>;
+/* {S!d14033}Outputs for Enabled SubSystem: '<S6>/Initialize Clock Schedule' incorporates:
+ *  EnablePort: '<S25>/Enable'
+ */
+/* {S!d14056}Logic: '<S6>/NOT' incorporates:
+ *  DataStoreRead: '<S6>/If 1 -> Clock initialized '
+ */
+/*@>1f9dd5*/if (/*@>2fc1ab*/rtDWork./*@>2fdc81*/init_clock/*@>2fae41*/ == /*@>2fae3e*/0.0) {
+    /*@>1f9dd9*/if (!/*@<1f9dd8*/%<SLibCG_DumpSSCode("/*@[2fc988*/",(SLibCG_SE(SLibCG_DWV(27, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcEnableFcnOfS526B1)
+        /* {S!d14046}Enable for M-S-Function: '<S894>/Level-2 M-file S-Function' incorporates:
+ *  Constant: '<S25>/Constant'
+ *  Constant: '<S25>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[2fc922*/",tlcEnableFcnOfS526B1,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[2fca12*/",SLibCG_SetDWV(27, 0, 528, 1, "", -1, "", 0, "true"),"/*@]*/")>\
+    }
+    /* {S!d14048}DataStoreWrite: '<S25>/Data Store Write' incorporates:
+ *  Constant: '<S25>/Constant2'
+ */
+    /*@>2fc1bc*/rtDWork./*@>2fdc84*/init_clock/*@>20d868*/ = %<SLibCG_DumpSSCode("/*@[2fca77*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+%if !WHITE_SPACE(tlcOutputsFcnOfS526B1)
+    /* {S!d14050}M-S-Function: '<S894>/Level-2 M-file S-Function' incorporates:
+ *  Constant: '<S25>/Constant'
+ *  Constant: '<S25>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[2fc925*/",tlcOutputsFcnOfS526B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS526B1)
+    /* {S!d14052}Update for M-S-Function: '<S894>/Level-2 M-file S-Function' incorporates:
+ *  Constant: '<S25>/Constant'
+ *  Constant: '<S25>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[2fc928*/",tlcUpdateFcnOfS526B1,"/*@]*/")>\
+%endif
+} else {
+    /*@>1f9de0*/if (%<SLibCG_DumpSSCode("/*@[2fc9aa*/",(SLibCG_DWV(27, 0, 528, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS526B1)
+        /* {S!d14054}Disable for M-S-Function: '<S894>/Level-2 M-file S-Function' incorporates:
+ *  Constant: '<S25>/Constant'
+ *  Constant: '<S25>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[2fc91f*/",tlcDisableFcnOfS526B1,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[2fca35*/",SLibCG_SetDWV(27, 0, 528, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+    }
+}
+/* {E!d14056}End of Logic: '<S6>/NOT' */
+/* {E!d14033}End of Outputs for SubSystem: '<S6>/Initialize Clock Schedule' */
+
+/* {S!d14084}If: '<S6>/If' incorporates:
+ *  DataStoreRead: '<S6>/Data Store Read1'
+ */
+/*@>2faa2b*/rtPrevAction/*@>1f9e5f*/ = /*@>2fc1c2*/rtDWork./*@>2fdc87*/If_ActiveSubsystem;
+/*@>2faa2d*/rtAction/*@>1f9e62*/ = /*@>2fdb2a*/-1;
+/*@>1f9e67*/if (/*@>2fc1c8*/rtDWork./*@>2fdc8a*/Board_ID/*@>1f9e66*/ == /*@>2faa31*/0.0) {
+    /*@>2faa32*/rtAction/*@>1f9e6b*/ = /*@>2fdb2d*/0;
+}
+/*@>2fc1ce*/rtDWork./*@>2fdc8d*/If_ActiveSubsystem/*@>1f9e6d*/ = /*@>2faa34*/rtAction;
+/*@>1f9e71*/if ((/*@>2faa3a*/rtPrevAction/*@>1f9e70*/ != /*@>2faa38*/rtAction)/*@>2fb8e6*/ && (/*@>2fac32*/rtPrevAction/*@>2fae3c*/ == /*@>2fae39*/0)) {
+%if !WHITE_SPACE(tlcDisableFcnOfS525B1)
+    /* {S!d14058}Disable for M-S-Function: '<S890>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc92a*/",tlcDisableFcnOfS525B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcDisableFcnOfS525B3)
+    /* {S!d14060}Disable for M-S-Function: '<S891>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc92c*/",tlcDisableFcnOfS525B3,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcDisableFcnOfS525B5)
+    /* {S!d14062}Disable for M-S-Function: '<S892>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc92e*/",tlcDisableFcnOfS525B5,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcDisableFcnOfS525B7)
+    /* {S!d14064}Disable for M-S-Function: '<S893>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc930*/",tlcDisableFcnOfS525B7,"/*@]*/")>\
+%endif
+}
+/*@>2fa197*/if (/*@>2fac35*/rtAction/*@>2fae37*/ == /*@>2fae34*/0) {
+    /*@>1f9e83*/if (/*@>2faf28*/0/*@>1f9e82*/ != /*@>2faa3c*/rtPrevAction) {
+%if !WHITE_SPACE(tlcEnableFcnOfS525B1)
+        /* {S!d14035}Enable for IfAction SubSystem: '<S6>/If Action Subsystem' incorporates:
+ *  ActionPort: '<S24>/Action Port'
+ */
+        /* {S!d14066}Enable for If: '<S6>/If' incorporates:
+ *  M-S-Function: '<S890>/Level-2 M-file S-Function'
+ *  M-S-Function: '<S891>/Level-2 M-file S-Function'
+ *  M-S-Function: '<S892>/Level-2 M-file S-Function'
+ *  M-S-Function: '<S893>/Level-2 M-file S-Function'
+ */
+%<SLibCG_DumpSSCode("/*@[2fc932*/",tlcEnableFcnOfS525B1,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[2fc934*/",tlcEnableFcnOfS525B3,"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[2fc936*/",tlcEnableFcnOfS525B5,"/*@]*/")>\
+%if !WHITE_SPACE(tlcEnableFcnOfS525B7)
+%<SLibCG_DumpSSCode("/*@[2fc938*/",tlcEnableFcnOfS525B7,"/*@]*/")>\
+        /* {E!d14035}End of Enable for SubSystem: '<S6>/If Action Subsystem' */
+%endif
+    }
+%if !WHITE_SPACE(tlcOutputsFcnOfS525B1)
+    /* {S!d14037}Outputs for IfAction SubSystem: '<S6>/If Action Subsystem' incorporates:
+ *  ActionPort: '<S24>/Action Port'
+ */
+    /* {S!d14068}M-S-Function: '<S890>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc93a*/",tlcOutputsFcnOfS525B1,"/*@]*/")>\
+%endif
+    /* {S!d14070}Product: '<S24>/Multiply' incorporates:
+ *  Constant: '<S24>/Constant'
+ */
+    /*@>2fab90*/rtb_Multiply/*@>20d92e*/ = /*@>2fab8e*/rtb_Level2MfileSFunction_p/*@>2fab8e*/ ? %<SLibCG_DumpSSCode("/*@[2fca99*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 528, 1, "", -1, "", 0))),"/*@]*/")> : /*@>2fae30*/0.0;
+%if !WHITE_SPACE(tlcOutputsFcnOfS525B3)
+    /* {S!d14072}M-S-Function: '<S891>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc93c*/",tlcOutputsFcnOfS525B3,"/*@]*/")>\
+%endif
+    /* {S!d14074}Product: '<S24>/Multiply1' incorporates:
+ *  Constant: '<S24>/Constant1'
+ */
+    /*@>2faba2*/rtb_Multiply1/*@>20d936*/ = /*@>2faba0*/rtb_Level2MfileSFunction_p/*@>2faba0*/ ? %<SLibCG_DumpSSCode("/*@[2fcabb*/",(SLibCG_SE(SLibCGIR_PV(1, 0, 528, 1, "", -1, "", 0))),"/*@]*/")> : /*@>2fae2c*/0.0;
+%if !WHITE_SPACE(tlcOutputsFcnOfS525B5)
+    /* {S!d14076}M-S-Function: '<S892>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc93e*/",tlcOutputsFcnOfS525B5,"/*@]*/")>\
+%endif
+    /* {S!d14078}Product: '<S24>/Multiply2' incorporates:
+ *  Constant: '<S24>/Constant2'
+ */
+    /*@>2fabb4*/rtb_Multiply2/*@>20d93e*/ = /*@>2fabb2*/rtb_Level2MfileSFunction_p/*@>2fabb2*/ ? %<SLibCG_DumpSSCode("/*@[2fcadd*/",(SLibCG_SE(SLibCGIR_PV(10, 0, 528, 1, "", -1, "", 0))),"/*@]*/")> : /*@>2fae28*/0.0;
+%if !WHITE_SPACE(tlcOutputsFcnOfS525B7)
+    /* {S!d14080}M-S-Function: '<S893>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc940*/",tlcOutputsFcnOfS525B7,"/*@]*/")>\
+%endif
+    /* {S!d14082}Sum: '<S24>/Add' incorporates:
+ *  Constant: '<S24>/Constant3'
+ *  Product: '<S24>/Multiply3'
+ */
+    /*@>2fac12*/Board_ID_s/*@>21e90d*/ = ((/*@>2fabc2*/rtb_Multiply/*@>21e908*/ + /*@>2fabc4*/rtb_Multiply1)/*@>21e909*/ + /*@>2fabc6*/rtb_Multiply2)/*@>21e90a*/ + (/*@>2fac1a*/rtb_Level2MfileSFunction_p/*@>2fac1a*/ ? %<SLibCG_DumpSSCode("/*@[2fcbed*/",(SLibCG_SE(SLibCGIR_PV(12, 0, 528, 1, "", -1, "", 0))),"/*@]*/")> : /*@>2fae24*/0.0);
+    /* {E!d14037}End of Outputs for SubSystem: '<S6>/If Action Subsystem' */
+}
+/* {E!d14084}End of If: '<S6>/If' */
+
+/* {S!d14086}DataStoreWrite: '<S6>/Data Store Write' */
+/*@>2fc1d4*/rtDWork./*@>2fdc90*/Board_ID/*@>1f9efc*/ = /*@>2faa40*/Board_ID_s;
+if (%<(SLibCGIRIsSampleHit(1, 528))>) {
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B2)
+    /* {S!d14088}M-S-Function: '<S900>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc945*/",tlcOutputsFcnOfS528B2,"/*@]*/")>\
+%endif
+    /* {S!d14039}Outputs for Triggered SubSystem: '<S902>/J-K Flip-Flop' incorporates:
+ *  TriggerPort: '<S903>/Trigger'
+ */
+    /*@>1f9ff6*/if ((!/*@<2f89b4*//*@>2fac20*/rtb_Level2MfileSFunction_g)/*@>2f89b3*/ && (/*@>2fc094*/rtPrevZCSigState./*@>2fdc7b*/JKFlipFlop_Trig_ZCE/*@>2f89b7*/ != /*@>2fc24d*/ZERO_ZCSIG)) {
+        /* {S!d14090}CombinatorialLogic: '<S903>/Logic' incorporates:
+ *  Memory: '<S902>/TmpLatchAtJ-K Flip-FlopInport1'
+ *  Memory: '<S903>/Memory'
+ */
+        /*@>2fac57*/rowIdx/*@>2fa211*/ = /*@>2fafc3*/(int32_T)((((/*@>2fb189*/(uint32_T)%<SLibCG_DumpSSCode("/*@[2fcc97*/",(SLibCG_SE(SLibCG_DWV(26, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>/*@>2fb188*/ << /*@>2fb18d*/1)/*@>2fb187*/ + %<SLibCG_DumpSSCode("/*@[2fcc75*/",(SLibCG_SE(SLibCG_DWV(22, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>)/*@>2fae16*/ << /*@>2fac5b*/1)/*@>2fae14*/ + %<SLibCG_DumpSSCode("/*@[2fcc53*/",(SLibCG_SE(SLibCG_DWV(23, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>);
+        /*@>2fbf0a*/rtB./*@>2fdc69*/Logic/*@>2fa227*/[/*@>2fac65*/0U]/*@>2fa226*/ = %<SLibCG_DumpSSCode("/*@[2fccb8*/",(SLibCG_SE(SLibCGIR_PV(83, 0, 528, 16, "", -1, "/*@>2fbbf3*/(uint32_T)/*@>2fbbf5*/rowIdx", 0))),"/*@]*/")>;
+        /*@>2fbf10*/rtB./*@>2fdc6c*/Logic/*@>2fa23a*/[/*@>2fac6c*/1U]/*@>2fa239*/ = %<SLibCG_DumpSSCode("/*@[2fccd9*/",(SLibCG_SE(SLibCGIR_PV(83, 0, 528, 16, "", -1, "/*@>2fbbfd*/rowIdx/*@>2fbbfa*/ + /*@>2fbbfe*/8U", 0))),"/*@]*/")>;
+        /* {S!d14092}Update for Memory: '<S903>/Memory' */
+%<SLibCG_DumpSSCode("/*@[2fcb01*/",SLibCG_SetDWV(26, 0, 528, 1, "", -1, "", 0, "/*@>2fdf4f*/rtB./*@>2fdf4e*/Logic/*@>2fdf4d*/[/*@>2fdf51*/0]"),"/*@]*/")>\
+    }
+    /*@>2fc09a*/rtPrevZCSigState./*@>2fdc7e*/JKFlipFlop_Trig_ZCE/*@>1f9ffe*/ = /*@>2faa52*/rtb_Level2MfileSFunction_g;
+    /* {E!d14039}End of Outputs for SubSystem: '<S902>/J-K Flip-Flop' */
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B4)
+
+    /* {S!d14041}S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc947*/",tlcOutputsFcnOfS528B4,"/*@]*/")>\
+    /* {E!d14041}End of Outputs for S-Function (sfcn_timeout_event_irq): '<S23>/S-Function' */
+%endif
+}
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B12)
+/* {S!d14094}S-Function (sfcn_timeout_init): '<S28>/S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc949*/",tlcOutputsFcnOfS528B12,"/*@]*/")>\
+%endif
+if (%<(SLibCGIRIsSampleHit(1, 528))>) {
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B13)
+    /* {S!d14096}M-S-Function: '<S904>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc94e*/",tlcOutputsFcnOfS528B13,"/*@]*/")>\
+%endif
+    /* {S!d14098}UnitDelay: '<S12>/Output' */
+    /*@>2fabcc*/rtb_Output/*@>20d9b9*/ = /*@>2fc1fb*/rtDWork./*@>2fdc93*/Output_DSTATE;
+    /* {S!d14100}Sum: '<S14>/FixPt Sum1' incorporates:
+ *  Constant: '<S14>/FixPt Constant'
+ *  UnitDelay: '<S12>/Output'
+ */
+    /*@>2fac0e*/rtb_FixPtSum1/*@>21e901*/ = /*@>2fae08*/(uint8_T)(/*@>2faf7a*/(uint32_T)/*@>2fc207*/rtDWork./*@>2fdc99*/Output_DSTATE/*@>2fae04*/ + %<SLibCG_DumpSSCode("/*@[2fcba9*/",(SLibCG_SE(SLibCGIR_PV(85, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>);
+    /* {S!d14102}Switch: '<S15>/FixPt Switch' incorporates:
+ *  Constant: '<S15>/Constant'
+ */
+    /*@>2fa16a*/if (/*@>2fabce*/rtb_FixPtSum1/*@>20d9c6*/ > %<SLibCG_DumpSSCode("/*@[2fc9cb*/",(SLibCG_SE(SLibCGIR_PV(85, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>) {
+        /*@>2fac2c*/rtb_FixPtSum1/*@>2fa16d*/ = %<SLibCG_DumpSSCode("/*@[2fcc0f*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+    }
+    /* {E!d14102}End of Switch: '<S15>/FixPt Switch' */
+}
+if (%<(SLibCGIRIsSampleHit(2, 528))>) {
+    /* {S!d14104}UnitDelay: '<S13>/Output' */
+    /*@>2fbf16*/rtB./*@>2fdc6f*/Output/*@>20d9dd*/ = /*@>2fc201*/rtDWork./*@>2fdc96*/Output_DSTATE_k;
+    /* {S!d14106}Sum: '<S16>/FixPt Sum1' incorporates:
+ *  Constant: '<S16>/FixPt Constant'
+ */
+    /*@>2fac10*/rtb_FixPtSum1_b/*@>21e906*/ = /*@>2fadf9*/(uint8_T)(/*@>2faf82*/(uint32_T)/*@>2fbf22*/rtB./*@>2fdc75*/Output/*@>2fadf5*/ + %<SLibCG_DumpSSCode("/*@[2fcbcb*/",(SLibCG_SE(SLibCGIR_PV(85, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>);
+    /* {S!d14108}Switch: '<S17>/FixPt Switch' incorporates:
+ *  Constant: '<S17>/Constant'
+ */
+    /*@>2fa175*/if (/*@>2fabda*/rtb_FixPtSum1_b/*@>20d9ea*/ > %<SLibCG_DumpSSCode("/*@[2fc9ed*/",(SLibCG_SE(SLibCGIR_PV(85, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>) {
+        /*@>2fac30*/rtb_FixPtSum1_b/*@>2fa178*/ = %<SLibCG_DumpSSCode("/*@[2fcc31*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+    }
+    /* {E!d14108}End of Switch: '<S17>/FixPt Switch' */
+}
+if (%<(SLibCGIRIsSampleHit(1, 528))>) {
+    /* {S!d14114}Switch: '<S2>/Switch' incorporates:
+ *  Constant: '<S2>/Constant'
+ *  Logic: '<S2>/Logical Operator'
+ */
+    /*@>2fb39a*/if (/*@>2fac25*/HANtuneOverride/*@>2f8a4c*/ || /*@>2fac27*/rtb_Level2MfileSFunction_g) {
+        /* {S!d14110}DataTypeConversion: '<S2>/Data Type Conversion' */
+        /*@>2fb39e*/LedValue/*@>2fb39d*/ = (/*@>2fac1c*/rtb_Output/*@>2fadee*/ != /*@>2fadec*/0);
+    } else {
+        /* {S!d14112}DataTypeConversion: '<S2>/Data Type Conversion' */
+        /*@>2fac2e*/LedValue/*@>2fa172*/ = (/*@>2fbf28*/rtB./*@>2fdc78*/Output/*@>2fadea*/ != /*@>2fade8*/0);
+    }
+    /* {E!d14114}End of Switch: '<S2>/Switch' */
+}
+/* {S!d14116}Constant: '<S3>/SampleTimeCrowBar' */
+/*@>2faa8a*/rtb_SampleTimeCrowBar/*@>1fa8f2*/ = %<SLibCG_DumpSSCode("/*@[2fca55*/",(SLibCG_SE(SLibCGIR_PV(79, 0, 528, 1, "", -1, "", 0))),"/*@]*/")>;
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B20)
+/* {S!d14118}M-S-Function: '<S3>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc955*/",tlcOutputsFcnOfS528B20,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B21)
+/* {S!d14120}M-S-Function: '<S4>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc956*/",tlcOutputsFcnOfS528B21,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B22)
+/* {S!d14122}M-S-Function: '<S5>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc957*/",tlcOutputsFcnOfS528B22,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B23)
+/* {S!d14124}M-S-Function: '<S905>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc959*/",tlcOutputsFcnOfS528B23,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B24)
+/* {S!d14126}M-S-Function: '<S906>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc95b*/",tlcOutputsFcnOfS528B24,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B25)
+/* {S!d14128}M-S-Function: '<S907>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc95d*/",tlcOutputsFcnOfS528B25,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS528B26)
+/* {S!d14130}M-S-Function: '<S11>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc95e*/",tlcOutputsFcnOfS528B26,"/*@]*/")>\
+%endif
+if (%<(SLibCGIRIsSampleHit(1, 528))>) {
+    /* {S!d14132}Update for Memory: '<S902>/TmpLatchAtJ-K Flip-FlopInport1' incorporates:
+ *  Constant: '<S8>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[2fcb45*/",SLibCG_SetDWV(22, 0, 528, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2fdfbf*/",(SLibCGIR_PV(79, 0, 528, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+    /* {S!d14134}Update for Memory: '<S902>/TmpLatchAtJ-K Flip-FlopInport2' incorporates:
+ *  Constant: '<S8>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[2fcb89*/",SLibCG_SetDWV(23, 0, 528, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[2fdfdd*/",(SLibCGIR_PV(79, 0, 528, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%if !WHITE_SPACE(tlcUpdateFcnOfS528B13)
+    /* {S!d14136}Update for M-S-Function: '<S904>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2fc963*/",tlcUpdateFcnOfS528B13,"/*@]*/")>\
+%endif
+    /* {S!d14138}Update for UnitDelay: '<S12>/Output' */
+    /*@>2fc213*/rtDWork./*@>2fdc9f*/Output_DSTATE/*@>20dc08*/ = /*@>2fabfe*/rtb_FixPtSum1;
+}
+if (%<(SLibCGIRIsSampleHit(2, 528))>) {
+    /* {S!d14140}Update for UnitDelay: '<S13>/Output' */
+    /*@>2fc20d*/rtDWork./*@>2fdc9c*/Output_DSTATE_k/*@>20dc14*/ = /*@>2fac02*/rtb_FixPtSum1_b;
+}
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(21, 1, fcnProtoType)>
+%endfunction

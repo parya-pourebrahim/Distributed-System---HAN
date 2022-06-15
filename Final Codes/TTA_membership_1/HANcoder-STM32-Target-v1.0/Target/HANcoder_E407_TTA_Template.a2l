@@ -1,0 +1,1622 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     HANcoder_E407_TTA_Template.a2l
+ *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use. 
+ * 
+ * Code generation for model "HANcoder_E407_TTA_Template".
+ *
+ * Model version              : 1.154
+ * Simulink Coder version : 9.0 (R2018b) 24-May-2018
+ * C source code generated on : Tue Feb 15 09:48:55 2022
+ * 
+ * Target selection: ert.tlc
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ProjectName "HANcoder_E407_TTA_Template_softwareID_v1_150222_094624"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    	ADDR_EPK		0x0800c274
+		CPU_TYPE		"STM32F407"
+		ECU				"E407"
+		EPK				"HANcoder_E407_TTA_Template_softwareID_v1_150222_094624"
+		SYSTEM_CONSTANT	"XcpStationID string length"  "0x00000036"
+		SYSTEM_CONSTANT	"RAM-FlashOffset"  "-402523744"
+	/end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_LAST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      COMM_Phase1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000010 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_TTA_Template_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      COMM_Phase2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000018 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_TTA_Template_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      COMM_Phase_init1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000020 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_TTA_Template_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      COMM_Phase_init2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000028 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_TTA_Template_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      script_run  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000008 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_TTA_Template_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      HANtuneOverride  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000003 
+      /* Record Layout          */      Scalar_BOOLEAN 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_TTA_Template_CM_boolean 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      simulation_time
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bd50
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      script_run_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bd20
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Board_ID_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bcb0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      SI_FreeHeap
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bcec
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      SI_FreeStack
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bd60
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      local_ticks_interrupt
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       0x2000bf4a
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      SI_CPUload
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bf1a
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      LedValue
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bd18
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Master_ID_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bd10
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Role_ID_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bae0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      sync_bc0_miss_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bf50
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      sync_bc1_miss_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bcf8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      votes_Board_1_DEBUG
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bf38
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      votes_Board_2_DEBUG
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bf20
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      votes_Board_3_DEBUG
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bcb8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Board_1_error_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bce0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Board_2_error_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bae8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Board_3_error_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bf08
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      msg_count_DEBUG_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bcd0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Desync_Sync_bc1_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bd40
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Desync_Sync_bc0_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000baf0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      TM1_timeout_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bcc0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      TM2_timeout_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bd58
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      TM3_timeout_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bd00
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_init_LT
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       0x2000bd4e
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Vote_s
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bad8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_init_id
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bf10
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_init_mc
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bf19
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_init_bc
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bce8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      bacic_cycle_s
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bcd8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BC1_sync_processed_s
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bf18
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BC0_sync_processed_s
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bad9
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BC0_vote1_processed_s
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bd29
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BC0_vote2_processed_s
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bd64
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BC0_vote3_processed_s
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bd38
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      reset_s
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bd4c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_temporal_msg_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bcc8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      TxCAN2_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bd48
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      TxID_CAN2_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bb04
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_temporal_msg_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bf30
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RxCAN2_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bd3c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RxID_CAN2_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bf28
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_msg_ticks_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       0x2000bf48
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_temporal_msg_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bd30
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RxCAN1_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bca8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RxID_CAN1_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bd0c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_msg_ticks_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       0x2000bd08
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_temporal_msg_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bf40
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      TxCAN1_counter_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bf14
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      TxID_CAN1_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bcf0
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_TTA_Template_CM_double
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%15.10"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_TTA_Template_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_TTA_Template_CM_uint32
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_TTA_Template_CM_uint16
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_TTA_Template_CM_uint8
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%3.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       HANcoder_E407_TTA_Template
+      /* Long identifier        */       "HANcoder_E407_TTA_Template"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_HANcoder_STM32_Target___E407_STM32_algorithm
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_HANcoder_STM32_Target___E407_STM32_algorithm
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm"
+      /begin SUB_GROUP
+        S1_Algorithm
+        S1_System_information
+        S1_TTA_CAN_System
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_Algorithm
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/Algorithm"
+      /begin REF_CHARACTERISTIC
+        HANtuneOverride
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        LedValue
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_System_information
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/System information"
+      /begin SUB_GROUP
+        S9_Get_CPU_load
+        S9_Get_free_Heap
+        S9_Get_free_Stack
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_TTA_CAN_System
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System"
+      /begin SUB_GROUP
+        S10_CAN1_Recieve
+        S10_CAN1_Send
+        S10_CAN2_Recieve
+        S10_CAN2_Send
+        S10_If_Action_Subsystem
+        S10_Local_Time_generation
+        S10_TTA_System
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        script_run
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        script_run_s
+        simulation_time
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S9_Get_CPU_load
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/System information/Get CPU load"
+      /begin REF_MEASUREMENT
+        SI_CPUload
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S9_Get_free_Heap
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/System information/Get free Heap"
+      /begin REF_MEASUREMENT
+        SI_FreeHeap
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S9_Get_free_Stack
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/System information/Get free Stack"
+      /begin REF_MEASUREMENT
+        SI_FreeStack
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_CAN1_Recieve
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/CAN1 Recieve"
+      /begin SUB_GROUP
+        S26_Update_message_buffers
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        RxCAN1_counter_s
+        RxID_CAN1_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_CAN1_Send
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/CAN1 Send"
+      /begin REF_MEASUREMENT
+        TxCAN1_counter_s
+        TxID_CAN1_s
+        Tx_temporal_msg_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_CAN2_Recieve
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/CAN2 Recieve"
+      /begin SUB_GROUP
+        S28_Update_message_buffers
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        RxCAN2_counter_s
+        RxID_CAN2_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_CAN2_Send
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/CAN2 Send"
+      /begin REF_MEASUREMENT
+        TxCAN2_counter_s
+        TxID_CAN2_s
+        Tx_temporal_msg_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_If_Action_Subsystem
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/If Action Subsystem"
+      /begin REF_MEASUREMENT
+        Board_ID_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_Local_Time_generation
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/Local Time generation"
+      /begin REF_MEASUREMENT
+        local_ticks_interrupt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_TTA_System
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System"
+      /begin SUB_GROUP
+        S36_Basic_Cycle_Increment
+        S36_Initialization
+        S36_LT_Update_Desync_Positive
+        S36_Matrix_Cycle_Manager
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_Update_message_buffers
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/CAN1 Recieve/Update message buffers"
+      /begin REF_MEASUREMENT
+        Rx_msg_ticks_CAN1
+        Rx_temporal_msg_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S28_Update_message_buffers
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/CAN2 Recieve/Update message buffers"
+      /begin REF_MEASUREMENT
+        Rx_msg_ticks_CAN2
+        Rx_temporal_msg_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S36_Basic_Cycle_Increment
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Basic Cycle Increment"
+      /begin REF_MEASUREMENT
+        bacic_cycle_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S36_Initialization
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Initialization"
+      /begin SUB_GROUP
+        S126_RoleID_and_Global_Time_init
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S36_LT_Update_Desync_Positive
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/LT_Update Desync_Positive"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase2
+        COMM_Phase_init1
+        COMM_Phase_init2
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S36_Matrix_Cycle_Manager
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager"
+      /begin SUB_GROUP
+        S132_Controller_Matrix_Cycle
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S126_RoleID_and_Global_Time_init
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Initialization/RoleID and Global Time init"
+      /begin SUB_GROUP
+        S139_Global_Time_Initialization_Slave
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S132_Controller_Matrix_Cycle
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle"
+      /begin SUB_GROUP
+        S159_Matrix_Cycle_Observation_DEBUG
+        S159_controller_basic_cycle_0
+        S159_controller_basic_cycle_1
+        S159_msg_count_DEBUG_observer
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S139_Global_Time_Initialization_Slave
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Initialization/RoleID and Global Time init/Global Time Initialization Slave"
+      /begin SUB_GROUP
+        S141_msg_decoding
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase2
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Rx_init_LT
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S159_Matrix_Cycle_Observation_DEBUG
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/Matrix_Cycle_Observation_DEBUG"
+      /begin REF_MEASUREMENT
+        BC0_sync_processed_s
+        BC0_vote1_processed_s
+        BC0_vote2_processed_s
+        BC0_vote3_processed_s
+        BC1_sync_processed_s
+        Board_1_error_counter_s
+        Board_2_error_counter_s
+        Board_3_error_counter_s
+        Master_ID_s
+        Role_ID_s
+        sync_bc0_miss_counter_s
+        sync_bc1_miss_counter_s
+        votes_Board_1_DEBUG
+        votes_Board_2_DEBUG
+        votes_Board_3_DEBUG
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S159_controller_basic_cycle_0
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0"
+      /begin SUB_GROUP
+        S161_COMM_Task___Sync_bc_0
+        S161_COMM_Task___Vote1
+        S161_COMM_Task___Vote2
+        S161_COMM_Task___Vote3
+        S161_COMP_Task___Check_Timeouts
+        S161_COMP_Task___Reset_Board
+        S161_COMP_Task___Sync_bc0_check
+        S161_COMP_Task___Vote_Decision
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S159_controller_basic_cycle_1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 1"
+      /begin SUB_GROUP
+        S162_COMM_Task___Sync_bc_1
+        S162_COMP_Task___Sync_bc1_check
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S159_msg_count_DEBUG_observer
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/msg_count_DEBUG observer"
+      /begin REF_MEASUREMENT
+        msg_count_DEBUG_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S141_msg_decoding
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Initialization/RoleID and Global Time init/Global Time Initialization Slave/msg_decoding"
+      /begin SUB_GROUP
+        S142_Bit_Shift
+        S142_Bit_Shift1
+        S142_Bit_Shift2
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S161_COMM_Task___Sync_bc_0
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Sync bc 0"
+      /begin SUB_GROUP
+        S164_Transmission_subtasks
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S161_COMM_Task___Vote1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote1"
+      /begin SUB_GROUP
+        S165_Transmission_subtasks
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S161_COMM_Task___Vote2
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote2"
+      /begin SUB_GROUP
+        S166_Transmission_subtasks
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S161_COMM_Task___Vote3
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote3"
+      /begin SUB_GROUP
+        S167_Transmission_subtasks
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S161_COMP_Task___Check_Timeouts
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Check Timeouts"
+      /begin SUB_GROUP
+        S168_Timeout_and_Board_error_counter
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S161_COMP_Task___Reset_Board
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Reset Board"
+      /begin REF_MEASUREMENT
+        reset_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S161_COMP_Task___Sync_bc0_check
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Sync bc0 check"
+      /begin SUB_GROUP
+        S172_Process_Messages
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S161_COMP_Task___Vote_Decision
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Vote Decision"
+      /begin SUB_GROUP
+        S174_Vote_Decision
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S162_COMM_Task___Sync_bc_1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 1/COMM Task - Sync bc 1"
+      /begin SUB_GROUP
+        S385_Transmission_subtasks1
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S162_COMP_Task___Sync_bc1_check
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 1/COMP Task - Sync bc1 check"
+      /begin SUB_GROUP
+        S387_Process_Messages
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S142_Bit_Shift
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Initialization/RoleID and Global Time init/Global Time Initialization Slave/msg_decoding/Bit Shift"
+      /begin REF_MEASUREMENT
+        Rx_init_bc
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S142_Bit_Shift1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Initialization/RoleID and Global Time init/Global Time Initialization Slave/msg_decoding/Bit Shift1"
+      /begin REF_MEASUREMENT
+        Rx_init_mc
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S142_Bit_Shift2
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Initialization/RoleID and Global Time init/Global Time Initialization Slave/msg_decoding/Bit Shift2"
+      /begin REF_MEASUREMENT
+        Rx_init_id
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S164_Transmission_subtasks
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Sync bc 0/Transmission subtasks"
+      /begin SUB_GROUP
+        S182_Check_msg_transmission_CAN1
+        S182_Check_msg_transmission_CAN2
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S165_Transmission_subtasks
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote1/Transmission subtasks"
+      /begin SUB_GROUP
+        S200_Check_msg_transmission_CAN1
+        S200_Check_msg_transmission_CAN2
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S166_Transmission_subtasks
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote2/Transmission subtasks"
+      /begin SUB_GROUP
+        S218_Check_msg_transmission_CAN1
+        S218_Check_msg_transmission_CAN2
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S167_Transmission_subtasks
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote3/Transmission subtasks"
+      /begin SUB_GROUP
+        S236_Check_msg_transmission_CAN1
+        S236_Check_msg_transmission_CAN2
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S168_Timeout_and_Board_error_counter
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Check Timeouts/Timeout and Board error counter"
+      /begin SUB_GROUP
+        S253_Timeout_Counter_1_DEBUG
+        S253_Timeout_Counter_2_DEBUG
+        S253_Timeout_Counter_3_DEBUG
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S172_Process_Messages
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Sync bc0 check/Process_Messages"
+      /begin SUB_GROUP
+        S262_Desync_calculation
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S174_Vote_Decision
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Vote Decision/Vote Decision"
+      /begin REF_MEASUREMENT
+        Vote_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S385_Transmission_subtasks1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 1/COMM Task - Sync bc 1/Transmission subtasks1"
+      /begin SUB_GROUP
+        S390_Check_msg_transmission_CAN1
+        S390_Check_msg_transmission_CAN2
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S387_Process_Messages
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 1/COMP Task - Sync bc1 check/Process_Messages"
+      /begin SUB_GROUP
+        S409_Desync_calculation
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S182_Check_msg_transmission_CAN1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Sync bc 0/Transmission subtasks/Check msg transmission CAN1"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase_init1
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S182_Check_msg_transmission_CAN2
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Sync bc 0/Transmission subtasks/Check msg transmission CAN2"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase2
+        COMM_Phase_init2
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S200_Check_msg_transmission_CAN1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote1/Transmission subtasks/Check msg transmission CAN1"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase_init1
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S200_Check_msg_transmission_CAN2
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote1/Transmission subtasks/Check msg transmission CAN2"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase2
+        COMM_Phase_init2
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S218_Check_msg_transmission_CAN1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote2/Transmission subtasks/Check msg transmission CAN1"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase_init1
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S218_Check_msg_transmission_CAN2
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote2/Transmission subtasks/Check msg transmission CAN2"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase2
+        COMM_Phase_init2
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S236_Check_msg_transmission_CAN1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote3/Transmission subtasks/Check msg transmission CAN1"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase_init1
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S236_Check_msg_transmission_CAN2
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMM Task - Vote3/Transmission subtasks/Check msg transmission CAN2"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase2
+        COMM_Phase_init2
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S253_Timeout_Counter_1_DEBUG
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Check Timeouts/Timeout and Board error counter/Timeout Counter 1 DEBUG"
+      /begin REF_MEASUREMENT
+        TM1_timeout_counter_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S253_Timeout_Counter_2_DEBUG
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Check Timeouts/Timeout and Board error counter/Timeout Counter 2 DEBUG"
+      /begin REF_MEASUREMENT
+        TM2_timeout_counter_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S253_Timeout_Counter_3_DEBUG
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Check Timeouts/Timeout and Board error counter/Timeout Counter 3 DEBUG"
+      /begin REF_MEASUREMENT
+        TM3_timeout_counter_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S262_Desync_calculation
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 0/COMP Task - Sync bc0 check/Process_Messages/Desync calculation"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase2
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Desync_Sync_bc0_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S390_Check_msg_transmission_CAN1
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 1/COMM Task - Sync bc 1/Transmission subtasks1/Check msg transmission CAN1"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase_init1
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S390_Check_msg_transmission_CAN2
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 1/COMM Task - Sync bc 1/Transmission subtasks1/Check msg transmission CAN2"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase2
+        COMM_Phase_init2
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S409_Desync_calculation
+      /* Long identifier        */       "HANcoder_E407_TTA_Template/HANcoder STM32 Target - E407-STM32 algorithm/TTA CAN System/TTA System/Matrix Cycle Manager/Controller Matrix Cycle/controller basic cycle 1/COMP Task - Sync bc1 check/Process_Messages/Desync calculation"
+      /begin REF_CHARACTERISTIC
+        COMM_Phase1
+        COMM_Phase2
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Desync_Sync_bc1_s
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF HANcoder_E407_TTA_Template.a2l */

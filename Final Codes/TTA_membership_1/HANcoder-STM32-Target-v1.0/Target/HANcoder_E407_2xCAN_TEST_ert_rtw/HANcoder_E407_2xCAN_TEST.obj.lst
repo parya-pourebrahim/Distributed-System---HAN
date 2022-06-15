@@ -1,0 +1,1374 @@
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 2
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"HANcoder_E407_2xCAN_TEST.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.text.ByteSwap_x,"ax",%progbits
+  21              		.align	2
+  22              		.global	ByteSwap_x
+  23              		.thumb
+  24              		.thumb_func
+  26              	ByteSwap_x:
+  27              	.LFB112:
+  28              		.file 1 "HANcoder_E407_2xCAN_TEST.c"
+   1:HANcoder_E407_2xCAN_TEST.c **** /*
+   2:HANcoder_E407_2xCAN_TEST.c ****  * Academic License - for use in teaching, academic research, and meeting
+   3:HANcoder_E407_2xCAN_TEST.c ****  * course requirements at degree granting institutions only.  Not for
+   4:HANcoder_E407_2xCAN_TEST.c ****  * government, commercial, or other organizational use.
+   5:HANcoder_E407_2xCAN_TEST.c ****  *
+   6:HANcoder_E407_2xCAN_TEST.c ****  * File: HANcoder_E407_2xCAN_TEST.c
+   7:HANcoder_E407_2xCAN_TEST.c ****  *
+   8:HANcoder_E407_2xCAN_TEST.c ****  * Code generated for Simulink model 'HANcoder_E407_2xCAN_TEST'.
+   9:HANcoder_E407_2xCAN_TEST.c ****  *
+  10:HANcoder_E407_2xCAN_TEST.c ****  * Model version                  : 1.120
+  11:HANcoder_E407_2xCAN_TEST.c ****  * Simulink Coder version         : 9.0 (R2018b) 24-May-2018
+  12:HANcoder_E407_2xCAN_TEST.c ****  * C/C++ source code generated on : Tue Feb 15 08:50:12 2022
+  13:HANcoder_E407_2xCAN_TEST.c ****  *
+  14:HANcoder_E407_2xCAN_TEST.c ****  * Target selection: ert.tlc
+  15:HANcoder_E407_2xCAN_TEST.c ****  * Embedded hardware selection: Generic->32-bit Embedded Processor
+  16:HANcoder_E407_2xCAN_TEST.c ****  * Code generation objectives: Unspecified
+  17:HANcoder_E407_2xCAN_TEST.c ****  * Validation result: Not run
+  18:HANcoder_E407_2xCAN_TEST.c ****  */
+  19:HANcoder_E407_2xCAN_TEST.c **** 
+  20:HANcoder_E407_2xCAN_TEST.c **** #include "HANcoder_E407_2xCAN_TEST.h"
+  21:HANcoder_E407_2xCAN_TEST.c **** #include "HANcoder_E407_2xCAN_TEST_private.h"
+  22:HANcoder_E407_2xCAN_TEST.c **** 
+  23:HANcoder_E407_2xCAN_TEST.c **** /* map ByteSwap function */
+  24:HANcoder_E407_2xCAN_TEST.c **** #define ByteSwap(x)                    (ByteSwap_x((uint8_t *) &x, sizeof(x)))
+  25:HANcoder_E407_2xCAN_TEST.c **** 
+  26:HANcoder_E407_2xCAN_TEST.c **** /* Exported block signals */
+  27:HANcoder_E407_2xCAN_TEST.c **** uint32_T SI_FreeHeap;                  /* '<S33>/Level-2 M-file S-Function' */
+  28:HANcoder_E407_2xCAN_TEST.c **** uint32_T SI_FreeStack;                 /* '<S34>/Level-2 M-file S-Function' */
+  29:HANcoder_E407_2xCAN_TEST.c **** uint32_T RX_MSG_2;                     /* '<S31>/In1' */
+  30:HANcoder_E407_2xCAN_TEST.c **** uint32_T RX_MSG_1;                     /* '<S30>/In1' */
+  31:HANcoder_E407_2xCAN_TEST.c **** uint32_T TX_MSG;                       /* '<S23>/Output' */
+  32:HANcoder_E407_2xCAN_TEST.c **** uint32_T TX_MSG_1;                     /* '<S8>/Data Type Conversion2' */
+  33:HANcoder_E407_2xCAN_TEST.c **** uint32_T TX_MSG_2;                     /* '<S8>/Data Type Conversion3' */
+  34:HANcoder_E407_2xCAN_TEST.c **** uint8_T SI_CPUload;                    /* '<S32>/Level-2 M-file S-Function' */
+  35:HANcoder_E407_2xCAN_TEST.c **** boolean_T WKUP_button;                 /* '<S26>/Level-2 M-file S-Function' */
+  36:HANcoder_E407_2xCAN_TEST.c **** boolean_T sender_id;                   /* '<S6>/Level-2 M-file S-Function' */
+  37:HANcoder_E407_2xCAN_TEST.c **** boolean_T LedValue;                    /* '<S2>/Data Type Conversion' */
+  38:HANcoder_E407_2xCAN_TEST.c **** boolean_T receiver_id;                 /* '<S7>/Level-2 M-file S-Function' */
+  39:HANcoder_E407_2xCAN_TEST.c **** 
+  40:HANcoder_E407_2xCAN_TEST.c **** /* Exported block parameters */
+  41:HANcoder_E407_2xCAN_TEST.c **** boolean_T HANtuneOverride = 0;         /* Variable: HANtuneOverride
+  42:HANcoder_E407_2xCAN_TEST.c ****                                         * Referenced by: '<S2>/Constant'
+  43:HANcoder_E407_2xCAN_TEST.c ****                                         */
+  44:HANcoder_E407_2xCAN_TEST.c **** 
+  45:HANcoder_E407_2xCAN_TEST.c **** /* Block signals (default storage) */
+  46:HANcoder_E407_2xCAN_TEST.c **** BlockIO rtB;
+  47:HANcoder_E407_2xCAN_TEST.c **** 
+  48:HANcoder_E407_2xCAN_TEST.c **** /* Block states (default storage) */
+  49:HANcoder_E407_2xCAN_TEST.c **** D_Work rtDWork;
+  50:HANcoder_E407_2xCAN_TEST.c **** 
+  51:HANcoder_E407_2xCAN_TEST.c **** /* Real-time model */
+  52:HANcoder_E407_2xCAN_TEST.c **** RT_MODEL rtM_;
+  53:HANcoder_E407_2xCAN_TEST.c **** RT_MODEL *const rtM = &rtM_;
+  54:HANcoder_E407_2xCAN_TEST.c **** static void rate_scheduler(void);
+  55:HANcoder_E407_2xCAN_TEST.c **** static tCanDataTypes canTxData;
+  56:HANcoder_E407_2xCAN_TEST.c **** static tCanDataTypes canRxData_1_1U;
+  57:HANcoder_E407_2xCAN_TEST.c **** static tCanDataTypes canRxData_0_1U;
+  58:HANcoder_E407_2xCAN_TEST.c **** 
+  59:HANcoder_E407_2xCAN_TEST.c **** /*
+  60:HANcoder_E407_2xCAN_TEST.c ****  * Swaps the values of two bytes.
+  61:HANcoder_E407_2xCAN_TEST.c ****  * a, b pointers to data values that need swapping
+  62:HANcoder_E407_2xCAN_TEST.c ****  */
+  63:HANcoder_E407_2xCAN_TEST.c **** static void swap(unsigned char *a, unsigned char *b)
+  64:HANcoder_E407_2xCAN_TEST.c **** {
+  65:HANcoder_E407_2xCAN_TEST.c ****   register char i = *a;
+  66:HANcoder_E407_2xCAN_TEST.c ****   *a = *b;
+  67:HANcoder_E407_2xCAN_TEST.c ****   *b = i;
+  68:HANcoder_E407_2xCAN_TEST.c **** }                                      /*** end of swap ***/
+  69:HANcoder_E407_2xCAN_TEST.c **** 
+  70:HANcoder_E407_2xCAN_TEST.c **** /*
+  71:HANcoder_E407_2xCAN_TEST.c ****  * Swaps all bytes in b. Typically used to fix endianes.
+  72:HANcoder_E407_2xCAN_TEST.c ****  * b pointer to data with bytes to swap
+  73:HANcoder_E407_2xCAN_TEST.c ****  * n number of bytes to swap
+  74:HANcoder_E407_2xCAN_TEST.c ****  */
+  75:HANcoder_E407_2xCAN_TEST.c **** void ByteSwap_x(uint8_t *b, size_t n)
+  76:HANcoder_E407_2xCAN_TEST.c **** {
+  29              		.loc 1 76 0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              	.LVL0:
+  77:HANcoder_E407_2xCAN_TEST.c ****   int i = 0;
+  78:HANcoder_E407_2xCAN_TEST.c ****   int j = n-1;
+  35              		.loc 1 78 0
+  36 0000 4B1E     		subs	r3, r1, #1
+  37              	.LVL1:
+  79:HANcoder_E407_2xCAN_TEST.c ****   while (i<j) {
+  38              		.loc 1 79 0
+  39 0002 002B     		cmp	r3, #0
+  40 0004 11DD     		ble	.L8
+  76:HANcoder_E407_2xCAN_TEST.c ****   int i = 0;
+  41              		.loc 1 76 0
+  42 0006 70B4     		push	{r4, r5, r6}
+  43              		.cfi_def_cfa_offset 12
+  44              		.cfi_offset 4, -12
+  45              		.cfi_offset 5, -8
+  46              		.cfi_offset 6, -4
+  47 0008 441E     		subs	r4, r0, #1
+  48 000a 0144     		add	r1, r1, r0
+  49              	.LVL2:
+  50              		.loc 1 79 0
+  51 000c 0022     		movs	r2, #0
+  52 000e 2046     		mov	r0, r4
+  53              	.LVL3:
+  54              	.L3:
+  80:HANcoder_E407_2xCAN_TEST.c ****     swap(&b[i], &b[j]);
+  81:HANcoder_E407_2xCAN_TEST.c ****     i++, j--;
+  55              		.loc 1 81 0
+  56 0010 0132     		adds	r2, r2, #1
+  57              	.LVL4:
+  58 0012 013B     		subs	r3, r3, #1
+  59              	.LVL5:
+  60              	.LBB6:
+  61              	.LBB7:
+  65:HANcoder_E407_2xCAN_TEST.c ****   *a = *b;
+  62              		.loc 1 65 0
+  63 0014 14F8015F 		ldrb	r5, [r4, #1]!	@ zero_extendqisi2
+  64              	.LVL6:
+  66:HANcoder_E407_2xCAN_TEST.c ****   *b = i;
+  65              		.loc 1 66 0
+  66 0018 11F8016C 		ldrb	r6, [r1, #-1]	@ zero_extendqisi2
+  67 001c 00F8016F 		strb	r6, [r0, #1]!
+  68              	.LBE7:
+  69              	.LBE6:
+  79:HANcoder_E407_2xCAN_TEST.c ****     swap(&b[i], &b[j]);
+  70              		.loc 1 79 0
+  71 0020 9A42     		cmp	r2, r3
+  72              	.LBB9:
+  73              	.LBB8:
+  67:HANcoder_E407_2xCAN_TEST.c **** }                                      /*** end of swap ***/
+  74              		.loc 1 67 0
+  75 0022 01F8015D 		strb	r5, [r1, #-1]!
+  76              	.LVL7:
+  77              	.LBE8:
+  78              	.LBE9:
+  79:HANcoder_E407_2xCAN_TEST.c ****     swap(&b[i], &b[j]);
+  79              		.loc 1 79 0
+  80 0026 F3DB     		blt	.L3
+  82:HANcoder_E407_2xCAN_TEST.c ****   }
+  83:HANcoder_E407_2xCAN_TEST.c **** }
+  81              		.loc 1 83 0
+  82 0028 70BC     		pop	{r4, r5, r6}
+  83              		.cfi_restore 6
+  84              		.cfi_restore 5
+  85              		.cfi_restore 4
+  86              		.cfi_def_cfa_offset 0
+  87              	.LVL8:
+  88              	.L8:
+  89 002a 7047     		bx	lr
+  90              		.cfi_endproc
+  91              	.LFE112:
+  93              		.section	.text.HANcoder_E407_2xCAN_TEST_step,"ax",%progbits
+  94              		.align	2
+  95              		.global	HANcoder_E407_2xCAN_TEST_step
+  96              		.thumb
+  97              		.thumb_func
+  99              	HANcoder_E407_2xCAN_TEST_step:
+ 100              	.LFB114:
+  84:HANcoder_E407_2xCAN_TEST.c **** 
+  85:HANcoder_E407_2xCAN_TEST.c **** /*
+  86:HANcoder_E407_2xCAN_TEST.c ****  *   This function updates active task flag for each subrate.
+  87:HANcoder_E407_2xCAN_TEST.c ****  * The function is called at model base rate, hence the
+  88:HANcoder_E407_2xCAN_TEST.c ****  * generated code self-manages all its subrates.
+  89:HANcoder_E407_2xCAN_TEST.c ****  */
+  90:HANcoder_E407_2xCAN_TEST.c **** static void rate_scheduler(void)
+  91:HANcoder_E407_2xCAN_TEST.c **** {
+  92:HANcoder_E407_2xCAN_TEST.c ****   /* Compute which subrates run during the next base time step.  Subrates
+  93:HANcoder_E407_2xCAN_TEST.c ****    * are an integer multiple of the base rate counter.  Therefore, the subtask
+  94:HANcoder_E407_2xCAN_TEST.c ****    * counter is reset when it reaches its limit (zero means run).
+  95:HANcoder_E407_2xCAN_TEST.c ****    */
+  96:HANcoder_E407_2xCAN_TEST.c ****   (rtM->Timing.TaskCounters.TID[1])++;
+  97:HANcoder_E407_2xCAN_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[1]) > 9) {/* Sample time: [0.1s, 0.0s] */
+  98:HANcoder_E407_2xCAN_TEST.c ****     rtM->Timing.TaskCounters.TID[1] = 0;
+  99:HANcoder_E407_2xCAN_TEST.c ****   }
+ 100:HANcoder_E407_2xCAN_TEST.c **** 
+ 101:HANcoder_E407_2xCAN_TEST.c ****   (rtM->Timing.TaskCounters.TID[2])++;
+ 102:HANcoder_E407_2xCAN_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[2]) > 19) {/* Sample time: [0.2s, 0.0s] */
+ 103:HANcoder_E407_2xCAN_TEST.c ****     rtM->Timing.TaskCounters.TID[2] = 0;
+ 104:HANcoder_E407_2xCAN_TEST.c ****   }
+ 105:HANcoder_E407_2xCAN_TEST.c **** }
+ 106:HANcoder_E407_2xCAN_TEST.c **** 
+ 107:HANcoder_E407_2xCAN_TEST.c **** /* Model step function */
+ 108:HANcoder_E407_2xCAN_TEST.c **** void HANcoder_E407_2xCAN_TEST_step(void)
+ 109:HANcoder_E407_2xCAN_TEST.c **** {
+ 101              		.loc 1 109 0
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 106              		.cfi_def_cfa_offset 36
+ 107              		.cfi_offset 4, -36
+ 108              		.cfi_offset 5, -32
+ 109              		.cfi_offset 6, -28
+ 110              		.cfi_offset 7, -24
+ 111              		.cfi_offset 8, -20
+ 112              		.cfi_offset 9, -16
+ 113              		.cfi_offset 10, -12
+ 114              		.cfi_offset 11, -8
+ 115              		.cfi_offset 14, -4
+ 110:HANcoder_E407_2xCAN_TEST.c ****   /* local block i/o variables */
+ 111:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o2;
+ 112:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o3;
+ 113:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o4;
+ 114:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o5;
+ 115:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o6;
+ 116:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o7;
+ 117:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o8;
+ 118:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o9;
+ 119:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o2_k;
+ 120:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o3_b;
+ 121:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o4_o;
+ 122:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o5_j;
+ 123:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o6_o;
+ 124:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o7_d;
+ 125:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o8_f;
+ 126:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_SFunction_o9_a;
+ 127:HANcoder_E407_2xCAN_TEST.c ****   int8_T rtb_SFunction_o1;
+ 128:HANcoder_E407_2xCAN_TEST.c ****   int8_T rtb_SFunction_o1_a;
+ 129:HANcoder_E407_2xCAN_TEST.c ****   uint8_T rtb_Output;
+ 130:HANcoder_E407_2xCAN_TEST.c ****   uint8_T rtb_FixPtSum1_j;
+ 131:HANcoder_E407_2xCAN_TEST.c ****   uint8_T rtb_FixPtSum1_k;
+ 132:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_FixPtSum1;
+ 133:HANcoder_E407_2xCAN_TEST.c ****   boolean_T rtb_SampleTimeCrowBar;
+ 134:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In2_k;
+ 135:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In3_k;
+ 136:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In4_n;
+ 137:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In5_b;
+ 138:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In6_i;
+ 139:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In7_c;
+ 140:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In8_g;
+ 141:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In2;
+ 142:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In3;
+ 143:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In4;
+ 144:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In5;
+ 145:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In6;
+ 146:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In7;
+ 147:HANcoder_E407_2xCAN_TEST.c ****   uint32_T rtb_In8;
+ 148:HANcoder_E407_2xCAN_TEST.c ****   if (rtM->Timing.TaskCounters.TID[1] == 0) {
+ 116              		.loc 1 148 0
+ 117 0004 714C     		ldr	r4, .L55
+ 118 0006 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 109:HANcoder_E407_2xCAN_TEST.c ****   /* local block i/o variables */
+ 119              		.loc 1 109 0
+ 120 0008 83B0     		sub	sp, sp, #12
+ 121              		.cfi_def_cfa_offset 48
+ 122              		.loc 1 148 0
+ 123 000a 002B     		cmp	r3, #0
+ 124 000c 70D0     		beq	.L52
+ 149:HANcoder_E407_2xCAN_TEST.c ****     /* M-S-Function: '<S26>/Level-2 M-file S-Function' */
+ 150:HANcoder_E407_2xCAN_TEST.c ****     /* read from digital input */
+ 151:HANcoder_E407_2xCAN_TEST.c ****     WKUP_button = DiginGet(DIGIN_PORTA_PIN0);
+ 152:HANcoder_E407_2xCAN_TEST.c **** 
+ 153:HANcoder_E407_2xCAN_TEST.c ****     /* M-S-Function: '<S6>/Level-2 M-file S-Function' */
+ 154:HANcoder_E407_2xCAN_TEST.c ****     /* read from digital input */
+ 155:HANcoder_E407_2xCAN_TEST.c ****     sender_id = DiginGet(DIGIN_PORTE_PIN2);
+ 156:HANcoder_E407_2xCAN_TEST.c **** 
+ 157:HANcoder_E407_2xCAN_TEST.c ****     /* Outputs for Enabled SubSystem: '<S1>/If Action Subsystem' incorporates:
+ 158:HANcoder_E407_2xCAN_TEST.c ****      *  EnablePort: '<S8>/Enable'
+ 159:HANcoder_E407_2xCAN_TEST.c ****      */
+ 160:HANcoder_E407_2xCAN_TEST.c ****     /* Logic: '<S1>/AND3' */
+ 161:HANcoder_E407_2xCAN_TEST.c ****     if (WKUP_button && sender_id) {
+ 162:HANcoder_E407_2xCAN_TEST.c ****       if (!rtDWork.IfActionSubsystem_MODE) {
+ 163:HANcoder_E407_2xCAN_TEST.c ****         rtDWork.IfActionSubsystem_MODE = true;
+ 164:HANcoder_E407_2xCAN_TEST.c ****       }
+ 165:HANcoder_E407_2xCAN_TEST.c **** 
+ 166:HANcoder_E407_2xCAN_TEST.c ****       /* UnitDelay: '<S23>/Output' */
+ 167:HANcoder_E407_2xCAN_TEST.c ****       TX_MSG = rtDWork.Output_DSTATE;
+ 168:HANcoder_E407_2xCAN_TEST.c **** 
+ 169:HANcoder_E407_2xCAN_TEST.c ****       /* Sum: '<S24>/FixPt Sum1' incorporates:
+ 170:HANcoder_E407_2xCAN_TEST.c ****        *  Constant: '<S24>/FixPt Constant'
+ 171:HANcoder_E407_2xCAN_TEST.c ****        */
+ 172:HANcoder_E407_2xCAN_TEST.c ****       rtb_FixPtSum1 = TX_MSG + 1U;
+ 173:HANcoder_E407_2xCAN_TEST.c **** 
+ 174:HANcoder_E407_2xCAN_TEST.c ****       /* DataTypeConversion: '<S8>/Data Type Conversion2' */
+ 175:HANcoder_E407_2xCAN_TEST.c ****       TX_MSG_1 = TX_MSG;
+ 176:HANcoder_E407_2xCAN_TEST.c **** 
+ 177:HANcoder_E407_2xCAN_TEST.c ****       /* DataTypeConversion: '<S8>/Data Type Conversion3' */
+ 178:HANcoder_E407_2xCAN_TEST.c ****       TX_MSG_2 = TX_MSG;
+ 179:HANcoder_E407_2xCAN_TEST.c **** 
+ 180:HANcoder_E407_2xCAN_TEST.c ****       /* Update for M-S-Function: '<S21>/S-Function' */
+ 181:HANcoder_E407_2xCAN_TEST.c ****       {
+ 182:HANcoder_E407_2xCAN_TEST.c ****         /* prepare the data */
+ 183:HANcoder_E407_2xCAN_TEST.c ****         canTxData.uint32_T_info[0] = TX_MSG_1;
+ 184:HANcoder_E407_2xCAN_TEST.c **** 
+ 185:HANcoder_E407_2xCAN_TEST.c ****         /* send the data */
+ 186:HANcoder_E407_2xCAN_TEST.c ****         CanTransmit(1, rtConstB.DataTypeConversion1, 4, &canTxData.uint8_T_info
+ 187:HANcoder_E407_2xCAN_TEST.c ****                     [0]);
+ 188:HANcoder_E407_2xCAN_TEST.c ****       }
+ 189:HANcoder_E407_2xCAN_TEST.c **** 
+ 190:HANcoder_E407_2xCAN_TEST.c ****       /* Update for M-S-Function: '<S22>/S-Function' */
+ 191:HANcoder_E407_2xCAN_TEST.c ****       {
+ 192:HANcoder_E407_2xCAN_TEST.c ****         /* prepare the data */
+ 193:HANcoder_E407_2xCAN_TEST.c ****         canTxData.uint32_T_info[0] = TX_MSG_2;
+ 194:HANcoder_E407_2xCAN_TEST.c **** 
+ 195:HANcoder_E407_2xCAN_TEST.c ****         /* send the data */
+ 196:HANcoder_E407_2xCAN_TEST.c ****         CanTransmit(0, rtConstB.DataTypeConversion1, 4, &canTxData.uint8_T_info
+ 197:HANcoder_E407_2xCAN_TEST.c ****                     [0]);
+ 198:HANcoder_E407_2xCAN_TEST.c ****       }
+ 199:HANcoder_E407_2xCAN_TEST.c **** 
+ 200:HANcoder_E407_2xCAN_TEST.c ****       /* Switch: '<S25>/FixPt Switch' */
+ 201:HANcoder_E407_2xCAN_TEST.c ****       if (rtb_FixPtSum1 > 4294967295U) {
+ 202:HANcoder_E407_2xCAN_TEST.c ****         /* Update for UnitDelay: '<S23>/Output' incorporates:
+ 203:HANcoder_E407_2xCAN_TEST.c ****          *  Constant: '<S25>/Constant'
+ 204:HANcoder_E407_2xCAN_TEST.c ****          */
+ 205:HANcoder_E407_2xCAN_TEST.c ****         rtDWork.Output_DSTATE = 0U;
+ 206:HANcoder_E407_2xCAN_TEST.c ****       } else {
+ 207:HANcoder_E407_2xCAN_TEST.c ****         /* Update for UnitDelay: '<S23>/Output' */
+ 208:HANcoder_E407_2xCAN_TEST.c ****         rtDWork.Output_DSTATE = rtb_FixPtSum1;
+ 209:HANcoder_E407_2xCAN_TEST.c ****       }
+ 210:HANcoder_E407_2xCAN_TEST.c **** 
+ 211:HANcoder_E407_2xCAN_TEST.c ****       /* End of Switch: '<S25>/FixPt Switch' */
+ 212:HANcoder_E407_2xCAN_TEST.c ****     } else {
+ 213:HANcoder_E407_2xCAN_TEST.c ****       if (rtDWork.IfActionSubsystem_MODE) {
+ 214:HANcoder_E407_2xCAN_TEST.c ****         rtDWork.IfActionSubsystem_MODE = false;
+ 215:HANcoder_E407_2xCAN_TEST.c ****       }
+ 216:HANcoder_E407_2xCAN_TEST.c ****     }
+ 217:HANcoder_E407_2xCAN_TEST.c **** 
+ 218:HANcoder_E407_2xCAN_TEST.c ****     /* End of Logic: '<S1>/AND3' */
+ 219:HANcoder_E407_2xCAN_TEST.c ****     /* End of Outputs for SubSystem: '<S1>/If Action Subsystem' */
+ 220:HANcoder_E407_2xCAN_TEST.c ****     /* UnitDelay: '<S15>/Output' */
+ 221:HANcoder_E407_2xCAN_TEST.c ****     rtb_Output = rtDWork.Output_DSTATE_d;
+ 222:HANcoder_E407_2xCAN_TEST.c **** 
+ 223:HANcoder_E407_2xCAN_TEST.c ****     /* Sum: '<S17>/FixPt Sum1' incorporates:
+ 224:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S17>/FixPt Constant'
+ 225:HANcoder_E407_2xCAN_TEST.c ****      *  UnitDelay: '<S15>/Output'
+ 226:HANcoder_E407_2xCAN_TEST.c ****      */
+ 227:HANcoder_E407_2xCAN_TEST.c ****     rtb_FixPtSum1_j = (uint8_T)((uint32_T)rtDWork.Output_DSTATE_d + ((uint8_T)1U));
+ 228:HANcoder_E407_2xCAN_TEST.c **** 
+ 229:HANcoder_E407_2xCAN_TEST.c ****     /* Switch: '<S18>/FixPt Switch' incorporates:
+ 230:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S18>/Constant'
+ 231:HANcoder_E407_2xCAN_TEST.c ****      */
+ 232:HANcoder_E407_2xCAN_TEST.c ****     if (rtb_FixPtSum1_j > ((uint8_T)1U)) {
+ 233:HANcoder_E407_2xCAN_TEST.c ****       rtb_FixPtSum1_j = ((uint8_T)0U);
+ 234:HANcoder_E407_2xCAN_TEST.c ****     }
+ 235:HANcoder_E407_2xCAN_TEST.c **** 
+ 236:HANcoder_E407_2xCAN_TEST.c ****     /* End of Switch: '<S18>/FixPt Switch' */
+ 237:HANcoder_E407_2xCAN_TEST.c ****   }
+ 238:HANcoder_E407_2xCAN_TEST.c **** 
+ 239:HANcoder_E407_2xCAN_TEST.c ****   if (rtM->Timing.TaskCounters.TID[2] == 0) {
+ 125              		.loc 1 239 0
+ 126 000e A378     		ldrb	r3, [r4, #2]	@ zero_extendqisi2
+ 240:HANcoder_E407_2xCAN_TEST.c ****     /* UnitDelay: '<S16>/Output' */
+ 241:HANcoder_E407_2xCAN_TEST.c ****     rtB.Output = rtDWork.Output_DSTATE_k;
+ 127              		.loc 1 241 0
+ 128 0010 6F4E     		ldr	r6, .L55+4
+ 239:HANcoder_E407_2xCAN_TEST.c ****     /* UnitDelay: '<S16>/Output' */
+ 129              		.loc 1 239 0
+ 130 0012 002B     		cmp	r3, #0
+ 131 0014 5CD0     		beq	.L36
+ 132              	.L18:
+ 242:HANcoder_E407_2xCAN_TEST.c **** 
+ 243:HANcoder_E407_2xCAN_TEST.c ****     /* Sum: '<S19>/FixPt Sum1' incorporates:
+ 244:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S19>/FixPt Constant'
+ 245:HANcoder_E407_2xCAN_TEST.c ****      */
+ 246:HANcoder_E407_2xCAN_TEST.c ****     rtb_FixPtSum1_k = (uint8_T)((uint32_T)rtB.Output + ((uint8_T)1U));
+ 247:HANcoder_E407_2xCAN_TEST.c **** 
+ 248:HANcoder_E407_2xCAN_TEST.c ****     /* Switch: '<S20>/FixPt Switch' incorporates:
+ 249:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S20>/Constant'
+ 250:HANcoder_E407_2xCAN_TEST.c ****      */
+ 251:HANcoder_E407_2xCAN_TEST.c ****     if (rtb_FixPtSum1_k > ((uint8_T)1U)) {
+ 252:HANcoder_E407_2xCAN_TEST.c ****       rtb_FixPtSum1_k = ((uint8_T)0U);
+ 253:HANcoder_E407_2xCAN_TEST.c ****     }
+ 254:HANcoder_E407_2xCAN_TEST.c **** 
+ 255:HANcoder_E407_2xCAN_TEST.c ****     /* End of Switch: '<S20>/FixPt Switch' */
+ 256:HANcoder_E407_2xCAN_TEST.c ****   }
+ 257:HANcoder_E407_2xCAN_TEST.c **** 
+ 258:HANcoder_E407_2xCAN_TEST.c ****   if (rtM->Timing.TaskCounters.TID[1] == 0) {
+ 259:HANcoder_E407_2xCAN_TEST.c ****     /* Switch: '<S2>/Switch' incorporates:
+ 260:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S2>/Constant'
+ 261:HANcoder_E407_2xCAN_TEST.c ****      *  Logic: '<S2>/Logical Operator'
+ 262:HANcoder_E407_2xCAN_TEST.c ****      */
+ 263:HANcoder_E407_2xCAN_TEST.c ****     if (HANtuneOverride || WKUP_button) {
+ 264:HANcoder_E407_2xCAN_TEST.c ****       /* DataTypeConversion: '<S2>/Data Type Conversion' */
+ 265:HANcoder_E407_2xCAN_TEST.c ****       LedValue = (rtb_Output != 0);
+ 266:HANcoder_E407_2xCAN_TEST.c ****     } else {
+ 267:HANcoder_E407_2xCAN_TEST.c ****       /* DataTypeConversion: '<S2>/Data Type Conversion' */
+ 268:HANcoder_E407_2xCAN_TEST.c ****       LedValue = (rtB.Output != 0);
+ 269:HANcoder_E407_2xCAN_TEST.c ****     }
+ 270:HANcoder_E407_2xCAN_TEST.c **** 
+ 271:HANcoder_E407_2xCAN_TEST.c ****     /* End of Switch: '<S2>/Switch' */
+ 272:HANcoder_E407_2xCAN_TEST.c ****   }
+ 273:HANcoder_E407_2xCAN_TEST.c **** 
+ 274:HANcoder_E407_2xCAN_TEST.c ****   /* M-S-Function: '<S7>/Level-2 M-file S-Function' */
+ 275:HANcoder_E407_2xCAN_TEST.c ****   /* read from digital input */
+ 276:HANcoder_E407_2xCAN_TEST.c ****   receiver_id = DiginGet(DIGIN_PORTE_PIN4);
+ 133              		.loc 1 276 0
+ 134 0016 0920     		movs	r0, #9
+ 135 0018 FFF7FEFF 		bl	DiginGet
+ 136              	.LVL9:
+ 137 001c 6D4B     		ldr	r3, .L55+8
+ 277:HANcoder_E407_2xCAN_TEST.c **** 
+ 278:HANcoder_E407_2xCAN_TEST.c ****   /* Outputs for Enabled SubSystem: '<S1>/Subsystem' incorporates:
+ 279:HANcoder_E407_2xCAN_TEST.c ****    *  EnablePort: '<S11>/Enable'
+ 280:HANcoder_E407_2xCAN_TEST.c ****    */
+ 281:HANcoder_E407_2xCAN_TEST.c ****   if (receiver_id) {
+ 282:HANcoder_E407_2xCAN_TEST.c ****     if (!rtDWork.Subsystem_MODE) {
+ 138              		.loc 1 282 0
+ 139 001e 6C4A     		ldr	r2, .L55+4
+ 276:HANcoder_E407_2xCAN_TEST.c **** 
+ 140              		.loc 1 276 0
+ 141 0020 1870     		strb	r0, [r3]
+ 142              		.loc 1 282 0
+ 143 0022 B37B     		ldrb	r3, [r6, #14]	@ zero_extendqisi2
+ 281:HANcoder_E407_2xCAN_TEST.c ****     if (!rtDWork.Subsystem_MODE) {
+ 144              		.loc 1 281 0
+ 145 0024 0028     		cmp	r0, #0
+ 146 0026 4FD0     		beq	.L21
+ 147              		.loc 1 282 0
+ 148 0028 0BB9     		cbnz	r3, .L22
+ 283:HANcoder_E407_2xCAN_TEST.c ****       rtDWork.Subsystem_MODE = true;
+ 149              		.loc 1 283 0
+ 150 002a 0123     		movs	r3, #1
+ 151 002c 9373     		strb	r3, [r2, #14]
+ 152              	.L22:
+ 284:HANcoder_E407_2xCAN_TEST.c ****     }
+ 285:HANcoder_E407_2xCAN_TEST.c **** 
+ 286:HANcoder_E407_2xCAN_TEST.c ****     /* M-S-Function: '<S28>/S-Function' incorporates:
+ 287:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S11>/Constant2'
+ 288:HANcoder_E407_2xCAN_TEST.c ****      */
+ 289:HANcoder_E407_2xCAN_TEST.c **** 
+ 290:HANcoder_E407_2xCAN_TEST.c ****     /* read the message data and store the new parameter */
+ 291:HANcoder_E407_2xCAN_TEST.c ****     rtb_SFunction_o1 = CanIoGetMessage(1, 1U, NULL,
+ 153              		.loc 1 291 0
+ 154 002e DFF8D881 		ldr	r8, .L55+60
+ 155 0032 0022     		movs	r2, #0
+ 156 0034 0121     		movs	r1, #1
+ 157 0036 4346     		mov	r3, r8
+ 158 0038 0092     		str	r2, [sp]
+ 159 003a 0846     		mov	r0, r1
+ 160 003c FFF7FEFF 		bl	CanIoGetMessage
+ 161              	.LVL10:
+ 292:HANcoder_E407_2xCAN_TEST.c ****       &canRxData_1_1U.uint8_T_info[0], NULL);
+ 293:HANcoder_E407_2xCAN_TEST.c **** 
+ 294:HANcoder_E407_2xCAN_TEST.c ****     /* process the message data */
+ 295:HANcoder_E407_2xCAN_TEST.c ****     if (rtb_SFunction_o1 > 0) {
+ 162              		.loc 1 295 0
+ 163 0040 0028     		cmp	r0, #0
+ 164 0042 03DD     		ble	.L23
+ 165              	.LVL11:
+ 296:HANcoder_E407_2xCAN_TEST.c ****       /* read the data */
+ 297:HANcoder_E407_2xCAN_TEST.c ****       rtb_SFunction_o2 = canRxData_1_1U.uint32_T_info[0];
+ 298:HANcoder_E407_2xCAN_TEST.c ****     }
+ 299:HANcoder_E407_2xCAN_TEST.c **** 
+ 300:HANcoder_E407_2xCAN_TEST.c ****     /* Outputs for Enabled SubSystem: '<S28>/Enabled Subsystem' incorporates:
+ 301:HANcoder_E407_2xCAN_TEST.c ****      *  EnablePort: '<S30>/Enable'
+ 302:HANcoder_E407_2xCAN_TEST.c ****      */
+ 303:HANcoder_E407_2xCAN_TEST.c ****     if (rtb_SFunction_o1 > 0) {
+ 304:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S30>/In1' */
+ 305:HANcoder_E407_2xCAN_TEST.c ****       RX_MSG_1 = rtb_SFunction_o2;
+ 166              		.loc 1 305 0
+ 167 0044 644B     		ldr	r3, .L55+12
+ 168 0046 D8F80020 		ldr	r2, [r8]
+ 169 004a 1A60     		str	r2, [r3]
+ 170              	.LVL12:
+ 171              	.L23:
+ 306:HANcoder_E407_2xCAN_TEST.c **** 
+ 307:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S30>/In2' */
+ 308:HANcoder_E407_2xCAN_TEST.c ****       rtb_In2_k = rtb_SFunction_o3;
+ 309:HANcoder_E407_2xCAN_TEST.c **** 
+ 310:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S30>/In3' */
+ 311:HANcoder_E407_2xCAN_TEST.c ****       rtb_In3_k = rtb_SFunction_o4;
+ 312:HANcoder_E407_2xCAN_TEST.c **** 
+ 313:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S30>/In4' */
+ 314:HANcoder_E407_2xCAN_TEST.c ****       rtb_In4_n = rtb_SFunction_o5;
+ 315:HANcoder_E407_2xCAN_TEST.c **** 
+ 316:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S30>/In5' */
+ 317:HANcoder_E407_2xCAN_TEST.c ****       rtb_In5_b = rtb_SFunction_o6;
+ 318:HANcoder_E407_2xCAN_TEST.c **** 
+ 319:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S30>/In6' */
+ 320:HANcoder_E407_2xCAN_TEST.c ****       rtb_In6_i = rtb_SFunction_o7;
+ 321:HANcoder_E407_2xCAN_TEST.c **** 
+ 322:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S30>/In7' */
+ 323:HANcoder_E407_2xCAN_TEST.c ****       rtb_In7_c = rtb_SFunction_o8;
+ 324:HANcoder_E407_2xCAN_TEST.c **** 
+ 325:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S30>/In8' */
+ 326:HANcoder_E407_2xCAN_TEST.c ****       rtb_In8_g = rtb_SFunction_o9;
+ 327:HANcoder_E407_2xCAN_TEST.c ****     }
+ 328:HANcoder_E407_2xCAN_TEST.c **** 
+ 329:HANcoder_E407_2xCAN_TEST.c ****     /* End of Outputs for SubSystem: '<S28>/Enabled Subsystem' */
+ 330:HANcoder_E407_2xCAN_TEST.c **** 
+ 331:HANcoder_E407_2xCAN_TEST.c ****     /* M-S-Function: '<S29>/S-Function' incorporates:
+ 332:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S11>/Constant1'
+ 333:HANcoder_E407_2xCAN_TEST.c ****      */
+ 334:HANcoder_E407_2xCAN_TEST.c **** 
+ 335:HANcoder_E407_2xCAN_TEST.c ****     /* read the message data and store the new parameter */
+ 336:HANcoder_E407_2xCAN_TEST.c ****     rtb_SFunction_o1_a = CanIoGetMessage(0, 1U, NULL,
+ 172              		.loc 1 336 0
+ 173 004c DFF8BC81 		ldr	r8, .L55+64
+ 174 0050 0022     		movs	r2, #0
+ 175 0052 4346     		mov	r3, r8
+ 176 0054 0092     		str	r2, [sp]
+ 177 0056 1046     		mov	r0, r2
+ 178              	.LVL13:
+ 179 0058 0121     		movs	r1, #1
+ 180 005a FFF7FEFF 		bl	CanIoGetMessage
+ 181              	.LVL14:
+ 337:HANcoder_E407_2xCAN_TEST.c ****       &canRxData_0_1U.uint8_T_info[0], NULL);
+ 338:HANcoder_E407_2xCAN_TEST.c **** 
+ 339:HANcoder_E407_2xCAN_TEST.c ****     /* process the message data */
+ 340:HANcoder_E407_2xCAN_TEST.c ****     if (rtb_SFunction_o1_a > 0) {
+ 182              		.loc 1 340 0
+ 183 005e 0028     		cmp	r0, #0
+ 184 0060 03DD     		ble	.L25
+ 185              	.LVL15:
+ 341:HANcoder_E407_2xCAN_TEST.c ****       /* read the data */
+ 342:HANcoder_E407_2xCAN_TEST.c ****       rtb_SFunction_o2_k = canRxData_0_1U.uint32_T_info[0];
+ 343:HANcoder_E407_2xCAN_TEST.c ****     }
+ 344:HANcoder_E407_2xCAN_TEST.c **** 
+ 345:HANcoder_E407_2xCAN_TEST.c ****     /* Outputs for Enabled SubSystem: '<S29>/Enabled Subsystem' incorporates:
+ 346:HANcoder_E407_2xCAN_TEST.c ****      *  EnablePort: '<S31>/Enable'
+ 347:HANcoder_E407_2xCAN_TEST.c ****      */
+ 348:HANcoder_E407_2xCAN_TEST.c ****     if (rtb_SFunction_o1_a > 0) {
+ 349:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S31>/In1' */
+ 350:HANcoder_E407_2xCAN_TEST.c ****       RX_MSG_2 = rtb_SFunction_o2_k;
+ 186              		.loc 1 350 0
+ 187 0062 5E4B     		ldr	r3, .L55+16
+ 188 0064 D8F80020 		ldr	r2, [r8]
+ 189 0068 1A60     		str	r2, [r3]
+ 190              	.LVL16:
+ 191              	.L25:
+ 351:HANcoder_E407_2xCAN_TEST.c **** 
+ 352:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S31>/In2' */
+ 353:HANcoder_E407_2xCAN_TEST.c ****       rtb_In2 = rtb_SFunction_o3_b;
+ 354:HANcoder_E407_2xCAN_TEST.c **** 
+ 355:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S31>/In3' */
+ 356:HANcoder_E407_2xCAN_TEST.c ****       rtb_In3 = rtb_SFunction_o4_o;
+ 357:HANcoder_E407_2xCAN_TEST.c **** 
+ 358:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S31>/In4' */
+ 359:HANcoder_E407_2xCAN_TEST.c ****       rtb_In4 = rtb_SFunction_o5_j;
+ 360:HANcoder_E407_2xCAN_TEST.c **** 
+ 361:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S31>/In5' */
+ 362:HANcoder_E407_2xCAN_TEST.c ****       rtb_In5 = rtb_SFunction_o6_o;
+ 363:HANcoder_E407_2xCAN_TEST.c **** 
+ 364:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S31>/In6' */
+ 365:HANcoder_E407_2xCAN_TEST.c ****       rtb_In6 = rtb_SFunction_o7_d;
+ 366:HANcoder_E407_2xCAN_TEST.c **** 
+ 367:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S31>/In7' */
+ 368:HANcoder_E407_2xCAN_TEST.c ****       rtb_In7 = rtb_SFunction_o8_f;
+ 369:HANcoder_E407_2xCAN_TEST.c **** 
+ 370:HANcoder_E407_2xCAN_TEST.c ****       /* Inport: '<S31>/In8' */
+ 371:HANcoder_E407_2xCAN_TEST.c ****       rtb_In8 = rtb_SFunction_o9_a;
+ 372:HANcoder_E407_2xCAN_TEST.c ****     }
+ 373:HANcoder_E407_2xCAN_TEST.c **** 
+ 374:HANcoder_E407_2xCAN_TEST.c ****     /* End of Outputs for SubSystem: '<S29>/Enabled Subsystem' */
+ 375:HANcoder_E407_2xCAN_TEST.c ****   } else {
+ 376:HANcoder_E407_2xCAN_TEST.c ****     if (rtDWork.Subsystem_MODE) {
+ 377:HANcoder_E407_2xCAN_TEST.c ****       rtDWork.Subsystem_MODE = false;
+ 378:HANcoder_E407_2xCAN_TEST.c ****     }
+ 379:HANcoder_E407_2xCAN_TEST.c ****   }
+ 380:HANcoder_E407_2xCAN_TEST.c **** 
+ 381:HANcoder_E407_2xCAN_TEST.c ****   /* End of Outputs for SubSystem: '<S1>/Subsystem' */
+ 382:HANcoder_E407_2xCAN_TEST.c **** 
+ 383:HANcoder_E407_2xCAN_TEST.c ****   /* Constant: '<S3>/SampleTimeCrowBar' */
+ 384:HANcoder_E407_2xCAN_TEST.c ****   rtb_SampleTimeCrowBar = true;
+ 385:HANcoder_E407_2xCAN_TEST.c **** 
+ 386:HANcoder_E407_2xCAN_TEST.c ****   /* M-S-Function: '<S32>/Level-2 M-file S-Function' */
+ 387:HANcoder_E407_2xCAN_TEST.c ****   /* read the current CPU load */
+ 388:HANcoder_E407_2xCAN_TEST.c ****   SI_CPUload = OsGetCpuLoad();
+ 192              		.loc 1 388 0
+ 193 006a FFF7FEFF 		bl	OsGetCpuLoad
+ 194              	.LVL17:
+ 195 006e 5C4B     		ldr	r3, .L55+20
+ 196 0070 1870     		strb	r0, [r3]
+ 389:HANcoder_E407_2xCAN_TEST.c **** 
+ 390:HANcoder_E407_2xCAN_TEST.c ****   /* M-S-Function: '<S33>/Level-2 M-file S-Function' */
+ 391:HANcoder_E407_2xCAN_TEST.c ****   /* read the free heap size */
+ 392:HANcoder_E407_2xCAN_TEST.c ****   SI_FreeHeap = OsGetFreeHeapSize();
+ 197              		.loc 1 392 0
+ 198 0072 FFF7FEFF 		bl	OsGetFreeHeapSize
+ 199              	.LVL18:
+ 200 0076 5B4B     		ldr	r3, .L55+24
+ 201 0078 1860     		str	r0, [r3]
+ 393:HANcoder_E407_2xCAN_TEST.c **** 
+ 394:HANcoder_E407_2xCAN_TEST.c ****   /* M-S-Function: '<S34>/Level-2 M-file S-Function' */
+ 395:HANcoder_E407_2xCAN_TEST.c ****   /* read the task's free stack size */
+ 396:HANcoder_E407_2xCAN_TEST.c ****   SI_FreeStack = OsGetTaskFreeStackSize("AppCtrlTask");
+ 202              		.loc 1 396 0
+ 203 007a 5B48     		ldr	r0, .L55+28
+ 204 007c FFF7FEFF 		bl	OsGetTaskFreeStackSize
+ 205              	.LVL19:
+ 206 0080 5A4A     		ldr	r2, .L55+32
+ 397:HANcoder_E407_2xCAN_TEST.c ****   if (rtM->Timing.TaskCounters.TID[1] == 0) {
+ 207              		.loc 1 397 0
+ 208 0082 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 396:HANcoder_E407_2xCAN_TEST.c ****   if (rtM->Timing.TaskCounters.TID[1] == 0) {
+ 209              		.loc 1 396 0
+ 210 0084 1060     		str	r0, [r2]
+ 211              		.loc 1 397 0
+ 212 0086 3BB9     		cbnz	r3, .L27
+ 398:HANcoder_E407_2xCAN_TEST.c ****     /* Update for M-S-Function: '<S27>/Level-2 M-file S-Function' */
+ 399:HANcoder_E407_2xCAN_TEST.c ****     /* update digital output */
+ 400:HANcoder_E407_2xCAN_TEST.c ****     if (LedValue == 0) {
+ 213              		.loc 1 400 0
+ 214 0088 594B     		ldr	r3, .L55+36
+ 215 008a 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 216 008c 71BB     		cbnz	r1, .L53
+ 217              	.L51:
+ 401:HANcoder_E407_2xCAN_TEST.c ****       DigoutSet(DIGOUT_PORTC_PIN13, DIGOUT_LOW);
+ 402:HANcoder_E407_2xCAN_TEST.c ****     } else {
+ 403:HANcoder_E407_2xCAN_TEST.c ****       DigoutSet(DIGOUT_PORTC_PIN13, DIGOUT_HIGH);
+ 218              		.loc 1 403 0
+ 219 008e 4720     		movs	r0, #71
+ 220 0090 FFF7FEFF 		bl	DigoutSet
+ 221              	.LVL20:
+ 222 0094 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 404:HANcoder_E407_2xCAN_TEST.c ****     }
+ 405:HANcoder_E407_2xCAN_TEST.c **** 
+ 406:HANcoder_E407_2xCAN_TEST.c ****     /* Update for UnitDelay: '<S15>/Output' */
+ 407:HANcoder_E407_2xCAN_TEST.c ****     rtDWork.Output_DSTATE_d = rtb_FixPtSum1_j;
+ 223              		.loc 1 407 0
+ 224 0096 3773     		strb	r7, [r6, #12]
+ 225              	.L27:
+ 408:HANcoder_E407_2xCAN_TEST.c ****   }
+ 409:HANcoder_E407_2xCAN_TEST.c **** 
+ 410:HANcoder_E407_2xCAN_TEST.c ****   if (rtM->Timing.TaskCounters.TID[2] == 0) {
+ 226              		.loc 1 410 0
+ 227 0098 4C49     		ldr	r1, .L55
+ 228 009a A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
+ 229              	.LBB10:
+ 230              	.LBB11:
+  96:HANcoder_E407_2xCAN_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[1]) > 9) {/* Sample time: [0.1s, 0.0s] */
+ 231              		.loc 1 96 0
+ 232 009c 0133     		adds	r3, r3, #1
+ 233 009e DBB2     		uxtb	r3, r3
+ 234 00a0 4B70     		strb	r3, [r1, #1]
+ 235              	.LBE11:
+ 236              	.LBE10:
+ 237              		.loc 1 410 0
+ 238 00a2 72B9     		cbnz	r2, .L30
+ 239              	.LBB16:
+ 240              	.LBB12:
+  97:HANcoder_E407_2xCAN_TEST.c ****     rtM->Timing.TaskCounters.TID[1] = 0;
+ 241              		.loc 1 97 0
+ 242 00a4 092B     		cmp	r3, #9
+ 243              	.LBE12:
+ 244              	.LBE16:
+ 411:HANcoder_E407_2xCAN_TEST.c ****     /* Update for UnitDelay: '<S16>/Output' */
+ 412:HANcoder_E407_2xCAN_TEST.c ****     rtDWork.Output_DSTATE_k = rtb_FixPtSum1_k;
+ 245              		.loc 1 412 0
+ 246 00a6 7573     		strb	r5, [r6, #13]
+ 247              	.LBB17:
+ 248              	.LBB13:
+  97:HANcoder_E407_2xCAN_TEST.c ****     rtM->Timing.TaskCounters.TID[1] = 0;
+ 249              		.loc 1 97 0
+ 250 00a8 1BD9     		bls	.L31
+ 251              	.L33:
+  98:HANcoder_E407_2xCAN_TEST.c ****   }
+ 252              		.loc 1 98 0
+ 253 00aa 0023     		movs	r3, #0
+ 254 00ac 6370     		strb	r3, [r4, #1]
+ 255              	.L32:
+ 101:HANcoder_E407_2xCAN_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[2]) > 19) {/* Sample time: [0.2s, 0.0s] */
+ 256              		.loc 1 101 0
+ 257 00ae 0132     		adds	r2, r2, #1
+ 258 00b0 D2B2     		uxtb	r2, r2
+ 102:HANcoder_E407_2xCAN_TEST.c ****     rtM->Timing.TaskCounters.TID[2] = 0;
+ 259              		.loc 1 102 0
+ 260 00b2 132A     		cmp	r2, #19
+ 103:HANcoder_E407_2xCAN_TEST.c ****   }
+ 261              		.loc 1 103 0
+ 262 00b4 8ABF     		itet	hi
+ 263 00b6 0023     		movhi	r3, #0
+ 101:HANcoder_E407_2xCAN_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[2]) > 19) {/* Sample time: [0.2s, 0.0s] */
+ 264              		.loc 1 101 0
+ 265 00b8 A270     		strbls	r2, [r4, #2]
+ 103:HANcoder_E407_2xCAN_TEST.c ****   }
+ 266              		.loc 1 103 0
+ 267 00ba A370     		strbhi	r3, [r4, #2]
+ 268              	.LBE13:
+ 269              	.LBE17:
+ 413:HANcoder_E407_2xCAN_TEST.c ****   }
+ 414:HANcoder_E407_2xCAN_TEST.c **** 
+ 415:HANcoder_E407_2xCAN_TEST.c ****   rate_scheduler();
+ 416:HANcoder_E407_2xCAN_TEST.c **** }
+ 270              		.loc 1 416 0
+ 271 00bc 03B0     		add	sp, sp, #12
+ 272              		.cfi_remember_state
+ 273              		.cfi_def_cfa_offset 36
+ 274              		@ sp needed
+ 275 00be BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 276              	.L30:
+ 277              		.cfi_restore_state
+ 278              	.LBB18:
+ 279              	.LBB14:
+  97:HANcoder_E407_2xCAN_TEST.c ****     rtM->Timing.TaskCounters.TID[1] = 0;
+ 280              		.loc 1 97 0
+ 281 00c2 092B     		cmp	r3, #9
+ 282 00c4 F1D8     		bhi	.L33
+ 283 00c6 F2E7     		b	.L32
+ 284              	.LVL21:
+ 285              	.L21:
+ 286              	.LBE14:
+ 287              	.LBE18:
+ 376:HANcoder_E407_2xCAN_TEST.c ****       rtDWork.Subsystem_MODE = false;
+ 288              		.loc 1 376 0
+ 289 00c8 002B     		cmp	r3, #0
+ 290 00ca CED0     		beq	.L25
+ 377:HANcoder_E407_2xCAN_TEST.c ****     }
+ 291              		.loc 1 377 0
+ 292 00cc 9073     		strb	r0, [r2, #14]
+ 293 00ce CCE7     		b	.L25
+ 294              	.L36:
+ 241:HANcoder_E407_2xCAN_TEST.c **** 
+ 295              		.loc 1 241 0
+ 296 00d0 757B     		ldrb	r5, [r6, #13]	@ zero_extendqisi2
+ 297 00d2 484B     		ldr	r3, .L55+40
+ 298 00d4 1D70     		strb	r5, [r3]
+ 246:HANcoder_E407_2xCAN_TEST.c **** 
+ 299              		.loc 1 246 0
+ 300 00d6 0135     		adds	r5, r5, #1
+ 301 00d8 EDB2     		uxtb	r5, r5
+ 302              	.LVL22:
+ 252:HANcoder_E407_2xCAN_TEST.c ****     }
+ 303              		.loc 1 252 0
+ 304 00da 022D     		cmp	r5, #2
+ 305 00dc 28BF     		it	cs
+ 306 00de 0025     		movcs	r5, #0
+ 307              	.LVL23:
+ 308 00e0 99E7     		b	.L18
+ 309              	.LVL24:
+ 310              	.L31:
+ 311              	.LBB19:
+ 312              	.LBB15:
+ 101:HANcoder_E407_2xCAN_TEST.c ****   if ((rtM->Timing.TaskCounters.TID[2]) > 19) {/* Sample time: [0.2s, 0.0s] */
+ 313              		.loc 1 101 0
+ 314 00e2 0123     		movs	r3, #1
+ 315 00e4 8B70     		strb	r3, [r1, #2]
+ 316              	.LBE15:
+ 317              	.LBE19:
+ 318              		.loc 1 416 0
+ 319 00e6 03B0     		add	sp, sp, #12
+ 320              		.cfi_remember_state
+ 321              		.cfi_def_cfa_offset 36
+ 322              		@ sp needed
+ 323 00e8 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 324              	.L53:
+ 325              		.cfi_restore_state
+ 403:HANcoder_E407_2xCAN_TEST.c ****     }
+ 326              		.loc 1 403 0
+ 327 00ec 0121     		movs	r1, #1
+ 328 00ee CEE7     		b	.L51
+ 329              	.LVL25:
+ 330              	.L52:
+ 151:HANcoder_E407_2xCAN_TEST.c **** 
+ 331              		.loc 1 151 0
+ 332 00f0 4720     		movs	r0, #71
+ 333 00f2 FFF7FEFF 		bl	DiginGet
+ 334              	.LVL26:
+ 335 00f6 DFF81881 		ldr	r8, .L55+68
+ 336 00fa 88F80000 		strb	r0, [r8]
+ 155:HANcoder_E407_2xCAN_TEST.c **** 
+ 337              		.loc 1 155 0
+ 338 00fe 0820     		movs	r0, #8
+ 339 0100 FFF7FEFF 		bl	DiginGet
+ 340              	.LVL27:
+ 341 0104 3C4A     		ldr	r2, .L55+44
+ 161:HANcoder_E407_2xCAN_TEST.c ****       if (!rtDWork.IfActionSubsystem_MODE) {
+ 342              		.loc 1 161 0
+ 343 0106 98F80030 		ldrb	r3, [r8]	@ zero_extendqisi2
+ 155:HANcoder_E407_2xCAN_TEST.c **** 
+ 344              		.loc 1 155 0
+ 345 010a 1070     		strb	r0, [r2]
+ 161:HANcoder_E407_2xCAN_TEST.c ****       if (!rtDWork.IfActionSubsystem_MODE) {
+ 346              		.loc 1 161 0
+ 347 010c 002B     		cmp	r3, #0
+ 348 010e 4DD0     		beq	.L12
+ 161:HANcoder_E407_2xCAN_TEST.c ****       if (!rtDWork.IfActionSubsystem_MODE) {
+ 349              		.loc 1 161 0 is_stmt 0 discriminator 1
+ 350 0110 0028     		cmp	r0, #0
+ 351 0112 4BD0     		beq	.L12
+ 162:HANcoder_E407_2xCAN_TEST.c ****         rtDWork.IfActionSubsystem_MODE = true;
+ 352              		.loc 1 162 0 is_stmt 1
+ 353 0114 2E4E     		ldr	r6, .L55+4
+ 354 0116 F37B     		ldrb	r3, [r6, #15]	@ zero_extendqisi2
+ 355 0118 0BB9     		cbnz	r3, .L13
+ 163:HANcoder_E407_2xCAN_TEST.c ****       }
+ 356              		.loc 1 163 0
+ 357 011a 0123     		movs	r3, #1
+ 358 011c F373     		strb	r3, [r6, #15]
+ 359              	.L13:
+ 186:HANcoder_E407_2xCAN_TEST.c ****                     [0]);
+ 360              		.loc 1 186 0
+ 361 011e 374B     		ldr	r3, .L55+48
+ 183:HANcoder_E407_2xCAN_TEST.c **** 
+ 362              		.loc 1 183 0
+ 363 0120 DFF8F090 		ldr	r9, .L55+72
+ 186:HANcoder_E407_2xCAN_TEST.c ****                     [0]);
+ 364              		.loc 1 186 0
+ 365 0124 D3F800B0 		ldr	fp, [r3]
+ 167:HANcoder_E407_2xCAN_TEST.c **** 
+ 366              		.loc 1 167 0
+ 367 0128 3548     		ldr	r0, .L55+52
+ 368 012a B768     		ldr	r7, [r6, #8]
+ 175:HANcoder_E407_2xCAN_TEST.c **** 
+ 369              		.loc 1 175 0
+ 370 012c DFF8E8E0 		ldr	lr, .L55+76
+ 178:HANcoder_E407_2xCAN_TEST.c **** 
+ 371              		.loc 1 178 0
+ 372 0130 DFF8E8A0 		ldr	r10, .L55+80
+ 167:HANcoder_E407_2xCAN_TEST.c **** 
+ 373              		.loc 1 167 0
+ 374 0134 0760     		str	r7, [r0]
+ 375              	.LVL28:
+ 186:HANcoder_E407_2xCAN_TEST.c ****                     [0]);
+ 376              		.loc 1 186 0
+ 377 0136 5946     		mov	r1, fp
+ 378 0138 4B46     		mov	r3, r9
+ 379 013a 0422     		movs	r2, #4
+ 380 013c 0120     		movs	r0, #1
+ 175:HANcoder_E407_2xCAN_TEST.c **** 
+ 381              		.loc 1 175 0
+ 382 013e CEF80070 		str	r7, [lr]
+ 183:HANcoder_E407_2xCAN_TEST.c **** 
+ 383              		.loc 1 183 0
+ 384 0142 C9F80070 		str	r7, [r9]
+ 178:HANcoder_E407_2xCAN_TEST.c **** 
+ 385              		.loc 1 178 0
+ 386 0146 CAF80070 		str	r7, [r10]
+ 186:HANcoder_E407_2xCAN_TEST.c ****                     [0]);
+ 387              		.loc 1 186 0
+ 388 014a FFF7FEFF 		bl	CanTransmit
+ 389              	.LVL29:
+ 193:HANcoder_E407_2xCAN_TEST.c **** 
+ 390              		.loc 1 193 0
+ 391 014e DAF80030 		ldr	r3, [r10]
+ 392 0152 C9F80030 		str	r3, [r9]
+ 196:HANcoder_E407_2xCAN_TEST.c ****                     [0]);
+ 393              		.loc 1 196 0
+ 394 0156 5946     		mov	r1, fp
+ 395 0158 4B46     		mov	r3, r9
+ 396 015a 0422     		movs	r2, #4
+ 397 015c 0020     		movs	r0, #0
+ 208:HANcoder_E407_2xCAN_TEST.c ****       }
+ 398              		.loc 1 208 0
+ 399 015e 0137     		adds	r7, r7, #1
+ 400              	.LVL30:
+ 196:HANcoder_E407_2xCAN_TEST.c ****                     [0]);
+ 401              		.loc 1 196 0
+ 402 0160 FFF7FEFF 		bl	CanTransmit
+ 403              	.LVL31:
+ 208:HANcoder_E407_2xCAN_TEST.c ****       }
+ 404              		.loc 1 208 0
+ 405 0164 B760     		str	r7, [r6, #8]
+ 406              	.LVL32:
+ 407              	.L14:
+ 221:HANcoder_E407_2xCAN_TEST.c **** 
+ 408              		.loc 1 221 0
+ 409 0166 337B     		ldrb	r3, [r6, #12]	@ zero_extendqisi2
+ 410              	.LVL33:
+ 239:HANcoder_E407_2xCAN_TEST.c ****     /* UnitDelay: '<S16>/Output' */
+ 411              		.loc 1 239 0
+ 412 0168 A178     		ldrb	r1, [r4, #2]	@ zero_extendqisi2
+ 413 016a 184A     		ldr	r2, .L55
+ 227:HANcoder_E407_2xCAN_TEST.c **** 
+ 414              		.loc 1 227 0
+ 415 016c 5F1C     		adds	r7, r3, #1
+ 416 016e FFB2     		uxtb	r7, r7
+ 417              	.LVL34:
+ 233:HANcoder_E407_2xCAN_TEST.c ****     }
+ 418              		.loc 1 233 0
+ 419 0170 022F     		cmp	r7, #2
+ 420 0172 28BF     		it	cs
+ 421 0174 0027     		movcs	r7, #0
+ 422              	.LVL35:
+ 239:HANcoder_E407_2xCAN_TEST.c ****     /* UnitDelay: '<S16>/Output' */
+ 423              		.loc 1 239 0
+ 424 0176 01BB     		cbnz	r1, .L54
+ 241:HANcoder_E407_2xCAN_TEST.c **** 
+ 425              		.loc 1 241 0
+ 426 0178 757B     		ldrb	r5, [r6, #13]	@ zero_extendqisi2
+ 427 017a 1E49     		ldr	r1, .L55+40
+ 428 017c 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
+ 429 017e 0D70     		strb	r5, [r1]
+ 246:HANcoder_E407_2xCAN_TEST.c **** 
+ 430              		.loc 1 246 0
+ 431 0180 0135     		adds	r5, r5, #1
+ 432 0182 EDB2     		uxtb	r5, r5
+ 433              	.LVL36:
+ 252:HANcoder_E407_2xCAN_TEST.c ****     }
+ 434              		.loc 1 252 0
+ 435 0184 022D     		cmp	r5, #2
+ 436 0186 28BF     		it	cs
+ 437 0188 0025     		movcs	r5, #0
+ 438              	.LVL37:
+ 439              	.L17:
+ 258:HANcoder_E407_2xCAN_TEST.c ****     /* Switch: '<S2>/Switch' incorporates:
+ 440              		.loc 1 258 0
+ 441 018a 002A     		cmp	r2, #0
+ 442 018c 7FF443AF 		bne	.L18
+ 263:HANcoder_E407_2xCAN_TEST.c ****       /* DataTypeConversion: '<S2>/Data Type Conversion' */
+ 443              		.loc 1 263 0
+ 444 0190 1C4A     		ldr	r2, .L55+56
+ 445 0192 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 446 0194 9AB9     		cbnz	r2, .L19
+ 263:HANcoder_E407_2xCAN_TEST.c ****       /* DataTypeConversion: '<S2>/Data Type Conversion' */
+ 447              		.loc 1 263 0 is_stmt 0 discriminator 1
+ 448 0196 98F80020 		ldrb	r2, [r8]	@ zero_extendqisi2
+ 449 019a 82B9     		cbnz	r2, .L19
+ 268:HANcoder_E407_2xCAN_TEST.c ****     }
+ 450              		.loc 1 268 0 is_stmt 1
+ 451 019c 154B     		ldr	r3, .L55+40
+ 452              	.LVL38:
+ 453 019e 144A     		ldr	r2, .L55+36
+ 454 01a0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 455 01a2 0033     		adds	r3, r3, #0
+ 456 01a4 18BF     		it	ne
+ 457 01a6 0123     		movne	r3, #1
+ 458 01a8 1370     		strb	r3, [r2]
+ 459 01aa 34E7     		b	.L18
+ 460              	.LVL39:
+ 461              	.L12:
+ 213:HANcoder_E407_2xCAN_TEST.c ****         rtDWork.IfActionSubsystem_MODE = false;
+ 462              		.loc 1 213 0
+ 463 01ac 084E     		ldr	r6, .L55+4
+ 464 01ae F37B     		ldrb	r3, [r6, #15]	@ zero_extendqisi2
+ 465 01b0 002B     		cmp	r3, #0
+ 466 01b2 D8D0     		beq	.L14
+ 214:HANcoder_E407_2xCAN_TEST.c ****       }
+ 467              		.loc 1 214 0
+ 468 01b4 0023     		movs	r3, #0
+ 469 01b6 F373     		strb	r3, [r6, #15]
+ 470 01b8 D5E7     		b	.L14
+ 471              	.LVL40:
+ 472              	.L54:
+ 473 01ba 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
+ 474 01bc E5E7     		b	.L17
+ 475              	.LVL41:
+ 476              	.L19:
+ 265:HANcoder_E407_2xCAN_TEST.c ****     } else {
+ 477              		.loc 1 265 0
+ 478 01be 0033     		adds	r3, r3, #0
+ 479 01c0 0B4A     		ldr	r2, .L55+36
+ 480 01c2 18BF     		it	ne
+ 481 01c4 0123     		movne	r3, #1
+ 482              	.LVL42:
+ 483 01c6 1370     		strb	r3, [r2]
+ 484 01c8 25E7     		b	.L18
+ 485              	.L56:
+ 486 01ca 00BF     		.align	2
+ 487              	.L55:
+ 488 01cc 00000000 		.word	rtM_
+ 489 01d0 00000000 		.word	rtDWork
+ 490 01d4 00000000 		.word	receiver_id
+ 491 01d8 00000000 		.word	RX_MSG_1
+ 492 01dc 00000000 		.word	RX_MSG_2
+ 493 01e0 00000000 		.word	SI_CPUload
+ 494 01e4 00000000 		.word	SI_FreeHeap
+ 495 01e8 00000000 		.word	.LC0
+ 496 01ec 00000000 		.word	SI_FreeStack
+ 497 01f0 00000000 		.word	LedValue
+ 498 01f4 00000000 		.word	rtB
+ 499 01f8 00000000 		.word	sender_id
+ 500 01fc 00000000 		.word	rtConstB
+ 501 0200 00000000 		.word	TX_MSG
+ 502 0204 00000000 		.word	.LANCHOR1
+ 503 0208 00000000 		.word	.LANCHOR2
+ 504 020c 00000000 		.word	.LANCHOR3
+ 505 0210 00000000 		.word	WKUP_button
+ 506 0214 00000000 		.word	.LANCHOR0
+ 507 0218 00000000 		.word	TX_MSG_1
+ 508 021c 00000000 		.word	TX_MSG_2
+ 509              		.cfi_endproc
+ 510              	.LFE114:
+ 512              		.section	.text.HANcoder_E407_2xCAN_TEST_initialize,"ax",%progbits
+ 513              		.align	2
+ 514              		.global	HANcoder_E407_2xCAN_TEST_initialize
+ 515              		.thumb
+ 516              		.thumb_func
+ 518              	HANcoder_E407_2xCAN_TEST_initialize:
+ 519              	.LFB115:
+ 417:HANcoder_E407_2xCAN_TEST.c **** 
+ 418:HANcoder_E407_2xCAN_TEST.c **** /* Model initialize function */
+ 419:HANcoder_E407_2xCAN_TEST.c **** void HANcoder_E407_2xCAN_TEST_initialize(void)
+ 420:HANcoder_E407_2xCAN_TEST.c **** {
+ 520              		.loc 1 420 0
+ 521              		.cfi_startproc
+ 522              		@ args = 0, pretend = 0, frame = 24
+ 523              		@ frame_needed = 0, uses_anonymous_args = 0
+ 524 0000 00B5     		push	{lr}
+ 525              		.cfi_def_cfa_offset 4
+ 526              		.cfi_offset 14, -4
+ 527              	.LBB20:
+ 421:HANcoder_E407_2xCAN_TEST.c ****   {
+ 422:HANcoder_E407_2xCAN_TEST.c ****     /* user code (Start function Header) */
+ 423:HANcoder_E407_2xCAN_TEST.c ****     uint8_t canResult1;
+ 424:HANcoder_E407_2xCAN_TEST.c ****     tCanFilter canFilter1;
+ 425:HANcoder_E407_2xCAN_TEST.c ****     uint8_t canResult2;
+ 426:HANcoder_E407_2xCAN_TEST.c ****     tCanFilter canFilter2;
+ 427:HANcoder_E407_2xCAN_TEST.c **** 
+ 428:HANcoder_E407_2xCAN_TEST.c ****     /* user code (Start function Body) */
+ 429:HANcoder_E407_2xCAN_TEST.c **** 
+ 430:HANcoder_E407_2xCAN_TEST.c ****     /* initialize the CAN driver. */
+ 431:HANcoder_E407_2xCAN_TEST.c ****     CanInit(64, 8);
+ 528              		.loc 1 431 0
+ 529 0002 0821     		movs	r1, #8
+ 530              	.LBE20:
+ 420:HANcoder_E407_2xCAN_TEST.c ****   {
+ 531              		.loc 1 420 0
+ 532 0004 87B0     		sub	sp, sp, #28
+ 533              		.cfi_def_cfa_offset 32
+ 534              	.LBB21:
+ 535              		.loc 1 431 0
+ 536 0006 4020     		movs	r0, #64
+ 537 0008 FFF7FEFF 		bl	CanInit
+ 538              	.LVL43:
+ 432:HANcoder_E407_2xCAN_TEST.c **** 
+ 433:HANcoder_E407_2xCAN_TEST.c ****     /* initialize the CAN I/O module for channel 1 */
+ 434:HANcoder_E407_2xCAN_TEST.c ****     CanIoInit(0);
+ 539              		.loc 1 434 0
+ 540 000c 0020     		movs	r0, #0
+ 541 000e FFF7FEFF 		bl	CanIoInit
+ 542              	.LVL44:
+ 435:HANcoder_E407_2xCAN_TEST.c **** 
+ 436:HANcoder_E407_2xCAN_TEST.c ****     /* initialize the CAN I/O module for channel 2 */
+ 437:HANcoder_E407_2xCAN_TEST.c ****     CanIoInit(1);
+ 543              		.loc 1 437 0
+ 544 0012 0120     		movs	r0, #1
+ 545 0014 FFF7FEFF 		bl	CanIoInit
+ 546              	.LVL45:
+ 438:HANcoder_E407_2xCAN_TEST.c **** 
+ 439:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S26>/Level-2 M-file S-Function' */
+ 440:HANcoder_E407_2xCAN_TEST.c **** 
+ 441:HANcoder_E407_2xCAN_TEST.c ****     /* configure the digital input */
+ 442:HANcoder_E407_2xCAN_TEST.c ****     DiginConfigure(DIGIN_PORTA_PIN0, DIGIN_CFG_PULLDOWN);
+ 547              		.loc 1 442 0
+ 548 0018 0221     		movs	r1, #2
+ 549 001a 4720     		movs	r0, #71
+ 550 001c FFF7FEFF 		bl	DiginConfigure
+ 551              	.LVL46:
+ 443:HANcoder_E407_2xCAN_TEST.c **** 
+ 444:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S6>/Level-2 M-file S-Function' */
+ 445:HANcoder_E407_2xCAN_TEST.c **** 
+ 446:HANcoder_E407_2xCAN_TEST.c ****     /* configure the digital input */
+ 447:HANcoder_E407_2xCAN_TEST.c ****     DiginConfigure(DIGIN_PORTE_PIN2, DIGIN_CFG_PULLDOWN);
+ 552              		.loc 1 447 0
+ 553 0020 0221     		movs	r1, #2
+ 554 0022 0820     		movs	r0, #8
+ 555 0024 FFF7FEFF 		bl	DiginConfigure
+ 556              	.LVL47:
+ 448:HANcoder_E407_2xCAN_TEST.c **** 
+ 449:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S27>/Level-2 M-file S-Function' */
+ 450:HANcoder_E407_2xCAN_TEST.c **** 
+ 451:HANcoder_E407_2xCAN_TEST.c ****     /* configure the digital output */
+ 452:HANcoder_E407_2xCAN_TEST.c ****     DigoutConfigure(DIGOUT_PORTC_PIN13, DIGOUT_CFG_PUSHPULL);
+ 557              		.loc 1 452 0
+ 558 0028 0121     		movs	r1, #1
+ 559 002a 4720     		movs	r0, #71
+ 560 002c FFF7FEFF 		bl	DigoutConfigure
+ 561              	.LVL48:
+ 453:HANcoder_E407_2xCAN_TEST.c **** 
+ 454:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S7>/Level-2 M-file S-Function' */
+ 455:HANcoder_E407_2xCAN_TEST.c **** 
+ 456:HANcoder_E407_2xCAN_TEST.c ****     /* configure the digital input */
+ 457:HANcoder_E407_2xCAN_TEST.c ****     DiginConfigure(DIGIN_PORTE_PIN4, DIGIN_CFG_PULLDOWN);
+ 562              		.loc 1 457 0
+ 563 0030 0221     		movs	r1, #2
+ 564 0032 0920     		movs	r0, #9
+ 565 0034 FFF7FEFF 		bl	DiginConfigure
+ 566              	.LVL49:
+ 458:HANcoder_E407_2xCAN_TEST.c **** 
+ 459:HANcoder_E407_2xCAN_TEST.c ****     /* Start for Enabled SubSystem: '<S1>/Subsystem' */
+ 460:HANcoder_E407_2xCAN_TEST.c **** 
+ 461:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S28>/S-Function' incorporates:
+ 462:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S11>/Constant2'
+ 463:HANcoder_E407_2xCAN_TEST.c ****      */
+ 464:HANcoder_E407_2xCAN_TEST.c **** 
+ 465:HANcoder_E407_2xCAN_TEST.c ****     /* register a CAN storage buffer for the message with this ID */
+ 466:HANcoder_E407_2xCAN_TEST.c ****     CanIoCreateMessageReceivedStorage(1, 1U);
+ 567              		.loc 1 466 0
+ 568 0038 0121     		movs	r1, #1
+ 569 003a 0846     		mov	r0, r1
+ 570 003c FFF7FEFF 		bl	CanIoCreateMessageReceivedStorage
+ 571              	.LVL50:
+ 467:HANcoder_E407_2xCAN_TEST.c **** 
+ 468:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S29>/S-Function' incorporates:
+ 469:HANcoder_E407_2xCAN_TEST.c ****      *  Constant: '<S11>/Constant1'
+ 470:HANcoder_E407_2xCAN_TEST.c ****      */
+ 471:HANcoder_E407_2xCAN_TEST.c **** 
+ 472:HANcoder_E407_2xCAN_TEST.c ****     /* register a CAN storage buffer for the message with this ID */
+ 473:HANcoder_E407_2xCAN_TEST.c ****     CanIoCreateMessageReceivedStorage(0, 1U);
+ 572              		.loc 1 473 0
+ 573 0040 0121     		movs	r1, #1
+ 574 0042 0020     		movs	r0, #0
+ 575 0044 FFF7FEFF 		bl	CanIoCreateMessageReceivedStorage
+ 576              	.LVL51:
+ 474:HANcoder_E407_2xCAN_TEST.c **** 
+ 475:HANcoder_E407_2xCAN_TEST.c ****     /* End of Start for SubSystem: '<S1>/Subsystem' */
+ 476:HANcoder_E407_2xCAN_TEST.c **** 
+ 477:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S3>/Level-2 M-file S-Function' */
+ 478:HANcoder_E407_2xCAN_TEST.c **** 
+ 479:HANcoder_E407_2xCAN_TEST.c ****     /* configure the stack size for the task that executes the model */
+ 480:HANcoder_E407_2xCAN_TEST.c ****     AppCtrlTaskSetStackSize((configMINIMAL_STACK_SIZE*sizeof(portBASE_TYPE)) + 0);
+ 577              		.loc 1 480 0
+ 578 0048 4FF40070 		mov	r0, #512
+ 579 004c FFF7FEFF 		bl	AppCtrlTaskSetStackSize
+ 580              	.LVL52:
+ 481:HANcoder_E407_2xCAN_TEST.c **** 
+ 482:HANcoder_E407_2xCAN_TEST.c ****     /* configure the sample time of the model in microseconds */
+ 483:HANcoder_E407_2xCAN_TEST.c ****     AppCtrlTaskSetPeriod(10000);
+ 581              		.loc 1 483 0
+ 582 0050 42F21070 		movw	r0, #10000
+ 583 0054 FFF7FEFF 		bl	AppCtrlTaskSetPeriod
+ 584              	.LVL53:
+ 484:HANcoder_E407_2xCAN_TEST.c **** 
+ 485:HANcoder_E407_2xCAN_TEST.c ****     /* Run the ADC conversions ten times faster than the Simulink model */
+ 486:HANcoder_E407_2xCAN_TEST.c ****     ADCconversionTaskSetPeriod(10000/10);
+ 585              		.loc 1 486 0
+ 586 0058 4FF47A70 		mov	r0, #1000
+ 587 005c FFF7FEFF 		bl	ADCconversionTaskSetPeriod
+ 588              	.LVL54:
+ 487:HANcoder_E407_2xCAN_TEST.c **** 
+ 488:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S4>/Level-2 M-file S-Function' */
+ 489:HANcoder_E407_2xCAN_TEST.c **** 
+ 490:HANcoder_E407_2xCAN_TEST.c ****     /* store the CAN controller's filter configuration */
+ 491:HANcoder_E407_2xCAN_TEST.c ****     canFilter1.mask = 0x00000000;
+ 589              		.loc 1 491 0
+ 590 0060 0023     		movs	r3, #0
+ 492:HANcoder_E407_2xCAN_TEST.c ****     canFilter1.code = 0x00000000;
+ 493:HANcoder_E407_2xCAN_TEST.c ****     canFilter1.mode = CAN_FILTER_MODE_STDID_ONLY;
+ 494:HANcoder_E407_2xCAN_TEST.c **** 
+ 495:HANcoder_E407_2xCAN_TEST.c ****     /* connect and synchronize the CAN bus */
+ 496:HANcoder_E407_2xCAN_TEST.c ****     canResult1 = CanConnect(0, 125000, &canFilter1);
+ 591              		.loc 1 496 0
+ 592 0062 1846     		mov	r0, r3
+ 593 0064 6A46     		mov	r2, sp
+ 594 0066 1349     		ldr	r1, .L67
+ 491:HANcoder_E407_2xCAN_TEST.c ****     canFilter1.code = 0x00000000;
+ 595              		.loc 1 491 0
+ 596 0068 0093     		str	r3, [sp]
+ 492:HANcoder_E407_2xCAN_TEST.c ****     canFilter1.code = 0x00000000;
+ 597              		.loc 1 492 0
+ 598 006a 0193     		str	r3, [sp, #4]
+ 493:HANcoder_E407_2xCAN_TEST.c **** 
+ 599              		.loc 1 493 0
+ 600 006c 8DF80830 		strb	r3, [sp, #8]
+ 601              		.loc 1 496 0
+ 602 0070 FFF7FEFF 		bl	CanConnect
+ 603              	.LVL55:
+ 497:HANcoder_E407_2xCAN_TEST.c ****     configASSERT(canResult1 == TRUE);
+ 604              		.loc 1 497 0
+ 605 0074 0128     		cmp	r0, #1
+ 606 0076 04D0     		beq	.L58
+ 607              		.loc 1 497 0 is_stmt 0 discriminator 1
+ 608 0078 40F2F111 		movw	r1, #497
+ 609 007c 0E48     		ldr	r0, .L67+4
+ 610              	.LVL56:
+ 611 007e FFF7FEFF 		bl	AssertFailure
+ 612              	.LVL57:
+ 613              	.L58:
+ 498:HANcoder_E407_2xCAN_TEST.c **** 
+ 499:HANcoder_E407_2xCAN_TEST.c ****     /* store the CAN controller's filter configuration */
+ 500:HANcoder_E407_2xCAN_TEST.c ****     canFilter2.mask = 0x00000000;
+ 614              		.loc 1 500 0 is_stmt 1
+ 615 0082 0023     		movs	r3, #0
+ 501:HANcoder_E407_2xCAN_TEST.c ****     canFilter2.code = 0x00000000;
+ 502:HANcoder_E407_2xCAN_TEST.c ****     canFilter2.mode = CAN_FILTER_MODE_STDID_ONLY;
+ 503:HANcoder_E407_2xCAN_TEST.c **** 
+ 504:HANcoder_E407_2xCAN_TEST.c ****     /* connect and synchronize the CAN bus */
+ 505:HANcoder_E407_2xCAN_TEST.c ****     canResult2 = CanConnect(1, 125000, &canFilter2);
+ 616              		.loc 1 505 0
+ 617 0084 03AA     		add	r2, sp, #12
+ 618 0086 0B49     		ldr	r1, .L67
+ 500:HANcoder_E407_2xCAN_TEST.c ****     canFilter2.code = 0x00000000;
+ 619              		.loc 1 500 0
+ 620 0088 0393     		str	r3, [sp, #12]
+ 621              		.loc 1 505 0
+ 622 008a 0120     		movs	r0, #1
+ 501:HANcoder_E407_2xCAN_TEST.c ****     canFilter2.code = 0x00000000;
+ 623              		.loc 1 501 0
+ 624 008c 0493     		str	r3, [sp, #16]
+ 502:HANcoder_E407_2xCAN_TEST.c **** 
+ 625              		.loc 1 502 0
+ 626 008e 8DF81430 		strb	r3, [sp, #20]
+ 627              		.loc 1 505 0
+ 628 0092 FFF7FEFF 		bl	CanConnect
+ 629              	.LVL58:
+ 506:HANcoder_E407_2xCAN_TEST.c ****     configASSERT(canResult2 == TRUE);
+ 630              		.loc 1 506 0
+ 631 0096 0128     		cmp	r0, #1
+ 632 0098 04D0     		beq	.L59
+ 633              		.loc 1 506 0 is_stmt 0 discriminator 1
+ 634 009a 4FF4FD71 		mov	r1, #506
+ 635 009e 0648     		ldr	r0, .L67+4
+ 636              	.LVL59:
+ 637 00a0 FFF7FEFF 		bl	AssertFailure
+ 638              	.LVL60:
+ 639              	.L59:
+ 507:HANcoder_E407_2xCAN_TEST.c **** 
+ 508:HANcoder_E407_2xCAN_TEST.c ****     /* Start for M-S-Function: '<S14>/Level-2 M-file S-Function' */
+ 509:HANcoder_E407_2xCAN_TEST.c **** 
+ 510:HANcoder_E407_2xCAN_TEST.c ****     /* initialize the measurement and calibration interface */
+ 511:HANcoder_E407_2xCAN_TEST.c ****     MacUsbComInit();
+ 640              		.loc 1 511 0 is_stmt 1
+ 641 00a4 FFF7FEFF 		bl	MacUsbComInit
+ 642              	.LVL61:
+ 512:HANcoder_E407_2xCAN_TEST.c ****     MacInit();
+ 643              		.loc 1 512 0
+ 644 00a8 FFF7FEFF 		bl	MacInit
+ 645              	.LVL62:
+ 646              	.LBE21:
+ 513:HANcoder_E407_2xCAN_TEST.c ****   }
+ 514:HANcoder_E407_2xCAN_TEST.c **** }
+ 647              		.loc 1 514 0
+ 648 00ac 07B0     		add	sp, sp, #28
+ 649              		.cfi_def_cfa_offset 4
+ 650              		@ sp needed
+ 651 00ae 5DF804FB 		ldr	pc, [sp], #4
+ 652              	.L68:
+ 653 00b2 00BF     		.align	2
+ 654              	.L67:
+ 655 00b4 48E80100 		.word	125000
+ 656 00b8 0C000000 		.word	.LC1
+ 657              		.cfi_endproc
+ 658              	.LFE115:
+ 660              		.global	rtM
+ 661              		.comm	rtM_,3,4
+ 662              		.comm	rtDWork,16,8
+ 663              		.comm	rtB,1,4
+ 664              		.global	HANtuneOverride
+ 665              		.comm	receiver_id,1,1
+ 666              		.comm	LedValue,1,1
+ 667              		.comm	sender_id,1,1
+ 668              		.comm	WKUP_button,1,1
+ 669              		.comm	SI_CPUload,1,1
+ 670              		.comm	TX_MSG_2,4,4
+ 671              		.comm	TX_MSG_1,4,4
+ 672              		.comm	TX_MSG,4,4
+ 673              		.comm	RX_MSG_1,4,4
+ 674              		.comm	RX_MSG_2,4,4
+ 675              		.comm	SI_FreeStack,4,4
+ 676              		.comm	SI_FreeHeap,4,4
+ 677              		.section	.bss.canRxData_0_1U,"aw",%nobits
+ 678              		.align	2
+ 679              		.set	.LANCHOR3,. + 0
+ 682              	canRxData_0_1U:
+ 683 0000 00000000 		.space	8
+ 683      00000000 
+ 684              		.section	.bss.canRxData_1_1U,"aw",%nobits
+ 685              		.align	2
+ 686              		.set	.LANCHOR2,. + 0
+ 689              	canRxData_1_1U:
+ 690 0000 00000000 		.space	8
+ 690      00000000 
+ 691              		.section	.rodata.rtM,"a",%progbits
+ 692              		.align	2
+ 695              	rtM:
+ 696 0000 00000000 		.word	rtM_
+ 697              		.section	.data.HANtuneOverride,"aw",%progbits
+ 698              		.set	.LANCHOR1,. + 0
+ 701              	HANtuneOverride:
+ 702 0000 00       		.space	1
+ 703              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 704              		.align	2
+ 705              	.LC0:
+ 706 0000 41707043 		.ascii	"AppCtrlTask\000"
+ 706      74726C54 
+ 706      61736B00 
+ 707              	.LC1:
+ 708 000c 48414E63 		.ascii	"HANcoder_E407_2xCAN_TEST.c\000"
+ 708      6F646572 
+ 708      5F453430 
+ 708      375F3278 
+ 708      43414E5F 
+ 709              		.section	.bss.canTxData,"aw",%nobits
+ 710              		.align	2
+ 711              		.set	.LANCHOR0,. + 0
+ 714              	canTxData:
+ 715 0000 00000000 		.space	8
+ 715      00000000 
+ 716              		.text
+ 717              	.Letext0:
+ 718              		.file 2 "rtwtypes.h"
+ 719              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\arm-none-eabi\\include\\mach
+ 720              		.file 4 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\arm-none-eabi\\include\\sys\
+ 721              		.file 5 "../blockset/rtw/STM32/inc/STM32_E407/can.h"
+ 722              		.file 6 "../blockset/rtw/STM32/inc/STM32_E407/digin.h"
+ 723              		.file 7 "../blockset/rtw/STM32/inc/STM32_E407/digout.h"
+ 724              		.file 8 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\lib\\gcc\\arm-none-eabi\\5.4
+ 725              		.file 9 "HANcoder_E407_2xCAN_TEST_types.h"
+ 726              		.file 10 "HANcoder_E407_2xCAN_TEST.h"
+ 727              		.file 11 "../blockset/rtw/STM32/inc/STM32_E407/core_cm4.h"
+ 728              		.file 12 "../blockset/rtw/STM32/inc/STM32_E407/canio.h"
+ 729              		.file 13 "../blockset/rtw/STM32/inc/os.h"
+ 730              		.file 14 "../blockset/rtw/STM32/inc/app.h"
+ 731              		.file 15 "../blockset/rtw/STM32/inc/STM32_E407/anin.h"
+ 732              		.file 16 "../blockset/rtw/STM32/inc/STM32_E407/FreeRTOSConfig.h"
+ 733              		.file 17 "../blockset/rtw/STM32/inc/STM32_E407/mac.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 HANcoder_E407_2xCAN_TEST.c
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:21     .text.ByteSwap_x:00000000 $t
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:26     .text.ByteSwap_x:00000000 ByteSwap_x
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:94     .text.HANcoder_E407_2xCAN_TEST_step:00000000 $t
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:99     .text.HANcoder_E407_2xCAN_TEST_step:00000000 HANcoder_E407_2xCAN_TEST_step
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:488    .text.HANcoder_E407_2xCAN_TEST_step:000001cc $d
+                            *COM*:00000003 rtM_
+                            *COM*:00000010 rtDWork
+                            *COM*:00000001 receiver_id
+                            *COM*:00000004 RX_MSG_1
+                            *COM*:00000004 RX_MSG_2
+                            *COM*:00000001 SI_CPUload
+                            *COM*:00000004 SI_FreeHeap
+                            *COM*:00000004 SI_FreeStack
+                            *COM*:00000001 LedValue
+                            *COM*:00000001 rtB
+                            *COM*:00000001 sender_id
+                            *COM*:00000004 TX_MSG
+                            *COM*:00000001 WKUP_button
+                            *COM*:00000004 TX_MSG_1
+                            *COM*:00000004 TX_MSG_2
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:513    .text.HANcoder_E407_2xCAN_TEST_initialize:00000000 $t
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:518    .text.HANcoder_E407_2xCAN_TEST_initialize:00000000 HANcoder_E407_2xCAN_TEST_initialize
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:655    .text.HANcoder_E407_2xCAN_TEST_initialize:000000b4 $d
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:695    .rodata.rtM:00000000 rtM
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:701    .data.HANtuneOverride:00000000 HANtuneOverride
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:678    .bss.canRxData_0_1U:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:682    .bss.canRxData_0_1U:00000000 canRxData_0_1U
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:685    .bss.canRxData_1_1U:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:689    .bss.canRxData_1_1U:00000000 canRxData_1_1U
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:692    .rodata.rtM:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:702    .data.HANtuneOverride:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:704    .rodata.str1.4:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:710    .bss.canTxData:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\cc9TKQbn.s:714    .bss.canTxData:00000000 canTxData
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+DiginGet
+CanIoGetMessage
+OsGetCpuLoad
+OsGetFreeHeapSize
+OsGetTaskFreeStackSize
+DigoutSet
+CanTransmit
+rtConstB
+CanInit
+CanIoInit
+DiginConfigure
+DigoutConfigure
+CanIoCreateMessageReceivedStorage
+AppCtrlTaskSetStackSize
+AppCtrlTaskSetPeriod
+ADCconversionTaskSetPeriod
+CanConnect
+AssertFailure
+MacUsbComInit
+MacInit

@@ -1,0 +1,530 @@
+%implements s909_b0_zc1e_16_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+boolean_T rtb_Equal2_ez;
+real_T rtb_Multiply_ey;
+real_T rtb_Fix1_p;
+boolean_T rtb_AND_jn;
+boolean_T rtb_AND1_il;
+uint8_T rtb_Cast_cs;
+uint8_T rtb_Cast_ha;
+uint8_T rtb_Cast_j;
+uint8_T rtb_Cast_a2;
+real_T u;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+/* {S!d9707}Outputs for Enabled SubSystem: '<S326>/Transmission subtasks' incorporates:
+ *  EnablePort: '<S347>/Enable'
+ */
+/*@>1fb2bb*/if (/*@>24e95e*/rtu_Enable) {
+    /*@>1fb2bf*/if (!/*@<1fb2be*/%<SLibCG_DumpSSCode("/*@[24f3aa*/",(SLibCG_SE(SLibCG_DWV(215, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>) {
+%<SLibCG_DumpSSCode("/*@[24f3cf*/",SLibCG_SetDWV(215, 0, 268, 1, "", -1, "", 0, "true"),"/*@]*/")>\
+    }
+    /* {S!d9724}RelationalOperator: '<S347>/Equal2' */
+    /*@>24d588*/rtb_Equal2_ez/*@>203a9c*/ = (*/*@<24f8c6*/rtd_Local_Ticks/*@>24d859*/ > /*@>24e963*/rtu_Time_Mark);
+    /* {S!d9726}Logic: '<S347>/AND' incorporates:
+ *  Constant: '<S347>/Constant6'
+ *  RelationalOperator: '<S347>/GreaterThan2'
+ */
+    /*@>24d58c*/rtb_AND_jn/*@>203aa8*/ = (/*@>24d58a*/rtb_Equal2_ez/*@>203aa7*/ && (*/*@<24f917*/rtd_Tx_msg_count_CAN1/*@>24c22a*/ <= %<SLibCG_DumpSSCode("/*@[24f3ef*/",(SLibCG_SE(SLibCGIR_PV(23, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>));
+    /* {S!d9728}Logic: '<S347>/AND1' incorporates:
+ *  Constant: '<S347>/Constant7'
+ *  RelationalOperator: '<S347>/GreaterThan3'
+ */
+    /*@>24d590*/rtb_AND1_il/*@>203ab4*/ = (/*@>24d58e*/rtb_Equal2_ez/*@>203ab3*/ && (*/*@<24f918*/rtd_Tx_msg_count_CAN2/*@>24c231*/ <= %<SLibCG_DumpSSCode("/*@[24f411*/",(SLibCG_SE(SLibCGIR_PV(23, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>));
+    /* {S!d9708}Outputs for Enabled SubSystem: '<S347>/Msg_Value_Data_Encoded7' incorporates:
+ *  EnablePort: '<S351>/Enable'
+ */
+    /* {S!d9830}RelationalOperator: '<S347>/Equal16' incorporates:
+ *  Constant: '<S351>/Constant'
+ */
+    /*@>203aba*/if (*/*@<24f919*/rtd_Local_Ticks/*@>24d852*/ == /*@>24e96e*/rtu_Time_Mark) {
+        /* {S!d9730}DataTypeConversion: '<S351>/Cast' */
+        /*@>24ea82*/localB->/*@>24faf7*/Cast/*@>203af6*/ = */*@<24f915*/rtd_Error_SetValues_NotRX;
+        /* {S!d9732}DataTypeConversion: '<S351>/Cast1' */
+        /*@>24eac1*/localB->/*@>24fb12*/Cast1/*@>203afb*/ = */*@<24f916*/rtd_Error_SensorValues_NotRX;
+        /*@>24eb00*/localB->/*@>24fb2d*/Constant/*@>203afd*/ = %<SLibCG_DumpSSCode("/*@[24f433*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        /* {S!d9738}Switch: '<S364>/Switch2' incorporates:
+ *  Constant: '<S351>/Constant'
+ *  Constant: '<S351>/Constant8'
+ *  Constant: '<S351>/Constant9'
+ *  RelationalOperator: '<S364>/LessThanOrEqual1'
+ *  RelationalOperator: '<S364>/LessThanOrEqual2'
+ *  Switch: '<S364>/Switch1'
+ */
+        /*@>24e19b*/if (%<SLibCG_DumpSSCode("/*@[24f586*/",(SLibCG_SE(SLibCGIR_PV(11, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>/*@>24df8e*/ < */*@<24f97d*/rtd_torque_fl_set) {
+            /* {S!d9734}Switch: '<S364>/Switch' */
+            /*@>24e19f*/rtb_Multiply_ey/*@>24e19e*/ = %<SLibCG_DumpSSCode("/*@[24f5a8*/",(SLibCG_SE(SLibCGIR_PV(11, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        } else /*@>24e1af*/if (*/*@<24f923*/rtd_torque_fl_set/*@>24c355*/ >= %<SLibCG_DumpSSCode("/*@[24f696*/",(SLibCG_SE(SLibCGIR_PV(22, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>) {
+            /* {S!d9736}Switch: '<S364>/Switch1' */
+            /*@>24e1b3*/rtb_Multiply_ey/*@>24e1b2*/ = */*@<24f91b*/rtd_torque_fl_set;
+        } else {
+            /*@>24d72f*/rtb_Multiply_ey/*@>24d116*/ = %<SLibCG_DumpSSCode("/*@[24f455*/",(SLibCG_SE(SLibCGIR_PV(22, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        }
+        /* {E!d9738}End of Switch: '<S364>/Switch2' */
+
+        /* {S!d9740}RelationalOperator: '<S364>/GreaterThan' incorporates:
+ *  Constant: '<S364>/Constant'
+ */
+        /*@>24d5aa*/rtb_Equal2_ez/*@>203b0e*/ = (/*@>24d5a8*/rtb_Multiply_ey/*@>203b0d*/ < %<SLibCG_DumpSSCode("/*@[24f477*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>);
+        /* {S!d9742}Abs: '<S364>/Abs' */
+        /*@>24d5ae*/rtb_Multiply_ey/*@>203b12*/ = /*@>24e604*/fabs(/*@>24d5ac*/rtb_Multiply_ey);
+        /* {S!d9744}Rounding: '<S364>/Fix' */
+        /*@>24dce3*/rtb_Fix1_p/*@>24dcd7*/ = /*@>24e606*/floor(/*@>24df82*/rtb_Multiply_ey);
+        /* {S!d9746}Sum: '<S364>/Minus' */
+        /*@>24d64a*/rtb_Multiply_ey/*@>24f8aa*/ -= /*@>24d5b4*/rtb_Fix1_p;
+        /* {S!d9748}DataTypeConversion: '<S364>/Cast' */
+        /*@>24d5ba*/rtb_Cast_cs/*@>203b29*/ = /*@>24d5b8*/rtb_Equal2_ez;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[97], "Output",1)
+        /* {S!d9709}Outputs for Atomic SubSystem: '<S364>/Bit Shift' */
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,0)
+%<SLibCG_AccessArg(16 ,0, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,2)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24f386*/",SLibCGIRGenReusableSysCall("BitShift1", ["/*@>24fbf0*/%<::tSimStruct>", "/*@>24fbfa*/rtb_Cast_cs", "&/*@>24fc06*/localB->/*@>24fc05*/BitShift_g"], 97, 20, 7, 1, 7, 268),"/*@]*/")>\
+
+
+        /* {E!d9709}End of Outputs for SubSystem: '<S364>/Bit Shift' */
+
+%endif
+        /* {S!d9750}Product: '<S364>/Multiply' */
+        /*@>24d5c2*/rtb_Fix1_p/*@>24f8ab*/ *= /*@>24ebaf*/localC->/*@>24fb66*/Power1;
+        /* {S!d9752}Product: '<S364>/Divide' */
+        /*@>24dc17*/u/*@>24dc19*/ = /*@>24d70e*/rtb_Multiply_ey/*@>24d846*/ / /*@>24ebb6*/localC->/*@>24fb69*/Power;
+        /* {S!d9754}Rounding: '<S364>/Fix1' */
+        /*@>24e1e4*/if (/*@>24df9c*/u/*@>24df9a*/ < /*@>24df9d*/0.0) {
+            /*@>24e1e8*/u/*@>24e1e7*/ = /*@>24e60c*/ceil(/*@>24dfa1*/u);
+        } else {
+            /*@>24e1c5*/u/*@>24e1c7*/ = /*@>24e60a*/floor(/*@>24dfa5*/u);
+        }
+        /* {E!d9754}End of Rounding: '<S364>/Fix1' */
+
+        /* {S!d9756}Sum: '<S364>/Plus' incorporates:
+ *  DataTypeConversion: '<S364>/Cast1'
+ *  DataTypeConversion: '<S364>/Cast2'
+ */
+        /*@>24eb0e*/localB->/*@>24fb33*/Plus/*@>2125d3*/ = /*@>24d82a*/(uint8_T)(/*@>24dab1*/(uint32_T)/*@>24d837*/(uint8_T)(/*@>24daae*/(uint32_T)/*@>24eb1a*/localB->/*@>24fb39*/BitShift_g./*@>24fb36*/y/*@>24d833*/ + /*@>24d83d*/(uint8_T)/*@>24d6e3*/rtb_Fix1_p)/*@>24d826*/ + /*@>24d842*/(uint8_T)/*@>24e1c9*/u);
+        /* {S!d9762}Switch: '<S365>/Switch2' incorporates:
+ *  Constant: '<S351>/Constant5'
+ *  Constant: '<S351>/Constant6'
+ *  RelationalOperator: '<S365>/LessThanOrEqual1'
+ *  RelationalOperator: '<S365>/LessThanOrEqual2'
+ *  Switch: '<S365>/Switch1'
+ */
+        /*@>24e1a0*/if (%<SLibCG_DumpSSCode("/*@[24f5ca*/",(SLibCG_SE(SLibCGIR_PV(11, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>/*@>24dfa7*/ < */*@<24f984*/rtd_torque_fr_set) {
+            /* {S!d9758}Switch: '<S365>/Switch' */
+            /*@>24e1a4*/rtb_Fix1_p/*@>24e1a3*/ = %<SLibCG_DumpSSCode("/*@[24f5ec*/",(SLibCG_SE(SLibCGIR_PV(11, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        } else /*@>24e1b4*/if (*/*@<24f926*/rtd_torque_fr_set/*@>24c36c*/ >= %<SLibCG_DumpSSCode("/*@[24f6b8*/",(SLibCG_SE(SLibCGIR_PV(22, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>) {
+            /* {S!d9760}Switch: '<S365>/Switch1' */
+            /*@>24e1b8*/rtb_Fix1_p/*@>24e1b7*/ = */*@<24f91d*/rtd_torque_fr_set;
+        } else {
+            /*@>24d733*/rtb_Fix1_p/*@>24d120*/ = %<SLibCG_DumpSSCode("/*@[24f499*/",(SLibCG_SE(SLibCGIR_PV(22, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        }
+        /* {E!d9762}End of Switch: '<S365>/Switch2' */
+
+        /* {S!d9764}RelationalOperator: '<S365>/GreaterThan' incorporates:
+ *  Constant: '<S365>/Constant'
+ */
+        /*@>24d5ce*/rtb_Equal2_ez/*@>203b47*/ = (/*@>24d5cc*/rtb_Fix1_p/*@>203b46*/ < %<SLibCG_DumpSSCode("/*@[24f4bb*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>);
+        /* {S!d9766}Abs: '<S365>/Abs' */
+        /*@>24d5d2*/rtb_Fix1_p/*@>203b4b*/ = /*@>24e60e*/fabs(/*@>24d5d0*/rtb_Fix1_p);
+        /* {S!d9768}Rounding: '<S365>/Fix' */
+        /*@>24dcb8*/rtb_Multiply_ey/*@>24dcac*/ = /*@>24e610*/floor(/*@>24df84*/rtb_Fix1_p);
+        /* {S!d9770}Sum: '<S365>/Minus' */
+        /*@>24d64e*/rtb_Fix1_p/*@>24f8ac*/ -= /*@>24d5d8*/rtb_Multiply_ey;
+        /* {S!d9772}DataTypeConversion: '<S365>/Cast' */
+        /*@>24d5de*/rtb_Cast_ha/*@>203b62*/ = /*@>24d5dc*/rtb_Equal2_ez;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[97], "Output",1)
+        /* {S!d9711}Outputs for Atomic SubSystem: '<S365>/Bit Shift' */
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,0)
+%<SLibCG_AccessArg(16 ,0, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,2)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24f387*/",SLibCGIRGenReusableSysCall("BitShift1", ["/*@>24fc2c*/%<::tSimStruct>", "/*@>24fc36*/rtb_Cast_ha", "&/*@>24fc42*/localB->/*@>24fc41*/BitShift_d"], 97, 21, 7, 1, 7, 268),"/*@]*/")>\
+
+
+        /* {E!d9711}End of Outputs for SubSystem: '<S365>/Bit Shift' */
+
+%endif
+        /* {S!d9774}Product: '<S365>/Multiply' */
+        /*@>24d5e6*/rtb_Multiply_ey/*@>24f8ad*/ *= /*@>24ebbd*/localC->/*@>24fb6c*/Power1_d;
+        /* {S!d9776}Product: '<S365>/Divide' */
+        /*@>24dbe5*/u/*@>24dbe7*/ = /*@>24d717*/rtb_Fix1_p/*@>24d819*/ / /*@>24ebc4*/localC->/*@>24fb6f*/Power_h;
+        /* {S!d9778}Rounding: '<S365>/Fix1' */
+        /*@>24e1e9*/if (/*@>24dfb5*/u/*@>24dfb3*/ < /*@>24dfb6*/0.0) {
+            /*@>24e1ed*/u/*@>24e1ec*/ = /*@>24e616*/ceil(/*@>24dfba*/u);
+        } else {
+            /*@>24e1cd*/u/*@>24e1cf*/ = /*@>24e614*/floor(/*@>24dfbe*/u);
+        }
+        /* {E!d9778}End of Rounding: '<S365>/Fix1' */
+
+        /* {S!d9780}Sum: '<S365>/Plus' incorporates:
+ *  DataTypeConversion: '<S365>/Cast1'
+ *  DataTypeConversion: '<S365>/Cast2'
+ */
+        /*@>24eb28*/localB->/*@>24fb3f*/Plus_n/*@>2125e2*/ = /*@>24d7fd*/(uint8_T)(/*@>24dadb*/(uint32_T)/*@>24d80a*/(uint8_T)(/*@>24dad8*/(uint32_T)/*@>24eb34*/localB->/*@>24fb45*/BitShift_d./*@>24fb42*/y/*@>24d806*/ + /*@>24d810*/(uint8_T)/*@>24d6ef*/rtb_Multiply_ey)/*@>24d7f9*/ + /*@>24d815*/(uint8_T)/*@>24e1d1*/u);
+        /* {S!d9786}Switch: '<S366>/Switch2' incorporates:
+ *  Constant: '<S351>/Constant11'
+ *  Constant: '<S351>/Constant12'
+ *  RelationalOperator: '<S366>/LessThanOrEqual1'
+ *  RelationalOperator: '<S366>/LessThanOrEqual2'
+ *  Switch: '<S366>/Switch1'
+ */
+        /*@>24e1a5*/if (%<SLibCG_DumpSSCode("/*@[24f60e*/",(SLibCG_SE(SLibCGIR_PV(11, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>/*@>24dfc0*/ < */*@<24f98b*/rtd_torque_ar_set) {
+            /* {S!d9782}Switch: '<S366>/Switch' */
+            /*@>24e1a9*/rtb_Fix1_p/*@>24e1a8*/ = %<SLibCG_DumpSSCode("/*@[24f630*/",(SLibCG_SE(SLibCGIR_PV(11, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        } else /*@>24e1b9*/if (*/*@<24f929*/rtd_torque_ar_set/*@>24c383*/ >= %<SLibCG_DumpSSCode("/*@[24f6da*/",(SLibCG_SE(SLibCGIR_PV(22, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>) {
+            /* {S!d9784}Switch: '<S366>/Switch1' */
+            /*@>24e1bd*/rtb_Fix1_p/*@>24e1bc*/ = */*@<24f91f*/rtd_torque_ar_set;
+        } else {
+            /*@>24d737*/rtb_Fix1_p/*@>24d12a*/ = %<SLibCG_DumpSSCode("/*@[24f4dd*/",(SLibCG_SE(SLibCGIR_PV(22, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        }
+        /* {E!d9786}End of Switch: '<S366>/Switch2' */
+
+        /* {S!d9788}RelationalOperator: '<S366>/GreaterThan' incorporates:
+ *  Constant: '<S366>/Constant'
+ */
+        /*@>24d5f2*/rtb_Equal2_ez/*@>203b80*/ = (/*@>24d5f0*/rtb_Fix1_p/*@>203b7f*/ < %<SLibCG_DumpSSCode("/*@[24f4ff*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>);
+        /* {S!d9790}Abs: '<S366>/Abs' */
+        /*@>24d5f6*/rtb_Fix1_p/*@>203b84*/ = /*@>24e618*/fabs(/*@>24d5f4*/rtb_Fix1_p);
+        /* {S!d9792}Rounding: '<S366>/Fix' */
+        /*@>24dc8d*/rtb_Multiply_ey/*@>24dc81*/ = /*@>24e61a*/floor(/*@>24df86*/rtb_Fix1_p);
+        /* {S!d9794}Sum: '<S366>/Minus' */
+        /*@>24d652*/rtb_Fix1_p/*@>24f8ae*/ -= /*@>24d5fc*/rtb_Multiply_ey;
+        /* {S!d9796}DataTypeConversion: '<S366>/Cast' */
+        /*@>24d602*/rtb_Cast_j/*@>203b9b*/ = /*@>24d600*/rtb_Equal2_ez;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[97], "Output",1)
+        /* {S!d9713}Outputs for Atomic SubSystem: '<S366>/Bit Shift' */
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,0)
+%<SLibCG_AccessArg(16 ,0, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,2)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24f388*/",SLibCGIRGenReusableSysCall("BitShift1", ["/*@>24fc68*/%<::tSimStruct>", "/*@>24fc72*/rtb_Cast_j", "&/*@>24fc7e*/localB->/*@>24fc7d*/BitShift_l"], 97, 22, 7, 1, 7, 268),"/*@]*/")>\
+
+
+        /* {E!d9713}End of Outputs for SubSystem: '<S366>/Bit Shift' */
+
+%endif
+        /* {S!d9798}Product: '<S366>/Multiply' */
+        /*@>24d60a*/rtb_Multiply_ey/*@>24f8af*/ *= /*@>24ebcb*/localC->/*@>24fb72*/Power1_m;
+        /* {S!d9800}Product: '<S366>/Divide' */
+        /*@>24dbb3*/u/*@>24dbb5*/ = /*@>24d720*/rtb_Fix1_p/*@>24d7ec*/ / /*@>24ebd2*/localC->/*@>24fb75*/Power_m;
+        /* {S!d9802}Rounding: '<S366>/Fix1' */
+        /*@>24e1ee*/if (/*@>24dfce*/u/*@>24dfcc*/ < /*@>24dfcf*/0.0) {
+            /*@>24e1f2*/u/*@>24e1f1*/ = /*@>24e620*/ceil(/*@>24dfd3*/u);
+        } else {
+            /*@>24e1d5*/u/*@>24e1d7*/ = /*@>24e61e*/floor(/*@>24dfd7*/u);
+        }
+        /* {E!d9802}End of Rounding: '<S366>/Fix1' */
+
+        /* {S!d9804}Sum: '<S366>/Plus' incorporates:
+ *  DataTypeConversion: '<S366>/Cast1'
+ *  DataTypeConversion: '<S366>/Cast2'
+ */
+        /*@>24eb42*/localB->/*@>24fb4b*/Plus_p/*@>2125f1*/ = /*@>24d7d0*/(uint8_T)(/*@>24db05*/(uint32_T)/*@>24d7dd*/(uint8_T)(/*@>24db02*/(uint32_T)/*@>24eb4e*/localB->/*@>24fb51*/BitShift_l./*@>24fb4e*/y/*@>24d7d9*/ + /*@>24d7e3*/(uint8_T)/*@>24d6fb*/rtb_Multiply_ey)/*@>24d7cc*/ + /*@>24d7e8*/(uint8_T)/*@>24e1d9*/u);
+        /* {S!d9810}Switch: '<S367>/Switch2' incorporates:
+ *  Constant: '<S351>/Constant14'
+ *  Constant: '<S351>/Constant15'
+ *  RelationalOperator: '<S367>/LessThanOrEqual1'
+ *  RelationalOperator: '<S367>/LessThanOrEqual2'
+ *  Switch: '<S367>/Switch1'
+ */
+        /*@>24e1aa*/if (%<SLibCG_DumpSSCode("/*@[24f652*/",(SLibCG_SE(SLibCGIR_PV(11, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>/*@>24dfd9*/ < */*@<24f992*/rtd_torque_al_set) {
+            /* {S!d9806}Switch: '<S367>/Switch' */
+            /*@>24e1ae*/rtb_Fix1_p/*@>24e1ad*/ = %<SLibCG_DumpSSCode("/*@[24f674*/",(SLibCG_SE(SLibCGIR_PV(11, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        } else /*@>24e1be*/if (*/*@<24f92c*/rtd_torque_al_set/*@>24c39a*/ >= %<SLibCG_DumpSSCode("/*@[24f6fc*/",(SLibCG_SE(SLibCGIR_PV(22, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>) {
+            /* {S!d9808}Switch: '<S367>/Switch1' */
+            /*@>24e1c2*/rtb_Fix1_p/*@>24e1c1*/ = */*@<24f921*/rtd_torque_al_set;
+        } else {
+            /*@>24d73b*/rtb_Fix1_p/*@>24d134*/ = %<SLibCG_DumpSSCode("/*@[24f521*/",(SLibCG_SE(SLibCGIR_PV(22, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>;
+        }
+        /* {E!d9810}End of Switch: '<S367>/Switch2' */
+
+        /* {S!d9812}RelationalOperator: '<S367>/GreaterThan' incorporates:
+ *  Constant: '<S367>/Constant'
+ */
+        /*@>24d616*/rtb_Equal2_ez/*@>203bb9*/ = (/*@>24d614*/rtb_Fix1_p/*@>203bb8*/ < %<SLibCG_DumpSSCode("/*@[24f543*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 268, 1, "", -1, "", 0))),"/*@]*/")>);
+        /* {S!d9814}Abs: '<S367>/Abs' */
+        /*@>24d61a*/rtb_Fix1_p/*@>203bbd*/ = /*@>24e622*/fabs(/*@>24d618*/rtb_Fix1_p);
+        /* {S!d9816}Rounding: '<S367>/Fix' */
+        /*@>24dc62*/rtb_Multiply_ey/*@>24dc56*/ = /*@>24e624*/floor(/*@>24df88*/rtb_Fix1_p);
+        /* {S!d9818}Sum: '<S367>/Minus' */
+        /*@>24d656*/rtb_Fix1_p/*@>24f8b0*/ -= /*@>24d620*/rtb_Multiply_ey;
+        /* {S!d9820}DataTypeConversion: '<S367>/Cast' */
+        /*@>24d626*/rtb_Cast_a2/*@>203bd4*/ = /*@>24d624*/rtb_Equal2_ez;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[97], "Output",1)
+        /* {S!d9715}Outputs for Atomic SubSystem: '<S367>/Bit Shift' */
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,0)
+%<SLibCG_AccessArg(16 ,0, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,2)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24f389*/",SLibCGIRGenReusableSysCall("BitShift1", ["/*@>24fca4*/%<::tSimStruct>", "/*@>24fcae*/rtb_Cast_a2", "&/*@>24fcba*/localB->/*@>24fcb9*/BitShift_dm"], 97, 23, 7, 1, 7, 268),"/*@]*/")>\
+
+
+        /* {E!d9715}End of Outputs for SubSystem: '<S367>/Bit Shift' */
+
+%endif
+        /* {S!d9822}Product: '<S367>/Multiply' */
+        /*@>24d62e*/rtb_Multiply_ey/*@>24f8b1*/ *= /*@>24ebd9*/localC->/*@>24fb78*/Power1_e;
+        /* {S!d9824}Product: '<S367>/Divide' */
+        /*@>24db81*/u/*@>24db83*/ = /*@>24d729*/rtb_Fix1_p/*@>24d7bc*/ / /*@>24ebe0*/localC->/*@>24fb7b*/Power_i;
+        /* {S!d9826}Rounding: '<S367>/Fix1' */
+        /*@>24e1f3*/if (/*@>24dfe7*/u/*@>24dfe5*/ < /*@>24dfe8*/0.0) {
+            /*@>24e1f7*/u/*@>24e1f6*/ = /*@>24e62a*/ceil(/*@>24dfec*/u);
+        } else {
+            /*@>24e1dd*/u/*@>24e1df*/ = /*@>24e628*/floor(/*@>24dff0*/u);
+        }
+        /* {E!d9826}End of Rounding: '<S367>/Fix1' */
+
+        /* {S!d9828}Sum: '<S367>/Plus' incorporates:
+ *  DataTypeConversion: '<S367>/Cast1'
+ *  DataTypeConversion: '<S367>/Cast2'
+ */
+        /*@>24eb5c*/localB->/*@>24fb57*/Plus_j/*@>212600*/ = /*@>24d7a0*/(uint8_T)(/*@>24db2f*/(uint32_T)/*@>24d7ad*/(uint8_T)(/*@>24db2c*/(uint32_T)/*@>24eb68*/localB->/*@>24fb5d*/BitShift_dm./*@>24fb5a*/y/*@>24d7a9*/ + /*@>24d7b3*/(uint8_T)/*@>24d707*/rtb_Multiply_ey)/*@>24d79c*/ + /*@>24d7b8*/(uint8_T)/*@>24e1e1*/u);
+    }
+    /* {E!d9830}End of RelationalOperator: '<S347>/Equal16' */
+    /* {E!d9708}End of Outputs for SubSystem: '<S347>/Msg_Value_Data_Encoded7' */
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[256], "Output",1)
+
+    /* {S!d9718}Outputs for Enabled SubSystem: '<S347>/Check msg transmission CAN1' */
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,0)
+%<SLibCG_AccessArg(16 ,0, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,2)
+%<SLibCG_AccessArg(16 ,0, 9)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,3)
+%<SLibCG_AccessArg(16 ,0, 2)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,4)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,5)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,6)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,7)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,8)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,9)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,10)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,11)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,12)
+%<SLibCG_AccessArg(16 ,0, 4)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,13)
+%<SLibCG_AccessArg(16 ,0, 5)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,14)
+%<SLibCG_AccessArg(16 ,0, 6)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,15)
+%<SLibCG_AccessArg(16 ,0, 10)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,16)
+%<SLibCG_AccessArg(16 ,0, 12)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,17)
+%<SLibCG_AccessArg(16 ,0, 14)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN1",256,18)
+%<SLibCG_AccessArg(16 ,0, 16)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24f384*/",SLibCGIRGenReusableSysCall("CheckmsgtransmissionCAN1", ["/*@>24fd15*/%<::tSimStruct>", "/*@>24fd1f*/rtb_AND_jn", "*/*@<24fd29*/rtd_Local_Ticks", "/*@>24fd34*/rtu_Time_Mark", "/*@>24fd3f*/localB->/*@>24fd3e*/Plus_n", "/*@>24fd4b*/localB->/*@>24fd4a*/Plus", "/*@>24fd57*/localB->/*@>24fd56*/Plus_p", "/*@>24fd63*/localB->/*@>24fd62*/Plus_j", "/*@>24fd6f*/localB->/*@>24fd6e*/Cast", "/*@>24fd7b*/localB->/*@>24fd7a*/Cast1", "/*@>24fd87*/localB->/*@>24fd86*/Constant", "&/*@>24fd94*/localB->/*@>24fd93*/CheckmsgtransmissionCAN1_e", "&/*@>24fda1*/localC->/*@>24fda0*/CheckmsgtransmissionCAN1_e", "&/*@>24fdae*/localDW->/*@>24fdad*/CheckmsgtransmissionCAN1_e", "rtd_Board_ID", "rtd_Msg_Tx_CAN1", "rtd_TxID_CAN1", "rtd_Tx_msg_count_CAN1", "rtd_basic_cycle_count"], 256, 0, 7, 1, 7, 268),"/*@]*/")>\
+
+
+    /* {E!d9718}End of Outputs for SubSystem: '<S347>/Check msg transmission CAN1' */
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[258], "Output",1)
+
+    /* {S!d9720}Outputs for Enabled SubSystem: '<S347>/Check msg transmission CAN2' */
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,0)
+%<SLibCG_AccessArg(16 ,0, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,2)
+%<SLibCG_AccessArg(16 ,0, 9)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,3)
+%<SLibCG_AccessArg(16 ,0, 2)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,4)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,5)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,6)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,7)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,8)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,9)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,10)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,11)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,12)
+%<SLibCG_AccessArg(16 ,0, 4)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,13)
+%<SLibCG_AccessArg(16 ,0, 5)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,14)
+%<SLibCG_AccessArg(16 ,0, 6)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,15)
+%<SLibCG_AccessArg(16 ,0, 11)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,16)
+%<SLibCG_AccessArg(16 ,0, 13)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,17)
+%<SLibCG_AccessArg(16 ,0, 15)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("CheckmsgtransmissionCAN2",258,18)
+%<SLibCG_AccessArg(16 ,0, 16)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24f385*/",SLibCGIRGenReusableSysCall("CheckmsgtransmissionCAN2", ["/*@>24fe3b*/%<::tSimStruct>", "/*@>24fe45*/rtb_AND1_il", "*/*@<24fe4f*/rtd_Local_Ticks", "/*@>24fe5a*/rtu_Time_Mark", "/*@>24fe65*/localB->/*@>24fe64*/Plus_n", "/*@>24fe71*/localB->/*@>24fe70*/Plus", "/*@>24fe7d*/localB->/*@>24fe7c*/Plus_p", "/*@>24fe89*/localB->/*@>24fe88*/Plus_j", "/*@>24fe95*/localB->/*@>24fe94*/Cast", "/*@>24fea1*/localB->/*@>24fea0*/Cast1", "/*@>24fead*/localB->/*@>24feac*/Constant", "&/*@>24feba*/localB->/*@>24feb9*/CheckmsgtransmissionCAN2_b", "&/*@>24fec7*/localC->/*@>24fec6*/CheckmsgtransmissionCAN2_b", "&/*@>24fed4*/localDW->/*@>24fed3*/CheckmsgtransmissionCAN2_b", "rtd_Board_ID", "rtd_Msg_Tx_CAN2", "rtd_TxID_CAN2", "rtd_Tx_msg_count_CAN2", "rtd_basic_cycle_count"], 258, 0, 7, 1, 7, 268),"/*@]*/")>\
+
+
+    /* {E!d9720}End of Outputs for SubSystem: '<S347>/Check msg transmission CAN2' */
+%endif
+} else {
+    /*@>1fb2e4*/if (%<SLibCG_DumpSSCode("/*@[24f565*/",(SLibCG_DWV(215, 0, 268, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[268], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,0)
+%<SLibCG_AccessArg(16 ,0, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,1)
+%<SLibCG_AccessArg(16 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_g_Disable",268,2)
+%<SLibCG_AccessArg(16 ,0, 5)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24f383*/",SLibCGIRGenReusableSysCall("Transmissionsubtasks_g_Disable", ["/*@>24ff29*/%<::tSimStruct>", "/*@>24ff33*/localB", "/*@>24ff3d*/localDW"], 268, 0, 15, 1, 7, 268),"/*@]*/")>\
+
+%endif
+    }
+}
+/* {E!d9707}End of Outputs for SubSystem: '<S326>/Transmission subtasks' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[16].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(16, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(16, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(16, 0, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Transmissionsubtasks_i(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(16, 0, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>boolean_T rtu_Enable\
+%assign comma = ", "
+%<comma>real_T rtu_Time_Mark\
+%assign comma = ", "
+%<comma>rtB_Transmissionsubtasks_k *localB\
+%assign comma = ", "
+%<comma>const rtC_Transmissionsubtasks_i *localC\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(16, 0, 5)
+%<comma>rtDW_Transmissionsubtasks_i *localDW\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(16, 0, 6)
+%<comma>real_T *rtd_Board_ID\
+%assign comma = ", "
+%endif
+%<comma>boolean_T *rtd_Error_SensorValues_NotRX\
+%assign comma = ", "
+%<comma>boolean_T *rtd_Error_SetValues_NotRX\
+%assign comma = ", "
+%<comma>uint16_T *rtd_Local_Ticks\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(16, 0, 10)
+%<comma>msg_buffer_type *rtd_Msg_Tx_CAN1\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(16, 0, 11)
+%<comma>msg_buffer_type *rtd_Msg_Tx_CAN2\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(16, 0, 12)
+%<comma>uint32_T *rtd_TxID_CAN1\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(16, 0, 13)
+%<comma>uint32_T *rtd_TxID_CAN2\
+%assign comma = ", "
+%endif
+%<comma>real_T *rtd_Tx_msg_count_CAN1\
+%assign comma = ", "
+%<comma>real_T *rtd_Tx_msg_count_CAN2\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(16, 0, 16)
+%<comma>uint8_T *rtd_basic_cycle_count\
+%assign comma = ", "
+%endif
+%<comma>real_T *rtd_torque_al_set\
+%assign comma = ", "
+%<comma>real_T *rtd_torque_ar_set\
+%assign comma = ", "
+%<comma>real_T *rtd_torque_fl_set\
+%assign comma = ", "
+%<comma>real_T *rtd_torque_fr_set\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(16, 0, fcnProtoType)>
+%endfunction

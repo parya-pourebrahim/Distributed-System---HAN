@@ -1,0 +1,43 @@
+%implements s909_b0_zc1e_20_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%assign tlcDisableFcnOfS524B4 = OpaqueTLCBlockFcn("Disable", 524, 4, 20, 5)
+%assign tlcDisableFcnOfS524B7 = OpaqueTLCBlockFcn("Disable", 524, 7, 20, 5)
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[522], "Disable",1)
+/* Disable for Chart: '<S26>/Chart' incorporates:
+ *  SubSystem: '<S6>/CAN Management'
+ */
+%if SLibCG_SystemFcnArgAccessed("CANManagement_Disable",522,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2f772f*/",SLibCGIRGenReusableSysCall("CANManagement_Disable", ["%<_modelSS>", "&/*@>2f8276*/rtB./*@>2f8275*/CANManagement_c", "&/*@>2f8283*/rtDWork./*@>2f8282*/CANManagement_c"], 522, 0, 15, 1, 15, 528),"/*@]*/")>\
+
+
+%endif
+%if !WHITE_SPACE(tlcDisableFcnOfS524B4)
+/* Disable for M-S-Function: '<S897>/Level-2 M-file S-Function' incorporates:
+ *  Constant: '<S26>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[2f772c*/",tlcDisableFcnOfS524B4,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcDisableFcnOfS524B7)
+/* Disable for M-S-Function: '<S896>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2f772e*/",tlcDisableFcnOfS524B7,"/*@]*/")>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function DisableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Disable(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(20, 5, fcnProtoType)>
+%endfunction

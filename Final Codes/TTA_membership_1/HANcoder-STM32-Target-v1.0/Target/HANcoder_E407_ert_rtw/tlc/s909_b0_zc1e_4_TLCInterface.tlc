@@ -1,0 +1,32 @@
+%implements s909_b0_zc1e_4_TLCInterface "C"
+
+%function getInputAddr_70_2_4_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(447, 0, 71, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_70_2_4_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(447, 0, 71, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_70_2_4_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(447, 0, 71, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_70_2_4_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(447, 0, 71, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_70_2_4_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(447, 0, 71, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_70_2_4_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(447, 0, 71, 1, "", -1, ucv, sigIdx)
+%endfunction
+

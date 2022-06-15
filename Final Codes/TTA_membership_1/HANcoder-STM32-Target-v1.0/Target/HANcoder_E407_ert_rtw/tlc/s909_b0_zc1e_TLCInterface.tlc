@@ -1,0 +1,272 @@
+%implements s909_b0_zc1e_TLCInterface "C"
+
+%function getSystemSystemInitializeFcnCallInfo_528_4_21_0_524_0(opaqueBlk) void
+%assign _modelSS = ""
+%createrecord fcnInfo { Name "/*@>2fce7d*/SystemInitialize"; Args [] }
+%return fcnInfo
+%endfunction
+%function getSystemSystemResetFcnCallInfo_528_4_21_0_524_0(opaqueBlk) void
+%assign _modelSS = ""
+%createrecord fcnInfo { Name "/*@>2fce9f*/SystemReset"; Args [] }
+%return fcnInfo
+%endfunction
+%function getSystemEnableFcnCallInfo_528_4_21_0_524_0(opaqueBlk) void
+%assign _modelSS = ""
+%createrecord fcnInfo { Name "/*@>2fcec1*/Enable"; Args [] }
+%return fcnInfo
+%endfunction
+%function getSystemOutputFcnCallInfo_528_4_21_0_524_0(opaqueBlk) void
+%assign _modelSS = ""
+%createrecord fcnInfo { Name "/*@>2fcee3*/Outputs"; Args [] }
+%return fcnInfo
+%endfunction
+%function getSystemDisableFcnCallInfo_528_4_21_0_524_0(opaqueBlk) void
+%assign _modelSS = ""
+%createrecord fcnInfo { Name "/*@>2fcf05*/Disable"; Args [] }
+%return fcnInfo
+%endfunction
+%function getInputAddr_526_1_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_526_1_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInputAddr_526_1_21_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_526_1_21_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_525_1_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "&/*@<2fd4c2*//*@>2fd4bd*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutput_525_1_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "/*@>2fd4cf*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutputAddr_525_3_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "&/*@<2fd4f9*//*@>2fd4f4*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutput_525_3_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "/*@>2fd506*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutputAddr_525_5_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "&/*@<2fd530*//*@>2fd52b*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutput_525_5_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "/*@>2fd53d*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutputAddr_525_7_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "&/*@<2fd567*//*@>2fd562*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutput_525_7_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "/*@>2fd574*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutputAddr_528_2_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(15, 0, "")> %% rtb_Level2MfileSFunction_g
+
+%return "&/*@<2fd63e*//*@>2fd639*/rtb_Level2MfileSFunction_g"
+%endfunction
+
+%function getOutput_528_2_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(15, 0, "")> %% rtb_Level2MfileSFunction_g
+
+%return "/*@>2fd64b*/rtb_Level2MfileSFunction_g"
+%endfunction
+
+%function getInputAddr_528_13_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fd69d*//*@>2fd698*/LedValue"
+%endfunction
+
+%function getInput_528_13_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2fd6aa*/LedValue"
+%endfunction
+
+%function getOutputAddr_528_23_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fd710*//*@>2fd70b*/SI_CPUload"
+%endfunction
+
+%function getOutput_528_23_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2fd71d*/SI_CPUload"
+%endfunction
+
+%function getOutputAddr_528_24_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fd747*//*@>2fd742*/SI_FreeHeap"
+%endfunction
+
+%function getOutput_528_24_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2fd754*/SI_FreeHeap"
+%endfunction
+
+%function getOutputAddr_528_25_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fd77e*//*@>2fd779*/SI_FreeStack"
+%endfunction
+
+%function getOutput_528_25_21_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2fd78b*/SI_FreeStack"
+%endfunction
+
+%function getSystemOutputFcnCallInfo_528_4_21_1_524_0(opaqueBlk) void
+%assign _modelSS = ""
+%createrecord fcnInfo { Name "/*@>2fc8e8*/Outputs"; Args [] }
+%return fcnInfo
+%endfunction
+%function getInputAddr_526_1_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_526_1_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInputAddr_526_1_21_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_526_1_21_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_525_1_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "&/*@<2fd80f*//*@>2fd80a*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutput_525_1_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "/*@>2fd81c*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutputAddr_525_3_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "&/*@<2fd846*//*@>2fd841*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutput_525_3_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "/*@>2fd853*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutputAddr_525_5_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "&/*@<2fd87d*//*@>2fd878*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutput_525_5_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "/*@>2fd88a*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutputAddr_525_7_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "&/*@<2fd8b4*//*@>2fd8af*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutput_525_7_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(19, 0, "")> %% rtb_Level2MfileSFunction_p
+
+%return "/*@>2fd8c1*/rtb_Level2MfileSFunction_p"
+%endfunction
+
+%function getOutputAddr_528_2_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(15, 0, "")> %% rtb_Level2MfileSFunction_g
+
+%return "&/*@<2fd8eb*//*@>2fd8e6*/rtb_Level2MfileSFunction_g"
+%endfunction
+
+%function getOutput_528_2_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(15, 0, "")> %% rtb_Level2MfileSFunction_g
+
+%return "/*@>2fd8f8*/rtb_Level2MfileSFunction_g"
+%endfunction
+
+%function getInputAddr_528_13_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fd94a*//*@>2fd945*/LedValue"
+%endfunction
+
+%function getInput_528_13_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2fd957*/LedValue"
+%endfunction
+
+%function getOutputAddr_528_23_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fda35*//*@>2fda30*/SI_CPUload"
+%endfunction
+
+%function getOutput_528_23_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2fda42*/SI_CPUload"
+%endfunction
+
+%function getOutputAddr_528_24_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fda6c*//*@>2fda67*/SI_FreeHeap"
+%endfunction
+
+%function getOutput_528_24_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2fda79*/SI_FreeHeap"
+%endfunction
+
+%function getOutputAddr_528_25_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fdaa3*//*@>2fda9e*/SI_FreeStack"
+%endfunction
+
+%function getOutput_528_25_21_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2fdab0*/SI_FreeStack"
+%endfunction
+

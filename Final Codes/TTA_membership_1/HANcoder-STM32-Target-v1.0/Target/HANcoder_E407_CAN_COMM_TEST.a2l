@@ -1,0 +1,2186 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     HANcoder_E407_CAN_COMM_TEST.a2l
+ *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use. 
+ * 
+ * Code generation for model "HANcoder_E407_CAN_COMM_TEST".
+ *
+ * Model version              : 1.124
+ * Simulink Coder version : 9.0 (R2018b) 24-May-2018
+ * C source code generated on : Tue Feb 15 08:35:59 2022
+ * 
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Generic->32-bit Embedded Processor
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ProjectName "HANcoder_E407_CAN_COMM_TEST_softwareID_v1_150222_083549"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    	ADDR_EPK		0x0800c004
+		CPU_TYPE		"STM32F407"
+		ECU				"E407"
+		EPK				"HANcoder_E407_CAN_COMM_TEST_softwareID_v1_150222_083549"
+		SYSTEM_CONSTANT	"XcpStationID string length"  "0x00000037"
+		SYSTEM_CONSTANT	"RAM-FlashOffset"  "-402536800"
+	/end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_LAST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_1_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x200000c8 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_1_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000058 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_2_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x200000b0 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_2_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x200000b8 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_3_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000068 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_3_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000078 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_4_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000010 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_4_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x200000c0 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_5_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000040 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_5_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000048 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_6_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x200000a0 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_6_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000098 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_7_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000038 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_7_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000050 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_8_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x200000a8 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Buffer_8_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000080 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_ID_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000060 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_ID_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000070 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Max_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000018 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Max_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000020 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Min_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x200000d0 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Tx_Min_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000008 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      precision_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000088 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      precision_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000090 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Rx_ID_CAN1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000028 
+      /* Record Layout          */      Scalar_ULONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      4294967295
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      Rx_ID_CAN2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x2000002c 
+      /* Record Layout          */      Scalar_ULONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      4294967295
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      HANtuneOverride  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x20000030 
+      /* Record Layout          */      Scalar_BOOLEAN 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_1_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bb28
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_8_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bb90
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_2_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bb70
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_3_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bb18
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_4_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bc60
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_5_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bb50
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_6_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bc40
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_7_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bbc0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_5_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bbe0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_4_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bb58
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_3_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bb80
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_2_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bc50
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_7_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bbc8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_1_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bbb0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_8_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bbf0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_Buffer_6_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x2000bb40
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      SI_FreeHeap
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bb9c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      SI_FreeStack
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bbf8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      constant_ID_TXCAN1
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bbd4
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      constant_ID_TXCAN2
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bb68
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_ID_CAN1_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bb8c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_ID_CAN2_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bb60
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      constant_ID_RXCAN1
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bba8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      constant_ID_RXCAN2
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bc34
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_ID_CAN2_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bb00
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_ID_CAN1_s
+      /* Long identifier        */      ""
+      /* Data type              */      ULONG
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      4294967295
+      ECU_ADDRESS                       0x2000bba0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      SI_CPUload
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc4b
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded5_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc49
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded6_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc38
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded4_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb98
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded7_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb64
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded8_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb04
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded3_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb0a
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded2_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb78
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded1_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc58
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded2_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc3a
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded3_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bafc
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded4_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bbe9
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded5_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bafa
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded6_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bbb9
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded7_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc48
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded8_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc4c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Tx_coded1_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb48
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded1_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc6a
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded2_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc39
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded3_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb05
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded4_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb99
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded5_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb9a
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded6_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb0c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded7_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bbd8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded8_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb08
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded1_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb89
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded2_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb06
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded3_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bc4a
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded4_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bafd
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded5_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb0b
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded6_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb88
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded7_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bb6c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Rx_coded8_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x2000bba5
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      new_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      SBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_int8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -128
+      /* Upper limit            */      127
+      ECU_ADDRESS                       0x2000bbd9
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      new_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      SBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_int8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -128
+      /* Upper limit            */      127
+      ECU_ADDRESS                       0x2000bc6c
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      WKUP_button
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bc69
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      receiver_id
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000baf8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      sender_id
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bc6b
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      LedValue
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bba6
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF5_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bb6d
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF6_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bba4
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF4_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bbe8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF7_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000baf9
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF8_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bafb
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF3_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bbb8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF2_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bbd0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF1_CAN1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bb07
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF2_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bc6d
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF3_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bc68
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF4_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bc6f
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF5_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bb09
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF6_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bc3b
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF7_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bb20
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF8_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bbfc
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      OF1_CAN2
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x2000bc6e
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_CAN_COMM_TEST_CM_double
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%15.10"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_CAN_COMM_TEST_CM_uint32
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_CAN_COMM_TEST_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_CAN_COMM_TEST_CM_uint8
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%3.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      HANcoder_E407_CAN_COMM_TEST_CM_int8
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%3.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       HANcoder_E407_CAN_COMM_TEST
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_HANcoder_STM32_Target___E407_STM32_algorithm
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_HANcoder_STM32_Target___E407_STM32_algorithm
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm"
+      /begin SUB_GROUP
+        S1_Algorithm
+        S1_Digital_Input
+        S1_Digital_Input1
+        S1_Inputs
+        S1_Rx_CAN
+        S1_System_information
+        S1_Tx_CAN
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_Algorithm
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Algorithm"
+      /begin REF_CHARACTERISTIC
+        HANtuneOverride
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        LedValue
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_Digital_Input
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Digital Input"
+      /begin REF_MEASUREMENT
+        sender_id
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_Digital_Input1
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Digital Input1"
+      /begin REF_MEASUREMENT
+        receiver_id
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_Inputs
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Inputs"
+      /begin SUB_GROUP
+        S8_Digital_Input
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_Rx_CAN
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN"
+      /begin SUB_GROUP
+        S10_CAN_receive
+        S10_CAN_receive1
+        S10_uint8_2float1
+        S10_uint8_2float10
+        S10_uint8_2float11
+        S10_uint8_2float12
+        S10_uint8_2float13
+        S10_uint8_2float14
+        S10_uint8_2float15
+        S10_uint8_2float16
+        S10_uint8_2float2
+        S10_uint8_2float3
+        S10_uint8_2float4
+        S10_uint8_2float5
+        S10_uint8_2float6
+        S10_uint8_2float7
+        S10_uint8_2float8
+        S10_uint8_2float9
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        Rx_ID_CAN1
+        Rx_ID_CAN2
+        precision_CAN1
+        precision_CAN2
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Rx_ID_CAN1_s
+        Rx_ID_CAN2_s
+        constant_ID_RXCAN1
+        constant_ID_RXCAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_System_information
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/System information"
+      /begin SUB_GROUP
+        S11_Get_CPU_load
+        S11_Get_free_Heap
+        S11_Get_free_Stack
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_Tx_CAN
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN"
+      /begin SUB_GROUP
+        S12_float2uint1
+        S12_float2uint10
+        S12_float2uint11
+        S12_float2uint12
+        S12_float2uint13
+        S12_float2uint14
+        S12_float2uint15
+        S12_float2uint16
+        S12_float2uint2
+        S12_float2uint3
+        S12_float2uint4
+        S12_float2uint5
+        S12_float2uint6
+        S12_float2uint7
+        S12_float2uint8
+        S12_float2uint9
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        Tx_Buffer_1_CAN1
+        Tx_Buffer_1_CAN2
+        Tx_Buffer_2_CAN1
+        Tx_Buffer_2_CAN2
+        Tx_Buffer_3_CAN1
+        Tx_Buffer_3_CAN2
+        Tx_Buffer_4_CAN1
+        Tx_Buffer_4_CAN2
+        Tx_Buffer_5_CAN1
+        Tx_Buffer_5_CAN2
+        Tx_Buffer_6_CAN1
+        Tx_Buffer_6_CAN2
+        Tx_Buffer_7_CAN1
+        Tx_Buffer_7_CAN2
+        Tx_Buffer_8_CAN1
+        Tx_Buffer_8_CAN2
+        Tx_ID_CAN1
+        Tx_ID_CAN2
+        Tx_Max_CAN1
+        Tx_Max_CAN2
+        Tx_Min_CAN1
+        Tx_Min_CAN2
+        precision_CAN1
+        precision_CAN2
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Tx_ID_CAN1_s
+        Tx_ID_CAN2_s
+        constant_ID_TXCAN1
+        constant_ID_TXCAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S8_Digital_Input
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Inputs/Digital Input"
+      /begin REF_MEASUREMENT
+        WKUP_button
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_CAN_receive
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/CAN receive"
+      /begin SUB_GROUP
+        S23_Enabled_Subsystem
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        new_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_CAN_receive1
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/CAN receive1"
+      /begin SUB_GROUP
+        S24_Enabled_Subsystem
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        new_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float1
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float1"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_1_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float10
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float10"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_5_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float11
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float11"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_4_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float12
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float12"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_3_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float13
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float13"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_2_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float14
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float14"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_7_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float15
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float15"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_1_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float16
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float16"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_8_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float2
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float2"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_2_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float3
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float3"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_3_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float4
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float4"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_4_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float5
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float5"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_5_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float6
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float6"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_6_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float7
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float7"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_7_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float8
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float8"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_8_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_uint8_2float9
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/uint8_2float9"
+      /begin REF_MEASUREMENT
+        Rx_Buffer_6_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S11_Get_CPU_load
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/System information/Get CPU load"
+      /begin REF_MEASUREMENT
+        SI_CPUload
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S11_Get_free_Heap
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/System information/Get free Heap"
+      /begin REF_MEASUREMENT
+        SI_FreeHeap
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S11_Get_free_Stack
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/System information/Get free Stack"
+      /begin REF_MEASUREMENT
+        SI_FreeStack
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint1
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint1"
+      /begin REF_MEASUREMENT
+        OF5_CAN1
+        Tx_coded5_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint10
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint10"
+      /begin REF_MEASUREMENT
+        OF2_CAN2
+        Tx_coded2_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint11
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint11"
+      /begin REF_MEASUREMENT
+        OF3_CAN2
+        Tx_coded3_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint12
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint12"
+      /begin REF_MEASUREMENT
+        OF4_CAN2
+        Tx_coded4_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint13
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint13"
+      /begin REF_MEASUREMENT
+        OF5_CAN2
+        Tx_coded5_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint14
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint14"
+      /begin REF_MEASUREMENT
+        OF6_CAN2
+        Tx_coded6_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint15
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint15"
+      /begin REF_MEASUREMENT
+        OF7_CAN2
+        Tx_coded7_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint16
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint16"
+      /begin REF_MEASUREMENT
+        OF8_CAN2
+        Tx_coded8_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint2
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint2"
+      /begin REF_MEASUREMENT
+        OF6_CAN1
+        Tx_coded6_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint3
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint3"
+      /begin REF_MEASUREMENT
+        OF4_CAN1
+        Tx_coded4_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint4
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint4"
+      /begin REF_MEASUREMENT
+        OF7_CAN1
+        Tx_coded7_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint5
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint5"
+      /begin REF_MEASUREMENT
+        OF8_CAN1
+        Tx_coded8_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint6
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint6"
+      /begin REF_MEASUREMENT
+        OF3_CAN1
+        Tx_coded3_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint7
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint7"
+      /begin REF_MEASUREMENT
+        OF2_CAN1
+        Tx_coded2_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint8
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint8"
+      /begin REF_MEASUREMENT
+        OF1_CAN1
+        Tx_coded1_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S12_float2uint9
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Tx CAN/float2uint9"
+      /begin REF_MEASUREMENT
+        OF1_CAN2
+        Tx_coded1_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S23_Enabled_Subsystem
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/CAN receive/Enabled Subsystem"
+      /begin REF_MEASUREMENT
+        Rx_coded1_CAN1
+        Rx_coded2_CAN1
+        Rx_coded3_CAN1
+        Rx_coded4_CAN1
+        Rx_coded5_CAN1
+        Rx_coded6_CAN1
+        Rx_coded7_CAN1
+        Rx_coded8_CAN1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S24_Enabled_Subsystem
+      /* Long identifier        */       "HANcoder_E407_CAN_COMM_TEST/HANcoder STM32 Target - E407-STM32 algorithm/Rx CAN/CAN receive1/Enabled Subsystem"
+      /begin REF_MEASUREMENT
+        Rx_coded1_CAN2
+        Rx_coded2_CAN2
+        Rx_coded3_CAN2
+        Rx_coded4_CAN2
+        Rx_coded5_CAN2
+        Rx_coded6_CAN2
+        Rx_coded7_CAN2
+        Rx_coded8_CAN2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF HANcoder_E407_CAN_COMM_TEST.a2l */

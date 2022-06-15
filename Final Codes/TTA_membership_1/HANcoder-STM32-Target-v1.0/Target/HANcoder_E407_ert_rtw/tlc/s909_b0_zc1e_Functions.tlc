@@ -1,0 +1,19 @@
+%implements s909_b0_zc1e_Functions "C"
+
+%function TestInterfaceFcn_Fcn0(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void TestInterfaceFcn(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(21, 0, fcnProtoType)>
+%return fcnBuff
+%endfunction
+

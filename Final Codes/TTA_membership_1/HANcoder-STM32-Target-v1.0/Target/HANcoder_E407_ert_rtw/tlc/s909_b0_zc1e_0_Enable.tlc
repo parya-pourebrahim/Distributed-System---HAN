@@ -1,0 +1,46 @@
+%implements s909_b0_zc1e_0_Enable "C"
+
+%function Enable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcEnableFcnOfS4B3 = OpaqueTLCBlockFcn("Enable", 4, 3, 0, 2)
+%assign tlcEnableFcnOfS4B4 = OpaqueTLCBlockFcn("Enable", 4, 4, 0, 2)
+%if !WHITE_SPACE(tlcEnableFcnOfS4B3)
+/* Enable for M-S-Function: '<S870>/S-Function' */
+%<SLibCG_DumpSSCode("/*@[223057*/",tlcEnableFcnOfS4B3,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS4B4)
+/* Enable for M-S-Function: '<S871>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[223059*/",tlcEnableFcnOfS4B4,"/*@]*/")>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Enable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Enable"))
+%<SLibCG_AccessArg(0, 2, 0)>
+%endif
+%if SLibCG_ArgAccessed(0, 2, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Enable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Enable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 2, 0)>
+%endif
+%endfunction
+%function EnableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CAN1Send_Enable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 2, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(0, 2, 1)
+%<comma>rtB_CAN1Send *localB\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

@@ -1,0 +1,43 @@
+%implements s909_b0_zc1e_15_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* Disable for Outport: '<S350>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[24b60f*/",SLibCG_SetBOV(362, 0, 258, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[24bb4f*/",(SLibCGIR_PV(78, 0, 258, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_SetDWV(216, 0, 258, 1, "", -1, "", 0, "false")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[15].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Disable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))
+%<SLibCG_AccessArg(15, 2, 0)>
+%endif
+%if SLibCG_ArgAccessed(15, 2, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Disable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(15, 2, 0)>
+%endif
+%endfunction
+%function DisableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CheckmsgtransmissionC_g_Disable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(15, 2, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(15, 2, 1)
+%<comma>rtB_CheckmsgtransmissionCAN2 *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(15, 2, 2)
+%<comma>rtDW_CheckmsgtransmissionCAN2 *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(15, 2, fcnProtoType)>
+%endfunction

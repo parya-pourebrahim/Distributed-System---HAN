@@ -1,0 +1,43 @@
+%implements s909_b0_zc1e_20_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%assign tlcStartFcnOfS524B4 = OpaqueTLCBlockFcn("Start", 524, 4, 20, 0)
+%assign tlcStartFcnOfS524B7 = OpaqueTLCBlockFcn("Start", 524, 7, 20, 0)
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[522], "Start",1)
+/* Start for Chart: '<S26>/Chart' incorporates:
+ *  SubSystem: '<S6>/CAN Management'
+ */
+%if SLibCG_SystemFcnArgAccessed("CANManagement_Start",522,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+
+%<SLibCG_DumpSSCode("/*@[2f7479*/",SLibCGIRGenReusableSysCall("CANManagement_Start", ["%<_modelSS>", "&/*@>2f7af2*/rtB./*@>2f7af1*/CANManagement_c", "&/*@>2f7aff*/rtDWork./*@>2f7afe*/CANManagement_c"], 522, 0, 0, 1, 0, 528),"/*@]*/")>\
+
+
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS524B4)
+/* Start for M-S-Function: '<S897>/Level-2 M-file S-Function' incorporates:
+ *  Constant: '<S26>/Constant1'
+ */
+%<SLibCG_DumpSSCode("/*@[2f7476*/",tlcStartFcnOfS524B4,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS524B7)
+/* Start for M-S-Function: '<S896>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[2f7478*/",tlcStartFcnOfS524B7,"/*@]*/")>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(20, 0, fcnProtoType)>
+%endfunction

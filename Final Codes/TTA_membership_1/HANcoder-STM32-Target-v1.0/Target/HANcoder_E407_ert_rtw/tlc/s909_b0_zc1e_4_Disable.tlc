@@ -1,0 +1,50 @@
+%implements s909_b0_zc1e_4_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcDisableFcnOfS70B2 = OpaqueTLCBlockFcn("Disable", 70, 2, 4, 2)
+/* {S!d9317}Disable for Enabled SubSystem: '<S27>/DEBUG - Toggle digital pin A3' */
+/*@>202da9*/if (%<SLibCG_DumpSSCode("/*@[23a234*/",(SLibCG_DWV(237, 0, 71, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !WHITE_SPACE(tlcDisableFcnOfS70B2)
+    /* {S!d9320}Disable for M-S-Function: '<S899>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[23a213*/",tlcDisableFcnOfS70B2,"/*@]*/")>\
+%endif
+%<SLibCG_DumpSSCode("/*@[23a258*/",SLibCG_SetDWV(237, 0, 71, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d9317}End of Disable for SubSystem: '<S27>/DEBUG - Toggle digital pin A3' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[4].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Disable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))
+%<SLibCG_AccessArg(4, 2, 0)>
+%endif
+%if SLibCG_ArgAccessed(4, 2, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Disable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(4, 2, 0)>
+%endif
+%endfunction
+%function DisableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void MeasureEXecutiontime_Disable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(4, 2, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(4, 2, 1)
+%<comma>rtB_MeasureEXecutiontime *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(4, 2, 2)
+%<comma>rtDW_MeasureEXecutiontime *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(4, 2, fcnProtoType)>
+%endfunction

@@ -1,0 +1,51 @@
+%implements s909_b0_zc1e_13_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* {S!d9659}Outputs for Enabled SubSystem: '<S233>/Desync_Negative' incorporates:
+ *  EnablePort: '<S234>/Enable'
+ */
+/*@>1fb111*/if (/*@>248202*/rtu_Enable) {
+    /* {S!d9662}DataTypeConversion: '<S234>/Cast' incorporates:
+ *  Sum: '<S234>/Minus'
+ */
+    *rtd_Local_Ticks/*@>2038ec*/ = /*@>24813f*/(uint16_T)(/*@>248207*/rtu_Current_Local_Time/*@>24802c*/ + */*@<248257*/rtd_Desync_Ticks);
+}
+/* {E!d9659}End of Outputs for SubSystem: '<S233>/Desync_Negative' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[13].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(13, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(13, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(13, 0, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Desync_Negative(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(13, 0, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>boolean_T rtu_Enable\
+%assign comma = ", "
+%<comma>real_T rtu_Current_Local_Time\
+%assign comma = ", "
+%<comma>real_T *rtd_Desync_Ticks\
+%assign comma = ", "
+%<comma>uint16_T *rtd_Local_Ticks\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(13, 0, fcnProtoType)>
+%endfunction

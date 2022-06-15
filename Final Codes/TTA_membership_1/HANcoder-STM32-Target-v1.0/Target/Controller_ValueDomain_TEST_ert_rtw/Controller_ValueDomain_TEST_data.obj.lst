@@ -1,0 +1,39 @@
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 2
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"Controller_ValueDomain_TEST_data.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.global	rtConstB
+  21              		.section	.rodata.rtConstB,"a",%progbits
+  22              		.align	3
+  25              	rtConstB:
+  26 0000 000000A0 		.word	-1610612736
+  27 0004 9999A93F 		.word	1068079513
+  28              		.text
+  29              	.Letext0:
+  30              		.file 1 "rtwtypes.h"
+  31              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\arm-none-eabi\\include\\mach
+  32              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\arm-none-eabi\\include\\sys\
+  33              		.file 4 "Controller_ValueDomain_TEST.h"
+  34              		.file 5 "../blockset/rtw/STM32/inc/STM32_E407/core_cm4.h"
+  35              		.file 6 "Controller_ValueDomain_TEST_data.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Controller_ValueDomain_TEST_data.c
+C:\Users\Diego\AppData\Local\Temp\cczvhjCC.s:25     .rodata.rtConstB:00000000 rtConstB
+C:\Users\Diego\AppData\Local\Temp\cczvhjCC.s:22     .rodata.rtConstB:00000000 $d
+
+NO UNDEFINED SYMBOLS

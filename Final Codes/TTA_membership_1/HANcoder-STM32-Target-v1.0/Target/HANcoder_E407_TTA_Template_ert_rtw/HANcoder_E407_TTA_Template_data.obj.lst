@@ -1,0 +1,231 @@
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 2
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"HANcoder_E407_TTA_Template_data.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.global	rtConstP
+  21              		.global	rtConstB
+  22              		.section	.rodata.rtConstP,"a",%progbits
+  23              		.align	3
+  26              	rtConstP:
+  27 0000 00000000 		.word	0
+  28 0004 00000000 		.word	0
+  29 0008 00000000 		.word	0
+  30 000c 00004440 		.word	1078198272
+  31 0010 00000000 		.word	0
+  32 0014 00004640 		.word	1078329344
+  33 0018 00000000 		.word	0
+  34 001c 00004740 		.word	1078394880
+  35 0020 00000000 		.word	0
+  36 0024 00004840 		.word	1078460416
+  37 0028 00000000 		.word	0
+  38 002c 00004940 		.word	1078525952
+  39 0030 00000000 		.word	0
+  40 0034 00004A40 		.word	1078591488
+  41 0038 00000000 		.word	0
+  42 003c 00005740 		.word	1079443456
+  43 0040 00000000 		.word	0
+  44 0044 00005840 		.word	1079508992
+  45 0048 00000000 		.word	0
+  46 004c 00005940 		.word	1079574528
+  47 0050 00000000 		.word	0
+  48 0054 00806140 		.word	1080131584
+  49 0058 00000000 		.word	0
+  50 005c 00C06140 		.word	1080147968
+  51 0060 00000000 		.word	0
+  52 0064 00006240 		.word	1080164352
+  53 0068 00000000 		.word	0
+  54 006c 00806240 		.word	1080197120
+  55 0070 00000000 		.word	0
+  56 0074 00806740 		.word	1080524800
+  57 0078 00000000 		.word	0
+  58 007c 00006840 		.word	1080557568
+  59 0080 00000000 		.word	0
+  60 0084 00806840 		.word	1080590336
+  61 0088 00000000 		.word	0
+  62 008c 00006940 		.word	1080623104
+  63 0090 00000000 		.word	0
+  64 0094 00806940 		.word	1080655872
+  65 0098 00000000 		.word	0
+  66 009c 00006A40 		.word	1080688640
+  67 00a0 00000000 		.word	0
+  68 00a4 00000000 		.word	0
+  69 00a8 00000000 		.word	0
+  70 00ac 0000F03F 		.word	1072693248
+  71 00b0 00000000 		.word	0
+  72 00b4 0000F03F 		.word	1072693248
+  73 00b8 00000000 		.word	0
+  74 00bc 0000F03F 		.word	1072693248
+  75 00c0 00000000 		.word	0
+  76 00c4 0000F03F 		.word	1072693248
+  77 00c8 00000000 		.word	0
+  78 00cc 0000F03F 		.word	1072693248
+  79 00d0 00000000 		.word	0
+  80 00d4 00000000 		.word	0
+  81 00d8 00000000 		.word	0
+  82 00dc 0000F03F 		.word	1072693248
+  83 00e0 00000000 		.word	0
+  84 00e4 0000F03F 		.word	1072693248
+  85 00e8 00000000 		.word	0
+  86 00ec 00000000 		.word	0
+  87 00f0 00000000 		.word	0
+  88 00f4 0000F03F 		.word	1072693248
+  89 00f8 00000000 		.word	0
+  90 00fc 0000F03F 		.word	1072693248
+  91 0100 00000000 		.word	0
+  92 0104 0000F03F 		.word	1072693248
+  93 0108 00000000 		.word	0
+  94 010c 00000000 		.word	0
+  95 0110 00000000 		.word	0
+  96 0114 0000F03F 		.word	1072693248
+  97 0118 00000000 		.word	0
+  98 011c 0000F03F 		.word	1072693248
+  99 0120 00000000 		.word	0
+ 100 0124 0000F03F 		.word	1072693248
+ 101 0128 00000000 		.word	0
+ 102 012c 0000F03F 		.word	1072693248
+ 103 0130 00000000 		.word	0
+ 104 0134 0000F03F 		.word	1072693248
+ 105 0138 00000000 		.word	0
+ 106 013c 0000F03F 		.word	1072693248
+ 107 0140 00       		.byte	0
+ 108 0141 00       		.byte	0
+ 109 0142 01       		.byte	1
+ 110 0143 01       		.byte	1
+ 111 0144 01       		.byte	1
+ 112 0145 00       		.byte	0
+ 113 0146 01       		.byte	1
+ 114 0147 00       		.byte	0
+ 115 0148 01       		.byte	1
+ 116 0149 01       		.byte	1
+ 117 014a 00       		.byte	0
+ 118 014b 00       		.byte	0
+ 119 014c 00       		.byte	0
+ 120 014d 01       		.byte	1
+ 121 014e 00       		.byte	0
+ 122 014f 01       		.byte	1
+ 123              		.section	.rodata.rtConstB,"a",%progbits
+ 124              		.align	3
+ 127              	rtConstB:
+ 128 0000 00000000 		.word	0
+ 129 0004 00007240 		.word	1081212928
+ 130 0008 00000000 		.word	0
+ 131 000c 00004640 		.word	1078329344
+ 132 0010 00000000 		.word	0
+ 133 0014 00004840 		.word	1078460416
+ 134 0018 00000000 		.word	0
+ 135 001c 00004440 		.word	1078198272
+ 136 0020 00000000 		.word	0
+ 137 0024 00006940 		.word	1080623104
+ 138 0028 00000000 		.word	0
+ 139 002c 00806940 		.word	1080655872
+ 140 0030 00000000 		.word	0
+ 141 0034 00806A40 		.word	1080721408
+ 142 0038 00000000 		.word	0
+ 143 003c 00006A40 		.word	1080688640
+ 144 0040 00000000 		.word	0
+ 145 0044 00004640 		.word	1078329344
+ 146 0048 00000000 		.word	0
+ 147 004c 00004840 		.word	1078460416
+ 148 0050 00000000 		.word	0
+ 149 0054 00004A40 		.word	1078591488
+ 150 0058 00000000 		.word	0
+ 151 005c 00005940 		.word	1079574528
+ 152 0060 00000000 		.word	0
+ 153 0064 00005840 		.word	1079508992
+ 154 0068 00000000 		.word	0
+ 155 006c 00806240 		.word	1080197120
+ 156 0070 00000000 		.word	0
+ 157 0074 00006240 		.word	1080164352
+ 158 0078 00000000 		.word	0
+ 159 007c 00806840 		.word	1080590336
+ 160 0080 00000000 		.word	0
+ 161 0084 00006840 		.word	1080557568
+ 162 0088 00000000 		.word	0
+ 163 008c 00004440 		.word	1078198272
+ 164 0090 00000000 		.word	0
+ 165 0094 00806740 		.word	1080524800
+ 166 0098 00000000 		.word	0
+ 167 009c 00005740 		.word	1079443456
+ 168 00a0 00000000 		.word	0
+ 169 00a4 00806140 		.word	1080131584
+ 170 00a8 00000000 		.word	0
+ 171 00ac 0000F03F 		.word	1072693248
+ 172 00b0 0000     		.short	0
+ 173 00b2 00       		.byte	0
+ 174 00b3 00       		.byte	0
+ 175 00b4 00       		.byte	0
+ 176 00b5 00       		.byte	0
+ 177 00b6 00       		.byte	0
+ 178 00b7 01       		.byte	1
+ 179 00b8 01000000 		.word	1
+ 180 00bc 01000000 		.word	1
+ 181 00c0 01000000 		.word	1
+ 182 00c4 01000000 		.word	1
+ 183 00c8 00       		.byte	0
+ 184 00c9 00       		.byte	0
+ 185 00ca 00       		.byte	0
+ 186 00cb 00       		.byte	0
+ 187 00cc 0D000000 		.word	13
+ 188 00d0 0D000000 		.word	13
+ 189 00d4 0D000000 		.word	13
+ 190 00d8 0D000000 		.word	13
+ 191 00dc 00       		.byte	0
+ 192 00dd 00       		.byte	0
+ 193 00de 00       		.byte	0
+ 194 00df 00       		.byte	0
+ 195 00e0 0C000000 		.word	12
+ 196 00e4 0C000000 		.word	12
+ 197 00e8 0C000000 		.word	12
+ 198 00ec 0C000000 		.word	12
+ 199 00f0 00       		.byte	0
+ 200 00f1 00       		.byte	0
+ 201 00f2 00       		.byte	0
+ 202 00f3 00       		.byte	0
+ 203 00f4 0B000000 		.word	11
+ 204 00f8 0B000000 		.word	11
+ 205 00fc 0B000000 		.word	11
+ 206 0100 0B000000 		.word	11
+ 207 0104 00       		.byte	0
+ 208 0105 00       		.byte	0
+ 209 0106 00       		.byte	0
+ 210 0107 00       		.byte	0
+ 211 0108 01000000 		.word	1
+ 212 010c 01000000 		.word	1
+ 213 0110 01000000 		.word	1
+ 214 0114 01000000 		.word	1
+ 215 0118 00       		.byte	0
+ 216 0119 00       		.byte	0
+ 217 011a 00       		.byte	0
+ 218 011b 00       		.byte	0
+ 219 011c 00000000 		.space	4
+ 220              		.text
+ 221              	.Letext0:
+ 222              		.file 1 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\arm-none-eabi\\include\\mach
+ 223              		.file 2 "rtwtypes.h"
+ 224              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q2\\arm-none-eabi\\include\\sys\
+ 225              		.file 4 "HANcoder_E407_TTA_Template.h"
+ 226              		.file 5 "../blockset/rtw/STM32/inc/STM32_E407/core_cm4.h"
+ 227              		.file 6 "HANcoder_E407_TTA_Template_data.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 HANcoder_E407_TTA_Template_data.c
+C:\Users\Diego\AppData\Local\Temp\ccFwKA7N.s:26     .rodata.rtConstP:00000000 rtConstP
+C:\Users\Diego\AppData\Local\Temp\ccFwKA7N.s:127    .rodata.rtConstB:00000000 rtConstB
+C:\Users\Diego\AppData\Local\Temp\ccFwKA7N.s:23     .rodata.rtConstP:00000000 $d
+C:\Users\Diego\AppData\Local\Temp\ccFwKA7N.s:124    .rodata.rtConstB:00000000 $d
+
+NO UNDEFINED SYMBOLS

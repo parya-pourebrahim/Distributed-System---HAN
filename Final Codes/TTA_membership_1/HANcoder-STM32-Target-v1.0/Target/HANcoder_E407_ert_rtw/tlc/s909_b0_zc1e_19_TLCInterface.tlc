@@ -1,0 +1,122 @@
+%implements s909_b0_zc1e_19_TLCInterface "C"
+
+%function getInputAddr_75_2_19_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(217, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_75_2_19_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(217, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_73_3_19_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(219, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_73_3_19_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(219, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_74_3_19_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(218, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_74_3_19_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(218, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_76_2_19_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(216, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_76_2_19_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(216, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_75_2_19_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(217, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_75_2_19_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(217, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_73_3_19_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(219, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_73_3_19_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(219, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_74_3_19_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(218, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_74_3_19_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(218, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_76_2_19_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(216, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_76_2_19_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(216, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_75_2_19_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(217, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_75_2_19_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(217, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_73_3_19_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(219, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_73_3_19_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(219, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_74_3_19_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(218, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_74_3_19_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(218, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInputAddr_76_2_19_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOVAddr(216, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+
+%function getInput_76_2_19_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibCG_BOV(216, 0, 522, 1, "", -1, ucv, sigIdx)
+%endfunction
+

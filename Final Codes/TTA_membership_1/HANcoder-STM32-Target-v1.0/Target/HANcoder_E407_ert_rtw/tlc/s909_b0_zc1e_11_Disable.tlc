@@ -1,0 +1,61 @@
+%implements s909_b0_zc1e_11_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* {S!d9641}Disable for Enabled SubSystem: '<S143>/Check msg transmission CAN1' */
+/*@>203894*/if (%<SLibCG_DumpSSCode("/*@[246e70*/",(SLibCG_DWV(229, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>) {
+    /* {S!d9646}Disable for Outport: '<S145>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[246fc7*/",SLibCG_SetBOV(409, 0, 132, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[247c5e*/",(SLibCGIR_PV(78, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[246ed8*/",SLibCG_SetDWV(229, 0, 132, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d9641}End of Disable for SubSystem: '<S143>/Check msg transmission CAN1' */
+
+/* {S!d9643}Disable for Enabled SubSystem: '<S143>/Check msg transmission CAN2' */
+/*@>203899*/if (%<SLibCG_DumpSSCode("/*@[246e91*/",(SLibCG_DWV(228, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>) {
+    /* {S!d9648}Disable for Outport: '<S146>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[24700b*/",SLibCG_SetBOV(408, 0, 132, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[247c8f*/",(SLibCGIR_PV(78, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[246efb*/",SLibCG_SetDWV(228, 0, 132, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+}
+/* {E!d9643}End of Disable for SubSystem: '<S143>/Check msg transmission CAN2' */
+
+/* {S!d9650}Disable for Outport: '<S143>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[246f3f*/",SLibCG_SetBOV(409, 0, 132, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[247cc0*/",(SLibCGIR_PV(78, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+/* {S!d9652}Disable for Outport: '<S143>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[246f83*/",SLibCG_SetBOV(408, 0, 132, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[247cde*/",(SLibCGIR_PV(78, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_SetDWV(227, 0, 132, 1, "", -1, "", 0, "false")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[11].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Disable", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))
+%<SLibCG_AccessArg(11, 2, 0)>
+%endif
+%if SLibCG_ArgAccessed(11, 2, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Disable", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Disable"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(11, 2, 0)>
+%endif
+%endfunction
+%function DisableFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Transmissionsubtasks_Disable(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(11, 2, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(11, 2, 1)
+%<comma>rtB_Transmissionsubtasks *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(11, 2, 2)
+%<comma>rtDW_Transmissionsubtasks *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(11, 2, fcnProtoType)>
+%endfunction

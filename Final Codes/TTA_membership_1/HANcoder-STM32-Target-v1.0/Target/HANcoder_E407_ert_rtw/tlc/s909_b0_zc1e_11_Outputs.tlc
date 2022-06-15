@@ -1,0 +1,340 @@
+%implements s909_b0_zc1e_11_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+boolean_T rtb_Equal2_km;
+uint8_T rtb_Cast4_o3;
+uint8_T rtb_Cast1_o;
+uint8_T rtb_Cast18_p;
+uint8_T rtb_Cast9_i;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(11,1,3,0)
+%<SLibCG_AccessArg(11 ,1, 7)>
+%<SLibCG_AccessArg(11 ,1, 2)>
+%endif
+%if SLibCG_FcnCallArgAccessed(11,1,3,2)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(11,1,2,0)
+%<SLibCG_AccessArg(11 ,1, 7)>
+%<SLibCG_AccessArg(11 ,1, 2)>
+%endif
+%if SLibCG_FcnCallArgAccessed(11,1,2,2)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(11,1,1,0)
+%<SLibCG_AccessArg(11 ,1, 7)>
+%<SLibCG_AccessArg(11 ,1, 2)>
+%endif
+%if SLibCG_FcnCallArgAccessed(11,1,1,2)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(11,1,0,0)
+%<SLibCG_AccessArg(11 ,1, 7)>
+%<SLibCG_AccessArg(11 ,1, 2)>
+%endif
+%if SLibCG_FcnCallArgAccessed(11,1,0,2)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+
+/* {S!d9587}Outputs for Enabled SubSystem: '<S93>/Transmission subtasks' incorporates:
+ *  EnablePort: '<S143>/Enable'
+ */
+/*@>1faff9*/if (/*@>24686c*/rtu_Enable) {
+    /*@>1faffd*/if (!/*@<1faffc*/%<SLibCG_DumpSSCode("/*@[24712c*/",(SLibCG_SE(SLibCG_DWV(227, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>) {
+%<SLibCG_DumpSSCode("/*@[247308*/",SLibCG_SetDWV(227, 0, 132, 1, "", -1, "", 0, "true"),"/*@]*/")>\
+    }
+    /* {S!d9608}RelationalOperator: '<S143>/Equal2' */
+    /*@>245a49*/rtb_Equal2_km/*@>20366e*/ = (*/*@<2476f7*/rtd_Local_Ticks/*@>245c0f*/ > /*@>246871*/rtu_Time_Mark);
+    /* {S!d9588}Outputs for Enabled SubSystem: '<S143>/Msg_Value_Data_Encoded2' incorporates:
+ *  EnablePort: '<S147>/Enable'
+ */
+    /* {S!d9612}RelationalOperator: '<S143>/Equal16' incorporates:
+ *  Constant: '<S147>/Constant'
+ */
+    /*@>20368c*/if (*/*@<24774e*/rtd_Local_Ticks/*@>245c08*/ == /*@>246876*/rtu_Time_Mark) {
+        /*@>246981*/localB->/*@>24789c*/Constant/*@>2036ef*/ = %<SLibCG_DumpSSCode("/*@[2473b4*/",(SLibCG_SE(SLibCGIR_PV(88, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>;
+        /* {S!d9610}DataStoreRead: '<S147>/Data Store Read' incorporates:
+ *  Constant: '<S147>/Constant'
+ */
+        /*@>246988*/localB->/*@>24789f*/DataStoreRead/*@>2036f1*/ = */*@<2476fa*/rtd_Own_Vote;
+    }
+    /* {E!d9612}End of RelationalOperator: '<S143>/Equal16' */
+    /* {E!d9588}End of Outputs for SubSystem: '<S143>/Msg_Value_Data_Encoded2' */
+
+    /* {S!d9590}Outputs for Enabled SubSystem: '<S143>/Check msg transmission CAN1' incorporates:
+ *  EnablePort: '<S145>/Enable'
+ */
+    /* {S!d9626}Logic: '<S143>/AND' incorporates:
+ *  Constant: '<S143>/Constant6'
+ *  Constant: '<S145>/Constant22'
+ *  Constant: '<S145>/Constant24'
+ *  Constant: '<S145>/Constant8'
+ *  Math: '<S145>/Mod'
+ *  RelationalOperator: '<S143>/GreaterThan2'
+ *  RelationalOperator: '<S145>/Equal4'
+ *  Sum: '<S145>/Minus'
+ */
+    /*@>203690*/if (/*@>245b00*/rtb_Equal2_km/*@>24487b*/ && (*/*@<247756*/rtd_Tx_msg_count_CAN1/*@>244936*/ <= %<SLibCG_DumpSSCode("/*@[24716f*/",(SLibCG_SE(SLibCGIR_PV(23, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>)) {
+        /*@>203693*/if (!/*@<203692*/%<SLibCG_DumpSSCode("/*@[247191*/",(SLibCG_SE(SLibCG_DWV(229, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>) {
+%<SLibCG_DumpSSCode("/*@[24732b*/",SLibCG_SetDWV(229, 0, 132, 1, "", -1, "", 0, "true"),"/*@]*/")>\
+        }
+        /* {S!d9591}Outputs for Enabled SubSystem: '<S145>/TX buffer update CAN1' incorporates:
+ *  EnablePort: '<S148>/Enable'
+ */
+        /*@>20370e*/if (%<SLibCG_DumpSSCode("/*@[2475e8*/",(SLibCGCallSubFcn("rt_modd", ["(/*@>247948*/(real_T)*/*@<247949*/rtd_Local_Ticks/*@>247947*/ + %<SLibCG_DumpSSCode("/*@[24794b*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>)/*@>247946*/ - /*@>247958*/rtu_Time_Mark", "%<SLibCG_DumpSSCode("/*@[247962*/",(SLibCGIR_PV(11, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>", "/*@>247976*/%<::tSimStruct>"], 11, 1, 0)),"/*@]*/")>/*@>24488b*/ == %<SLibCG_DumpSSCode("/*@[247239*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>) {
+            /* {S!d9614}DataTypeConversion: '<S148>/Cast4' */
+            /*@>245a73*/rtb_Cast4_o3/*@>2037a3*/ = */*@<24774a*/rtd_basic_cycle_count;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[97], "Output",1)
+            /* {S!d9592}Outputs for Atomic SubSystem: '<S149>/Bit Shift1' */
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,0)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,2)
+%<SLibCG_AccessArg(11 ,1, 3)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[247108*/",SLibCGIRGenReusableSysCall("BitShift1", ["/*@>24799b*/%<::tSimStruct>", "/*@>2479a5*/rtb_Cast4_o3", "&/*@>2479b1*/localB->/*@>2479b0*/BitShift1_j"], 97, 12, 7, 1, 7, 132),"/*@]*/")>\
+
+
+            /* {E!d9592}End of Outputs for SubSystem: '<S149>/Bit Shift1' */
+
+%endif
+            /* {S!d9616}DataTypeConversion: '<S148>/Cast1' */
+            /*@>245a77*/rtb_Cast1_o/*@>2037aa*/ = /*@>245c03*/(uint8_T)*/*@<24774b*/rtd_Tx_msg_count_CAN1;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[92], "Output",1)
+            /* {S!d9594}Outputs for Atomic SubSystem: '<S149>/Bit Shift' */
+%if SLibCG_SystemFcnArgAccessed("BitShift4",92,0)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift4",92,2)
+%<SLibCG_AccessArg(11 ,1, 3)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24710a*/",SLibCGIRGenReusableSysCall("BitShift4", ["/*@>2479d7*/%<::tSimStruct>", "/*@>2479e1*/rtb_Cast1_o", "&/*@>2479ed*/localB->/*@>2479ec*/BitShift_c"], 92, 3, 7, 1, 7, 132),"/*@]*/")>\
+
+
+            /* {E!d9594}End of Outputs for SubSystem: '<S149>/Bit Shift' */
+
+%endif
+            /* {S!d9618}DataStoreWrite: '<S148>/Data Store Write10' incorporates:
+ *  DataTypeConversion: '<S148>/Cast16'
+ *  Sum: '<S149>/Minus'
+ */
+            rtd_Msg_Tx_CAN1->/*@>24786c*/Buffer_1/*@>2037ba*/ = /*@>245beb*/(uint8_T)(/*@>245d67*/(uint32_T)/*@>245bf8*/(uint8_T)(/*@>245d64*/(uint32_T)/*@>2469ba*/localB->/*@>2478ab*/BitShift1_j./*@>2478a8*/y/*@>245bf4*/ + /*@>2469c6*/localB->/*@>2478b1*/BitShift_c./*@>2478ae*/y)/*@>245be7*/ + /*@>2461e7*/(uint8_T)*/*@<24776a*/rtd_Board_ID);
+            rtd_Msg_Tx_CAN1->/*@>24786f*/Buffer_2/*@>2037bd*/ = /*@>2469d4*/localB->/*@>2478b7*/DataStoreRead;
+            rtd_Msg_Tx_CAN1->/*@>247872*/Buffer_3/*@>2037c0*/ = /*@>2469db*/localB->/*@>2478ba*/Constant;
+            rtd_Msg_Tx_CAN1->/*@>247875*/Buffer_4/*@>2037c3*/ = /*@>2469e9*/localB->/*@>2478c0*/Constant;
+            rtd_Msg_Tx_CAN1->/*@>247878*/Buffer_5/*@>2037c6*/ = /*@>246a08*/localB->/*@>2478cf*/Constant;
+            rtd_Msg_Tx_CAN1->/*@>24787b*/Buffer_6/*@>2037c9*/ = /*@>246a16*/localB->/*@>2478d5*/Constant;
+            rtd_Msg_Tx_CAN1->/*@>24787e*/Buffer_7/*@>2037cc*/ = /*@>246a24*/localB->/*@>2478db*/Constant;
+            rtd_Msg_Tx_CAN1->/*@>247881*/Buffer_8/*@>2037cf*/ = /*@>246a32*/localB->/*@>2478e1*/Constant;
+            /* {S!d9620}DataStoreWrite: '<S148>/Data Store Write8' */
+            *rtd_TxID_CAN1/*@>2037d1*/ = /*@>246a6f*/localC->/*@>2478f0*/Cast;
+        }
+        /* {E!d9591}End of Outputs for SubSystem: '<S145>/TX buffer update CAN1' */
+
+        /* {S!d9622}RelationalOperator: '<S145>/Equal7' incorporates:
+ *  Constant: '<S145>/Constant11'
+ *  Constant: '<S145>/Constant22'
+ *  Constant: '<S145>/Constant24'
+ *  Constant: '<S145>/Constant27'
+ *  Constant: '<S145>/Constant8'
+ *  Math: '<S145>/Mod'
+ *  Math: '<S145>/Mod1'
+ *  RelationalOperator: '<S145>/Equal4'
+ *  Sum: '<S145>/Minus'
+ *  Sum: '<S145>/Minus1'
+ */
+%<SLibCG_DumpSSCode("/*@[24741c*/",SLibCG_SetBOV(409, 0, 132, 1, "", -1, "", 0, "(%<SLibCG_DumpSSCode("/*@[247a03*/",(SLibCGCallSubFcn("rt_modd", ["/*@>247a36*/(real_T)*/*@<247a37*/rtd_Local_Ticks/*@>247a35*/ - /*@>247a39*/rtu_Time_Mark", "%<SLibCG_DumpSSCode("/*@[247a43*/",(SLibCGIR_PV(11, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>", "/*@>247a57*/%<::tSimStruct>"], 11, 1, 2)),"/*@]*/")>/*@>247a02*/ == %<SLibCG_DumpSSCode("/*@[247a1f*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>)"),"/*@]*/")>\
+    } else {
+        /*@>203698*/if (%<SLibCG_DumpSSCode("/*@[2471b3*/",(SLibCG_DWV(229, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d9624}Disable for Outport: '<S145>/Send CAN1' */
+%<SLibCG_DumpSSCode("/*@[247460*/",SLibCG_SetBOV(409, 0, 132, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[247a6b*/",(SLibCGIR_PV(78, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[24734e*/",SLibCG_SetDWV(229, 0, 132, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+    }
+    /* {E!d9626}End of Logic: '<S143>/AND' */
+    /* {E!d9590}End of Outputs for SubSystem: '<S143>/Check msg transmission CAN1' */
+
+    /* {S!d9598}Outputs for Enabled SubSystem: '<S143>/Check msg transmission CAN2' incorporates:
+ *  EnablePort: '<S146>/Enable'
+ */
+    /* {S!d9640}Logic: '<S143>/AND1' incorporates:
+ *  Constant: '<S143>/Constant7'
+ *  Constant: '<S146>/Constant22'
+ *  Constant: '<S146>/Constant24'
+ *  Constant: '<S146>/Constant8'
+ *  Math: '<S146>/Mod'
+ *  RelationalOperator: '<S143>/GreaterThan3'
+ *  RelationalOperator: '<S146>/Equal4'
+ *  Sum: '<S146>/Minus'
+ */
+    /*@>20369c*/if (/*@>245b08*/rtb_Equal2_km/*@>2448ad*/ && (*/*@<247757*/rtd_Tx_msg_count_CAN2/*@>244962*/ <= %<SLibCG_DumpSSCode("/*@[2471d4*/",(SLibCG_SE(SLibCGIR_PV(23, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>)) {
+        /*@>20369f*/if (!/*@<20369e*/%<SLibCG_DumpSSCode("/*@[2471f6*/",(SLibCG_SE(SLibCG_DWV(228, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>) {
+%<SLibCG_DumpSSCode("/*@[247371*/",SLibCG_SetDWV(228, 0, 132, 1, "", -1, "", 0, "true"),"/*@]*/")>\
+        }
+        /* {S!d9599}Outputs for Enabled SubSystem: '<S146>/TX buffer update CAN2' incorporates:
+ *  EnablePort: '<S154>/Enable'
+ */
+        /*@>20375e*/if (%<SLibCG_DumpSSCode("/*@[247601*/",(SLibCGCallSubFcn("rt_modd", ["(/*@>247aa7*/(real_T)*/*@<247aa8*/rtd_Local_Ticks/*@>247aa6*/ + %<SLibCG_DumpSSCode("/*@[247aaa*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>)/*@>247aa5*/ - /*@>247ab7*/rtu_Time_Mark", "%<SLibCG_DumpSSCode("/*@[247ac1*/",(SLibCGIR_PV(12, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>", "/*@>247ad5*/%<::tSimStruct>"], 11, 1, 1)),"/*@]*/")>/*@>2448bd*/ == %<SLibCG_DumpSSCode("/*@[24729f*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>) {
+            /* {S!d9628}DataTypeConversion: '<S154>/Cast18' */
+            /*@>245aa5*/rtb_Cast18_p/*@>20381d*/ = */*@<24774c*/rtd_basic_cycle_count;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[97], "Output",1)
+            /* {S!d9600}Outputs for Atomic SubSystem: '<S155>/Bit Shift1' */
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,0)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift1",97,2)
+%<SLibCG_AccessArg(11 ,1, 3)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[247109*/",SLibCGIRGenReusableSysCall("BitShift1", ["/*@>247afa*/%<::tSimStruct>", "/*@>247b04*/rtb_Cast18_p", "&/*@>247b10*/localB->/*@>247b0f*/BitShift1_k"], 97, 13, 7, 1, 7, 132),"/*@]*/")>\
+
+
+            /* {E!d9600}End of Outputs for SubSystem: '<S155>/Bit Shift1' */
+
+%endif
+            /* {S!d9630}DataTypeConversion: '<S154>/Cast9' */
+            /*@>245aa9*/rtb_Cast9_i/*@>203824*/ = /*@>245bdc*/(uint8_T)*/*@<24774d*/rtd_Tx_msg_count_CAN2;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[92], "Output",1)
+            /* {S!d9602}Outputs for Atomic SubSystem: '<S155>/Bit Shift' */
+%if SLibCG_SystemFcnArgAccessed("BitShift4",92,0)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("BitShift4",92,2)
+%<SLibCG_AccessArg(11 ,1, 3)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[24710b*/",SLibCGIRGenReusableSysCall("BitShift4", ["/*@>247b36*/%<::tSimStruct>", "/*@>247b40*/rtb_Cast9_i", "&/*@>247b4c*/localB->/*@>247b4b*/BitShift_n"], 92, 4, 7, 1, 7, 132),"/*@]*/")>\
+
+
+            /* {E!d9602}End of Outputs for SubSystem: '<S155>/Bit Shift' */
+
+%endif
+            /* {S!d9632}DataStoreWrite: '<S154>/Data Store Write4' incorporates:
+ *  DataTypeConversion: '<S154>/Cast17'
+ *  Sum: '<S155>/Minus'
+ */
+            rtd_Msg_Tx_CAN2->/*@>247884*/Buffer_1/*@>203834*/ = /*@>245bc1*/(uint8_T)(/*@>245d8c*/(uint32_T)/*@>245bce*/(uint8_T)(/*@>245d89*/(uint32_T)/*@>2469f5*/localB->/*@>2478c6*/BitShift1_k./*@>2478c3*/y/*@>245bca*/ + /*@>246a01*/localB->/*@>2478cc*/BitShift_n./*@>2478c9*/y)/*@>245bbd*/ + /*@>246206*/(uint8_T)*/*@<24776f*/rtd_Board_ID);
+            rtd_Msg_Tx_CAN2->/*@>247887*/Buffer_2/*@>203837*/ = /*@>246a0f*/localB->/*@>2478d2*/DataStoreRead;
+            rtd_Msg_Tx_CAN2->/*@>24788a*/Buffer_3/*@>20383a*/ = /*@>246a1d*/localB->/*@>2478d8*/Constant;
+            rtd_Msg_Tx_CAN2->/*@>24788d*/Buffer_4/*@>20383d*/ = /*@>246a2b*/localB->/*@>2478de*/Constant;
+            rtd_Msg_Tx_CAN2->/*@>247890*/Buffer_5/*@>203840*/ = /*@>246a39*/localB->/*@>2478e4*/Constant;
+            rtd_Msg_Tx_CAN2->/*@>247893*/Buffer_6/*@>203843*/ = /*@>246a40*/localB->/*@>2478e7*/Constant;
+            rtd_Msg_Tx_CAN2->/*@>247896*/Buffer_7/*@>203846*/ = /*@>246a47*/localB->/*@>2478ea*/Constant;
+            rtd_Msg_Tx_CAN2->/*@>247899*/Buffer_8/*@>203849*/ = /*@>246a4e*/localB->/*@>2478ed*/Constant;
+            /* {S!d9634}DataStoreWrite: '<S154>/Data Store Write5' */
+            *rtd_TxID_CAN2/*@>20384b*/ = /*@>246a76*/localC->/*@>2478f3*/Cast8;
+        }
+        /* {E!d9599}End of Outputs for SubSystem: '<S146>/TX buffer update CAN2' */
+
+        /* {S!d9636}RelationalOperator: '<S146>/Equal7' incorporates:
+ *  Constant: '<S146>/Constant11'
+ *  Constant: '<S146>/Constant22'
+ *  Constant: '<S146>/Constant24'
+ *  Constant: '<S146>/Constant27'
+ *  Constant: '<S146>/Constant8'
+ *  Math: '<S146>/Mod'
+ *  Math: '<S146>/Mod1'
+ *  RelationalOperator: '<S146>/Equal4'
+ *  Sum: '<S146>/Minus'
+ *  Sum: '<S146>/Minus1'
+ */
+%<SLibCG_DumpSSCode("/*@[2474c6*/",SLibCG_SetBOV(408, 0, 132, 1, "", -1, "", 0, "(%<SLibCG_DumpSSCode("/*@[247b62*/",(SLibCGCallSubFcn("rt_modd", ["/*@>247b95*/(real_T)*/*@<247b96*/rtd_Local_Ticks/*@>247b94*/ - /*@>247b98*/rtu_Time_Mark", "%<SLibCG_DumpSSCode("/*@[247ba2*/",(SLibCGIR_PV(12, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>", "/*@>247bb6*/%<::tSimStruct>"], 11, 1, 3)),"/*@]*/")>/*@>247b61*/ == %<SLibCG_DumpSSCode("/*@[247b7e*/",(SLibCG_SE(SLibCGIR_PV(3, 0, 132, 1, "", -1, "", 0))),"/*@]*/")>)"),"/*@]*/")>\
+    } else {
+        /*@>2036a4*/if (%<SLibCG_DumpSSCode("/*@[247218*/",(SLibCG_DWV(228, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>) {
+            /* {S!d9638}Disable for Outport: '<S146>/Send CAN2' */
+%<SLibCG_DumpSSCode("/*@[24750a*/",SLibCG_SetBOV(408, 0, 132, 1, "", -1, "", 0, "%<SLibCG_DumpSSCode("/*@[247bca*/",(SLibCGIR_PV(78, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>"),"/*@]*/")>\
+%<SLibCG_DumpSSCode("/*@[247394*/",SLibCG_SetDWV(228, 0, 132, 1, "", -1, "", 0, "false"),"/*@]*/")>\
+        }
+    }
+    /* {E!d9640}End of Logic: '<S143>/AND1' */
+    /* {E!d9598}End of Outputs for SubSystem: '<S143>/Check msg transmission CAN2' */
+} else {
+    /*@>1fb022*/if (%<SLibCG_DumpSSCode("/*@[24714e*/",(SLibCG_DWV(227, 0, 132, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[132], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,0)
+%<SLibCG_AccessArg(11 ,1, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,1)
+%<SLibCG_AccessArg(11 ,1, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Transmissionsubtasks_Disable",132,2)
+%<SLibCG_AccessArg(11 ,1, 5)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[247107*/",SLibCGIRGenReusableSysCall("Transmissionsubtasks_Disable", ["/*@>247c09*/%<::tSimStruct>", "/*@>247c13*/localB", "/*@>247c1d*/localDW"], 132, 0, 15, 1, 7, 132),"/*@]*/")>\
+
+%endif
+    }
+}
+/* {E!d9587}End of Outputs for SubSystem: '<S93>/Transmission subtasks' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[11].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(11, 1, 0)>
+%endif
+%if SLibCG_ArgAccessed(11, 1, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(11, 1, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Transmissionsubtasks(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(11, 1, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>boolean_T rtu_Enable\
+%assign comma = ", "
+%<comma>real_T rtu_Time_Mark\
+%assign comma = ", "
+%<comma>rtB_Transmissionsubtasks *localB\
+%assign comma = ", "
+%<comma>const rtC_Transmissionsubtasks *localC\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(11, 1, 5)
+%<comma>rtDW_Transmissionsubtasks *localDW\
+%assign comma = ", "
+%endif
+%<comma>real_T *rtd_Board_ID\
+%assign comma = ", "
+%<comma>uint16_T *rtd_Local_Ticks\
+%assign comma = ", "
+%<comma>msg_buffer_type *rtd_Msg_Tx_CAN1\
+%assign comma = ", "
+%<comma>msg_buffer_type *rtd_Msg_Tx_CAN2\
+%assign comma = ", "
+%<comma>uint8_T *rtd_Own_Vote\
+%assign comma = ", "
+%<comma>uint32_T *rtd_TxID_CAN1\
+%assign comma = ", "
+%<comma>uint32_T *rtd_TxID_CAN2\
+%assign comma = ", "
+%<comma>real_T *rtd_Tx_msg_count_CAN1\
+%assign comma = ", "
+%<comma>real_T *rtd_Tx_msg_count_CAN2\
+%assign comma = ", "
+%<comma>uint8_T *rtd_basic_cycle_count\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(11, 1, fcnProtoType)>
+%endfunction

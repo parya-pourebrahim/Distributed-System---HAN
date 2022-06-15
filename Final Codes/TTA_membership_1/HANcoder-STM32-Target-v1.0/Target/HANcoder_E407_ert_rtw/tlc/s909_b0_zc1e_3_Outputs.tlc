@@ -1,0 +1,102 @@
+%implements s909_b0_zc1e_3_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcOutputsFcnOfS68B3 = OpaqueTLCBlockFcn("Outputs", 68, 3, 3, 1)
+%assign tlcOutputsFcnOfS68B4 = OpaqueTLCBlockFcn("Outputs", 68, 4, 3, 1)
+%assign tlcUpdateFcnOfS68B3 = OpaqueTLCBlockFcn("Update", 68, 3, 3, 1)
+/* DataStoreWrite: '<S22>/Data Store Write2' incorporates:
+ *  Constant: '<S22>/Constant8'
+ *  Sum: '<S22>/Plus'
+ */
+*rtd_Tx_msg_count_CAN2/*@>239420*/ += %<SLibCG_DumpSSCode("/*@[238bf6*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 68, 1, "", -1, "", 0))),"/*@]*/")>;
+/* DataStoreWrite: '<S22>/Data Store Write1' incorporates:
+ *  Constant: '<S22>/Constant'
+ */
+*rtd_Toggle_Pin_A0/*@>202bbe*/ = %<SLibCG_DumpSSCode("/*@[238c18*/",(SLibCG_SE(SLibCGIR_PV(79, 0, 68, 1, "", -1, "", 0))),"/*@]*/")>;
+/* Sum: '<S22>/Sum1' incorporates:
+ *  Constant: '<S22>/Constant3'
+ *  DataStoreRead: '<S22>/Data Store Read'
+ */
+/*@>238371*/TxCAN2_counter_s/*@>210fed*/ = %<SLibCG_DumpSSCode("/*@[238c3a*/",(SLibCG_SE(SLibCGIR_PV(73, 0, 68, 1, "", -1, "", 0))),"/*@]*/")>/*@>210fea*/ + /*@>2389de*/localDW->/*@>2394d4*/fcn_call_counter;
+/* DataStoreWrite: '<S22>/Data Store Write' */
+/*@>2389e5*/localDW->/*@>2394d7*/fcn_call_counter/*@>202bc7*/ = /*@>2382f9*/TxCAN2_counter_s;
+%if !WHITE_SPACE(tlcOutputsFcnOfS68B3)
+/* M-S-Function: '<S888>/S-Function' */
+%<SLibCG_DumpSSCode("/*@[238bc9*/",tlcOutputsFcnOfS68B3,"/*@]*/")>\
+%endif
+/* DataTypeConversion: '<S22>/Cast To Double' */
+/*@>238322*/Tx_temporal_msg_CAN2/*@>202bcd*/ = rtd_Msg_Tx_CAN2->Buffer_1;
+/* DataStoreRead: '<S22>/Data Store Read3' */
+/*@>238326*/TxID_CAN2_s/*@>202bcf*/ = */*@<239427*/rtd_TxID_CAN2;
+/* DataTypeConversion: '<S22>/Data Type Conversion' */
+/*@>2388e0*/localB->/*@>2394b9*/DataTypeConversion/*@>202bd2*/ = rtd_Msg_Tx_CAN2->Buffer_1;
+/* DataTypeConversion: '<S22>/Data Type Conversion1' */
+/*@>2388e7*/localB->/*@>2394bc*/DataTypeConversion1/*@>202bd5*/ = /*@>23832a*/TxID_CAN2_s;
+/* DataTypeConversion: '<S22>/Data Type Conversion10' */
+/*@>2388ee*/localB->/*@>2394bf*/DataTypeConversion10/*@>202bd8*/ = rtd_Msg_Tx_CAN2->Buffer_8;
+/* DataTypeConversion: '<S22>/Data Type Conversion4' */
+/*@>2388f5*/localB->/*@>2394c2*/DataTypeConversion4/*@>202bdb*/ = rtd_Msg_Tx_CAN2->Buffer_2;
+/* DataTypeConversion: '<S22>/Data Type Conversion5' */
+/*@>2388fc*/localB->/*@>2394c5*/DataTypeConversion5/*@>202bde*/ = rtd_Msg_Tx_CAN2->Buffer_3;
+/* DataTypeConversion: '<S22>/Data Type Conversion6' */
+/*@>238903*/localB->/*@>2394c8*/DataTypeConversion6/*@>202be1*/ = rtd_Msg_Tx_CAN2->Buffer_4;
+/* DataTypeConversion: '<S22>/Data Type Conversion7' */
+/*@>23890a*/localB->/*@>2394cb*/DataTypeConversion7/*@>202be4*/ = rtd_Msg_Tx_CAN2->Buffer_5;
+/* DataTypeConversion: '<S22>/Data Type Conversion8' */
+/*@>238911*/localB->/*@>2394ce*/DataTypeConversion8/*@>202be7*/ = rtd_Msg_Tx_CAN2->Buffer_6;
+/* DataTypeConversion: '<S22>/Data Type Conversion9' */
+/*@>238918*/localB->/*@>2394d1*/DataTypeConversion9/*@>202bea*/ = rtd_Msg_Tx_CAN2->Buffer_7;
+/* DataStoreRead: '<S22>/Data Store Read1' */
+/*@>23833e*/Local_Ticks_Activation_CAN2_send/*@>202bec*/ = */*@<239433*/rtd_Local_Ticks;
+%if !WHITE_SPACE(tlcOutputsFcnOfS68B4)
+/* M-S-Function: '<S889>/Level-2 M-file S-Function' */
+%<SLibCG_DumpSSCode("/*@[238bcb*/",tlcOutputsFcnOfS68B4,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS68B3)
+/* Update for M-S-Function: '<S888>/S-Function' */
+%<SLibCG_DumpSSCode("/*@[238bd5*/",tlcUpdateFcnOfS68B3,"/*@]*/")>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[3].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(3, 1, 0)>
+%endif
+%if SLibCG_ArgAccessed(3, 1, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(3, 1, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CAN2Send(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(3, 1, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>rtB_CAN2Send *localB\
+%assign comma = ", "
+%<comma>rtDW_CAN2Send *localDW\
+%assign comma = ", "
+%<comma>uint16_T *rtd_Local_Ticks\
+%assign comma = ", "
+%<comma>msg_buffer_type *rtd_Msg_Tx_CAN2\
+%assign comma = ", "
+%<comma>boolean_T *rtd_Toggle_Pin_A0\
+%assign comma = ", "
+%<comma>uint32_T *rtd_TxID_CAN2\
+%assign comma = ", "
+%<comma>real_T *rtd_Tx_msg_count_CAN2\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(3, 1, fcnProtoType)>
+%endfunction

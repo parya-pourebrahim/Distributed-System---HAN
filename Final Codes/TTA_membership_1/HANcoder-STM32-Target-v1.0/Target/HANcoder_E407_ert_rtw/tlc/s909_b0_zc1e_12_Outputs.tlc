@@ -1,0 +1,53 @@
+%implements s909_b0_zc1e_12_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* {S!d9653}Outputs for Enabled SubSystem: '<S100>/Reset Tx msg counter' incorporates:
+ *  EnablePort: '<S206>/Enable'
+ */
+/*@>1fb09c*/if (/*@>247f1f*/rtu_Enable) {
+    /* {S!d9656}DataStoreWrite: '<S206>/Data Store Write2' incorporates:
+ *  Constant: '<S206>/Constant1'
+ */
+    *rtd_Tx_msg_count_CAN2/*@>2038d3*/ = %<SLibCG_DumpSSCode("/*@[247f8c*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 181, 1, "", -1, "", 0))),"/*@]*/")>;
+    /* {S!d9658}DataStoreWrite: '<S206>/Data Store Write1' incorporates:
+ *  Constant: '<S206>/Constant6'
+ */
+    *rtd_Tx_msg_count_CAN1/*@>2038d5*/ = %<SLibCG_DumpSSCode("/*@[247fae*/",(SLibCG_SE(SLibCGIR_PV(2, 0, 181, 1, "", -1, "", 0))),"/*@]*/")>;
+}
+/* {E!d9653}End of Outputs for SubSystem: '<S100>/Reset Tx msg counter' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[12].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(12, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(12, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(12, 0, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ResetTxmsgcounter(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(12, 0, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>boolean_T rtu_Enable\
+%assign comma = ", "
+%<comma>real_T *rtd_Tx_msg_count_CAN1\
+%assign comma = ", "
+%<comma>real_T *rtd_Tx_msg_count_CAN2\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(12, 0, fcnProtoType)>
+%endfunction

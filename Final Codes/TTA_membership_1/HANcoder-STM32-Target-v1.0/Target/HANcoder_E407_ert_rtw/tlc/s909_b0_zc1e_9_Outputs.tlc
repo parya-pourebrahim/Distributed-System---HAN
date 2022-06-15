@@ -1,0 +1,136 @@
+%implements s909_b0_zc1e_9_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+boolean_T rtb_Equal2_dx;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+/* {S!d9329}Outputs for Enabled SubSystem: '<S92>/Reception substasks' incorporates:
+ *  EnablePort: '<S109>/Enable'
+ */
+/*@>1faec1*/if (/*@>23b75a*/rtu_Enable) {
+    /*@>1faec5*/if (!/*@<1faec4*/%<SLibCG_DumpSSCode("/*@[23ba55*/",(SLibCG_SE(SLibCG_DWV(235, 0, 109, 1, "", -1, "", 0))),"/*@]*/")>) {
+%<SLibCG_DumpSSCode("/*@[23ba9b*/",SLibCG_SetDWV(235, 0, 109, 1, "", -1, "", 0, "true"),"/*@]*/")>\
+    }
+    /* {S!d9330}Outputs for Enabled SubSystem: '<S109>/RX buffers update' incorporates:
+ *  EnablePort: '<S111>/Enable'
+ */
+    /* {S!d9350}RelationalOperator: '<S109>/Equal16' */
+    /*@>202e66*/if (*/*@<23bbd9*/rtd_Local_Ticks/*@>23b3fe*/ == /*@>23b75f*/rtu_Time_Mark) {
+        /* {S!d9334}DataStoreWrite: '<S111>/Data Store Write11' */
+        *rtd_RxID_CAN2/*@>202eaf*/ = /*@>23b7ec*/localC->/*@>23bc1f*/Cast13;
+        /* {S!d9336}DataStoreWrite: '<S111>/Data Store Write6' */
+        *rtd_RxID_CAN1/*@>202eb1*/ = /*@>23b7f3*/localC->/*@>23bc22*/Cast3;
+        /* {S!d9338}DataStoreWrite: '<S111>/Data Store Write9' */
+        *rtd_New_Msg_Ready_CAN2/*@>202eb3*/ = %<SLibCG_DumpSSCode("/*@[23baff*/",(SLibCG_SE(SLibCG_CBOV(297, 0, 109, 1, "", -1, "", 0))),"/*@]*/")>;
+        /* {S!d9340}DataStoreWrite: '<S111>/Data Store Write12' */
+        *rtd_Rx_State_CAN2/*@>202eb5*/ = /*@>23b806*/localC->/*@>23bc25*/Cast15;
+        /* {S!d9342}DataStoreWrite: '<S111>/Data Store Write2' */
+        *rtd_New_Msg_Ready_CAN1/*@>202eb7*/ = %<SLibCG_DumpSSCode("/*@[23bb21*/",(SLibCG_SE(SLibCG_CBOV(298, 0, 109, 1, "", -1, "", 0))),"/*@]*/")>;
+        /* {S!d9344}DataStoreWrite: '<S111>/Data Store Write7' */
+        *rtd_Rx_State_CAN1/*@>202eb9*/ = /*@>23b819*/localC->/*@>23bc28*/Cast6;
+        /* {S!d9346}DataStoreWrite: '<S111>/Data Store Write' incorporates:
+ *  Constant: '<S111>/RESET_Msg_Rx'
+ */
+        *rtd_Msg_Rx_d/*@>202ebb*/ = %<SLibCG_DumpSSCode("/*@[23bb43*/",(SLibCG_SE(SLibCGIR_PV(68, 0, 109, 1, "", -1, "", 0))),"/*@]*/")>;
+        /* {S!d9348}DataStoreWrite: '<S111>/Data Store Write3' incorporates:
+ *  Constant: '<S111>/RESET_new_msg_Rx'
+ */
+        *rtd_new_msg_Rx_l/*@>202ebd*/ = %<SLibCG_DumpSSCode("/*@[23bb65*/",(SLibCG_SE(SLibCGIR_PV(78, 0, 109, 1, "", -1, "", 0))),"/*@]*/")>;
+    }
+    /* {E!d9350}End of RelationalOperator: '<S109>/Equal16' */
+    /* {E!d9330}End of Outputs for SubSystem: '<S109>/RX buffers update' */
+
+    /* {S!d9352}RelationalOperator: '<S109>/Equal2' */
+    /*@>23b39c*/rtb_Equal2_dx/*@>202e6c*/ = (*/*@<23bbc9*/rtd_Local_Ticks/*@>23b3e4*/ > /*@>23b767*/rtu_Time_Mark);
+    /* {S!d9354}Logic: '<S109>/AND' incorporates:
+ *  Logic: '<S109>/NOT'
+ */
+%<SLibCG_DumpSSCode("/*@[23babd*/",SLibCG_SetBOV(433, 0, 109, 1, "", -1, "", 0, "(/*@>23bc63*/rtb_Equal2_dx/*@>23bc62*/ && (!/*@<23bc64*/*/*@<23bc65*/rtd_New_Msg_Ready_CAN1))"),"/*@]*/")>\
+    /* {S!d9356}Logic: '<S109>/AND1' incorporates:
+ *  Logic: '<S109>/NOT1'
+ */
+%<SLibCG_DumpSSCode("/*@[23badf*/",SLibCG_SetBOV(434, 0, 109, 1, "", -1, "", 0, "(/*@>23bc7b*/rtb_Equal2_dx/*@>23bc7a*/ && (!/*@<23bc7c*/*/*@<23bc7d*/rtd_New_Msg_Ready_CAN2))"),"/*@]*/")>\
+} else {
+    /*@>1faeea*/if (%<SLibCG_DumpSSCode("/*@[23ba77*/",(SLibCG_DWV(235, 0, 109, 1, "", -1, "", 0)),"/*@]*/")>) {
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[109], "Disable",1)
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,0)
+%<SLibCG_AccessArg(9 ,0, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,1)
+%<SLibCG_AccessArg(9 ,0, 3)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("Receptionsubstasks_Disable",109,2)
+%<SLibCG_AccessArg(9 ,0, 5)>
+%endif
+
+%<SLibCG_DumpSSCode("/*@[23ba34*/",SLibCGIRGenReusableSysCall("Receptionsubstasks_Disable", ["/*@>23bca0*/%<::tSimStruct>", "/*@>23bcaa*/localB", "/*@>23bcb4*/localDW"], 109, 0, 15, 1, 7, 109),"/*@]*/")>\
+
+%endif
+    }
+}
+/* {E!d9329}End of Outputs for SubSystem: '<S92>/Reception substasks' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[9].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(9, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(9, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(9, 0, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Receptionsubstasks(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(9, 0, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>boolean_T rtu_Enable\
+%assign comma = ", "
+%<comma>real_T rtu_Time_Mark\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(9, 0, 3)
+%<comma>rtB_Receptionsubstasks *localB\
+%assign comma = ", "
+%endif
+%<comma>const rtC_Receptionsubstasks *localC\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(9, 0, 5)
+%<comma>rtDW_Receptionsubstasks *localDW\
+%assign comma = ", "
+%endif
+%<comma>uint16_T *rtd_Local_Ticks\
+%assign comma = ", "
+%<comma>msg_buffer_type *rtd_Msg_Rx_d\
+%assign comma = ", "
+%<comma>boolean_T *rtd_New_Msg_Ready_CAN1\
+%assign comma = ", "
+%<comma>boolean_T *rtd_New_Msg_Ready_CAN2\
+%assign comma = ", "
+%<comma>uint32_T *rtd_RxID_CAN1\
+%assign comma = ", "
+%<comma>uint32_T *rtd_RxID_CAN2\
+%assign comma = ", "
+%<comma>uint8_T *rtd_Rx_State_CAN1\
+%assign comma = ", "
+%<comma>uint8_T *rtd_Rx_State_CAN2\
+%assign comma = ", "
+%<comma>boolean_T *rtd_new_msg_Rx_l\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(9, 0, fcnProtoType)>
+%endfunction

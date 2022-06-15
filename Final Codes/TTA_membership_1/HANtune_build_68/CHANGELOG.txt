@@ -1,0 +1,382 @@
+Copyright (c) 2020 [HAN University of Applied Sciences]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING 
+BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+*************** HANtune build 68 - Change Log (15-07-2021) ***************
+
+- Logfile Reader - The Logfile reader is now able to read and play a log while writing to it
+- Fixed a bug where XCP over USB was no longer working due to a Windows 10 update
+
+*************** HANtune build 68 - Known Issues (15-07-2021) ***************
+
+- Making HANtune fullscreen (with the F11 key) causes HANtune to lose connection
+
+
+*************** HANtune build 1280 (Logfile Reader) Release Change Log (22-10-2019) ***************
+
+- Logfile Reader - New functionality to read back log files
+- Fullscreen functionality - Maximize a layout tab to fullscreen by pressing f11
+- MATLAB interface scripting examples - Interface HANtune with MATLAB
+- Fixed a bug where calibrations could not be exported to a DCM file
+- Fixed a bug where the GaugeViewer would be drawn on top of other components in HANtune
+
+
+*************** HANtune build 1265 (Table Editor) Release Change Log (27-06-2019) ***************
+
+This update contains various improvements for the Table Editor
+
+- The ability to select and edit multiple cells at once
+- The ability to color code cells based on their value
+- A working point to show where a value is currently in the table
+- Several bugfixes and small improvements
+
+
+*************** HANtune build 1239 (Image Manipulator) Release Change Log (15-03-2019) ***************
+
+- Image Manipulator - A new type of viewer with which you can manipulate images (i.e. rotate, move, scale and transparentize) based on the value of a signal
+- The ability to send and receive raw CAN messages via Python scripting
+
+
+*************** HANtune build 1216 (Intel HEX) Release Change Log (20-02-2019) ***************
+
+- Intel HEX based calibration and flashing support
+- Several bugfixes and small improvements
+
+Note: From now on, more frequent builds will be published. These can be identified using the build number as well as a related name that we will add for ease of identification.
+
+
+*************** HANtune 2.2 Release Change Log (17-07-2018) ***************
+
+- Python scripting
+
+
+*************** HANtune 2.1 Release Change Log (06-07-2018) ***************
+
+HANtune 2.1 offers several new features and improvements over 2.0:
+
+- Service tool mode
+- Improved calibration management
+- Faster loading of Asap2 files
+- A list of 'Recent Projects' has been added to the file menu
+- Several bugfixes and small improvements
+
+For a detailed overview see the change logs of the 2.1 alpha and beta builds.
+
+************** HANtune 2.1 Release Known issues **************
+
+1. HANcoder models running 10kHz in combination with an active HANtune connection is known to possibly cause unstable behavior.
+2. Old HANtune window frames can return under special circumstances.
+3. When a DBC file is present in the project, it now always loads upon loading the HANtune project regardless if it was loaded before or not.
+4. In service-tool mode there is no way to find out or change the location to where the data logfile is written. (Workaround: start HANtune in normal mode, change log location, close project, load service-tool project)
+5. The GaugeViewer can leave a visual mark behind outside the layout boundaries.
+6. Images in the ImageMarkupWindow use absolute paths instead of relative paths, which causes some project portability issues.
+7. Clicking "Open project" while connected will first disconnect and then ask for confirmation to proceed
+8. Export to SCREC functionality could process table data and negative number incorrectly.
+9. Overflow in timestamp of CAN messages resulting in negative timestamps in the logfile and causing the ScopeViewer to stall.
+
+
+*************** HANtune 2.1 Beta (build 1133) Change Log (27-06-2018) ***************
+
+1. Fixed a bug where the MultiEditor would sometimes not send its value
+2. General tooltip improvements in the Project side panel
+3. The path to a HANtune project is now shown in a tooltip when mousing over it in the Project side panel
+
+************** HANtune 2.1 Beta (build 1133) Known issues **************
+
+1. HANcoder models running 10kHz in combination with an active HANtune connection is known to possibly cause unstable behavior.
+2. Old HANtune window frames can return under special circumstances.
+3. When a DBC file is present in the project, it now always loads upon loading the HANtune project regardless if it was loaded before or not.
+4. In service-tool mode there is no way to find out or change the location to where the data logfile is written. (Workaround: start HANtune in normal mode, change log location, close project, load service-tool project)
+5. The GaugeViewer can leave a visual mark behind outside the layout boundaries.
+6. Images in the ImageMarkupWindow use absolute paths instead of relative paths, which causes some project portability issues.
+7. Clicking "Open project" while connected will first disconnect and then ask for confirmation to proceed
+8. Export to SCREC functionality could process table data and negative number incorrectly.
+
+
+*************** HANtune 2.1 Beta Change Log ***************
+
+The changes mostly consist of bugfixes.
+
+1. A "Recent Projects" list has been added to the "File" menu
+2. Using the Delete key now works properly to delete the selected Viewer or Editor
+3. Fixed the unexpected behavior when resizing a viewer or editor while an other viewer or editor has been selected
+4. The ScopeViewer now remains functional after reconnecting or switching communication protocols
+5. Because of unstable behavior the usage of slave timestamps in XCP on Ethernet has been disabled
+6. Missing data in the logfile is not filled with N/A anymore to decrease the logfile size.
+
+************** HANtune 2.1 Beta Known issues **************
+
+This is a summary of the known issues which are not yet fixed in the 2.1 Beta release:
+
+1. HANcoder models running 10kHz in combination with an active HANtune connection is known to possibly cause unstable behavior.
+2. Old HANtune window frames can return under special circumstances.
+3. When a DBC file is present in the project, it now always loads upon loading the HANtune project regardless if it was loaded before or not.
+4. In service-tool mode there is no way to find out or change the location to where the data logfile is written. (Workaround: start HANtune in normal mode, change log location, close project, load service-tool project)
+5. The GaugeViewer can leave a visual mark behind outside the layout boundaries.
+6. Images in the ImageMarkupWindow use absolute paths instead of relative paths, which causes some project portability issues.
+7. Clicking "Open project" while connected will first disconnect and then ask for confirmation to proceed
+8. Export to SCREC functionality could process table data and negative number incorrectly.
+
+*************** HANtune 2.1 Alpha Change Log ***************
+
+In HANtune 2.1 the following features have been added:
+1. Service Tool mode, which means HANtune is able to export to an encrypten .shml format of which the entire project is "locked". 
+   The end-user can use HANtune in service-tool mode to connect and calibrate only those parameters which are visible on screen.
+2. Loading large .a2l files take significantly less time now (under four seconds now opposed to ~2 minutes)
+3. Enhanced Calibration Management: The management of calibrations is now more intuitive because a "working parameter set" is used 
+   to reflect the current set of parameters. Also more convenient names are used for the calibration features.
+4. "Resize and Move mode" now toggles on a short-tap on the Ctrl key.
+5. Usability enhancements, such as: "add tab" is used for the tab context menu, "resize and move mode" has been moved to the right-mouse 
+   click context menu of empty tab space, viewers and editors, and much more.
+6. DBC file usage has been further improved with more checks and bug-fixes.
+7. Datalogging with CAN-only is possible now. It also works alongside an XCP on CAN connection.
+8. HANtune now warns the user when the XCP on CAN's transmission and reception ID's are used in one of the loaded CAN DBC files to prevent possible conflicts on the CAN bus.
+
+*************** HANtune 2.1 Alpha Known issues ***************
+
+This is a summary of the known issues which are not yet fixed in the 2.1 Alpha release:
+1. HANcoder models running 10kHz in combination with an active HANtune connection is known to possibly cause unstable behavior.
+2. Old HANtune window frames can return under special circumstances.
+3. When a DBC file is present in the project, it now always loads upon loading the HANtune project regardless if it was loaded before or not.
+4. In service-tool mode there is no way to find out or change the location to where the data logfile is written. (Workaround: start HANtune in normal mode, change log location, close project, load service-tool project)
+5. The GaugeViewer can leave a visual mark behind outside the layout boundaries.
+6. Resizing a window while another window is selected may result in the selected window to move along.
+7. Images in the ImageMarkupWindow use absolute paths instead of relative paths, which causes some project portability issues.
+8. Clicking "Open project" while connected will first disconnect and then ask for confirmation to proceed
+
+
+*************** HANtune 2.0 Release Change Log ***************
+
+Opposed to the 1.1 release some significant new features have been added. 
+DBC file support has been added to enable HANtune to be used as a generic CAN-dashboard.
+Also the GUI has been thoroughly revised to enhance the look and feel of HANtune.
+No additional features are added after the 2.0 beta release.
+For full list of changes, please refer to the 2.0 Alpha and 2.0 Beta change logs.
+
+*************** HANtune 2.0 Release Known issues ***************
+
+1.  Loading large .a2l file could take a while (10mb file ~2 min)
+2.  At the ASAP2 Elements side tab, right mouse clicking a signal will show the context menu which only contains the Multiviewers. Thereafter it works like it should.
+3.  When using XCP on CAN in combination with other nodes on the bus (e.g. also communicating using a DBC file) there's currently no safeguard to warn for overlapping CAN-ID's between the DBC file and XCP's transmission and reception ID.
+4.  Importing an existing project into the current project leads to problems when they contain similarly named files
+5.  ButtonEditor and RadioButtonEditor: large numbers can push window elements out of sight
+6.  Clicking "Open project" while connected will first disconnect and then ask for confirmation to proceed
+7.  After loading a project the (first time) right mouse button context menu of the ASAP2 tree only shows the uption of the multi-editor and multi-viewers
+8.  ScopeViewer: adding a new signal disables the auto-scale function
+9.  HANtune allows the use of double datatype in signals and parameters on CAN in newly defined DAQlists, causing the connection to be terminated (double doesn't fit into an XCP on CAN message)
+10. Bar Viewer: modify display range, the upper limit can't be modified using the arrow buttons
+12. Button Editor and RadioButtonEditor: may hide the toggled value after defining a new limit (only when multiple parameters are added to the same viewer)
+13. Button Editor and RadioButtonEditor: no range/limit check implemented yet
+14. Some HANtune windows are not vertically resizable while the mouse pointer indicates it is possible
+15. Presentation of numbers still have to be improved: scientific and decimal presentation
+16. GaugeViewer: while scaling the gauge the indicators (stripes) sometimes do not correspond to a whole number
+
+
+
+
+*************** HANtune 2.0 Beta Change Log ***************
+
+	This Beta release contains a lot of bug fixes opposed to the Alpha. DBC file support has been extensively tested, as well as tables. 
+	Testing has only happened on STM32 target and the Rexroth targets, not on the Prodrive GCU, which has another endianness. 
+	Please also take a look at the known issues.
+	
+1. Generic CAN: added live simultaneous support for extended and standard frame identifiers (both for CAN-only and for XCP on CAN)
+2. XCP on CAN can now also use generic CAN messages at the same time when the .dbc file has been added
+3. Stability improvements and bugfixes
+4. Updated and unified the right mouse button context menu for all HANtune windows
+5. Added support for Errormonitoring
+
+
+*************** HANtune 2.0 Beta Known issues ***************
+
+1.	Project files saved with HANtune 2.0 Alpha may cause windows not to be able to be deleted in other versions of HANtune 
+2.  Importing an existing project into the current project leads to problems when they contain similarly named files
+3.  ButtonEditor and RadioButtonEditor: large numbers can push window elements out of sight
+4.  "Edit title" function in all HANtune windows only take effect after the layout has been reloaded
+5.  Clicking "Open project" while connected will first disconnect and then ask for confirmation to proceed
+6.  After loading a project the (first time) right mouse button context menu of the ASAP2 tree only shows the uption of the multi-editor and multi-viewers
+7.  ScopeViewer: adding a new signal disables the auto-scale function
+8.  HANtune allows the use of double datatype in signals and parameters on CAN in newly defined DAQlists, causing the connection to be terminated (double doesn't fit into an XCP on CAN message)
+9.  HANtune window: modify decimals only has direct effect when connected
+10. Bar Viewer: modify display range, the upper limit can't be modified using the arrow buttons
+11. Button Editor and RadioButtonEditor: may hide the toggled value after defining a new limit (only when multiple parameters are added to the same viewer)
+12. Button Editor and RadioButtonEditor: no range/limit check implemented yet
+13. Some HANtune windows are not vertically resizable while the mouse pointer indicates it is possible
+14. Presentation of numbers still have to be improved: scientific and decimal presentation
+15. GaugeViewer: while scaling the gauge the indicators (stripes) sometimes do not correspond to a whole number
+
+
+*************** HANtune 2.0 Alpha Change Log ***************
+
+	In general: in the transition from 1.1 to 2.0 the GUI has changed significantly. 
+	Also generic CAN support has been added by adding .dbc file support. In this Alpha version it only works in combination with ASAP2.
+	
+--> SidePanel Revision:
+1.	Sidepanel can now be pinned, positioning the layout next to the sidepanel instead of beneath it.
+2.	ASAP2 files in the sidepanel can be sorted by subsystem as they are defined in MATLAB Simulink.
+3.	New search/filter function in the sidepanel.
+4.	DAQ lists can now be added/removed/renamed/activated from the ASAP2 sidepanel.
+5.	New sidepanel to display the contents of the DBC file.
+6.	Panels within a sidepanel can be resized vertically or minimized/maximized by clicking the double arrows in the top.
+--> Drag 'n Drop functionality:
+7.  Drag a signal/parameter from the sidepanel and drop it on an empty space in the layout to add a new viewer/editor.
+8.	Drag a signal/parameter from the sidepanel and drop it on an existing viewer/editor to add the signal/parameter.
+
+9. The order of signals/paramters in a viewer/editor can now be rearranged through a context menu.
+10. Signals/paramters can now be directly removed from a viewer/editor through a context menu.
+11. Layouts can be opened independently from ASAP2 files.
+
+--> Default frames for viewers/editors have been replaced:
+13.	A titled border, lineborder or no border can be used.
+14.	The title used for the border can be editted.
+15.	Viewers/editors that can handle multiple signals/parameters have a 1px line border by default.
+16.	Viewers/editors that can handle only a single signal/parameter have no border by default.
+
+--> Viewers/editors can now only be moved/resized when HANtune is in "Resize and move" mode. This mode can be entered by either:
+17.	Right clicking an empty space in the layout.
+18.	Holding the left control key.
+
+19.	Added a new viewer: TextViewer
+20. Added a new viewer: LedViewer. This viewer is similair to the BooleanViewer but can handle multiple ranges/colors.
+21.	Enhanced logging performance at high speed (1kHz)
+22.	Quartz font is back for the digitalViewer
+23.	Added a state to the editors: grey, for not active (when it is not part of an active DAQlist) Note: orange still exists, meaning the value could potentially be out of sync with the targets value.
+24. Bugfix: HANtune will now automatically show the "Save as" dialog on first save.
+25. ScopeViewer background color can now be inverted. This is required for a good visibility on beamers.
+26. The connectionDialog has been revised.
+27. Fixed an issue with leading zero in the binary representation for the digitalViewer
+28. Improved readability of the statusbar.
+29. The prescaler setting will now be stored in the project settings. (previously this was stored in the user settings)
+30.	ASAP2 files can now be imported without a version number.
+31. DBC files can be used for HANtune as a generic CAN dashboard. (currently only works in conjunction with ASAP2)
+32. Improved the resolution behavior of the slider editor.
+33. Bugfix: The multi-editor now properly handles parameters with a minimum greater than zero or a maximum lower than zero.
+34. Improved table editor integrity with better input validity checks.
+35. The table editor can now also turn orange when it's not in sync with the target.
+36.	It is now possible to move windows using the arrow keys. (in resize and move mode)
+37. The frequency indicator in the ASAP2 panel now shows the frequency correct at all times
+38. Enhanced the correctness of the busload indication.
+39. The Scopeviewer can now handle all combinations of signals.
+
+*************** HANtune 2.0 Alpha Known issues ***************
+1.	Actively modifying DAQlist may cause HANtune to stall.
+2.	The compatibility of calibrations with the currently loaded ASAP2 file is not verified. When the files do not match the calibration may not finish.
+3.	Errormonitoring is currently disabled because of stability issues.
+4. 	The GaugeViewer needle may behave unexpected when the signal's value is out of the GaugeViewer's boundaries.
+5. 	When using HANtune over a wireless connection (E407 on Ethernet with a router) the Windows firewall can block the connection after 10 minutes
+6.  Starting HANtune by clicking an .hml project file will cause some malfunction in HANtune. (connection problems and some settings can't be loaded)
+
+
+
+*************** HANtune 1.1 Change Log ***************
+1. The MultiLedViewer doesn't change the color of the LED.
+2. Loading a calibration: fixed a bug which could disable the user to quit the "loading a calibration" window.
+3. Table Editor: added extra checks to ensure valid input (added boundary, decimals and format checks)
+4. Thorough update of the HANtune manual (added "Hints and Tips!)
+5. Fixed a bug which could cause the connection dialog to become unresponsive.
+
+*************** HANtune 1.1 Known issues ***************
+1.  HANcoder models with a base sample time under 1ms (1kHz+) can cause connection instabilities with HANtune.
+2.  The frequency indicator in the ASAP2 panel initially shows value "0" and only gets updated after modifying the prescaler
+3.  When using HANtune over a wireless connection (E407 on Ethernet with a router) the Windows firewall can block the connection after 10 minutes
+4.  The ASAP2 menu DAQlist checkmarks do not always reflect the current status of the DAQlist. (new ASAP2 panel is on the way)
+5.  The USB busload calculation is incorrect for non-default base sample time settings in the HANcoder target
+6.  Starting HANtune by clicking an .hml project file will cause some malfunction in HANtune. (connection problems and some settings can't be loaded)
+7.  The scopeViewer is unable to handle certain combinations of fixed point datatypes causing all plot lines to disappear.
+8.  After creating a new project the "save as..." dialog does not up after clicking "Save". Always choose "Save as..." when saving your project for the first time.
+9.  When connecting to the target goes wrong HANtune sometimes cannot close the connection dialog.
+10. The DigitalViewer can show it's value in too small characters when loading a layout which has been previously used in combination with another ASAP2 file
+11. HANtune doesn't check the validity of the ASAP2's upper and lower limits of parameters and signals. This situation can occur due to a fault in Simulink. HANtune doesn't allow over or underflow so this is only a presentation issue.
+12. The right-click menu of the DAQlists cannot dissappear other than by clicking a menu-item.
+13. Newly created DAQlists get a default prescaler setting of "1000" while the user is not allowed to enter a bigger value than 255 due to overflow problems.
+14. HANtune loses CAN connection after a DAQlist is loaded which contains a signal of the double datatype.
+15. The default DAQlist prescaler is not stored in the project settings
+16. The SliderEditor currently only allows a minimum resolution of 1 to set parameters despite of the used datatype
+
+
+
+*************** HANtune 1.1 Beta Known issues ***************
+    Note: a full regression test has reveiled quite some previously unknown issues.
+1.  The frequency indicator in the ASAP2 panel initially shows value "0" and only gets updated after modifying the prescaler
+2.  When using HANtune over a wireless connection (E407 on Ethernet with a router) the Windows firewall can block the connection after 10 mins
+3.  The ASAP2 menu DAQlist checkmarks do not reflect the current status of the DAQlist.
+4.  The USB busload calculation is incorrect for non-default base sample time settings in the HANcoder target
+5.  Starting HANtune by clicking an .hml project file will cause some malfunction in HANtune. (connection problems and some settings can't be loaded)
+6.  The scopeViewer is unable to handle certain combinations of fixed point datatypes causing all plot lines to disappear.
+7.  After creating a new project the "save as..." dialog does not show up after clicking "Save". Always choose "Save as..." when saving your project for the first time.
+8.  When connecting to the target goes wrong HANtune sometimes cannot close the connection dialog.
+9.  When loading a calibration to the target goes wrong HANtune sometimes cannot close the Load Calibration dialog.
+10. Tables allow the user to enter values which are out of bounds for that data type (over/underflow errors can occur)
+11. The DigitalViewer can show it's value in too small characters when loading a layout which has been previously used in combination with another ASAP2 file
+12. HANtune doesn't check the validity of the ASAP2's upper and lower limits of parameters and signals. This situation can occur due to a fault in Simulink. HANtune doesn't allow over or underflow so this is only a presentation issue.
+13. the right-click menu of the DAQlists cannot dissappear other than by clicking a menu-item.
+14. Newly created DAQlists get a default prescaler setting of "1000" while the user is not allowed to enter a bigger value than 255 due to overflow problems
+15. HANtune loses CAN connection after a DAQlist is loaded which contains a signal of the double datatype.
+16. The default DAQlist prescaler is not stored in the project settings
+
+*************** HANtune 1.1 Beta Change Log ***************
+1. Fixed the following issue: viewer subrange dialog only accepts the value "0" after it has been assigned another value
+2. Improved the behaviour of showing decimals
+3. When editors or viewers are set to use doubles they turn grey when HANtune is connected to CAN to inform the user of the incompatibility
+4. Improved the errorLogger
+5. Fixed an overflow issue in the editors
+
+
+
+*************** HANtune 1.1 Alpha 5 Known issues ***************
+1. Viewer subrange dialog only accepts the value "0" after it has been assigned another value
+2. The frequency indicator in the ASAP2 panel initially shows value "0" and only gets updated after modifying the prescaler
+3. When using HANtune over a wireless connection (E407 on Ethernet with a router) the Windows firewall can block the connection after 10 mins
+
+*************** HANtune 1.1 Alpha 5 Change Log ***************
+1. Fixed the binary and hexadecimal representation of certain datatypes
+2. Provided a more accurate busload estimate while using XCP on USB
+3. Fixed a bug which discarded the last daqlist item before visualizing it in HANtune
+
+
+
+*************** HANtune 1.1 Alpha 4 Known issues ***************
+1. HANtune can become unstable when one or more expected DAQlist signals don't arrive
+2. Viewer subrange dialog only accepts the value "0" after it has been assigned another value
+3. The frequency indicator in the ASAP2 panel initially shows value "0" and only gets updated after modifying the prescaler
+4. When using HANtune over a wireless connection (E407 on Ethernet with a router) the Windows firewall can block the connection after 10 mins
+
+*************** HANtune 1.1 Alpha 4 Change Log ***************
+1. Fixed "stuck at Configure DAQlist" issue in the connection dialog
+2. Slave timestamps are re-enabled after a bugfix on the target-side (applies to ethernet)
+3. Right clicking next to tabs and on tabs now works as it should
+4. Clicking HANTune project files (.hml) will automatically start HANtune and load the specific project
+5. HANtune now has a function to reset all user preferences
+
+
+
+*************** HANtune 1.1 Alpha 3 Known issues ***************
+1. High frequency logging: missing datapoints. Sometimes a datapoint is missed showing N/A in the logfile.
+2. Ethernet on E407: HANtune doesn't force the Ethernet connection to stay open while using a Laptop which goes into low power mode. This can cause a loss of connection when the user isn't using the laptop for a while. User gets a warning with an advise about this problem.
+3. Slow ECU cycle time in combination with a high prescaler setting can cause a time-out. Currently HANtune warns the user when this can happen. In the future release the time-out will be set more dynamically.
+
+*************** HANtune 1.1 Alpha 3 Change Log ***************
+1. Added Licencing
+2. Added an error logger mechanism to improve problem solving
+3. HANtune now warns the user when the double datatype is about to be used with CAN as transport layer  (physical restriction)
+4. Time-out and DAQlist frequency settings which can cause unwanted time-outs are checked. When the combination of these settings are going to cause time-outs, the user gets advised to adapt the settings
+5. Changed the default prescaler setting back to 100
+6. Improved the performance of the scopeViewer
+7. Fixed the frequency indicator of the ASAP2 panel
+8. Decimals can now be set to zero in the viewers
+9. Improved Ethernet connection stability

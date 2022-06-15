@@ -1,0 +1,139 @@
+%implements s909_b0_zc1e_2_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS58B0 = OpaqueTLCBlockFcn("Start", 58, 0, 2, 0)
+%assign tlcStartFcnOfS60B0 = OpaqueTLCBlockFcn("Start", 60, 0, 2, 0)
+%assign tlcStartFcnOfS62B0 = OpaqueTLCBlockFcn("Start", 62, 0, 2, 0)
+%assign tlcStartFcnOfS64B0 = OpaqueTLCBlockFcn("Start", 64, 0, 2, 0)
+%assign   Start_open_Sync_ID_CAN_66_11 = ""
+%openfile Start_open_Sync_ID_CAN_66_11
+
+/* Start for Enabled SubSystem: '<S874>/Sync_ID_CAN' */
+%closefile Start_open_Sync_ID_CAN_66_11
+
+%assign    Start_body_Sync_ID_CAN_66_11 = ""
+%openfile  Start_body_Sync_ID_CAN_66_11
+
+%if !WHITE_SPACE(tlcStartFcnOfS58B0)
+/* Start for M-S-Function: '<S880>/S-Function' incorporates:
+ *  Constant: '<S876>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[23487e*/",tlcStartFcnOfS58B0,"/*@]*/")>\
+%endif
+%closefile Start_body_Sync_ID_CAN_66_11
+
+%assign    Start_close_Sync_ID_CAN_66_11 = ""
+%openfile  Start_close_Sync_ID_CAN_66_11
+
+/* End of Start for SubSystem: '<S874>/Sync_ID_CAN' */
+%closefile Start_close_Sync_ID_CAN_66_11
+%<SLibCG_DumpSSCode(Start_open_Sync_ID_CAN_66_11, Start_body_Sync_ID_CAN_66_11, Start_close_Sync_ID_CAN_66_11)>
+
+
+%assign   Start_open_Vote1_ID_CAN_66_14 = ""
+%openfile Start_open_Vote1_ID_CAN_66_14
+
+/* Start for Enabled SubSystem: '<S874>/Vote1_ID_CAN' */
+%closefile Start_open_Vote1_ID_CAN_66_14
+
+%assign    Start_body_Vote1_ID_CAN_66_14 = ""
+%openfile  Start_body_Vote1_ID_CAN_66_14
+
+%if !WHITE_SPACE(tlcStartFcnOfS60B0)
+/* Start for M-S-Function: '<S882>/S-Function' incorporates:
+ *  Constant: '<S877>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[234889*/",tlcStartFcnOfS60B0,"/*@]*/")>\
+%endif
+%closefile Start_body_Vote1_ID_CAN_66_14
+
+%assign    Start_close_Vote1_ID_CAN_66_14 = ""
+%openfile  Start_close_Vote1_ID_CAN_66_14
+
+/* End of Start for SubSystem: '<S874>/Vote1_ID_CAN' */
+%closefile Start_close_Vote1_ID_CAN_66_14
+%<SLibCG_DumpSSCode(Start_open_Vote1_ID_CAN_66_14, Start_body_Vote1_ID_CAN_66_14, Start_close_Vote1_ID_CAN_66_14)>
+
+
+%assign   Start_open_Vote2_ID_CAN_66_17 = ""
+%openfile Start_open_Vote2_ID_CAN_66_17
+
+/* Start for Enabled SubSystem: '<S874>/Vote2_ID_CAN' */
+%closefile Start_open_Vote2_ID_CAN_66_17
+
+%assign    Start_body_Vote2_ID_CAN_66_17 = ""
+%openfile  Start_body_Vote2_ID_CAN_66_17
+
+%if !WHITE_SPACE(tlcStartFcnOfS62B0)
+/* Start for M-S-Function: '<S884>/S-Function' incorporates:
+ *  Constant: '<S878>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[234894*/",tlcStartFcnOfS62B0,"/*@]*/")>\
+%endif
+%closefile Start_body_Vote2_ID_CAN_66_17
+
+%assign    Start_close_Vote2_ID_CAN_66_17 = ""
+%openfile  Start_close_Vote2_ID_CAN_66_17
+
+/* End of Start for SubSystem: '<S874>/Vote2_ID_CAN' */
+%closefile Start_close_Vote2_ID_CAN_66_17
+%<SLibCG_DumpSSCode(Start_open_Vote2_ID_CAN_66_17, Start_body_Vote2_ID_CAN_66_17, Start_close_Vote2_ID_CAN_66_17)>
+
+
+%assign   Start_open_Vote3_ID_CAN_66_20 = ""
+%openfile Start_open_Vote3_ID_CAN_66_20
+
+/* Start for Enabled SubSystem: '<S874>/Vote3_ID_CAN' */
+%closefile Start_open_Vote3_ID_CAN_66_20
+
+%assign    Start_body_Vote3_ID_CAN_66_20 = ""
+%openfile  Start_body_Vote3_ID_CAN_66_20
+
+%if !WHITE_SPACE(tlcStartFcnOfS64B0)
+/* Start for M-S-Function: '<S886>/S-Function' incorporates:
+ *  Constant: '<S879>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[23489f*/",tlcStartFcnOfS64B0,"/*@]*/")>\
+%endif
+%closefile Start_body_Vote3_ID_CAN_66_20
+
+%assign    Start_close_Vote3_ID_CAN_66_20 = ""
+%openfile  Start_close_Vote3_ID_CAN_66_20
+
+/* End of Start for SubSystem: '<S874>/Vote3_ID_CAN' */
+%closefile Start_close_Vote3_ID_CAN_66_20
+%<SLibCG_DumpSSCode(Start_open_Vote3_ID_CAN_66_20, Start_body_Vote3_ID_CAN_66_20, Start_close_Vote3_ID_CAN_66_20)>
+
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[2].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Start", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Start"))
+%<SLibCG_AccessArg(2, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(2, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Start", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Start"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(2, 0, 0)>
+%endif
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void CAN2Recieve_Start(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(2, 0, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(2, 0, 1)
+%<comma>rtB_CAN2Recieve *localB\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 0, fcnProtoType)>
+%endfunction
